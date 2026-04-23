@@ -1,0 +1,48 @@
+{
+  "name": "@chio/codex-plugin",
+  "version": "0.2.0",
+  "description": "Chio plugin for the OpenAI Codex CLI. Bonds every plan-then-act loop through the chio kernel: seven guards, attested plans, publishable did:chio citizens.",
+  "type": "module",
+  "main": "./dist/cli/main.js",
+  "bin": {
+    "chio-codex": "./dist/cli/main.js"
+  },
+  "files": [
+    "dist",
+    ".codex-plugin",
+    ".codex",
+    "hooks.json",
+    "skills",
+    "examples",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc && node ./scripts/mark-hooks-executable.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test ./test/*.test.ts",
+    "prepack": "node ./scripts/prep-publish.mjs && npm run build",
+    "postpack": "node ./scripts/restore-publish.mjs"
+  },
+  "keywords": [
+    "codex",
+    "chio",
+    "plugin",
+    "agent-governance",
+    "hooks",
+    "receipts",
+    "capabilities",
+    "passport"
+  ],
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@chio/bridge": "file:../chio-bridge"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "~5.7.0"
+  }
+}

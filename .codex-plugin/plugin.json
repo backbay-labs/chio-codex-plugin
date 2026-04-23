@@ -1,0 +1,24 @@
+{
+  "name": "chio-codex",
+  "version": "0.1.0",
+  "description": "Bond every OpenAI Codex plan-then-act loop through the Chio kernel. Seven guards, attested plans, publishable citizens.",
+  "author": "Backbay Industries",
+  "homepage": "https://chio.world/plugins/codex",
+  "repository": "https://github.com/backbay/chio-codex-plugin",
+  "license": "Apache-2.0",
+  "keywords": ["codex", "chio", "agent-governance", "receipts", "capabilities", "hooks"],
+  "skills": "./skills/",
+  "hooks": "./hooks.json",
+  "interface": {
+    "displayName": "Chio for Codex",
+    "shortDescription": "Bonded, budgeted, receipt-signed Codex runs.",
+    "longDescription": "The Chio Codex plugin wires the Codex CLI into the chio kernel. Every tool call is routed through chio's seven-guard pipeline and lands as a signed receipt; every session's initial prompt is SHA-256-fingerprinted and embedded in the first receipt as a plan attestation; every successful run can be promoted, via --chio-publish, to a named, scheduled, revocable citizen with a did:chio Agent Passport.",
+    "capabilities": [
+      "hooks:PreToolUse",
+      "hooks:PostToolUse",
+      "hooks:UserPromptSubmit",
+      "hooks:Stop",
+      "hooks:SessionStart"
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+# HushSpec 0.1.0 policy for a mongo-to-postgres migration.
+#
+# Chio's Rules enum is closed and deny_unknown_fields (see ARC_GROUND_TRUTH
+# §5 and crates/chio-policy/src/models.rs:143-164). `human_in_loop:` and
+# `budget:` are not first-class rule keys yet, so we put them under
+# `extensions.chio.*` per the ARC_UPSTREAM_PROPOSAL migration table —
+# they stay readable/typed for the plugin while the policy still loads
+# through chio unmodified.
+hushspec: "0.1.0"
+name: mongo-to-postgres
+description: >-
+  Minimal migration policy used by the Chio Codex plugin demo. Read/write
+  restricted to ./migrations/**, shell allowlisted to psql/mongodump/npm,
+  egress pinned to the two internal data stores.
+metadata:
+  version: "0.3.0"
+
+rules:
+  path_allowlist:
+    enabled: true
+    read:  ["./migrations/**"]
+    write: ["./migrations/**"]
+
+  shell_commands:
+    enabled: true
+    allow:
+      - "psql *"
+      - "mongodump *"
+      - "npm test"
+    default: block
+
+  egress:
+    enabled: true
+    default: block
+    allow:
+      - "postgres://db.int:5432"
+      - "mongodb://old.int:27017"
+
+extensions:
+  chio:
+    # Approval gating — evaluated by the plugin (and, when upstreamed to
+    # chio, by an ApprovalGuard in a future HushSpec version).
+    human_in_loop:
+      approve_when:
+        - "not dry_run and affects prod"
+    # Spend ceiling — surfaced via `chio-codex budget` and (when the trust-
+    # plane /v1/budgets integration lands) enforced kernel-side.
+    budget:
+      max_usd: 25
+      ttl: "30m"

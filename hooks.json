@@ -1,0 +1,57 @@
+{
+  "SessionStart": [
+    {
+      "matcher": "*",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "node ${CODEX_PLUGIN_ROOT:-${HOME}/.codex/plugins/chio-codex}/dist/hooks/sessionstart.mjs"
+        }
+      ]
+    }
+  ],
+  "UserPromptSubmit": [
+    {
+      "matcher": "*",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "node ${CODEX_PLUGIN_ROOT:-${HOME}/.codex/plugins/chio-codex}/dist/hooks/userpromptsubmit.mjs"
+        }
+      ]
+    }
+  ],
+  "PreToolUse": [
+    {
+      "matcher": "*",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "node ${CODEX_PLUGIN_ROOT:-${HOME}/.codex/plugins/chio-codex}/dist/hooks/pretooluse.mjs"
+        }
+      ]
+    }
+  ],
+  "PostToolUse": [
+    {
+      "matcher": "*",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "node ${CODEX_PLUGIN_ROOT:-${HOME}/.codex/plugins/chio-codex}/dist/hooks/posttooluse.mjs"
+        }
+      ]
+    }
+  ],
+  "Stop": [
+    {
+      "matcher": "*",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "node ${CODEX_PLUGIN_ROOT:-${HOME}/.codex/plugins/chio-codex}/dist/hooks/stop.mjs"
+        }
+      ]
+    }
+  ]
+}
