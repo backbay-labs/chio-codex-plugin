@@ -1,0 +1,48 @@
+{
+  "request-substitution": [
+    {
+      "method": "chio/execution-context",
+      "forwarded": true
+    },
+    {
+      "method": "chio/execution-context",
+      "forwarded": true
+    }
+  ],
+  "result-substitution": [
+    {
+      "method": "chio/execution-context",
+      "forwarded": true
+    },
+    {
+      "method": "chio/execution-context",
+      "forwarded": true
+    }
+  ],
+  "malformed-context": [
+    {
+      "method": "chio/execution-context",
+      "forwarded": false
+    }
+  ],
+  "lost-response": [
+    {
+      "method": "chio/execution-context",
+      "forwarded": true
+    },
+    {
+      "method": "chio/execution-context",
+      "forwarded": true
+    }
+  ],
+  "timeout": [
+    {
+      "method": "chio/execution-context",
+      "forwarded": false
+    },
+    {
+      "method": "chio/execution-context",
+      "forwarded": true
+    }
+  ]
+}

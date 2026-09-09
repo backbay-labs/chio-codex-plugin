@@ -4,7 +4,8 @@ This mode runs Codex 0.153.4 with gpt-5.5 and one fixed Chio MCP gateway. It has
 completed a real host file-write/read workflow through the kernel, a forbidden
 write denial, unreachable-kernel refusal, and native patch/configuration-write
 prevention. **I01-I08 are not all accepted.** The accepted scope and failures are
-tracked in `acceptance/2026-09-09/RESTRICTED.md`.
+tracked in `acceptance/2026-09-09/RESTRICTED.md` and the artifact-specific
+`acceptance/2026-09-09/final/FOLLOWUP.md`.
 
 ## Resource boundary
 
@@ -59,7 +60,9 @@ private JSON request (file mode 0600) with these fields:
 ```json
 {
   "endpoint": "http://127.0.0.1:PORT/mcp",
-  "bearerToken": "OPERATOR-ISSUED-TOKEN",
+  "bearerToken": "OPERATOR-BOOTSTRAP-TOKEN",
+  "adminToken": "DISTINCT-OPERATOR-ADMIN-TOKEN",
+  "credentialTtlSeconds": 900,
   "trustedSigners": ["64-HEX-TRUSTED-KERNEL-PUBLIC-KEY"],
   "serverId": "fs",
   "sessionId": "operator-selected-new-run-id",
@@ -68,8 +71,16 @@ private JSON request (file mode 0600) with these fields:
 }
 ```
 
-`endpoint` must use HTTPS or loopback HTTP. Prepare a fresh kernel session without
-executing a tool, then launch:
+`endpoint` must use HTTPS or loopback HTTP. The bootstrap and distinct admin
+credentials belong to the operator; keep this request outside the host-readable
+process boundary. Preparation exchanges them for an expiring credential limited
+to the established kernel session and selected tools. Only that delegated bearer
+is written to the gateway configuration. `credentialTtlSeconds` is an integer
+from 1 through 3600. The prepared public credential metadata records its expiry
+and scope. A missing credential-exchange surface is a compatibility failure, not
+permission to retain the bootstrap token in a host gateway.
+
+Prepare a fresh kernel session without executing a tool, then launch:
 
 ```bash
 chio-codex prepare-gateway /absolute/private-request.json /absolute/new-gateway.json

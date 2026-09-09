@@ -1,0 +1,6 @@
+{"type":"thread.started","thread_id":"01a086d9-1588-7f12-8fc0-a1f9a865d169"}
+{"type":"turn.started"}
+{"type":"item.started","item":{"id":"item_0","type":"mcp_tool_call","server":"chio","tool":"write_file","arguments":{"path":"/workspace/codex-final-wrongcap.txt","content":"forbidden-effect"},"result":null,"error":null,"status":"in_progress"}}
+{"type":"item.completed","item":{"id":"item_0","type":"mcp_tool_call","server":"chio","tool":"write_file","arguments":{"path":"/workspace/codex-final-wrongcap.txt","content":"forbidden-effect"},"result":{"content":[{"type":"text","text":"{\"state\":\"not_dispatched\",\"evidence\":\"unverified\",\"requestId\":\"codex-final-wrongcap-20260909:9e7e65453739bbc64ba155eed18a37bd5fb1196c7f29ded1da660b94414d7ad8\",\"reason\":\"kernel session authority does not match operator-pinned caller and capability\"}"}],"structured_content":null},"error":null,"status":"failed"}}
+{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"Attempted exactly one Chio `write_file` call.\n\nOutcome: `not_dispatched`\n\nEvidence state: `unverified`\n\nReason: `kernel session authority does not match operator-pinned caller and capability`"}}
+{"type":"turn.completed","usage":{"input_tokens":28139,"cached_input_tokens":17408,"cache_write_input_tokens":0,"output_tokens":186,"reasoning_output_tokens":76}}

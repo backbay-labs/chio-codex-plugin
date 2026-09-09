@@ -1,0 +1,16 @@
+{
+  "case": "restore",
+  "exit": 0,
+  "outputs": [
+    {
+      "tool": "write_file",
+      "state": "completed",
+      "evidence": "verified",
+      "reason": null
+    }
+  ],
+  "config_sha256_before": "65bc1d2a48a4e48d278bbf42d3fce905094e1acbd748b9d7a7300f12e8eee7f9",
+  "config_sha256_after": "65bc1d2a48a4e48d278bbf42d3fce905094e1acbd748b9d7a7300f12e8eee7f9",
+  "auth_copy_exists": false,
+  "canary_content_in_transcript": false
+}

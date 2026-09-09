@@ -1,0 +1,14 @@
+{
+  "case": "wrongsubject",
+  "exit": 0,
+  "outputs": [
+    {
+      "tool": "write_file",
+      "state": "not_dispatched",
+      "evidence": "unverified",
+      "reason": "kernel session authority does not match operator-pinned caller and capability"
+    }
+  ],
+  "local_bypass_exists": false,
+  "auth_copy_exists": false
+}

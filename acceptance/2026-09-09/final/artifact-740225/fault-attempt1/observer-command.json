@@ -1,0 +1,13 @@
+[
+  "docker",
+  "run",
+  "--rm",
+  "--network",
+  "none",
+  "--mount",
+  "type=volume,src=chio-required-agents-final-20260909,dst=/observe,readonly",
+  "alpine:3.20",
+  "sh",
+  "-c",
+  "sha256sum /observe/forbidden.txt /observe/secret.txt; for file in codex-final-tamper.txt codex-final-uri.txt codex-final-revoked.txt codex-final-restore.txt codex-final-request-substitution.txt codex-final-result-substitution.txt codex-final-malformed-context.txt codex-final-lost-response.txt codex-final-timeout.txt codex-final-request-substitution-after.txt codex-final-result-substitution-after.txt codex-final-lost-response-after.txt codex-final-timeout-after.txt; do if test -f \"/observe/$file\"; then printf \"%s=\" \"$file\"; cat \"/observe/$file\"; printf \"\\n\"; else printf \"%s=ABSENT\\n\" \"$file\"; fi; done"
+]

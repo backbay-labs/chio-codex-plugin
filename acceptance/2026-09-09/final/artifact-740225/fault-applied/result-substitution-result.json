@@ -1,0 +1,22 @@
+{
+  "case": "result-substitution",
+  "exit": 0,
+  "outputs": [
+    {
+      "tool": "write_file",
+      "state": "unknown",
+      "evidence": "verified",
+      "reason": "no verified completed result; preserve the operation fence"
+    },
+    {
+      "tool": "write_file",
+      "state": "not_dispatched",
+      "evidence": "unverified",
+      "reason": "an unresolved operation fences this gateway; operator reconciliation required"
+    }
+  ],
+  "config_sha256_before": "52531a4c55b5a80a0d073912ee41f09cad4cebed662ef29d962f87914fb44df6",
+  "config_sha256_after": "52531a4c55b5a80a0d073912ee41f09cad4cebed662ef29d962f87914fb44df6",
+  "auth_copy_exists": false,
+  "canary_content_in_transcript": false
+}

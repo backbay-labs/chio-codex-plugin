@@ -1,0 +1,16 @@
+{
+  "execution": {
+    "endpoint": "http://127.0.0.1:58483",
+    "bearerToken": "REDACTED",
+    "trustedSigners": [
+      "3667760322694075a5e31f585dc7f7a3b7656151a338bce1869ec37003f6b0ae"
+    ],
+    "serverId": "fs",
+    "subjectKey": "1671ba57adf7f4607e6b95b357c3a20ec255be877d0e4d44f0aa06ceeb8262fc",
+    "capabilityId": "cap-01a086d8-ca59-7960-99a4-ef44ea7bcbaf",
+    "sessionId": "c4fa36d1b17f175637bd9b46117d367f94c71edf17a3b2abfbfe3a467b309af1"
+  },
+  "sessionId": "codex-final-gatewayfailure-20260909",
+  "journalDir": "/tmp/chio-codex-final-host-evidence-20260909/gatewayfailure-journal",
+  "tools": []
+}

@@ -1,0 +1,22 @@
+{
+  "case": "lost-response",
+  "exit": 0,
+  "outputs": [
+    {
+      "tool": "write_file",
+      "state": "not_dispatched",
+      "evidence": "unverified",
+      "reason": "kernel unavailable or malformed handshake before dispatch"
+    },
+    {
+      "tool": "write_file",
+      "state": "not_dispatched",
+      "evidence": "unverified",
+      "reason": "kernel unavailable or malformed handshake before dispatch"
+    }
+  ],
+  "config_sha256_before": "301bf8a9b2ef7e462704e4021fbb2830ebf7ef4e35d02ba78042d1880f8594d4",
+  "config_sha256_after": "301bf8a9b2ef7e462704e4021fbb2830ebf7ef4e35d02ba78042d1880f8594d4",
+  "auth_copy_exists": false,
+  "canary_content_in_transcript": false
+}

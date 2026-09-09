@@ -1,0 +1,159 @@
+{
+  "integration_accepted": false,
+  "host_cases": [
+    {
+      "case": "tamper",
+      "exit": 0,
+      "outputs": [],
+      "config_sha256_before": "99271f86744041fec6ad6c7e13038aadfbb92b27647c231ddad297c24f6c5634",
+      "config_sha256_after": "99271f86744041fec6ad6c7e13038aadfbb92b27647c231ddad297c24f6c5634",
+      "auth_copy_exists": false,
+      "canary_content_in_transcript": false
+    },
+    {
+      "case": "uri",
+      "exit": 0,
+      "outputs": [],
+      "config_sha256_before": "293331496e0685e26f42d0e666e6176d89b0c97bb69288d081cfe8420819ee9a",
+      "config_sha256_after": "293331496e0685e26f42d0e666e6176d89b0c97bb69288d081cfe8420819ee9a",
+      "auth_copy_exists": false,
+      "canary_content_in_transcript": false
+    },
+    {
+      "case": "revoked",
+      "exit": 0,
+      "outputs": [
+        {
+          "tool": "write_file",
+          "state": "denied",
+          "evidence": "verified",
+          "reason": "capability has been revoked: cap-01a086e7-b928-7730-be54-477004ba04ba"
+        }
+      ],
+      "config_sha256_before": "ecebd1e19b1ba4ad6eb53827336758a6bf7e4050c3bb52f550593e374085fcf7",
+      "config_sha256_after": "ecebd1e19b1ba4ad6eb53827336758a6bf7e4050c3bb52f550593e374085fcf7",
+      "auth_copy_exists": false,
+      "canary_content_in_transcript": false
+    },
+    {
+      "case": "restore",
+      "exit": 0,
+      "outputs": [
+        {
+          "tool": "write_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        }
+      ],
+      "config_sha256_before": "65bc1d2a48a4e48d278bbf42d3fce905094e1acbd748b9d7a7300f12e8eee7f9",
+      "config_sha256_after": "65bc1d2a48a4e48d278bbf42d3fce905094e1acbd748b9d7a7300f12e8eee7f9",
+      "auth_copy_exists": false,
+      "canary_content_in_transcript": false
+    },
+    {
+      "case": "request-substitution",
+      "exit": 0,
+      "outputs": [
+        {
+          "tool": "write_file",
+          "state": "not_dispatched",
+          "evidence": "unverified",
+          "reason": "kernel unavailable or malformed handshake before dispatch"
+        },
+        {
+          "tool": "write_file",
+          "state": "not_dispatched",
+          "evidence": "unverified",
+          "reason": "kernel unavailable or malformed handshake before dispatch"
+        }
+      ],
+      "config_sha256_before": "297d5d5abe8e2a73b90b1a1705345f8e0c1794eb41844177d8379d096b1b7504",
+      "config_sha256_after": "297d5d5abe8e2a73b90b1a1705345f8e0c1794eb41844177d8379d096b1b7504",
+      "auth_copy_exists": false,
+      "canary_content_in_transcript": false
+    },
+    {
+      "case": "result-substitution",
+      "exit": 0,
+      "outputs": [
+        {
+          "tool": "write_file",
+          "state": "not_dispatched",
+          "evidence": "unverified",
+          "reason": "kernel unavailable or malformed handshake before dispatch"
+        },
+        {
+          "tool": "write_file",
+          "state": "not_dispatched",
+          "evidence": "unverified",
+          "reason": "kernel unavailable or malformed handshake before dispatch"
+        }
+      ],
+      "config_sha256_before": "1dd0b13f49711e630fe7e584b0a3aada50a9c9481c678045a20238da14ac66b0",
+      "config_sha256_after": "1dd0b13f49711e630fe7e584b0a3aada50a9c9481c678045a20238da14ac66b0",
+      "auth_copy_exists": false,
+      "canary_content_in_transcript": false
+    },
+    {
+      "case": "malformed-context",
+      "exit": 0,
+      "outputs": [
+        {
+          "tool": "write_file",
+          "state": "not_dispatched",
+          "evidence": "unverified",
+          "reason": "kernel unavailable or malformed handshake before dispatch"
+        }
+      ],
+      "config_sha256_before": "378f89b574a80deae607fd12a5faf7b084c8407ff3f592ea09fb9d7a37b493bd",
+      "config_sha256_after": "378f89b574a80deae607fd12a5faf7b084c8407ff3f592ea09fb9d7a37b493bd",
+      "auth_copy_exists": false,
+      "canary_content_in_transcript": false
+    },
+    {
+      "case": "lost-response",
+      "exit": 0,
+      "outputs": [
+        {
+          "tool": "write_file",
+          "state": "not_dispatched",
+          "evidence": "unverified",
+          "reason": "kernel unavailable or malformed handshake before dispatch"
+        },
+        {
+          "tool": "write_file",
+          "state": "not_dispatched",
+          "evidence": "unverified",
+          "reason": "kernel unavailable or malformed handshake before dispatch"
+        }
+      ],
+      "config_sha256_before": "301bf8a9b2ef7e462704e4021fbb2830ebf7ef4e35d02ba78042d1880f8594d4",
+      "config_sha256_after": "301bf8a9b2ef7e462704e4021fbb2830ebf7ef4e35d02ba78042d1880f8594d4",
+      "auth_copy_exists": false,
+      "canary_content_in_transcript": false
+    },
+    {
+      "case": "timeout",
+      "exit": 0,
+      "outputs": [
+        {
+          "tool": "write_file",
+          "state": "not_dispatched",
+          "evidence": "unverified",
+          "reason": "kernel unavailable or malformed handshake before dispatch"
+        },
+        {
+          "tool": "write_file",
+          "state": "not_dispatched",
+          "evidence": "unverified",
+          "reason": "kernel unavailable or malformed handshake before dispatch"
+        }
+      ],
+      "config_sha256_before": "e940a744710aa2a4dedf592f0df3135783b76b7866d4542975362a3dc0cecaa5",
+      "config_sha256_after": "e940a744710aa2a4dedf592f0df3135783b76b7866d4542975362a3dc0cecaa5",
+      "auth_copy_exists": false,
+      "canary_content_in_transcript": false
+    }
+  ]
+}

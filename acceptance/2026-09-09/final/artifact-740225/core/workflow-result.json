@@ -1,0 +1,32 @@
+{
+  "case": "workflow",
+  "exit": 0,
+  "outputs": [
+    {
+      "tool": "write_file",
+      "state": "completed",
+      "evidence": "verified",
+      "reason": null
+    },
+    {
+      "tool": "edit_file",
+      "state": "completed",
+      "evidence": "verified",
+      "reason": null
+    },
+    {
+      "tool": "read_text_file",
+      "state": "completed",
+      "evidence": "verified",
+      "reason": null
+    },
+    {
+      "tool": "list_directory",
+      "state": "completed",
+      "evidence": "verified",
+      "reason": null
+    }
+  ],
+  "local_bypass_exists": false,
+  "auth_copy_exists": false
+}

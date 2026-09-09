@@ -1,0 +1,11 @@
+[
+  [],
+  [
+    {
+      "type": "function_call_output",
+      "id": "fco_01a086d6-0fc1-7591-9628-e053cb4cbd30",
+      "call_id": "call_probe",
+      "output": "unsupported call: shell"
+    }
+  ]
+]

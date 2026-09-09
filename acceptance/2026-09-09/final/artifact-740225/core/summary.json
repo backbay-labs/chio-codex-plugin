@@ -1,0 +1,141 @@
+{
+  "integration_accepted": false,
+  "host_cases": [
+    {
+      "case": "workflow",
+      "exit": 0,
+      "outputs": [
+        {
+          "tool": "write_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "edit_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "list_directory",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        }
+      ],
+      "local_bypass_exists": false,
+      "auth_copy_exists": false
+    },
+    {
+      "case": "forbidden",
+      "exit": 0,
+      "outputs": [
+        {
+          "tool": "write_file",
+          "state": "denied",
+          "evidence": "verified",
+          "reason": "guard denied the request: guard \"guard-pipeline\" denied the request"
+        }
+      ],
+      "local_bypass_exists": false,
+      "auth_copy_exists": false
+    },
+    {
+      "case": "patch",
+      "exit": 0,
+      "outputs": [],
+      "local_bypass_exists": false,
+      "auth_copy_exists": false
+    },
+    {
+      "case": "wrongsubject",
+      "exit": 0,
+      "outputs": [
+        {
+          "tool": "write_file",
+          "state": "not_dispatched",
+          "evidence": "unverified",
+          "reason": "kernel session authority does not match operator-pinned caller and capability"
+        }
+      ],
+      "local_bypass_exists": false,
+      "auth_copy_exists": false
+    },
+    {
+      "case": "wrongcap",
+      "exit": 0,
+      "outputs": [
+        {
+          "tool": "write_file",
+          "state": "not_dispatched",
+          "evidence": "unverified",
+          "reason": "kernel session authority does not match operator-pinned caller and capability"
+        }
+      ],
+      "local_bypass_exists": false,
+      "auth_copy_exists": false
+    },
+    {
+      "case": "wrongsigner",
+      "exit": 0,
+      "outputs": [
+        {
+          "tool": "write_file",
+          "state": "unknown",
+          "evidence": "unverified",
+          "reason": "execution receipt failed trusted request verification"
+        },
+        {
+          "tool": "write_file",
+          "state": "not_dispatched",
+          "evidence": "unverified",
+          "reason": "an unresolved operation fences this gateway; operator reconciliation required"
+        }
+      ],
+      "local_bypass_exists": false,
+      "auth_copy_exists": false
+    },
+    {
+      "case": "absent",
+      "exit": 0,
+      "outputs": [
+        {
+          "tool": "write_file",
+          "state": "not_dispatched",
+          "evidence": "unverified",
+          "reason": "kernel unavailable or malformed handshake before dispatch"
+        }
+      ],
+      "local_bypass_exists": false,
+      "auth_copy_exists": false
+    },
+    {
+      "case": "gatewayfailure",
+      "exit": 1,
+      "outputs": [],
+      "local_bypass_exists": false,
+      "auth_copy_exists": false
+    },
+    {
+      "case": "secret",
+      "exit": 0,
+      "outputs": [
+        {
+          "tool": "read_text_file",
+          "state": "denied",
+          "evidence": "verified",
+          "reason": "guard denied the request: guard \"guard-pipeline\" denied the request"
+        }
+      ],
+      "local_bypass_exists": false,
+      "auth_copy_exists": false
+    }
+  ]
+}

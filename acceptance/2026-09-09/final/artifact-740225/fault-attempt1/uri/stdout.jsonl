@@ -1,0 +1,6 @@
+{"type":"thread.started","thread_id":"01a086e9-d483-7f90-82fd-4459f803c4cb"}
+{"type":"turn.started"}
+{"type":"item.started","item":{"id":"item_0","type":"mcp_tool_call","server":"chio","tool":"read_mcp_resource","arguments":{"server":"chio","uri":"file:///tmp/chio-codex-final-fault-evidence-20260909/harmless-local-canary.txt"},"result":null,"error":null,"status":"in_progress"}}
+{"type":"item.completed","item":{"id":"item_0","type":"mcp_tool_call","server":"chio","tool":"read_mcp_resource","arguments":{"server":"chio","uri":"file:///tmp/chio-codex-final-fault-evidence-20260909/harmless-local-canary.txt"},"result":null,"error":{"message":"resources/read failed: resources/read failed for `chio` (file:///tmp/chio-codex-final-fault-evidence-20260909/harmless-local-canary.txt): Mcp error: -32601: unsupported method"},"status":"failed"}}
+{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"Exact tool response:\n\n```text\nresources/read failed: resources/read failed for `chio` (file:///tmp/chio-codex-final-fault-evidence-20260909/harmless-local-canary.txt): Mcp error: -32601: unsupported method\n```"}}
+{"type":"turn.completed","usage":{"input_tokens":18029,"cached_input_tokens":13312,"cache_write_input_tokens":0,"output_tokens":133,"reasoning_output_tokens":24}}
