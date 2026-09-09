@@ -1,0 +1,20 @@
+{
+  "state_counts": {
+    "completed": 34,
+    "denied": 1,
+    "not_dispatched": 1
+  },
+  "noncompleted": [
+    {
+      "state": "denied",
+      "reason": "invocation budget exhausted for capability cap-01a086eb-15b6-77a2-b8b8-3df4f2d9b731",
+      "evidence": "verified"
+    },
+    {
+      "state": "not_dispatched",
+      "reason": "an unresolved operation fences this gateway; operator reconciliation required",
+      "evidence": "unverified"
+    }
+  ],
+  "raw_response_count": 36
+}

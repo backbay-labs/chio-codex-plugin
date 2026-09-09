@@ -54,3 +54,11 @@ test("unfinished, failed and malformed host events cannot claim verified success
   assert.equal(summarizeRestrictedOutcome("", null, "SIGTERM").exitCode, 1);
   assert.equal(summarizeRestrictedOutcome('{"type":"turn.completed"}', 0, null).status, "host_completed_without_protected_result");
 });
+
+test("a deadline or operator interruption cannot inherit a trapped host exit zero", () => {
+  const completed = completedCall({ state: "completed", evidence: "verified" });
+  const outcome = summarizeRestrictedOutcome(completed, 0, null, true);
+  assert.equal(outcome.completed, 1);
+  assert.equal(outcome.status, "host_failed");
+  assert.equal(outcome.exitCode, 1);
+});

@@ -60,6 +60,7 @@ retained evidence file. Bearer credentials and copied authentication are exclude
 | `fault-applied/result-substitution` | Changed output: `unknown`, decision evidence `verified`, no verified completed result; next operation fenced | First write exists, second target absent |
 | `fault-applied/lost-response` | Discarded execution response: `unknown`, `unverified`; next operation fenced | First write exists, second target absent |
 | `fault-applied/timeout` | Execution response delayed 3 seconds with 1 second client deadline: `unknown`, `unverified`; next operation fenced | First write exists, second target absent |
+| `gateway-crash` | Operator killed only this gateway after its first verified response; second actual MCP call failed `Transport closed` | First file contains `first-completed`; second target absent |
 
 For the four applied response faults, operator proxies forwarded the real kernel
 request and changed or withheld its response. They did not synthesize execution or
@@ -78,11 +79,37 @@ return `unknown`, `unverified`. The independent observer found
 identity after execution does not satisfy prevention of a resource-owner mismatch.
 This concrete shared defect was sent to the kernel and bridge owners for repair.
 
-**Budget exhaustion remains untested:** the live model attempted the 65-read
-budget scenario but completed 29 verified reads before a context/handshake failure
-returned `not_dispatched`. The operator API independently recorded 29 invocations.
-The test did not reach the 64-invocation limit or the 65th denial. Host exit 0 does
-not make this a passing budget test.
+**The live budget case failed to finish and retained an unknown operation:** it
+attempted the 65-read scenario, producing 31 tool starts and 30 completions. Of
+the completions, 29 were verified reads and one was `not_dispatched`. A final read
+remained in progress when the launcher's 180-second deadline fired. Codex trapped
+the termination signal and exited 0 without a `turn.completed` event. The gateway
+later recorded the pending operation as `unknown`, while the independent kernel
+receipt database shows that read completed. The early operator budget observation
+was 29; the late kernel ledger contains 30 allowed reads in that namespace.
+
+The first state-only summary omitted the pending call. The full raw host log,
+deadline flag, unknown journal record and independent late receipt are retained.
+Host exit 0 does not make this a passing budget or cancellation test. Source
+repair `64763cf` adds structured protected-work outcomes and nonzero statuses;
+the subsequent interruption fix also records deadlines and operator signals even
+when Codex traps them and exits 0. These source changes need installed-host reruns.
+
+A subsequent deterministic model-transport driver exercised the actual host and
+kernel against the same capability. It observed 34 more completed reads, a
+verified budget denial and a fenced subsequent request. The read-only kernel
+receipt observer independently found 30 + 34 allowed receipts and one denial;
+the operator budget endpoint reported exactly 64 charged invocations. These
+records are in `budget-dispatch/`. This is supplemental aggregate-budget evidence,
+not a live-model replacement.
+
+The diagnostic continuation created a new operator-selected namespace before the
+late unknown from the first run was discovered. That was not a valid recovery
+procedure, and is not presented as one. Original journals were preserved. The
+late outcome was subsequently inspected through the independent kernel ledger.
+The operator's ability to create another namespace must not be used to hide an
+unknown operation. Earlier driver attempts are also retained: a symlinked gateway
+entrypoint failed startup, and undiscovered MCP function names were unsupported.
 
 **Fault harness failures are preserved:** initial response-substitution/loss/
 timeout attempts used `urllib.read()` on the kernel's long-lived SSE response and
@@ -120,11 +147,17 @@ from the feature configuration.
 | I01 | Qualify the replacement archive, session credential contract and compatible immutable kernel; retain superseded identities |
 | I02 | Four useful operations observed on this archive; repeat the workflow after contract repair |
 | I03 | Repair pre-dispatch resource-owner binding; complete unsupported-path and independent sensitive-read coverage |
-| I04 | Preserve observed absence, startup failure, malformed context, lost response and timeout results; qualify actual process-loss and remaining interruption cutpoints on final artifacts |
+| I04 | Absence, startup failure, malformed context, lost response, timeout and owned gateway process loss observed; qualify replacement artifacts and remaining interruption cutpoints |
 | I05 | Revocation, fresh authority and subject/capability mismatch observed; resource/server mismatch repair, expiration, session mismatch, aggregate exhaustion and pending/rejected approvals unresolved |
 | I06 | Request/result/signer mismatch detected truthfully; repeat changed binding checks and remaining forgery cases on final contract |
 | I07 | Unknown outcomes fence new writes; cancellation, concurrent calls, restart/resume and operator reconciliation still require supported procedures and real host evidence |
-| I08 | Offline staged installation works for this archive; replacement installation, upgrade, removal, compatible kernel delivery and public release gates remain open |
+| I08 | Offline install, uninstall and reinstall passed in a fresh disposable consumer; replacement installation, upgrade, compatible kernel delivery and public release gates remain open |
+
+`offline-removal-reinstall.json` records three successful npm operations with
+separate empty caches, entrypoint absence after uninstall, and CLI help after
+reinstall. The exact tested archive was recovered from the original npm content
+cache, its SHA-256 rechecked, and preserved under a hash-bearing filename because
+the mutable staging filename had been replaced by another candidate.
 
 No required skipped, failed or unavailable case is counted as accepted. These
 results do not accept another host or the six-host program.

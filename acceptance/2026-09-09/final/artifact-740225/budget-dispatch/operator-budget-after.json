@@ -1,0 +1,17 @@
+{
+  "action": "budget",
+  "result": {
+    "backend": "sqlite",
+    "capabilityId": "cap-01a086eb-15b6-77a2-b8b8-3df4f2d9b731",
+    "configured": true,
+    "count": 1,
+    "usages": [
+      {
+        "capabilityId": "cap-01a086eb-15b6-77a2-b8b8-3df4f2d9b731",
+        "grantIndex": 0,
+        "invocationCount": 64,
+        "updatedAt": 1788970865
+      }
+    ]
+  }
+}

@@ -58,9 +58,9 @@ export function restrictedHostArgs(workspace: string, gateway: string, config: s
 }
 
 /** Host turn completion does not establish successful protected execution. */
-export function summarizeRestrictedOutcome(stdout: string, hostExit: number | null, signal: string | null) {
+export function summarizeRestrictedOutcome(stdout: string, hostExit: number | null, signal: string | null, interrupted = false) {
   let completed = 0, denied = 0, notDispatched = 0, unknown = 0, toolFailures = 0;
-  let hostFailed = false;
+  let hostFailed = interrupted;
   const pending = new Set<string>(), finished = new Set<string>();
   for (const line of stdout.split("\n").filter(line => line.trim())) {
     try {
@@ -137,7 +137,7 @@ export async function restrictedCmd(args: string[]): Promise<number> {
       const stdout: Buffer[] = [], stderr: Buffer[] = [];
       child.stdout.on("data", data => { stdout.push(data); process.stdout.write(data); });
       child.stderr.on("data", data => { stderr.push(data); process.stderr.write(data); });
-      const forward = (signal: NodeJS.Signals) => child.kill(signal);
+      const forward = (signal: NodeJS.Signals) => { report["operator_interrupt"] = signal; child.kill(signal); };
       const term = () => forward("SIGTERM"), interrupt = () => forward("SIGINT");
       process.once("SIGTERM", term); process.once("SIGINT", interrupt);
       child.once("error", error => { stderr.push(Buffer.from(error.message)); });
@@ -147,7 +147,8 @@ export async function restrictedCmd(args: string[]): Promise<number> {
         writeFileSync(join(options.evidenceDir, "stdout.jsonl"), Buffer.concat(stdout), { mode: 0o600 });
         writeFileSync(join(options.evidenceDir, "stderr.txt"), Buffer.concat(stderr), { mode: 0o600 });
         report["exit_code"] = status; report["signal"] = signal; report["finished_at"] = new Date().toISOString();
-        const outcome = summarizeRestrictedOutcome(Buffer.concat(stdout).toString("utf8"), status, signal);
+        const outcome = summarizeRestrictedOutcome(Buffer.concat(stdout).toString("utf8"), status, signal,
+          report["timed_out"] === true || report["operator_interrupt"] !== undefined);
         report["execution_outcome"] = outcome;
         writeFileSync(join(options.evidenceDir, "launch.json"), JSON.stringify(report, null, 2) + "\n", { mode: 0o600 });
         done(outcome.exitCode);
