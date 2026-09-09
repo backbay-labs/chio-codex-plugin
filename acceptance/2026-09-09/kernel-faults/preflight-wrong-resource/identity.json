@@ -1,0 +1,13 @@
+{
+  "host": "codex",
+  "suite": "wrong-resource",
+  "cases": 1,
+  "skips": 0,
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "resourceImage": "sha256:188cb84d5d0bb4063d4ce5a3b9c3832445a5acda5604911cda80a9136d1850a0",
+  "hostImage": null,
+  "packageDirectory": "/tmp/chio-codex-received-result-cold-consumer-20260909/node_modules/@chio/codex-plugin",
+  "privateConfiguration": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-bc2b55c917e34de0bd4be595f228e080/gateway.json",
+  "configurationSha256": "a8e87e5d89e21dcc609d3bd0dac4632356b21f6401a6622c652ac78f66ea6ac9",
+  "claim": "bounded real-host authority and explicit launcher refusal cases; full acceptance remains open"
+}
