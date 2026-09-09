@@ -57,6 +57,49 @@ export function restrictedHostArgs(workspace: string, gateway: string, config: s
   return args;
 }
 
+/** Host turn completion does not establish successful protected execution. */
+export function summarizeRestrictedOutcome(stdout: string, hostExit: number | null, signal: string | null) {
+  let completed = 0, denied = 0, notDispatched = 0, unknown = 0, toolFailures = 0;
+  let hostFailed = false;
+  const pending = new Set<string>(), finished = new Set<string>();
+  for (const line of stdout.split("\n").filter(line => line.trim())) {
+    try {
+      const event = JSON.parse(line) as { type?: string; item?: {
+        id?: string; type?: string; server?: string; status?: string; error?: unknown;
+        result?: { content?: { type?: string; text?: string }[] };
+      } };
+      if (event.type === "error" || event.type === "turn.failed") hostFailed = true;
+      const item = event.item;
+      if (item?.type !== "mcp_tool_call") continue;
+      if (!item.id) { unknown++; continue; }
+      if (event.type === "item.started") { pending.add(item.id); continue; }
+      if (event.type !== "item.completed" || finished.has(item.id)) continue;
+      pending.delete(item.id); finished.add(item.id);
+      if (item.server !== "chio" || item.error || item.status === "failed") { unknown++; continue; }
+      const content = item.result?.content;
+      if (content?.length !== 1 || content[0]?.type !== "text") { unknown++; continue; }
+      const outcome = JSON.parse(content[0].text ?? "") as {
+        state?: string; evidence?: string; result?: { isError?: boolean };
+      };
+      if (outcome.state === "not_dispatched") notDispatched++;
+      else if (outcome.state === "denied" && outcome.evidence === "verified") denied++;
+      else if (outcome.state === "completed" && outcome.evidence === "verified") {
+        if (outcome.result?.isError === true) toolFailures++;
+        else completed++;
+      } else unknown++;
+    } catch { unknown++; }
+  }
+  unknown += pending.size;
+  const hostCode = hostExit ?? 1;
+  const status = unknown ? "unknown" : hostCode !== 0 || signal || hostFailed ? "host_failed"
+    : denied || notDispatched || toolFailures ? "protected_work_incomplete"
+    : completed ? "protected_calls_completed" : "host_completed_without_protected_result";
+  const exitCode = unknown ? 2 : hostCode !== 0 ? hostCode : signal || hostFailed ? 1
+    : denied || notDispatched || toolFailures ? 3 : 0;
+  return { status, exitCode, hostExitCode: hostExit, hostSignal: signal,
+    completed, denied, notDispatched, unknown, toolFailures };
+}
+
 export async function restrictedCmd(args: string[]): Promise<number> {
   const options = parseArgs(args);
   const config = lstatSync(options.gatewayConfig);
@@ -104,8 +147,10 @@ export async function restrictedCmd(args: string[]): Promise<number> {
         writeFileSync(join(options.evidenceDir, "stdout.jsonl"), Buffer.concat(stdout), { mode: 0o600 });
         writeFileSync(join(options.evidenceDir, "stderr.txt"), Buffer.concat(stderr), { mode: 0o600 });
         report["exit_code"] = status; report["signal"] = signal; report["finished_at"] = new Date().toISOString();
+        const outcome = summarizeRestrictedOutcome(Buffer.concat(stdout).toString("utf8"), status, signal);
+        report["execution_outcome"] = outcome;
         writeFileSync(join(options.evidenceDir, "launch.json"), JSON.stringify(report, null, 2) + "\n", { mode: 0o600 });
-        done(status ?? 1);
+        done(outcome.exitCode);
       });
     });
     return code;

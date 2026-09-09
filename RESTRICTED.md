@@ -98,6 +98,13 @@ arguments, gateway/config hashes, output JSONL, exit status and runtime paths. I
 has a three-minute deadline; interruption or timeout cannot be treated as a
 verified result.
 
+`launch.json` preserves the raw host exit separately from `execution_outcome`.
+The launcher exits 2 for unknown, unfinished or malformed protected results and
+3 for denied, undispatched or failed protected work. Host failures remain nonzero.
+Exit 0 with no protected call is labelled `host_completed_without_protected_result`;
+it is not a claim that resource work succeeded. These statuses use structured
+host/tool events, never the model's final prose.
+
 ## Recovery and upgrades
 
 Keep the private gateway configuration and journal outside agent-accessible
