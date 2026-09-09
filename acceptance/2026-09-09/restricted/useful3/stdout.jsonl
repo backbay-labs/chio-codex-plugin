@@ -1,0 +1,9 @@
+{"type":"thread.started","thread_id":"01a086c7-4304-7e90-b84d-717e3b44439d"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"I’ll use the Chio file tools only, as requested, and stop after the write and read calls."}}
+{"type":"item.started","item":{"id":"item_1","type":"mcp_tool_call","server":"chio","tool":"write_file","arguments":{"path":"/workspace/codex-useful.txt","content":"Hello Chio."},"result":null,"error":null,"status":"in_progress"}}
+{"type":"item.completed","item":{"id":"item_1","type":"mcp_tool_call","server":"chio","tool":"write_file","arguments":{"path":"/workspace/codex-useful.txt","content":"Hello Chio."},"result":null,"error":{"message":"MCP tool call requires approval, but approval policy is never"},"status":"failed"}}
+{"type":"item.started","item":{"id":"item_2","type":"mcp_tool_call","server":"chio","tool":"read_text_file","arguments":{"path":"/workspace/codex-useful.txt"},"result":null,"error":null,"status":"in_progress"}}
+{"type":"item.completed","item":{"id":"item_2","type":"mcp_tool_call","server":"chio","tool":"read_text_file","arguments":{"path":"/workspace/codex-useful.txt"},"result":null,"error":{"message":"MCP tool call requires approval, but approval policy is never"},"status":"failed"}}
+{"type":"item.completed","item":{"id":"item_3","type":"agent_message","text":"The Chio calls could not run because the MCP tool requires approval, and this session’s approval policy is `never`.\n\nContent: unavailable  \nEvidence state: both `write_file` and `read_text_file` were blocked before execution."}}
+{"type":"turn.completed","usage":{"input_tokens":37910,"cached_input_tokens":26112,"cache_write_input_tokens":0,"output_tokens":391,"reasoning_output_tokens":213}}

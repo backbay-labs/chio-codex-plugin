@@ -1,57 +1,64 @@
 {
-  "SessionStart": [
-    {
-      "matcher": "*",
-      "hooks": [
-        {
-          "type": "command",
-          "command": "node ${CODEX_PLUGIN_ROOT:-${HOME}/.codex/plugins/chio-codex}/dist/hooks/sessionstart.mjs"
-        }
-      ]
-    }
-  ],
-  "UserPromptSubmit": [
-    {
-      "matcher": "*",
-      "hooks": [
-        {
-          "type": "command",
-          "command": "node ${CODEX_PLUGIN_ROOT:-${HOME}/.codex/plugins/chio-codex}/dist/hooks/userpromptsubmit.mjs"
-        }
-      ]
-    }
-  ],
-  "PreToolUse": [
-    {
-      "matcher": "*",
-      "hooks": [
-        {
-          "type": "command",
-          "command": "node ${CODEX_PLUGIN_ROOT:-${HOME}/.codex/plugins/chio-codex}/dist/hooks/pretooluse.mjs"
-        }
-      ]
-    }
-  ],
-  "PostToolUse": [
-    {
-      "matcher": "*",
-      "hooks": [
-        {
-          "type": "command",
-          "command": "node ${CODEX_PLUGIN_ROOT:-${HOME}/.codex/plugins/chio-codex}/dist/hooks/posttooluse.mjs"
-        }
-      ]
-    }
-  ],
-  "Stop": [
-    {
-      "matcher": "*",
-      "hooks": [
-        {
-          "type": "command",
-          "command": "node ${CODEX_PLUGIN_ROOT:-${HOME}/.codex/plugins/chio-codex}/dist/hooks/stop.mjs"
-        }
-      ]
-    }
-  ]
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${PLUGIN_ROOT}\"/dist/hooks/sessionstart.mjs",
+            "timeout": 20
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${PLUGIN_ROOT}\"/dist/hooks/userpromptsubmit.mjs",
+            "timeout": 20
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${PLUGIN_ROOT}\"/dist/hooks/pretooluse.mjs",
+            "timeout": 20
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${PLUGIN_ROOT}\"/dist/hooks/posttooluse.mjs",
+            "timeout": 20
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${PLUGIN_ROOT}\"/dist/hooks/stop.mjs",
+            "timeout": 20
+          }
+        ]
+      }
+    ]
+  }
 }

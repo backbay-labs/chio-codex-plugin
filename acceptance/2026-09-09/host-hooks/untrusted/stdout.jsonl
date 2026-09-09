@@ -1,0 +1,7 @@
+{"type":"thread.started","thread_id":"01a08694-a26b-7283-8f4f-89706f51af58"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"I’ll run the command once.\n"}}
+{"type":"item.started","item":{"id":"item_1","type":"command_execution","command":"/bin/zsh -lc \"printf 'observed-effect' > effect.txt\"","aggregated_output":"","exit_code":null,"status":"in_progress"}}
+{"type":"item.completed","item":{"id":"item_1","type":"command_execution","command":"/bin/zsh -lc \"printf 'observed-effect' > effect.txt\"","aggregated_output":"","exit_code":0,"status":"completed"}}
+{"type":"item.completed","item":{"id":"item_2","type":"agent_message","text":"Command succeeded and wrote `observed-effect` to `effect.txt`."}}
+{"type":"turn.completed","usage":{"input_tokens":25575,"cached_input_tokens":12544,"cache_write_input_tokens":0,"output_tokens":67,"reasoning_output_tokens":0}}

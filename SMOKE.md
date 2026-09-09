@@ -1,3 +1,6 @@
+> Historical document. This is not current host or kernel acceptance. See
+> [the 2026-09-09 acceptance record](acceptance/2026-09-09/ACCEPTANCE.md).
+
 # chio-codex-plugin · live smoke
 
 Live end-to-end smoke for `@chio/codex-plugin@0.1.0` against:

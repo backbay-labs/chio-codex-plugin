@@ -1,0 +1,7 @@
+codex-useful.txt=Hello Chio
+forbidden.txt=independent forbidden observer
+
+codex-unavailable.txt=ABSENT
+codex-wrongsubject.txt=ABSENT
+codex-wrongsigner.txt=first-outcome
+codex-after-unknown.txt=ABSENT

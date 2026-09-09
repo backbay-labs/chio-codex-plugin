@@ -8,11 +8,12 @@
  * persist the receipt.
  */
 
-import { readFileSync, mkdirSync, readdirSync, renameSync, statSync } from "node:fs";
+import { readFileSync, mkdirSync, renameSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { PENDING_DIR, RECEIPT_CACHE_DIR, TRANSCRIPT_DIR } from "../chio/paths.js";
 import { getBond, patchBond } from "../chio/state.js";
 import { buildBridge } from "../chio/bridge.js";
+import { receiptKey } from "../chio/receiptKey.js";
 import { appendFileSync } from "node:fs";
 import type { ChioReceipt } from "@chio/bridge";
 
@@ -26,6 +27,9 @@ interface PostToolUseInput {
 
 interface PendingReceiptFile {
   receipt: ChioReceipt;
+  session_id: string;
+  tool_use_id: string;
+  tool_name: string;
   chio_plan_attestation?: {
     plan_hash: string | null;
     prompt_hash: string | null;
@@ -63,6 +67,10 @@ async function main(): Promise<void> {
   }
 
   const bridge = buildBridge();
+  if (wrapped.session_id !== input.session_id || wrapped.tool_use_id !== input.tool_use_id || wrapped.tool_name !== input.tool_name) {
+    process.stderr.write("[chio] posttooluse: authorization correlation mismatch\n");
+    process.exit(0);
+  }
   let verified = false;
   try {
     verified = await bridge.verifyReceipt(wrapped.receipt);
@@ -81,12 +89,12 @@ async function main(): Promise<void> {
   try {
     mkdirSync(RECEIPT_CACHE_DIR, { recursive: true });
     mkdirSync(TRANSCRIPT_DIR, { recursive: true });
-    const outName = `${wrapped.receipt.id}.json`;
+    const outName = `${receiptKey(wrapped.session_id, wrapped.tool_use_id)}.json`;
     const outPath = join(RECEIPT_CACHE_DIR, outName);
     renameSync(pendingPath, outPath);
 
     const sid = input.session_id ?? "unknown";
-    const transcriptPath = join(TRANSCRIPT_DIR, `${sid}.log`);
+    const transcriptPath = join(TRANSCRIPT_DIR, `${receiptKey(sid, "transcript")}.log`);
     const decision =
       typeof wrapped.receipt.decision === "string"
         ? wrapped.receipt.decision
@@ -96,7 +104,9 @@ async function main(): Promise<void> {
       tool: input.tool_name ?? null,
       receipt_id: wrapped.receipt.id,
       decision,
-      verified,
+      signature_integrity_valid: verified,
+      trusted_caller_request_verified: false,
+      execution_result_verified: false,
       plan_hash: wrapped.chio_plan_attestation?.plan_hash ?? null,
       prompt_hash: wrapped.chio_plan_attestation?.prompt_hash ?? null,
     });
@@ -118,27 +128,16 @@ async function main(): Promise<void> {
 }
 
 function findPendingReceipt(input: PostToolUseInput): string | undefined {
-  if (input.tool_use_id) {
-    const direct = join(PENDING_DIR, `${input.tool_use_id}.json`);
+  if (input.tool_use_id && input.session_id) {
+    const direct = join(PENDING_DIR, `${receiptKey(input.session_id, input.tool_use_id)}.json`);
     try {
       statSync(direct);
       return direct;
     } catch {
-      // fall through
+      return undefined;
     }
   }
-  // Fallback: youngest pending file for this turn.
-  try {
-    const turn = input.turn_id;
-    const entries = readdirSync(PENDING_DIR)
-      .filter((f) => f.endsWith(".json"))
-      .filter((f) => !turn || f.startsWith(turn))
-      .map((f) => ({ f, m: statSync(join(PENDING_DIR, f)).mtimeMs }))
-      .sort((a, b) => b.m - a.m);
-    if (entries.length > 0 && entries[0]) return join(PENDING_DIR, entries[0].f);
-  } catch {
-    // pending dir missing
-  }
+  // A missing identifier cannot borrow another parallel call's receipt.
   return undefined;
 }
 

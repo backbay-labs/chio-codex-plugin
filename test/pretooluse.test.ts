@@ -101,7 +101,7 @@ export default ChioBridge;
   // (~/.codex/plugins/chio-codex/...) materializes inside the sandbox.
   const env: NodeJS.ProcessEnv = {
     ...process.env,
-    HOME: sandbox,
+    CHIO_CODEX_STATE_DIR: join(sandbox, "state"),
     CHIO_POLICY_PATH: "/tmp/none.yaml",
   };
   delete env["CHIO_SERVICE_TOKEN"];
@@ -117,8 +117,12 @@ function runHook(
   env: NodeJS.ProcessEnv,
   hookPath: string,
 ): { stdout: string; stderr: string; code: number } {
+  const sid = (stdin as {session_id?: string}).session_id;
+  const stateDir = env["CHIO_CODEX_STATE_DIR"]!;
+  mkdirSync(stateDir, {recursive: true});
+  writeFileSync(join(stateDir, "state.json"), JSON.stringify({bonds: sid ? {[sid]: {sessionId: sid, policyPath: "/tmp/test-policy.yaml", bondedAt: "2026-09-09T00:00:00Z"}} : {}}));
   const res = spawnSync(process.execPath, [hookPath], {
-    input: JSON.stringify(stdin),
+    input: JSON.stringify({tool_use_id: "fixture-tool-id", ...stdin}),
     env,
     encoding: "utf8",
     timeout: 10_000,
@@ -130,7 +134,7 @@ function runHook(
   };
 }
 
-test("PreToolUse deny emits Codex permissionDecision JSON and exits 0", { skip: shouldSkip() }, () => {
+test("PreToolUse deny emits Codex permissionDecision JSON and exits 0", () => {
   withMockBridge(
     `return { decision: "deny", reason: "forbidden_paths hit", guard: "ForbiddenPathGuard" };`,
     (env, hookPath) => {
@@ -163,7 +167,7 @@ test("PreToolUse deny emits Codex permissionDecision JSON and exits 0", { skip: 
   );
 });
 
-test("PreToolUse allow exits 0 with empty stdout", { skip: shouldSkip() }, () => {
+test("PreToolUse allow exits 0 with empty stdout", () => {
   withMockBridge(
     `return { decision: "allow" };`,
     (env, hookPath) => {
@@ -184,7 +188,7 @@ test("PreToolUse allow exits 0 with empty stdout", { skip: shouldSkip() }, () =>
   );
 });
 
-test("PreToolUse fails closed on bridge throw", { skip: shouldSkip() }, () => {
+test("PreToolUse fails closed on bridge throw", () => {
   withMockBridge(
     `throw new Error("daemon unreachable at http://127.0.0.1:8940");`,
     (env, hookPath) => {
@@ -213,6 +217,18 @@ test("PreToolUse fails closed on bridge throw", { skip: shouldSkip() }, () => {
   );
 });
 
-function shouldSkip(): boolean {
-  return !existsSync(join(projectRoot, "dist", "hooks", "pretooluse.mjs"));
+for (const decision of ["pending", "challenge", "defer", "unknown", undefined]) {
+  test(`PreToolUse rejects non-allow decision ${decision}`, () => {
+    withMockBridge(`return ${JSON.stringify({decision})};`, (env, hookPath) => {
+      const result = runHook({session_id:"s", tool_name:"Bash", tool_input:{command:"true"}}, env, hookPath);
+      assert.equal(JSON.parse(result.stdout).hookSpecificOutput.permissionDecision, "deny");
+    });
+  });
 }
+
+test("PreToolUse rejects missing session identity despite a default policy", () => {
+  withMockBridge('return {decision:"allow"};', (env, hookPath) => {
+    const result = runHook({tool_name:"Bash", tool_input:{command:"true"}}, env, hookPath);
+    assert.equal(JSON.parse(result.stdout).hookSpecificOutput.permissionDecision, "deny");
+  });
+});
