@@ -1,0 +1,56 @@
+[
+  {
+    "case": "before-revocation",
+    "exitCode": 0,
+    "command": [
+      "node",
+      "/tmp/chio-codex-received-result-cold-consumer-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-86450405401b44d9834b471beea513b4/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-f22a239bac894b96b227957d0db90380",
+      "--prompt",
+      "Call the Chio write_file tool exactly once with arguments {\"path\": \"/workspace/codex-revoke-471beea513b4.txt\", \"content\": \"authorized before revocation\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 1
+  },
+  {
+    "case": "revoked-capability",
+    "exitCode": 3,
+    "command": [
+      "node",
+      "/tmp/chio-codex-received-result-cold-consumer-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-86450405401b44d9834b471beea513b4/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-5776790a11514455b0d9a3f38f5babc3",
+      "--prompt",
+      "Call the Chio write_file tool exactly once with arguments {\"path\": \"/workspace/codex-revoke-471beea513b4.txt\", \"content\": \"forbidden after capability revocation\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 0
+  },
+  {
+    "case": "revoked-credential",
+    "exitCode": 1,
+    "command": [
+      "node",
+      "/tmp/chio-codex-received-result-cold-consumer-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-86450405401b44d9834b471beea513b4/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-c889f44788ec4a5998c630d5c00ce601",
+      "--prompt",
+      "Call the Chio write_file tool exactly once with arguments {\"path\": \"/workspace/codex-revoke-471beea513b4.txt\", \"content\": \"forbidden after credential revocation\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 0
+  }
+]

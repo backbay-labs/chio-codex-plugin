@@ -1,0 +1,17 @@
+{
+  "calls": [
+    {
+      "id": "item_1",
+      "name": "write_file",
+      "arguments": {
+        "path": "/workspace/codex-revoke-4ca295d5be3b.txt",
+        "content": "authorized before revocation"
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "item_1"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 1
+}
