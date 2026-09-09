@@ -41,7 +41,7 @@
     "node": ">=22"
   },
   "dependencies": {
-    "@chio/bridge": "file:vendor/chio-bridge-0.3.0-c22c8dd094e3.tgz"
+    "@chio/bridge": "file:vendor/chio-bridge-0.3.0-ed680ff9d987.tgz"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

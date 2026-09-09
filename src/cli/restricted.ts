@@ -1,3 +1,4 @@
+import { StringDecoder } from "node:string_decoder";
 import { spawn, spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { existsSync, lstatSync, mkdirSync, mkdtempSync, readFileSync, realpathSync, writeFileSync } from "node:fs";
@@ -163,6 +164,7 @@ export async function restrictedCmd(args: string[]): Promise<number> {
   const transport = await startGatewayHttp(authority.config);
   let relay: Awaited<ReturnType<typeof startModelRelay>> | undefined;
   try {
+  if (typeof transport.acknowledgeDelivery !== "function") throw new Error("Host delivery acknowledgement transport is required");
   relay = await startModelRelay(apiKey, RESTRICTED_MODEL);
   env["CHIO_CODEX_MODEL_TOKEN"] = relay.token;
   env["CHIO_CODEX_GATEWAY_TOKEN"] = transport.token;
@@ -190,13 +192,35 @@ export async function restrictedCmd(args: string[]): Promise<number> {
         forceStop = setTimeout(() => child.kill("SIGKILL"), 5_000);
       }, 180_000);
       const stdout: Buffer[] = [], stderr: Buffer[] = [];
-      child.stdout.on("data", data => { stdout.push(data); process.stdout.write(data); });
+      const decoder = new StringDecoder("utf8");
+      let hostLines = "", delivered = 0, deliveryFailed = false;
+      let acknowledgements = Promise.resolve();
+      child.stdout.on("data", data => {
+        stdout.push(data); process.stdout.write(data); hostLines += decoder.write(data);
+        if (Buffer.byteLength(hostLines) > 16 * 1024 * 1024) { deliveryFailed = true; child.kill("SIGTERM"); return; }
+        let end: number;
+        while ((end = hostLines.indexOf("\n")) >= 0) {
+          const line = hostLines.slice(0, end); hostLines = hostLines.slice(end + 1);
+          try {
+            const event = JSON.parse(line); const item = event.item;
+            if (event.type !== "item.completed" || item?.type !== "mcp_tool_call" || item.server !== "chio" || item.error
+              || item.result?.content?.length !== 1 || item.result.content[0].type !== "text") continue;
+            const outcome = JSON.parse(item.result.content[0].text);
+            if (outcome.state !== "completed" || outcome.evidence !== "verified" || !outcome.delivery) continue;
+            acknowledgements = acknowledgements.then(async () => {
+              const receipt = await transport.acknowledgeDelivery(outcome.delivery);
+              if (receipt.acknowledged) delivered++; else deliveryFailed = true;
+            }).catch(() => { deliveryFailed = true; });
+          } catch { /* Missing host proof never releases the operation fence. */ }
+        }
+      });
       child.stderr.on("data", data => { stderr.push(data); process.stderr.write(data); });
       const forward = (signal: NodeJS.Signals) => { report["operator_interrupt"] = signal; child.kill(signal); };
       const term = () => forward("SIGTERM"), interrupt = () => forward("SIGINT");
       process.once("SIGTERM", term); process.once("SIGINT", interrupt);
       child.once("error", error => { stderr.push(Buffer.from(error.message)); });
-      child.once("close", (status, signal) => {
+      child.once("close", async (status, signal) => {
+        await acknowledgements;
         clearTimeout(deadline); if (forceStop) clearTimeout(forceStop);
         process.removeListener("SIGTERM", term); process.removeListener("SIGINT", interrupt);
         writeFileSync(join(options.evidenceDir, "stdout.jsonl"), Buffer.concat(stdout), { mode: 0o600 });
@@ -204,6 +228,8 @@ export async function restrictedCmd(args: string[]): Promise<number> {
         report["exit_code"] = status; report["signal"] = signal; report["finished_at"] = new Date().toISOString();
         const outcome = summarizeRestrictedOutcome(Buffer.concat(stdout).toString("utf8"), status, signal,
           report["timed_out"] === true || report["operator_interrupt"] !== undefined);
+        report["host_delivery"] = {confirmed: delivered, failed: deliveryFailed};
+        if (deliveryFailed) { outcome.status = "delivery_unresolved"; outcome.exitCode = 2; }
         report["execution_outcome"] = outcome;
         report["model_relay"] = { ...relay?.stats };
         writeFileSync(join(options.evidenceDir, "launch.json"), JSON.stringify(report, null, 2) + "\n", { mode: 0o600 });
