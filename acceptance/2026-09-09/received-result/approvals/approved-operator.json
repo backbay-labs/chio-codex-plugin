@@ -1,0 +1,15 @@
+{
+  "submission": {
+    "output": "/Users/connor/.local/share/chio-required-operators/bridge-host-delivery-approval-20260909/codex-approvals-daaa3da427f4440fbbd273d155dccae2/approved-submission.json",
+    "status": "pending",
+    "approvalId": "approval-ef8e87b6ad7b28a30c6eaf37c829f78a908e0f3dbb6c49ba42a9ca14a818e7e2",
+    "protectedDispatch": false
+  },
+  "decision": {
+    "output": "/Users/connor/.local/share/chio-required-operators/bridge-host-delivery-approval-20260909/codex-approvals-daaa3da427f4440fbbd273d155dccae2/journal/approvals/015e372b4098a7c3044f0f6239fc95119a2f1d96f82da7f54985245c95f30889.json",
+    "status": "approved",
+    "approvalId": "approval-ef8e87b6ad7b28a30c6eaf37c829f78a908e0f3dbb6c49ba42a9ca14a818e7e2",
+    "protectedDispatch": false
+  },
+  "protectedDispatch": false
+}

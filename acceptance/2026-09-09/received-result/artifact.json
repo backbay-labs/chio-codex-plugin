@@ -1,0 +1,15 @@
+{
+  "artifact": "/tmp/chio-codex-received-result-package-20260909/chio-codex-plugin-0.3.0.tgz",
+  "sha256": "860811efcdebea7a4c9fe4db7b9a4c9eb764b55c0fadd4dc6e9429447e7813b6",
+  "hostVersion": "0.153.4",
+  "hostSha256": "b973d440acac501fd2594a43e7ca9ce41e0a65b9dfb28d0d7a7837c99e1261e3",
+  "bridgeSha256": "7d9e34f7408a316e35125982a23faaecfd2f31f4da6b50ca8eab287c2c918f67",
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "skips": 0,
+  "claim": "bounded real-host result, delivery, and authority cases; all I01-I08 remain open",
+  "sourceFiles": {
+    "src/cli/restricted.ts": "e6a1befd6df127be08ef58cc7af46cee720b831f0ae4467403992b85f4164d64",
+    "src/cli/modelRelay.ts": "d3830d8481ab56855426e1b4b2f6cfe9641f1a93752c26ae05aa0e14f7336b7d",
+    "scripts/qualify-http-host.py": "f4f9a9f2babb829c858ec72925e64d89bf4ddd10ca86979eac733aba265208f9"
+  }
+}

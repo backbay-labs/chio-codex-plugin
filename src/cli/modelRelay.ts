@@ -75,7 +75,7 @@ export function validateModelRequest(body: ObjectValue, model: string): void {
 
 /** Operator-owned fixed OpenAI Responses transport. The child sees only a
  * temporary relay token, never the provider account credential. */
-export async function startModelRelay(apiKey: string, model: string) {
+export async function startModelRelay(apiKey: string, model: string, onToolResults?: (outcomes: unknown[]) => Promise<void>) {
   const token = randomBytes(32).toString("hex");
   const stats = { requests: 0, forwarded: 0, refused: 0, upstreamFailures: 0, cancelled: 0, lastRefusal: "", lastRequestKeys: [] as string[], nativeTools: [] as {callId: string; input: string; output?: unknown}[] };
   let port = 0;
@@ -108,6 +108,23 @@ export async function startModelRelay(apiKey: string, model: string) {
           }
         }
       }
+      const outcomes: unknown[] = [];
+      for (const item of body.input as ObjectValue[]) {
+        if (item.type !== "function_call_output") continue;
+        let output: unknown = item.output;
+        for (let depth = 0; depth < 4; depth++) {
+          if (typeof output === "string") {
+            try { output = JSON.parse(output); } catch { break; }
+          } else if (Array.isArray(output) && output.length === 1 && object(output[0]) && typeof output[0].text === "string") {
+            output = output[0].text;
+          } else if (object(output) && Array.isArray(output.content)) {
+            output = output.content;
+          } else break;
+        }
+        if (object(output) && output.state !== undefined) outcomes.push(output);
+      }
+      await onToolResults?.(outcomes);
+      body.parallel_tool_calls = false;
       stats.forwarded++;
       const upstream = await fetch("https://api.openai.com/v1/responses", { method: "POST", redirect: "error", signal: controller.signal,
         headers: { authorization: `Bearer ${apiKey}`, "content-type": "application/json" }, body: JSON.stringify(body) });

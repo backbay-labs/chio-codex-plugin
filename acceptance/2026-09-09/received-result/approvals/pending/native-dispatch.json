@@ -1,0 +1,17 @@
+{
+  "calls": [
+    {
+      "id": "item_1",
+      "name": "write_file",
+      "arguments": {
+        "path": "/workspace/codex-approved-73d155dccae2.txt",
+        "content": "exact operator-approved effect"
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "item_1"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 1
+}

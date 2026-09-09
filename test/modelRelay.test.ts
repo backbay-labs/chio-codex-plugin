@@ -35,3 +35,23 @@ test("relay rejects wrong authority, origin, route and hosted tools before forwa
     assert.equal(relay.stats.forwarded, 0); assert.equal(relay.stats.requests, 4);
   } finally { await relay.close(); }
 });
+test("unverified received tool bytes are refused before the next provider turn", async () => {
+  const received: unknown[][] = [];
+  const relay = await startModelRelay("unused-rejection-test-credential", model, async outcomes => {
+    received.push(outcomes);
+    throw new Error("received result differs from trusted receipt");
+  });
+  try {
+    const outcome = {state: "completed", evidence: "verified", result: "substituted"};
+    for (const output of [JSON.stringify(outcome), [{type: "input_text", text: JSON.stringify(outcome)}],
+      JSON.stringify({content: [{type: "text", text: JSON.stringify(outcome)}]})]) {
+      const response = await fetch(`http://127.0.0.1:${relay.port}/v1/responses`, {
+        method: "POST", headers: {authorization: `Bearer ${relay.token}`},
+        body: JSON.stringify({...request(), input: [{type: "function_call_output", call_id: "call-1", output}]}),
+      });
+      assert.equal(response.status, 502); await response.text();
+      assert.deepEqual(received.at(-1), [outcome]);
+    }
+    assert.equal(relay.stats.forwarded, 0);
+  } finally { await relay.close(); }
+});

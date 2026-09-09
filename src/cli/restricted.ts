@@ -162,10 +162,27 @@ export async function restrictedCmd(args: string[]): Promise<number> {
   for (const key of ["PATH", "USER", "LOGNAME", "LANG"]) if (process.env[key]) env[key] = process.env[key];
   env["CODEX_HOME"] = profile; env["TMPDIR"] = temporary; env["OPENSSL_CONF"] = "/dev/null";
   const transport = await startGatewayHttp(authority.config);
+  let delivered = 0, deliveryFailed = false;
+  let acknowledgements = Promise.resolve();
+  const confirmed = new Set<string>();
+  function receiveHostResults(outcomes: unknown[]): Promise<void> {
+    acknowledgements = acknowledgements.then(async () => {
+      for (const value of outcomes) {
+        const outcome = value as {state?: string; evidence?: string};
+        if (outcome?.state !== "completed" || outcome.evidence !== "verified") continue;
+        const identity = createHash("sha256").update(JSON.stringify(outcome)).digest("hex");
+        if (confirmed.has(identity)) continue;
+        const receipt = await transport.acknowledgeReceivedOutcome(outcome);
+        if (!receipt.acknowledged) throw new Error("Actual host result delivery is unresolved");
+        confirmed.add(identity); delivered++;
+      }
+    }).catch(error => { deliveryFailed = true; throw error; });
+    return acknowledgements;
+  }
   let relay: Awaited<ReturnType<typeof startModelRelay>> | undefined;
   try {
-  if (typeof transport.acknowledgeDelivery !== "function") throw new Error("Host delivery acknowledgement transport is required");
-  relay = await startModelRelay(apiKey, RESTRICTED_MODEL);
+  if (typeof transport.acknowledgeReceivedOutcome !== "function") throw new Error("Host delivery acknowledgement transport is required");
+  relay = await startModelRelay(apiKey, RESTRICTED_MODEL, receiveHostResults);
   env["CHIO_CODEX_MODEL_TOKEN"] = relay.token;
   env["CHIO_CODEX_GATEWAY_TOKEN"] = transport.token;
   const command = restrictedHostArgs(workspace, transport.url, options.prompt, Boolean(authority.config.approval));
@@ -193,8 +210,7 @@ export async function restrictedCmd(args: string[]): Promise<number> {
       }, 180_000);
       const stdout: Buffer[] = [], stderr: Buffer[] = [];
       const decoder = new StringDecoder("utf8");
-      let hostLines = "", delivered = 0, deliveryFailed = false;
-      let acknowledgements = Promise.resolve();
+      let hostLines = "";
       child.stdout.on("data", data => {
         stdout.push(data); process.stdout.write(data); hostLines += decoder.write(data);
         if (Buffer.byteLength(hostLines) > 16 * 1024 * 1024) { deliveryFailed = true; child.kill("SIGTERM"); return; }
@@ -207,10 +223,7 @@ export async function restrictedCmd(args: string[]): Promise<number> {
               || item.result?.content?.length !== 1 || item.result.content[0].type !== "text") continue;
             const outcome = JSON.parse(item.result.content[0].text);
             if (outcome.state !== "completed" || outcome.evidence !== "verified" || !outcome.delivery) continue;
-            acknowledgements = acknowledgements.then(async () => {
-              const receipt = await transport.acknowledgeDelivery(outcome.delivery);
-              if (receipt.acknowledged) delivered++; else deliveryFailed = true;
-            }).catch(() => { deliveryFailed = true; });
+            void receiveHostResults([outcome]).catch(() => { child.kill("SIGTERM"); });
           } catch { /* Missing host proof never releases the operation fence. */ }
         }
       });
@@ -220,7 +233,7 @@ export async function restrictedCmd(args: string[]): Promise<number> {
       process.once("SIGTERM", term); process.once("SIGINT", interrupt);
       child.once("error", error => { stderr.push(Buffer.from(error.message)); });
       child.once("close", async (status, signal) => {
-        await acknowledgements;
+        await acknowledgements.catch(() => { deliveryFailed = true; });
         clearTimeout(deadline); if (forceStop) clearTimeout(forceStop);
         process.removeListener("SIGTERM", term); process.removeListener("SIGINT", interrupt);
         writeFileSync(join(options.evidenceDir, "stdout.jsonl"), Buffer.concat(stdout), { mode: 0o600 });
