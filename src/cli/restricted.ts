@@ -77,7 +77,7 @@ export function restrictedHostArgs(workspace: string, gatewayUrl: string, prompt
   const tools = ["read_text_file", "write_file", "edit_file", "list_directory", ...(approval ? ["chio_resume"] : [])];
   const server = `mcp_servers={chio={url=${JSON.stringify(gatewayUrl)},bearer_token_env_var="CHIO_CODEX_GATEWAY_TOKEN",required=true,startup_timeout_sec=10,tool_timeout_sec=40,default_tools_approval_mode="approve",enabled_tools=${JSON.stringify(tools)}}}`;
   const args = ["exec", "--strict-config", "--ignore-user-config", "--ignore-rules", "--ephemeral", "--sandbox", "read-only", "--skip-git-repo-check", "-C", workspace, "--model", RESTRICTED_MODEL, "--json",
-    "-c", 'approval_policy="never"', "-c", 'web_search="disabled"', "-c", "agents.enabled=false", "-c", server];
+    "-c", 'approval_policy="never"', "-c", 'web_search="disabled"', "-c", "agents.enabled=false", "-c", 'developer_instructions="Chio MCP file tools operate on a separate remote resource rooted at /workspace. Preserve remote absolute paths exactly. Do not translate them to the local working directory. Only a verified completed Chio result establishes a completed resource call; an isError result is a tool failure."', "-c", server];
   for (const feature of DISABLED_FEATURES) args.push("--disable", feature);
   args.push("--", prompt);
   return args;

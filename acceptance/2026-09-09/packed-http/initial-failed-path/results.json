@@ -1,0 +1,22 @@
+[
+  {
+    "case": "useful",
+    "passed": false,
+    "exitCode": 2,
+    "executionOutcome": {
+      "status": "unknown",
+      "exitCode": 2,
+      "hostExitCode": 0,
+      "hostSignal": null,
+      "completed": 0,
+      "denied": 0,
+      "notDispatched": 0,
+      "unknown": 1,
+      "toolFailures": 0,
+      "awaitingApproval": 0
+    },
+    "newDispatchRows": 1,
+    "operatorConfigUnchanged": true,
+    "privateState": "/Users/connor/.local/share/chio-required-operators/aggregate-ack-20260909/codex-useful-ffd0e633ee144036981d02fbc67f7cc9"
+  }
+]

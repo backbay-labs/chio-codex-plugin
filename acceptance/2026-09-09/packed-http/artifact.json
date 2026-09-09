@@ -1,0 +1,10 @@
+{
+  "pluginTarballSha256": "53c797a99322cbcb163188cf428443b0f29a8703ca14a9729ba3aa010c23e6a2",
+  "pluginSourceParent": "9011d3e",
+  "changes": "remote path developer instruction and explicit newline qualification prompt",
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "bridgeTarballSha256": "c22c8dd094e39249484b3f4631d9ee6728db76bfd9e6f1f767c22538ab18a0ff",
+  "casesPassed": 5,
+  "skipped": 0,
+  "integrationAcceptance": false
+}

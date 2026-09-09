@@ -161,3 +161,22 @@ the mutable staging filename had been replaced by another candidate.
 
 No required skipped, failed or unavailable case is counted as accepted. These
 results do not accept another host or the six-host program.
+
+
+## Packaged HTTP candidate (current kernel)
+
+Artifact `53c797a99322cbcb163188cf428443b0f29a8703ca14a9729ba3aa010c23e6a2`
+passed an empty-cache offline install and five real Codex 0.153.4/gpt-5.5 cases
+against kernel `33dd1dea21a4...`: useful write/edit/read/list, fresh forbidden
+read, fresh forbidden write, native patch refusal, and mismatched resource
+owner startup refusal. Independent resource/audit observations accompanied
+every case. Thirty component tests passed. Evidence is in `../packed-http`.
+
+The predecessor artifact `b274e36b8497...` failed its useful case when the model
+translated a remote path to the local workspace. This exposed a kernel bug in
+acknowledging known tool errors. The failure is retained. The launcher now tells
+the host that MCP paths are remote and must be preserved; the kernel separately
+acknowledges verified terminal errors without reporting them as successful work.
+
+Approval/resume, complete fault/lifecycle/authority cases and final release gates
+remain unresolved. These five cases do not accept I01-I08 or this host.

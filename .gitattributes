@@ -1,0 +1,3 @@
+
+# Preserve exact host and test transcripts.
+acceptance/**/*.log -text -whitespace
