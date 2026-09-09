@@ -1,0 +1,11 @@
+{
+  "source": "8a4adc1",
+  "artifactSha256": "8099b20d0c1a8a947bfc8fe90a3a482691ae2a0031e48be16bd2431d33385da2",
+  "bridgeSha256": "b7785282b4f4e4da42e4158c7390a2d1411ba2763b01956b07896aadf6dcc6d9",
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "hostSha256": "b973d440acac501fd2594a43e7ca9ce41e0a65b9dfb28d0d7a7837c99e1261e3",
+  "hostVersion": "0.153.4",
+  "model": "gpt-5.5",
+  "runnerSha256": "780933f6ee61cd47b9449a22f7ba8230e1415ecd9fa195942a4951a8c208dcc7",
+  "acceptance": "unresolved"
+}

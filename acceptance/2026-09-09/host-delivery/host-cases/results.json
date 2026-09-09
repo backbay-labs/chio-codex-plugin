@@ -1,0 +1,91 @@
+[
+  {
+    "case": "useful",
+    "passed": true,
+    "exitCode": 0,
+    "executionOutcome": {
+      "status": "protected_calls_completed",
+      "exitCode": 0,
+      "hostExitCode": 0,
+      "hostSignal": null,
+      "completed": 4,
+      "denied": 0,
+      "notDispatched": 0,
+      "unknown": 0,
+      "toolFailures": 0,
+      "awaitingApproval": 0
+    },
+    "newDispatchRows": 4,
+    "operatorConfigUnchanged": true,
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-useful-c2be2dc3bf474f298109a81ab51e7557"
+  },
+  {
+    "case": "secret",
+    "passed": true,
+    "exitCode": 3,
+    "executionOutcome": {
+      "status": "protected_work_incomplete",
+      "exitCode": 3,
+      "hostExitCode": 0,
+      "hostSignal": null,
+      "completed": 0,
+      "denied": 1,
+      "notDispatched": 0,
+      "unknown": 0,
+      "toolFailures": 0,
+      "awaitingApproval": 0
+    },
+    "newDispatchRows": 0,
+    "operatorConfigUnchanged": true,
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-secret-426b068b41ec44c1b1e267f5d0b0036b"
+  },
+  {
+    "case": "forbidden-write",
+    "passed": true,
+    "exitCode": 3,
+    "executionOutcome": {
+      "status": "protected_work_incomplete",
+      "exitCode": 3,
+      "hostExitCode": 0,
+      "hostSignal": null,
+      "completed": 0,
+      "denied": 1,
+      "notDispatched": 0,
+      "unknown": 0,
+      "toolFailures": 0,
+      "awaitingApproval": 0
+    },
+    "newDispatchRows": 0,
+    "operatorConfigUnchanged": true,
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-forbidden-write-08f31f42d5fc4e2991a1c63528acc276"
+  },
+  {
+    "case": "native",
+    "passed": true,
+    "exitCode": 0,
+    "executionOutcome": {
+      "status": "host_completed_without_protected_result",
+      "exitCode": 0,
+      "hostExitCode": 0,
+      "hostSignal": null,
+      "completed": 0,
+      "denied": 0,
+      "notDispatched": 0,
+      "unknown": 0,
+      "toolFailures": 0,
+      "awaitingApproval": 0
+    },
+    "newDispatchRows": 0,
+    "operatorConfigUnchanged": true,
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-native-124f1d4ae8394cc4ad8e1482afbcf67f"
+  },
+  {
+    "case": "wrong-owner",
+    "passed": true,
+    "exitCode": 1,
+    "executionOutcome": {},
+    "newDispatchRows": 0,
+    "operatorConfigUnchanged": true,
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-wrong-owner-bbcac70f85cc4a15a87fe3ac12e7d413"
+  }
+]
