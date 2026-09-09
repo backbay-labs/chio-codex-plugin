@@ -54,12 +54,12 @@ kernel/plugin/bridge artifact combination is identified.
 ## Operator configuration and run
 
 The kernel must support `chio.mcp.execution-context.v1` and execution-evidence
-version 1. The original public CLI 0.1.0 is not a qualified replacement. Prepare a
+version 1, delegated session credentials, and delivery acknowledgement version 1. The original public CLI 0.1.0 is not a qualified replacement. Prepare a
 private JSON request (file mode 0600) with these fields:
 
 ```json
 {
-  "endpoint": "http://127.0.0.1:PORT/mcp",
+  "endpoint": "http://127.0.0.1:PORT",
   "bearerToken": "OPERATOR-BOOTSTRAP-TOKEN",
   "adminToken": "DISTINCT-OPERATOR-ADMIN-TOKEN",
   "credentialTtlSeconds": 900,
@@ -90,17 +90,24 @@ chio-codex restricted \
   --prompt 'Write /workspace/example.txt through Chio, then read it back.'
 ```
 
-Use `--auth-file /absolute/designated-codex-auth.json` for a test login, or the
-current `CODEX_HOME/auth.json` is copied to the private temporary profile. The copy
-is deleted when the host stops. `--codex-binary /absolute/codex` selects the installed
-host executable; its version must be exactly 0.153.4. The launcher records exact
-arguments, gateway/config hashes, output JSONL, exit status and runtime paths. It
-has a three-minute deadline; interruption or timeout cannot be treated as a
-verified result.
+The operator supplies `OPENAI_API_KEY` or `--model-key-file /absolute/private/key`.
+The key stays in the launcher. Codex receives only an ephemeral local model
+transport token; its relay accepts fixed-model inline Responses requests and
+local tool declarations, rejecting hosted tools, account references and other
+routes. Normal Codex account state is never copied. The sandbox permits outbound
+connections only to this relay and the launcher-owned Chio HTTP transport.
+
+`--codex-binary /absolute/codex` selects the installed host executable; its native
+binary must match version 0.153.4 and SHA256
+`b973d440acac501fd2594a43e7ca9ce41e0a65b9dfb28d0d7a7837c99e1261e3`.
+The launcher records arguments, gateway/config hashes, output JSONL, exit status
+and runtime paths. It has a three-minute deadline. Interruption or timeout
+cannot be treated as a verified result.
 
 `launch.json` preserves the raw host exit separately from `execution_outcome`.
 The launcher exits 2 for unknown, unfinished or malformed protected results and
-3 for denied, undispatched or failed protected work. Host failures remain nonzero.
+3 for denied, undispatched or failed protected work, and 4 for pending operator
+approval. Host failures remain nonzero.
 Exit 0 with no protected call is labelled `host_completed_without_protected_result`;
 it is not a claim that resource work succeeded. These statuses use structured
 host/tool events, never the model's final prose.
@@ -113,11 +120,26 @@ must not retry it under a fresh operation identity. Observe the actual resource,
 reconcile with retained kernel receipts, and record the result before issuing new
 authority. Do not delete a journal or stale lock to make a failed run green.
 
-Codex termination has left gateway locks in real testing, and restarting an MCP
-client resets its request IDs. Reusing an old journal for unrelated new calls can
-therefore refuse or collide. Those are open I07 recovery issues. Preparing a new
-session is appropriate for an independent new acceptance case; it does not recover
-an unknown existing operation.
+The gateway now runs in the launcher process with a local HTTP transport. It
+durably saves verified completion before `chio/acknowledge`; the kernel fences
+new requests until acknowledgement. The guest cannot read its configuration or
+journal, connect directly to the kernel, fork descendants, or execute Node/shell.
+Killing the launcher closes the resource route. A new host transport namespaces
+its RPC counter while retaining the same authority and journal.
+
+Inspect retained state with `chio-gateway-operator status CONFIG`. For a dead
+launcher on the same machine, `chio-gateway-operator recover-lock CONFIG` safely
+recovers only the process lock and preserves all operation fences. Unknown
+outcomes require independent reconciliation; a fresh session is not recovery.
+Kernel idle-session expiry is 15 minutes by default and can occur before the
+delegated credential expires. An expired session remains terminal.
+
+To require approval, the operator configures `approval.requiredTools`, `purpose`
+and a bounded `ttlSeconds` in the private gateway file against a matching kernel
+confirmation policy. A proposed tool returns `awaiting_approval` without dispatch.
+The operator uses `approval-submit` and `approval-decide`; the host may then call
+`chio_resume` with the original request ID, tool and exact arguments. Host-specific
+approval qualification remains open until its recorded cases pass.
 
 Stop sessions before an upgrade, retain evidence, replace the identified artifact,
 and repeat all applicable gates. The fresh profile contains no persistent Codex

@@ -45,24 +45,27 @@ class Capture(http.server.BaseHTTPRequestHandler):
 
 server = http.server.ThreadingHTTPServer(('127.0.0.1', 0), Capture)
 threading.Thread(target=server.serve_forever, daemon=True).start()
-code = '''import { restrictedHostArgs } from "./dist/cli/restricted.js";
-import {dirname,join} from "node:path";
-import {fileURLToPath} from "node:url";
-const gateway=join(dirname(fileURLToPath(import.meta.resolve("@chio/bridge/package.json"))),"dist","gateway.js");
-console.log(JSON.stringify(restrictedHostArgs(process.argv[1],gateway,process.argv[2],"Report available tools.")));
+code = r'''import { restrictedHostArgs, resolveCodexNative } from "./dist/cli/restricted.js";
+import { startGatewayHttp } from "@chio/bridge";
+import { readFileSync, writeFileSync } from "node:fs";
+import { spawn } from "node:child_process";
+const [workspace,configPath,profile,captureUrl,commandFile]=process.argv.slice(1);
+const transport=await startGatewayHttp(JSON.parse(readFileSync(configPath,"utf8")));
+try {
+ const command=restrictedHostArgs(workspace,transport.url,"Report available tools.");
+ command.splice(command.indexOf("--"),0,"-c",'model_provider="inventory"',"-c",'model_providers.inventory.name="inventory"',"-c",`model_providers.inventory.base_url="${captureUrl}"`,"-c",'model_providers.inventory.wire_api="responses"');
+ writeFileSync(commandFile,JSON.stringify(command,null,2)+"\n");
+ const env={PATH:process.env.PATH,CODEX_HOME:profile,CHIO_CODEX_GATEWAY_TOKEN:transport.token,OPENSSL_CONF:"/dev/null"};
+ const child=spawn(resolveCodexNative("codex"),command,{env,stdio:["ignore","inherit","inherit"]});
+ process.exitCode=await new Promise(resolve=>child.once("close",code=>resolve(code??1)));
+} finally { await transport.close(); }
 '''
-command = json.loads(subprocess.check_output(['node', '--input-type=module', '-e', code, str(workspace), str(args.gateway_config.resolve())], cwd=source, text=True))
-index = command.index('--')
-command[index:index] = ['-c', 'model_provider="inventory"', '-c', 'model_providers.inventory.name="inventory"', '-c', f'model_providers.inventory.base_url="http://127.0.0.1:{server.server_port}"', '-c', 'model_providers.inventory.wire_api="responses"']
-env = {key: os.environ[key] for key in ['PATH', 'USER', 'LOGNAME', 'SHELL', 'LANG', 'TMPDIR'] if key in os.environ}
-env['CODEX_HOME'] = str(profile)
 try:
-    result = subprocess.run(['codex', *command], env=env, stdin=subprocess.DEVNULL, capture_output=True, text=True, timeout=60)
+    result = subprocess.run(['node', '--input-type=module', '-e', code, str(workspace), str(args.gateway_config.resolve()), str(profile), f'http://127.0.0.1:{server.server_port}', str(args.output / 'command.json')], cwd=source, stdin=subprocess.DEVNULL, capture_output=True, text=True, timeout=60)
 finally:
     server.shutdown()
 (args.output / 'stdout.jsonl').write_text(result.stdout)
 (args.output / 'stderr.txt').write_text(result.stderr)
-(args.output / 'command.json').write_text(json.dumps(command, indent=2) + '\n')
 record = {'kind': 'actual-host-tool-catalog', 'acceptance': False, 'model_endpoint': 'local diagnostic capture; no model/tool execution', 'host_exit': result.returncode, 'runtime': str(runtime)}
 (args.output / 'record.json').write_text(json.dumps(record, indent=2) + '\n')
 tools = json.loads((args.output / 'tools.json').read_text())

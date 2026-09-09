@@ -1,14 +1,18 @@
 import { spawn, spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
-import { chmodSync, copyFileSync, lstatSync, mkdirSync, mkdtempSync, readFileSync, unlinkSync, writeFileSync } from "node:fs";
-import { homedir, tmpdir } from "node:os";
+import { existsSync, lstatSync, mkdirSync, mkdtempSync, readFileSync, realpathSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { dirname, isAbsolute, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { buildSandboxPolicy, isWithin, requireSessionCredential } from "./sandbox.js";
+import { startModelRelay } from "./modelRelay.js";
+import { startGatewayHttp } from "@chio/bridge";
 
 // The selected model must expose ordinary MCP tools. Code-mode-only models
 // need separate qualification and cannot silently replace this host contract.
 export const RESTRICTED_MODEL = "gpt-5.5";
 export const RESTRICTED_HOST_VERSION = "codex-cli 0.153.4";
+export const RESTRICTED_HOST_SHA256 = "b973d440acac501fd2594a43e7ca9ce41e0a65b9dfb28d0d7a7837c99e1261e3";
 export const DISABLED_FEATURES = [
   "shell_tool", "unified_exec", "multi_agent", "multi_agent_v2", "apps",
   "plugins", "browser_use", "browser_use_external", "computer_use", "code_mode",
@@ -19,7 +23,7 @@ export const DISABLED_FEATURES = [
   "hooks", "shell_snapshot", "in_app_local_automation",
 ] as const;
 
-interface RestrictedOptions { gatewayConfig: string; authFile: string; codexBinary: string; evidenceDir: string; prompt: string }
+interface RestrictedOptions { gatewayConfig: string; modelKeyFile?: string; codexBinary: string; evidenceDir: string; prompt: string }
 
 export function prepareGatewayCmd(args: string[]): number {
   if (args.length !== 2 || args.some(path => !isAbsolute(path))) throw new Error("prepare-gateway: requires /absolute/private-request.json /absolute/new-config.json");
@@ -30,7 +34,7 @@ export function prepareGatewayCmd(args: string[]): number {
 
 function parseArgs(args: string[]): RestrictedOptions {
   const values = new Map<string, string>();
-  const known = new Set(["--gateway-config", "--auth-file", "--codex-binary", "--evidence-dir", "--prompt"]);
+  const known = new Set(["--gateway-config", "--model-key-file", "--codex-binary", "--evidence-dir", "--prompt"]);
   for (let i = 0; i < args.length; i += 2) {
     const flag = args[i], value = args[i + 1];
     if (!flag || !known.has(flag) || !value || value.startsWith("--") || values.has(flag)) {
@@ -42,14 +46,36 @@ function parseArgs(args: string[]): RestrictedOptions {
   const evidenceDir = values.get("--evidence-dir");
   const prompt = values.get("--prompt");
   if (!gatewayConfig || !evidenceDir || !prompt || !isAbsolute(gatewayConfig) || !isAbsolute(evidenceDir)) throw new Error("restricted: absolute gateway config, new evidence directory and prompt are required");
-  return { gatewayConfig, evidenceDir, prompt,
-    authFile: values.get("--auth-file") ?? join(process.env["CODEX_HOME"] ?? join(homedir(), ".codex"), "auth.json"),
+  return { gatewayConfig, evidenceDir, prompt, ...(values.has("--model-key-file") ? { modelKeyFile: values.get("--model-key-file")! } : {}),
     codexBinary: values.get("--codex-binary") ?? "codex" };
 }
 
+export function resolveCodexNative(requested: string): string {
+  const path = isAbsolute(requested) ? requested : (process.env["PATH"] ?? "").split(":").map(directory => join(directory, requested)).find(existsSync);
+  if (!path) throw new Error("Codex executable was not found");
+  let binary = realpathSync(path);
+  if (binary.endsWith("/@openai/codex/bin/codex.js")) {
+    binary = realpathSync(join(dirname(dirname(dirname(binary))), "codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex"));
+  }
+  if (!["cffaedfe", "feedfacf", "cafebabe", "bebafeca", "cafebabf"].includes(readFileSync(binary).subarray(0, 4).toString("hex"))) {
+    throw new Error("Restricted mode requires the installed native Darwin Codex executable");
+  }
+  return binary;
+}
+
+function requirePrivateFile(path: string): string {
+  if (!isAbsolute(path)) throw new Error("Operator file path must be absolute");
+  const stat = lstatSync(path);
+  if (!stat.isFile() || stat.isSymbolicLink() || (stat.mode & 0o077) !== 0 || stat.uid !== process.getuid?.()) {
+    throw new Error("Operator file must be a private owned regular file");
+  }
+  return realpathSync(path);
+}
+
 /** Fixed configuration, never supplemented with agent-provided host flags. */
-export function restrictedHostArgs(workspace: string, gateway: string, config: string, prompt: string): string[] {
-  const server = `mcp_servers={chio={command=${JSON.stringify(process.execPath)},args=[${JSON.stringify(gateway)},${JSON.stringify(config)}],required=true,startup_timeout_sec=10,tool_timeout_sec=40,default_tools_approval_mode="approve",enabled_tools=["read_text_file","write_file","edit_file","list_directory"]}}`;
+export function restrictedHostArgs(workspace: string, gatewayUrl: string, prompt: string, approval = false): string[] {
+  const tools = ["read_text_file", "write_file", "edit_file", "list_directory", ...(approval ? ["chio_resume"] : [])];
+  const server = `mcp_servers={chio={url=${JSON.stringify(gatewayUrl)},bearer_token_env_var="CHIO_CODEX_GATEWAY_TOKEN",required=true,startup_timeout_sec=10,tool_timeout_sec=40,default_tools_approval_mode="approve",enabled_tools=${JSON.stringify(tools)}}}`;
   const args = ["exec", "--strict-config", "--ignore-user-config", "--ignore-rules", "--ephemeral", "--sandbox", "read-only", "--skip-git-repo-check", "-C", workspace, "--model", RESTRICTED_MODEL, "--json",
     "-c", 'approval_policy="never"', "-c", 'web_search="disabled"', "-c", "agents.enabled=false", "-c", server];
   for (const feature of DISABLED_FEATURES) args.push("--disable", feature);
@@ -59,7 +85,7 @@ export function restrictedHostArgs(workspace: string, gateway: string, config: s
 
 /** Host turn completion does not establish successful protected execution. */
 export function summarizeRestrictedOutcome(stdout: string, hostExit: number | null, signal: string | null, interrupted = false) {
-  let completed = 0, denied = 0, notDispatched = 0, unknown = 0, toolFailures = 0;
+  let completed = 0, denied = 0, notDispatched = 0, unknown = 0, toolFailures = 0, awaitingApproval = 0;
   let hostFailed = interrupted;
   const pending = new Set<string>(), finished = new Set<string>();
   for (const line of stdout.split("\n").filter(line => line.trim())) {
@@ -75,16 +101,18 @@ export function summarizeRestrictedOutcome(stdout: string, hostExit: number | nu
       if (event.type === "item.started") { pending.add(item.id); continue; }
       if (event.type !== "item.completed" || finished.has(item.id)) continue;
       pending.delete(item.id); finished.add(item.id);
-      if (item.server !== "chio" || item.error || item.status === "failed") { unknown++; continue; }
+      if (item.server !== "chio" || item.error) { unknown++; continue; }
       const content = item.result?.content;
       if (content?.length !== 1 || content[0]?.type !== "text") { unknown++; continue; }
       const outcome = JSON.parse(content[0].text ?? "") as {
         state?: string; evidence?: string; result?: { isError?: boolean };
       };
-      if (outcome.state === "not_dispatched") notDispatched++;
+      if (outcome.state === "awaiting_approval") awaitingApproval++;
+      else if (outcome.state === "not_dispatched") notDispatched++;
       else if (outcome.state === "denied" && outcome.evidence === "verified") denied++;
       else if (outcome.state === "completed" && outcome.evidence === "verified") {
         if (outcome.result?.isError === true) toolFailures++;
+        else if (item.status === "failed") unknown++;
         else completed++;
       } else unknown++;
     } catch { unknown++; }
@@ -92,42 +120,69 @@ export function summarizeRestrictedOutcome(stdout: string, hostExit: number | nu
   unknown += pending.size;
   const hostCode = hostExit ?? 1;
   const status = unknown ? "unknown" : hostCode !== 0 || signal || hostFailed ? "host_failed"
+    : awaitingApproval ? "awaiting_operator_approval"
     : denied || notDispatched || toolFailures ? "protected_work_incomplete"
     : completed ? "protected_calls_completed" : "host_completed_without_protected_result";
   const exitCode = unknown ? 2 : hostCode !== 0 ? hostCode : signal || hostFailed ? 1
-    : denied || notDispatched || toolFailures ? 3 : 0;
+    : awaitingApproval ? 4 : denied || notDispatched || toolFailures ? 3 : 0;
   return { status, exitCode, hostExitCode: hostExit, hostSignal: signal,
-    completed, denied, notDispatched, unknown, toolFailures };
+    completed, denied, notDispatched, unknown, toolFailures, awaitingApproval };
 }
 
 export async function restrictedCmd(args: string[]): Promise<number> {
   const options = parseArgs(args);
-  const config = lstatSync(options.gatewayConfig);
-  if (!config.isFile() || config.isSymbolicLink() || (config.mode & 0o077) !== 0) throw new Error("restricted: gateway configuration must be a private operator-owned regular file");
-  if (config.uid !== process.getuid?.()) throw new Error("restricted: gateway configuration owner differs from the operator");
-  const host = spawnSync(options.codexBinary, ["--version"], { encoding: "utf8", timeout: 10_000 });
+  if (process.platform !== "darwin" || process.arch !== "arm64") throw new Error("Restricted process mode is qualified only for macOS arm64");
+  const configPath = requirePrivateFile(options.gatewayConfig);
+  const authority = await requireSessionCredential(configPath);
+  const binary = resolveCodexNative(options.codexBinary);
+  if (createHash("sha256").update(readFileSync(binary)).digest("hex") !== RESTRICTED_HOST_SHA256) throw new Error("restricted: native host digest is not qualified");
+  const host = spawnSync(binary, ["--version"], { encoding: "utf8", timeout: 10_000 });
   if (host.status !== 0 || host.stdout.trim() !== RESTRICTED_HOST_VERSION) throw new Error(`restricted: requires ${RESTRICTED_HOST_VERSION}; this host is not qualified`);
-  const gateway = join(dirname(fileURLToPath(import.meta.resolve("@chio/bridge/package.json"))), "dist", "gateway.js");
+  const gateway = realpathSync(join(dirname(fileURLToPath(import.meta.resolve("@chio/bridge/package.json"))), "dist", "gateway-http.js"));
   if (!lstatSync(gateway).isFile()) throw new Error("restricted: packaged gateway is missing");
+  const installation = realpathSync(resolve(dirname(fileURLToPath(import.meta.url)), "../.."));
+  const keyFile = options.modelKeyFile ? requirePrivateFile(options.modelKeyFile) : undefined;
+  if (keyFile && isWithin(installation, keyFile)) throw new Error("Provider credential must be outside the readable installation");
+  const apiKey = keyFile ? readFileSync(keyFile, "utf8").trim() : process.env["OPENAI_API_KEY"];
+  if (!apiKey) throw new Error("Operator OPENAI_API_KEY or --model-key-file is required; account auth is never copied to the host");
   mkdirSync(options.evidenceDir, { mode: 0o700 });
-  const runtime = mkdtempSync(join(tmpdir(), "chio-codex-restricted-"));
+  const runtime = realpathSync(mkdtempSync(join(tmpdir(), "chio-codex-restricted-")));
   const profile = join(runtime, "profile"), workspace = join(runtime, "workspace");
   mkdirSync(profile, { mode: 0o700 }); mkdirSync(workspace, { mode: 0o700 });
-  const auth = join(profile, "auth.json");
+  const temporary = join(profile, "tmp"); mkdirSync(temporary, { mode: 0o700 });
+  if (!isAbsolute(authority.config.journalDir)) throw new Error("Journal path must be absolute");
+  mkdirSync(authority.config.journalDir, { recursive: true, mode: 0o700 });
+  const journalStat = lstatSync(authority.config.journalDir);
+  if (!journalStat.isDirectory() || journalStat.isSymbolicLink() || (journalStat.mode & 0o077) !== 0 || journalStat.uid !== process.getuid?.()) throw new Error("Journal must be a private owned directory");
+  const journal = realpathSync(authority.config.journalDir);
+  if (isWithin(journal, configPath) || isWithin(journal, installation) || isWithin(installation, journal)
+    || keyFile && (isWithin(journal, keyFile) || isWithin(profile, keyFile))) throw new Error("Writable journal must not contain operator credentials or installed code");
   const env: NodeJS.ProcessEnv = {};
-  for (const key of ["PATH", "USER", "LOGNAME", "SHELL", "LANG", "TMPDIR"]) if (process.env[key]) env[key] = process.env[key];
-  env["CODEX_HOME"] = profile;
-  const command = restrictedHostArgs(workspace, gateway, resolve(options.gatewayConfig), options.prompt);
+  for (const key of ["PATH", "USER", "LOGNAME", "LANG"]) if (process.env[key]) env[key] = process.env[key];
+  env["CODEX_HOME"] = profile; env["TMPDIR"] = temporary; env["OPENSSL_CONF"] = "/dev/null";
+  const transport = await startGatewayHttp(authority.config);
+  let relay: Awaited<ReturnType<typeof startModelRelay>> | undefined;
+  try {
+  relay = await startModelRelay(apiKey, RESTRICTED_MODEL);
+  env["CHIO_CODEX_MODEL_TOKEN"] = relay.token;
+  env["CHIO_CODEX_GATEWAY_TOKEN"] = transport.token;
+  const command = restrictedHostArgs(workspace, transport.url, options.prompt, Boolean(authority.config.approval));
+  command.splice(command.indexOf("--"), 0, "-c", 'model_provider="chio_model"', "-c", 'model_providers.chio_model.name="Chio model relay"',
+    "-c", `model_providers.chio_model.base_url="http://127.0.0.1:${relay.port}/v1"`, "-c", 'model_providers.chio_model.wire_api="responses"',
+    "-c", 'model_providers.chio_model.env_key="CHIO_CODEX_MODEL_TOKEN"', "-c", "model_providers.chio_model.supports_websockets=false");
+  const boundary = { codex: binary, profile, workspace, gatewayPort: transport.port, modelPort: relay.port };
+  const policy = await buildSandboxPolicy(boundary), policyPath = join(runtime, "boundary.sb");
+  writeFileSync(policyPath, policy, { mode: 0o600 });
   const report: Record<string, unknown> = { host: RESTRICTED_HOST_VERSION, model: RESTRICTED_MODEL, runtime, workspace, profile,
+    boundary, policy_path: policyPath, policy_sha256: createHash("sha256").update(policy).digest("hex"),
+    host_binary_sha256: createHash("sha256").update(readFileSync(binary)).digest("hex"),
     gateway_sha256: createHash("sha256").update(readFileSync(gateway)).digest("hex"),
-    config_sha256: createHash("sha256").update(readFileSync(options.gatewayConfig)).digest("hex"),
+    config_sha256: createHash("sha256").update(readFileSync(configPath)).digest("hex"),
     command, acceptance: "candidate: independent effect verification required", started_at: new Date().toISOString() };
   writeFileSync(join(options.evidenceDir, "launch.json"), JSON.stringify(report, null, 2) + "\n", { mode: 0o600 });
   process.stderr.write(`Restricted candidate evidence: ${options.evidenceDir}\n`);
-  try {
-    copyFileSync(options.authFile, auth); chmodSync(auth, 0o600);
     const code = await new Promise<number>((done) => {
-      const child = spawn(options.codexBinary, command, { env, stdio: ["ignore", "pipe", "pipe"] });
+      const child = spawn("/usr/bin/sandbox-exec", ["-f", policyPath, binary, ...command], { env, cwd: workspace, stdio: ["ignore", "pipe", "pipe"] });
       let forceStop: NodeJS.Timeout | undefined;
       const deadline = setTimeout(() => {
         report["timed_out"] = true;
@@ -150,12 +205,14 @@ export async function restrictedCmd(args: string[]): Promise<number> {
         const outcome = summarizeRestrictedOutcome(Buffer.concat(stdout).toString("utf8"), status, signal,
           report["timed_out"] === true || report["operator_interrupt"] !== undefined);
         report["execution_outcome"] = outcome;
+        report["model_relay"] = { ...relay?.stats };
         writeFileSync(join(options.evidenceDir, "launch.json"), JSON.stringify(report, null, 2) + "\n", { mode: 0o600 });
         done(outcome.exitCode);
       });
     });
     return code;
   } finally {
-    try { unlinkSync(auth); } catch { /* Authentication may not have been copied. */ }
+    await transport.close();
+    await relay?.close();
   }
 }

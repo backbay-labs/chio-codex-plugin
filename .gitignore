@@ -8,3 +8,7 @@ dist/
 coverage/
 .vscode/
 .idea/
+
+__pycache__/
+
+delivery/20260909/superseded/

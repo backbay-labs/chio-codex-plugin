@@ -1,0 +1,46 @@
+
+> @chio/codex-plugin@0.3.0 test
+> npm run build && node --experimental-strip-types --test ./test/*.test.ts
+
+
+> @chio/codex-plugin@0.3.0 build
+> tsc && node ./scripts/mark-hooks-executable.mjs
+
+✔ inline Chio context permits ordinary tools and strips account diagnostic writes (0.970875ms)
+✔ hosted tools, remote MCP, alternate namespace and referenced account context are refused (0.644041ms)
+✔ relay rejects wrong authority, origin, route and hosted tools before forwarding (28.842584ms)
+✔ fingerprintPrompt returns a full 64-hex SHA-256 digest (1.288209ms)
+✔ fingerprintPrompt canonical order is stable across key order (0.110125ms)
+✔ canonicalizePlanInput omits undefined fields (0.064334ms)
+✔ fingerprintPlanText normalizes CRLF (0.08925ms)
+✔ extractPlanBlock finds fenced plan block (0.1175ms)
+✔ extractPlanBlock returns undefined when no plan is embedded (0.109292ms)
+✔ sha256Hex matches the Node crypto reference (0.05825ms)
+✔ PreToolUse deny emits Codex permissionDecision JSON and exits 0 (102.284375ms)
+✔ PreToolUse allow exits 0 with empty stdout (94.629125ms)
+✔ PreToolUse fails closed on bridge throw (107.328084ms)
+✔ PreToolUse rejects non-allow decision pending (107.6815ms)
+✔ PreToolUse rejects non-allow decision challenge (96.803125ms)
+✔ PreToolUse rejects non-allow decision defer (99.192833ms)
+✔ PreToolUse rejects non-allow decision unknown (101.931042ms)
+✔ PreToolUse rejects non-allow decision undefined (106.520625ms)
+✔ PreToolUse rejects missing session identity despite a default policy (98.63725ms)
+✔ publishCitizen returns a did:chio passport and full plan hash (2.456292ms)
+✔ publishCitizen rejects did:chio: fiction (0.387208ms)
+✔ renderCitizen includes did:chio passport and schedule (0.168625ms)
+✔ restricted host fixes the enforcing sandbox and sole MCP server without prompt flag injection (1.009417ms)
+✔ restricted launcher rejects host override arguments before starting any host (0.535ms)
+✔ host exit zero does not turn an uncertain result into successful protected work (1.447125ms)
+✔ denial, non-dispatch and tool failure remain unsuccessful outcomes (0.17825ms)
+✔ unfinished, failed and malformed host events cannot claim verified success (0.117458ms)
+✔ a deadline or operator interruption cannot inherit a trapped host exit zero (0.069334ms)
+✔ pending operator approval is explicit non-success without claiming uncertain dispatch (0.068167ms)
+✔ Codex failed MCP status preserves a verified kernel denial (0.086584ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 30
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1096.539125
