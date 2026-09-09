@@ -1,0 +1,37 @@
+
+> @chio/codex-plugin@0.3.0 test
+> npm run build && node --experimental-strip-types --test ./test/*.test.ts
+
+
+> @chio/codex-plugin@0.3.0 build
+> tsc && node ./scripts/mark-hooks-executable.mjs
+
+✔ fingerprintPrompt returns a full 64-hex SHA-256 digest (1.474791ms)
+✔ fingerprintPrompt canonical order is stable across key order (0.127708ms)
+✔ canonicalizePlanInput omits undefined fields (0.067334ms)
+✔ fingerprintPlanText normalizes CRLF (0.08625ms)
+✔ extractPlanBlock finds fenced plan block (0.120458ms)
+✔ extractPlanBlock returns undefined when no plan is embedded (0.121625ms)
+✔ sha256Hex matches the Node crypto reference (0.060458ms)
+✔ PreToolUse deny emits Codex permissionDecision JSON and exits 0 (113.260542ms)
+✔ PreToolUse allow exits 0 with empty stdout (108.7665ms)
+✔ PreToolUse fails closed on bridge throw (103.924083ms)
+✔ PreToolUse rejects non-allow decision pending (104.284667ms)
+✔ PreToolUse rejects non-allow decision challenge (99.204166ms)
+✔ PreToolUse rejects non-allow decision defer (108.574584ms)
+✔ PreToolUse rejects non-allow decision unknown (98.368042ms)
+✔ PreToolUse rejects non-allow decision undefined (101.306791ms)
+✔ PreToolUse rejects missing session identity despite a default policy (111.084792ms)
+✔ publishCitizen returns a did:chio passport and full plan hash (2.685083ms)
+✔ publishCitizen rejects did:chio: fiction (0.342958ms)
+✔ renderCitizen includes did:chio passport and schedule (0.169458ms)
+✔ restricted host fixes the enforcing sandbox and sole MCP server without prompt flag injection (0.975875ms)
+✔ restricted launcher rejects host override arguments before starting any host (0.507792ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1120.3015
