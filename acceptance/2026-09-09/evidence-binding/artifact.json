@@ -1,0 +1,9 @@
+{
+  "host": "codex",
+  "archiveSha256": "860811efcdebea7a4c9fe4db7b9a4c9eb764b55c0fadd4dc6e9429447e7813b6",
+  "sourceRevision": "8eff2ac2de3048d7279a892e877a2e40533377a0",
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "nativeRuns": 6,
+  "skips": 0,
+  "claim": "bounded real native host and actual OpenAI evidence binding and fencing; full acceptance remains open"
+}
