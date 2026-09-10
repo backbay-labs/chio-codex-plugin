@@ -73,7 +73,7 @@ save(a.output / 'identity.json', {'artifactSha256': sha(a.archive), 'kernelSha25
 
 def native(name, tool, arguments):
     folder = a.output / name
-    prompt = f'Call Chio {tool} exactly once with JSON arguments {json.dumps(arguments)}. Preserve strings exactly. Stop after its result. Do not retry or use any other tool.'
+    prompt = f'Use native tool discovery if needed to expose Chio {tool}, then call it exactly once with JSON arguments {json.dumps(arguments)}. Preserve strings exactly. Stop after its result. Do not retry or invoke any other protected operation.'
     command = ['node', '--import', str(instrument), str(a.package_dir / 'dist/cli/main.js'), 'restricted', '--gateway-config', str(config_path),
         '--codex-binary', '/opt/homebrew/bin/codex', '--evidence-dir', str(folder), '--model-auth-file', str(a.model_auth_file), '--prompt', prompt]
     timing_path = a.output / (name + '.timing.jsonl')
