@@ -1,5 +1,9 @@
 # Restricted Codex candidate
 
+The [2026-09-10 local static-kernel qualification](docs/STATIC-KERNEL-QUALIFICATION.md)
+records the newer exact kernel and retained native follow-up results. Earlier
+records keep their original binary identities; publication remains separate.
+
 This mode runs Codex 0.153.4 with gpt-5.5 and one fixed Chio MCP gateway. It has
 completed a real host file-write/read workflow through the kernel, a forbidden
 write denial, unreachable-kernel refusal, and native patch/configuration-write
