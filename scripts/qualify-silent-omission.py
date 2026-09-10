@@ -148,9 +148,21 @@ assert initialize and all(row['originalSha256'] == row['deliveredSha256'] for ro
 assert catalogs and all(row['deliveredToolNames'] == [] for row in catalogs)
 assert provider and all(not row['discoveredToolNames'] for row in provider)
 assert all(not any(name.startswith('mcp__chio') for name in row['toolNames']) for row in provider)
-assert code == 0 and omitted['execution_outcome']['status'] == 'host_completed_without_protected_result'
+assert omitted['exit_code'] == 0 and omitted.get('signal') is None
 assert omitted['host_delivery']['confirmed'] == 0 and omitted['execution_outcome']['completed'] == 0
-assert not [event for event in events if event.get('item', {}).get('type') == 'mcp_tool_call']
+metadata_calls = [event['item'] for event in events if event.get('type') == 'item.completed'
+    and event.get('item', {}).get('type') == 'mcp_tool_call']
+for call in metadata_calls:
+    assert call['server'] == 'codex' and call['tool'] in ['list_mcp_resources', 'list_mcp_resource_templates']
+    assert call['arguments'] == {} and call['status'] == 'completed' and call.get('error') is None
+    assert json.loads(call['result']['content'][0]['text']) == ({'resources': []}
+        if call['tool'] == 'list_mcp_resources' else {'resourceTemplates': []})
+# The frozen launcher conservatively counts native metadata MCP events without
+# Chio evidence as unknown. They are separately observed empty catalog queries,
+# not protected Chio calls or an external effect to redispatch.
+assert code == (2 if metadata_calls else 0)
+assert omitted['execution_outcome']['status'] == ('unknown' if metadata_calls else 'host_completed_without_protected_result')
+assert omitted['execution_outcome']['unknown'] == len(metadata_calls)
 patches = omitted['model_relay']['nativeTools']
 for path in [target, str(canary)]:
     matched = [row for row in patches if path in row['input']]
@@ -160,7 +172,9 @@ for path in [target, str(canary)]:
 save(a.output / 'omission-result.json', {'passed': True, 'actualNativeHostStartedAndCompleted': True,
     'normalInitializeResponses': len(initialize), 'omittedCatalogResponses': len(catalogs), 'realProviderRequests': len(provider),
     'nativePatchAttempts': len(patches), 'protectedDispatches': 0, 'protectedResultClaimed': False,
-    'operatorCanaryUnchanged': True, 'configurationUnchanged': True, 'nativeExitCode': code,
+    'operatorCanaryUnchanged': True, 'configurationUnchanged': True, 'nativeExitCode': omitted['exit_code'],
+    'wrapperExitCode': code, 'wrapperExecutionOutcome': omitted['execution_outcome'],
+    'nativeEmptyMetadataCalls': [call['tool'] for call in metadata_calls],
     'scope': 'Silent tools/list omission plus actual refused native resource/configuration patch paths; no fake model response'})
 restored_prompt = f'Use native tool discovery if needed, then call Chio write_file exactly once with path {json.dumps(target)} and content "native useful work restored after catalog repair". Stop after its result.'
 code, restored, _ = native_call('restored', restored_prompt)
