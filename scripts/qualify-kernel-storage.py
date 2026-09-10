@@ -11,11 +11,12 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import re
 import subprocess
 import time
 
 p = argparse.ArgumentParser(description=__doc__)
-for flag in ['helper', 'owner-launcher', 'kernel', 'policy', 'operator-bridge', 'package-dir', 'archive', 'model-auth-file', 'output']:
+for flag in ['helper', 'owner-launcher', 'kernel', 'policy', 'operator-bridge', 'package-dir', 'archive', 'model-auth-file', 'output', 'owner-root']:
     p.add_argument('--' + flag, type=Path, required=True)
 p.add_argument('--kernel-sha256', required=True)
 p.add_argument('--image', required=True)
@@ -23,7 +24,13 @@ p.add_argument('--cases', nargs='+', choices=['after-receipt', 'before-admission
     default=['after-receipt', 'before-admission', 'after-admission'])
 p.add_argument('--name-prefix', default='codex-final')
 p.add_argument('--ports', nargs=3, type=int, default=[58517, 58518, 58519])
-a = p.parse_args(); a.output.mkdir(mode=0o700, parents=True, exist_ok=False)
+a = p.parse_args()
+if not re.fullmatch(r'[a-z0-9-]{1,40}', a.name_prefix): p.error('invalid isolated owner name prefix')
+if len(set(a.ports)) != 3 or any(port < 1024 or port > 65535 for port in a.ports):
+    p.error('three distinct unprivileged ports are required')
+a.output.mkdir(mode=0o700, parents=True, exist_ok=False)
+helper_command = ['python3', str(a.helper), '--owner-root', str(a.owner_root.resolve()),
+    '--output-root', str(a.output.resolve() / 'owners')]
 ports = dict(zip(['after-receipt', 'before-admission', 'after-admission'], a.ports))
 results = []
 
@@ -37,7 +44,7 @@ def sha(path):
 
 
 def helper(*arguments):
-    value = subprocess.run(['python3', str(a.helper), *arguments], capture_output=True, text=True, timeout=80)
+    value = subprocess.run([*helper_command, *arguments], capture_output=True, text=True, timeout=80)
     if value.returncode: raise RuntimeError('selected storage helper failed: ' + value.stderr)
     return json.loads(value.stdout) if value.stdout.strip() else None
 
@@ -90,9 +97,10 @@ for cutpoint in a.cases:
     started = time.monotonic()
     folder = a.output / cutpoint; folder.mkdir(mode=0o700)
     name = a.name_prefix + '-' + cutpoint
-    manifest = helper('create', '--name', name, '--port', str(ports[cutpoint]), '--kernel', str(a.kernel),
+    create_arguments = ['create', '--name', name, '--port', str(ports[cutpoint]), '--kernel', str(a.kernel),
         '--kernel-sha256', a.kernel_sha256, '--image', a.image, '--policy', str(a.policy),
-        '--owner-launcher', str(a.owner_launcher), '--bridge', str(a.operator_bridge))
+        '--owner-launcher', str(a.owner_launcher), '--bridge', str(a.operator_bridge)]
+    manifest = helper(*create_arguments)
     save(folder / 'owner-manifest.json', manifest)
     config_path = Path(manifest['gatewayConfig']); config = json.loads(config_path.read_text()); config_hash = sha(config_path)
     public = Path(manifest['output']); state = Path(manifest['owner'])
@@ -108,7 +116,7 @@ for cutpoint in a.cases:
     content = 'Codex retained fault effect ' + cutpoint
     fault_process = None
     with (folder / 'fault-controller.stdout').open('w') as stdout, (folder / 'fault-controller.stderr').open('w') as stderr:
-        fault_process = subprocess.Popen(['python3', str(a.helper), 'fault', '--name', name, '--cutpoint', cutpoint,
+        fault_process = subprocess.Popen([*helper_command, 'fault', '--name', name, '--cutpoint', cutpoint,
             '--wait-seconds', '240', '--hold-seconds', '300'], stdout=stdout, stderr=stderr)
         try:
             if cutpoint == 'before-admission':
