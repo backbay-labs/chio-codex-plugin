@@ -1,0 +1,13 @@
+{
+  "archiveSha256": "ac4f14ee4073abdc0c9ff2b4771e99adf7a871d084a9b488513f5d28eae56874",
+  "launcherSha256": "1ea563da0a738a3a10ba1166b3702aafe7bace92946935b4791f6912b0d7906b",
+  "helperSha256AtStart": "5da5e9d5743a3da8f045b4fd35f7597ac9890691f8f17dd6815ebaa6e8e6dcd7",
+  "harnessSha256": "1c3048822c0565572620a45faa8760124bad7f9aa83d2ef03ed6915838ed1779",
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "image": "sha256:188cb84d5d0bb4063d4ce5a3b9c3832445a5acda5604911cda80a9136d1850a0",
+  "policySha256": "8c2c732d9115799b13150f7924da0e68fc1f9b2d42a2618912511d407035cc66",
+  "host": "codex-cli 0.153.4",
+  "model": "gpt-5.5",
+  "modelAuthentication": "explicit native ChatGPT cache retained by operator launcher",
+  "scope": "actual native host and kernel SQLite lock faults, not simulated transport errors"
+}

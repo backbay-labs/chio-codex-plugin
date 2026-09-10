@@ -1,0 +1,285 @@
+{
+  "scope": "15 real native subscription turns across three selected SQLite fault cases; these are observed durations, not an incremental overhead estimate",
+  "intervalDefinitions": {
+    "driverElapsedSecondsIncludingProvider": "Python monotonic interval around the complete supported launcher subprocess",
+    "launcherRecordedHostWindowSeconds": "launch.json finished_at minus started_at; includes native model work and tool activity",
+    "driverMinusHostWindowSeconds": "Residual includes preparation and shutdown/reporting; cannot isolate startup",
+    "nativeToolIntervalSeconds": "Unknown: raw native item.started/item.completed frames contain no timestamps"
+  },
+  "rows": [
+    {
+      "case": "after-receipt",
+      "turn": "positive",
+      "driverElapsedSecondsIncludingProvider": 9.74802733300021,
+      "launcherRecordedHostWindowSeconds": 8.585,
+      "driverMinusHostWindowSeconds": 1.163027,
+      "hostStartedAt": "2026-09-10T03:14:02.084Z",
+      "hostFinishedAt": "2026-09-10T03:14:10.669Z",
+      "nativeToolIntervalSeconds": null,
+      "sources": [
+        "after-receipt/positive/invocation.json",
+        "after-receipt/positive/launch.json",
+        "after-receipt/positive/stdout.jsonl"
+      ]
+    },
+    {
+      "case": "after-receipt",
+      "turn": "faulted",
+      "driverElapsedSecondsIncludingProvider": 15.549458833993413,
+      "launcherRecordedHostWindowSeconds": 14.962,
+      "driverMinusHostWindowSeconds": 0.587459,
+      "hostStartedAt": "2026-09-10T03:14:11.550Z",
+      "hostFinishedAt": "2026-09-10T03:14:26.512Z",
+      "nativeToolIntervalSeconds": null,
+      "sources": [
+        "after-receipt/faulted/invocation.json",
+        "after-receipt/faulted/launch.json",
+        "after-receipt/faulted/stdout.jsonl"
+      ]
+    },
+    {
+      "case": "after-receipt",
+      "turn": "same-action-retry",
+      "driverElapsedSecondsIncludingProvider": 12.422798416999285,
+      "launcherRecordedHostWindowSeconds": 11.5,
+      "driverMinusHostWindowSeconds": 0.922798,
+      "hostStartedAt": "2026-09-10T03:14:28.540Z",
+      "hostFinishedAt": "2026-09-10T03:14:40.040Z",
+      "nativeToolIntervalSeconds": null,
+      "sources": [
+        "after-receipt/same-action-retry/invocation.json",
+        "after-receipt/same-action-retry/launch.json",
+        "after-receipt/same-action-retry/stdout.jsonl"
+      ]
+    },
+    {
+      "case": "after-receipt",
+      "turn": "new-action-refused",
+      "driverElapsedSecondsIncludingProvider": 14.353613917002804,
+      "launcherRecordedHostWindowSeconds": 13.431,
+      "driverMinusHostWindowSeconds": 0.922614,
+      "hostStartedAt": "2026-09-10T03:14:42.450Z",
+      "hostFinishedAt": "2026-09-10T03:14:55.881Z",
+      "nativeToolIntervalSeconds": null,
+      "sources": [
+        "after-receipt/new-action-refused/invocation.json",
+        "after-receipt/new-action-refused/launch.json",
+        "after-receipt/new-action-refused/stdout.jsonl"
+      ]
+    },
+    {
+      "case": "after-receipt",
+      "turn": "after-owner-restart",
+      "driverElapsedSecondsIncludingProvider": 13.067192208007327,
+      "launcherRecordedHostWindowSeconds": 12.028,
+      "driverMinusHostWindowSeconds": 1.039192,
+      "hostStartedAt": "2026-09-10T03:15:01.541Z",
+      "hostFinishedAt": "2026-09-10T03:15:13.569Z",
+      "nativeToolIntervalSeconds": null,
+      "sources": [
+        "after-receipt/after-owner-restart/invocation.json",
+        "after-receipt/after-owner-restart/launch.json",
+        "after-receipt/after-owner-restart/stdout.jsonl"
+      ]
+    },
+    {
+      "case": "before-admission",
+      "turn": "positive",
+      "driverElapsedSecondsIncludingProvider": 8.750683416990796,
+      "launcherRecordedHostWindowSeconds": 8.077,
+      "driverMinusHostWindowSeconds": 0.673683,
+      "hostStartedAt": "2026-09-10T03:15:19.825Z",
+      "hostFinishedAt": "2026-09-10T03:15:27.902Z",
+      "nativeToolIntervalSeconds": null,
+      "sources": [
+        "before-admission/positive/invocation.json",
+        "before-admission/positive/launch.json",
+        "before-admission/positive/stdout.jsonl"
+      ]
+    },
+    {
+      "case": "before-admission",
+      "turn": "faulted",
+      "driverElapsedSecondsIncludingProvider": 14.460764792005648,
+      "launcherRecordedHostWindowSeconds": 13.756,
+      "driverMinusHostWindowSeconds": 0.704765,
+      "hostStartedAt": "2026-09-10T03:15:29.237Z",
+      "hostFinishedAt": "2026-09-10T03:15:42.993Z",
+      "nativeToolIntervalSeconds": null,
+      "sources": [
+        "before-admission/faulted/invocation.json",
+        "before-admission/faulted/launch.json",
+        "before-admission/faulted/stdout.jsonl"
+      ]
+    },
+    {
+      "case": "before-admission",
+      "turn": "same-action-retry",
+      "driverElapsedSecondsIncludingProvider": 9.892052208000678,
+      "launcherRecordedHostWindowSeconds": 9.151,
+      "driverMinusHostWindowSeconds": 0.741052,
+      "hostStartedAt": "2026-09-10T03:15:44.643Z",
+      "hostFinishedAt": "2026-09-10T03:15:53.794Z",
+      "nativeToolIntervalSeconds": null,
+      "sources": [
+        "before-admission/same-action-retry/invocation.json",
+        "before-admission/same-action-retry/launch.json",
+        "before-admission/same-action-retry/stdout.jsonl"
+      ]
+    },
+    {
+      "case": "before-admission",
+      "turn": "new-action-refused",
+      "driverElapsedSecondsIncludingProvider": 10.585565791989211,
+      "launcherRecordedHostWindowSeconds": 9.986,
+      "driverMinusHostWindowSeconds": 0.599566,
+      "hostStartedAt": "2026-09-10T03:15:54.674Z",
+      "hostFinishedAt": "2026-09-10T03:16:04.660Z",
+      "nativeToolIntervalSeconds": null,
+      "sources": [
+        "before-admission/new-action-refused/invocation.json",
+        "before-admission/new-action-refused/launch.json",
+        "before-admission/new-action-refused/stdout.jsonl"
+      ]
+    },
+    {
+      "case": "before-admission",
+      "turn": "after-owner-restart",
+      "driverElapsedSecondsIncludingProvider": 10.34808445800445,
+      "launcherRecordedHostWindowSeconds": 9.694,
+      "driverMinusHostWindowSeconds": 0.654084,
+      "hostStartedAt": "2026-09-10T03:16:07.654Z",
+      "hostFinishedAt": "2026-09-10T03:16:17.348Z",
+      "nativeToolIntervalSeconds": null,
+      "sources": [
+        "before-admission/after-owner-restart/invocation.json",
+        "before-admission/after-owner-restart/launch.json",
+        "before-admission/after-owner-restart/stdout.jsonl"
+      ]
+    },
+    {
+      "case": "after-admission",
+      "turn": "positive",
+      "driverElapsedSecondsIncludingProvider": 12.389719500002684,
+      "launcherRecordedHostWindowSeconds": 11.727,
+      "driverMinusHostWindowSeconds": 0.66272,
+      "hostStartedAt": "2026-09-10T03:16:23.074Z",
+      "hostFinishedAt": "2026-09-10T03:16:34.801Z",
+      "nativeToolIntervalSeconds": null,
+      "sources": [
+        "after-admission/positive/invocation.json",
+        "after-admission/positive/launch.json",
+        "after-admission/positive/stdout.jsonl"
+      ]
+    },
+    {
+      "case": "after-admission",
+      "turn": "faulted",
+      "driverElapsedSecondsIncludingProvider": 17.115688417005003,
+      "launcherRecordedHostWindowSeconds": 16.345,
+      "driverMinusHostWindowSeconds": 0.770688,
+      "hostStartedAt": "2026-09-10T03:16:35.932Z",
+      "hostFinishedAt": "2026-09-10T03:16:52.277Z",
+      "nativeToolIntervalSeconds": null,
+      "sources": [
+        "after-admission/faulted/invocation.json",
+        "after-admission/faulted/launch.json",
+        "after-admission/faulted/stdout.jsonl"
+      ]
+    },
+    {
+      "case": "after-admission",
+      "turn": "same-action-retry",
+      "driverElapsedSecondsIncludingProvider": 10.416542332997778,
+      "launcherRecordedHostWindowSeconds": 9.639,
+      "driverMinusHostWindowSeconds": 0.777542,
+      "hostStartedAt": "2026-09-10T03:16:54.226Z",
+      "hostFinishedAt": "2026-09-10T03:17:03.865Z",
+      "nativeToolIntervalSeconds": null,
+      "sources": [
+        "after-admission/same-action-retry/invocation.json",
+        "after-admission/same-action-retry/launch.json",
+        "after-admission/same-action-retry/stdout.jsonl"
+      ]
+    },
+    {
+      "case": "after-admission",
+      "turn": "new-action-refused",
+      "driverElapsedSecondsIncludingProvider": 10.01578662499378,
+      "launcherRecordedHostWindowSeconds": 9.429,
+      "driverMinusHostWindowSeconds": 0.586787,
+      "hostStartedAt": "2026-09-10T03:17:04.765Z",
+      "hostFinishedAt": "2026-09-10T03:17:14.194Z",
+      "nativeToolIntervalSeconds": null,
+      "sources": [
+        "after-admission/new-action-refused/invocation.json",
+        "after-admission/new-action-refused/launch.json",
+        "after-admission/new-action-refused/stdout.jsonl"
+      ]
+    },
+    {
+      "case": "after-admission",
+      "turn": "after-owner-restart",
+      "driverElapsedSecondsIncludingProvider": 10.44868575000146,
+      "launcherRecordedHostWindowSeconds": 9.851,
+      "driverMinusHostWindowSeconds": 0.597686,
+      "hostStartedAt": "2026-09-10T03:17:16.699Z",
+      "hostFinishedAt": "2026-09-10T03:17:26.550Z",
+      "nativeToolIntervalSeconds": null,
+      "sources": [
+        "after-admission/after-owner-restart/invocation.json",
+        "after-admission/after-owner-restart/launch.json",
+        "after-admission/after-owner-restart/stdout.jsonl"
+      ]
+    }
+  ],
+  "operatorInterventionsByCase": [
+    {
+      "case": "after-receipt",
+      "interventions": [
+        "create dedicated frozen owner with recorded resource reply barrier",
+        "prepare original scoped authority",
+        "run and acknowledge native positive control",
+        "hold selected SQLite write lock",
+        "run native faulted call",
+        "rollback fault transaction",
+        "retry same and new action under original authority",
+        "restart same owner",
+        "retry original action under unchanged authority and journal"
+      ],
+      "totalElapsedSecondsIncludingProviderSetupAndObservers": 78.55785008400562
+    },
+    {
+      "case": "before-admission",
+      "interventions": [
+        "create dedicated frozen owner with recorded resource reply barrier",
+        "prepare original scoped authority",
+        "run and acknowledge native positive control",
+        "hold selected SQLite write lock",
+        "run native faulted call",
+        "rollback fault transaction",
+        "retry same and new action under original authority",
+        "restart same owner",
+        "retry original action under unchanged authority and journal"
+      ],
+      "totalElapsedSecondsIncludingProviderSetupAndObservers": 63.62764216600044
+    },
+    {
+      "case": "after-admission",
+      "interventions": [
+        "create dedicated frozen owner with recorded resource reply barrier",
+        "prepare original scoped authority",
+        "run and acknowledge native positive control",
+        "hold selected SQLite write lock",
+        "run native faulted call",
+        "rollback fault transaction",
+        "retry same and new action under original authority",
+        "restart same owner",
+        "retry original action under unchanged authority and journal"
+      ],
+      "totalElapsedSecondsIncludingProviderSetupAndObservers": 69.14903545899142
+    }
+  ],
+  "comparableBaseline": "No same-resource unmediated paired duration retained in this run. Incremental mediation overhead is unknown.",
+  "smallestFollowup": "If incremental overhead is required, timestamp native item.started/item.completed at capture and pair three identical same-resource reads through the native Chio tool and an operator-only direct resource control. Preserve each raw interval; report the three differences without a population or provider-latency claim."
+}

@@ -1,0 +1,110 @@
+{
+  "method": "read-only assertions over retained independent snapshots, no new host/resource execution",
+  "cases": [
+    {
+      "case": "after-receipt",
+      "requestId": "storage-fault-codex-final-after-receipt:bf3b93309efbde564ccb8b1bafcbf742c5b08682b5a9c19416328320a07b42e5",
+      "snapshots": [
+        {
+          "snapshot": "after-receipt/native-faulted-locked.json",
+          "admissionState": "completed",
+          "faultToolOutcomeCount": 1,
+          "faultCredentialCallState": "fenced",
+          "faultCredentialLatchRetained": true
+        },
+        {
+          "snapshot": "after-receipt/native-after-unlock.json",
+          "admissionState": "completed",
+          "faultToolOutcomeCount": 1,
+          "faultCredentialCallState": "fenced",
+          "faultCredentialLatchRetained": true
+        },
+        {
+          "snapshot": "after-receipt/native-owner-restarted.json",
+          "admissionState": "completed",
+          "faultToolOutcomeCount": 1,
+          "faultCredentialCallState": "fenced",
+          "faultCredentialLatchRetained": true
+        },
+        {
+          "snapshot": "after-receipt/native-final.json",
+          "admissionState": "completed",
+          "faultToolOutcomeCount": 1,
+          "faultCredentialCallState": "fenced",
+          "faultCredentialLatchRetained": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "case": "before-admission",
+      "requestId": "storage-fault-codex-final-before-admission:ad71fb51584edf01c6777d956ac621124d254c026549f6a211013f74c12eb647",
+      "snapshots": [
+        {
+          "snapshot": "before-admission/native-faulted-locked.json",
+          "admissionState": null,
+          "faultToolOutcomeCount": 0,
+          "faultCredentialCallState": "fenced",
+          "faultCredentialLatchRetained": true
+        },
+        {
+          "snapshot": "before-admission/native-after-unlock.json",
+          "admissionState": null,
+          "faultToolOutcomeCount": 0,
+          "faultCredentialCallState": "fenced",
+          "faultCredentialLatchRetained": true
+        },
+        {
+          "snapshot": "before-admission/native-owner-restarted.json",
+          "admissionState": null,
+          "faultToolOutcomeCount": 0,
+          "faultCredentialCallState": "fenced",
+          "faultCredentialLatchRetained": true
+        },
+        {
+          "snapshot": "before-admission/native-final.json",
+          "admissionState": null,
+          "faultToolOutcomeCount": 0,
+          "faultCredentialCallState": "fenced",
+          "faultCredentialLatchRetained": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "case": "after-admission",
+      "requestId": "storage-fault-codex-final-after-admission:186c5571a52ff7a6791a830e2129fa6a153db9c25966b22e2334506d87d7a3bd",
+      "snapshots": [
+        {
+          "snapshot": "after-admission/native-faulted-locked.json",
+          "admissionState": "dispatch_committed",
+          "faultToolOutcomeCount": 0,
+          "faultCredentialCallState": "fenced",
+          "faultCredentialLatchRetained": true
+        },
+        {
+          "snapshot": "after-admission/native-after-unlock.json",
+          "admissionState": "dispatch_committed",
+          "faultToolOutcomeCount": 0,
+          "faultCredentialCallState": "fenced",
+          "faultCredentialLatchRetained": true
+        },
+        {
+          "snapshot": "after-admission/native-owner-restarted.json",
+          "admissionState": "outcome_unknown_after_dispatch",
+          "faultToolOutcomeCount": 0,
+          "faultCredentialCallState": "fenced",
+          "faultCredentialLatchRetained": true
+        },
+        {
+          "snapshot": "after-admission/native-final.json",
+          "admissionState": "outcome_unknown_after_dispatch",
+          "faultToolOutcomeCount": 0,
+          "faultCredentialCallState": "fenced",
+          "faultCredentialLatchRetained": true
+        }
+      ],
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "exactCompletedAttempts": 1,
+  "totalCompletedMcpCalls": 1,
+  "target": "/workspace/must-stay-fenced.txt",
+  "content": "must not execute after unknown"
+}

@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "pairedReads": 3,
+  "nativeCompletedAndAcknowledged": 4,
+  "seedWrites": 1,
+  "sameNativeAuthorityConfigurationPreserved": true,
+  "newObservedNativeReadDispatches": 3,
+  "fileUnchangedAcrossPairs": true,
+  "operatorInterventions": [
+    "create new healthy owner and original scoped authority",
+    "seed file through actual acknowledged native write",
+    "start separate readonly direct MCP control",
+    "run three paired read observations",
+    "stop direct control"
+  ],
+  "nativeToolInterval": "The native JSONL lacks timestamps; the trusted parent HTTP request/result boundary is instrumented instead.",
+  "limits": "Three non-randomized observations on one local resource; unlike transports and clock implementations; not a population estimate, pure plugin cost or model-latency comparison."
+}

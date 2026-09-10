@@ -1,6 +1,6 @@
 # Native ChatGPT subscription candidate
 
-The [current scoped matrix](CURRENT-MATRIX.md) and [archived gate review](final-qualification/GATE-REVIEW.md) identify the exact `ac4f14ee` runtime and its remaining internal-storage/publication qualifications. The [archive manifest](final-qualification/ARCHIVE-MANIFEST.json) retains new final-cutpoint, boundary, lifecycle and expiry evidence without changing the tested package. Overall acceptance remains open.
+The [current scoped matrix](CURRENT-MATRIX.md) and [archived gate review](final-qualification/GATE-REVIEW.md) identify the exact `ac4f14ee` runtime. The separately archived [kernel-storage and operating-cost followup](kernel-storage/README.md) closes the selected SQLite unavailability qualification and records three paired healthy reads. Publication remains open. The [archive manifest](final-qualification/ARCHIVE-MANIFEST.json) retains prior final-cutpoint, boundary, lifecycle and expiry evidence without changing the tested package. Overall acceptance remains open.
 
 The API-key credit failure did not block native ChatGPT authentication. Codex 0.153.4 completed actual provider-backed protected work using its native subscription cache in the trusted parent. The child received only an ephemeral model-relay token. No account cache is distributed.
 

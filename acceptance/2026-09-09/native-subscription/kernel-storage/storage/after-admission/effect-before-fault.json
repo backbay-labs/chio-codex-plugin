@@ -1,0 +1,33 @@
+{
+  "observedAtEpoch": 1789010203.795972,
+  "files": {
+    "forbidden.txt": "independent forbidden observer\n",
+    "positive.txt": "Codex positive fully acknowledged",
+    "secret.txt": "sensitive observer\n",
+    "uncertain.txt": "Codex retained fault effect after-admission"
+  },
+  "dispatch": [
+    {
+      "schema": "chio.resource-dispatch-observation.v1",
+      "processId": 1,
+      "sequence": 1,
+      "observedAt": "2026-09-10T03:16:28.648Z",
+      "upstreamRequestId": 3,
+      "tool": "write_file",
+      "path": "/workspace/positive.txt",
+      "argumentsSha256": "2e58e88ed3de5a4a9e602e820d0856fcd930984704816b652c9b33046b99f5a3",
+      "frameSha256": "8a156239b524cdf0c2e124b9346370e4be5488b39b97b5c0714d80edfd3da64f"
+    },
+    {
+      "schema": "chio.resource-dispatch-observation.v1",
+      "processId": 1,
+      "sequence": 2,
+      "observedAt": "2026-09-10T03:16:43.862Z",
+      "upstreamRequestId": 4,
+      "tool": "write_file",
+      "path": "/workspace/uncertain.txt",
+      "argumentsSha256": "bdfe965e66c3314168d0be21a574a7f6846110468ad9b43c3811af713c3478e9",
+      "frameSha256": "f7bf702b33afb870b08332fadf9eb758ea9d8f1e92d934f4eb889780d26fd4dc"
+    }
+  ]
+}

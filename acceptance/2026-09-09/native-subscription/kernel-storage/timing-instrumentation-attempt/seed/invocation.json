@@ -1,0 +1,21 @@
+{
+  "command": [
+    "node",
+    "--import",
+    "/Users/connor/Medica/backbay/standalone/chio-codex-plugin/.worktrees/required-agent-integrations-20260909/scripts/subscription-timing.mjs",
+    "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+    "restricted",
+    "--gateway-config",
+    "/Users/connor/.local/share/chio-required-operators/codex-paired-timing-20260909/gateway.json",
+    "--codex-binary",
+    "/opt/homebrew/bin/codex",
+    "--evidence-dir",
+    "/tmp/chio-codex-paired-timing-final-20260909/seed",
+    "--model-auth-file",
+    "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json",
+    "--prompt",
+    "Call Chio write_file exactly once with JSON arguments {\"path\": \"/workspace/timing.txt\", \"content\": \"Three paired Codex native resource reads.\\n\"}. Preserve strings exactly. Stop after its result. Do not retry or use any other tool."
+  ],
+  "exitCode": 0,
+  "elapsedSecondsIncludingProvider": 12.194147500005784
+}

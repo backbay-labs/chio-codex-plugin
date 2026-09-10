@@ -1,0 +1,6 @@
+{
+  "acceptedPairedReads": 0,
+  "seedWriteCompletedAndAcknowledged": true,
+  "failure": "Timing assertion: response.text hook was not invoked because frozen SDK uses response.body.getReader. Gateway interval retained, required inner kernel interval absent.",
+  "resolution": "Retain this attempt unchanged; stream reader end/terminal cancellation timestamp instrumentation in separate corrected run."
+}

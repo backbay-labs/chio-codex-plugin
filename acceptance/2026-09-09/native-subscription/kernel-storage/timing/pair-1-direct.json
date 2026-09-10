@@ -1,0 +1,46 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 2,
+    "method": "tools/call",
+    "params": {
+      "name": "read_text_file",
+      "arguments": {
+        "path": "/workspace/timing.txt"
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Three paired Codex native resource reads.\n"
+        }
+      ],
+      "structuredContent": {
+        "content": "Three paired Codex native resource reads.\n"
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 2
+  },
+  "startedEpochNs": 1789011090748227000,
+  "startedMonotonicNs": 109071266334833,
+  "finishedMonotonicNs": 109071282541666,
+  "elapsedMs": 16.206833,
+  "stage": "warm-direct-MCP-stdin-write-to-parsed-response",
+  "includes": [
+    "Docker stdio transport",
+    "resource dispatch audit fsync",
+    "resource file read",
+    "JSON parsing"
+  ],
+  "excludes": [
+    "container startup",
+    "MCP initialize",
+    "model",
+    "kernel authorization or receipt",
+    "delivery ACK"
+  ]
+}

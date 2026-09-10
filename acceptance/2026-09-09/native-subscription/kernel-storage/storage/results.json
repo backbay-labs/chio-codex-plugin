@@ -1,0 +1,137 @@
+[
+  {
+    "case": "after-receipt",
+    "passed": true,
+    "positiveExitCode": 0,
+    "positiveCompletedAndAcknowledged": 1,
+    "faultExitCode": 2,
+    "faultOutcome": {
+      "status": "unknown",
+      "exitCode": 2,
+      "hostExitCode": 0,
+      "hostSignal": null,
+      "completed": 0,
+      "denied": 0,
+      "notDispatched": 0,
+      "unknown": 1,
+      "toolFailures": 0,
+      "awaitingApproval": 0
+    },
+    "newFaultDispatches": 1,
+    "sameActionRetryNewDispatches": 0,
+    "newActionDispatches": 0,
+    "afterOwnerRestartDispatches": 0,
+    "originalAuthorityAndJournalPreserved": true,
+    "configurationSha256": "4e69a73ad185f2d65b7d5f811f970a3c216c403c0a392dba2c8305b5e4e2cb73",
+    "publicOwnerEvidence": "/private/tmp/chio-kernel-storage-fault-20260909/codex-final-after-receipt",
+    "positiveElapsedSeconds": 9.74802733300021,
+    "faultElapsedSeconds": 15.549458833993413,
+    "retryElapsedSeconds": {
+      "same-action-retry": 12.422798416999285,
+      "new-action-refused": 14.353613917002804
+    },
+    "afterRestartElapsedSeconds": 13.067192208007327,
+    "totalElapsedSecondsIncludingProviderSetupAndObservers": 78.55785008400562,
+    "operatorInterventions": [
+      "create dedicated frozen owner with recorded resource reply barrier",
+      "prepare original scoped authority",
+      "run and acknowledge native positive control",
+      "hold selected SQLite write lock",
+      "run native faulted call",
+      "rollback fault transaction",
+      "retry same and new action under original authority",
+      "restart same owner",
+      "retry original action under unchanged authority and journal"
+    ]
+  },
+  {
+    "case": "before-admission",
+    "passed": true,
+    "positiveExitCode": 0,
+    "positiveCompletedAndAcknowledged": 1,
+    "faultExitCode": 2,
+    "faultOutcome": {
+      "status": "unknown",
+      "exitCode": 2,
+      "hostExitCode": 0,
+      "hostSignal": null,
+      "completed": 0,
+      "denied": 0,
+      "notDispatched": 0,
+      "unknown": 1,
+      "toolFailures": 0,
+      "awaitingApproval": 0
+    },
+    "newFaultDispatches": 0,
+    "sameActionRetryNewDispatches": 0,
+    "newActionDispatches": 0,
+    "afterOwnerRestartDispatches": 0,
+    "originalAuthorityAndJournalPreserved": true,
+    "configurationSha256": "6f834b6379fdf70dae921cf4fced308340c6206889bc23c6e1a10a2cdf3245a8",
+    "publicOwnerEvidence": "/private/tmp/chio-kernel-storage-fault-20260909/codex-final-before-admission",
+    "positiveElapsedSeconds": 8.750683416990796,
+    "faultElapsedSeconds": 14.460764792005648,
+    "retryElapsedSeconds": {
+      "same-action-retry": 9.892052208000678,
+      "new-action-refused": 10.585565791989211
+    },
+    "afterRestartElapsedSeconds": 10.34808445800445,
+    "totalElapsedSecondsIncludingProviderSetupAndObservers": 63.62764216600044,
+    "operatorInterventions": [
+      "create dedicated frozen owner with recorded resource reply barrier",
+      "prepare original scoped authority",
+      "run and acknowledge native positive control",
+      "hold selected SQLite write lock",
+      "run native faulted call",
+      "rollback fault transaction",
+      "retry same and new action under original authority",
+      "restart same owner",
+      "retry original action under unchanged authority and journal"
+    ]
+  },
+  {
+    "case": "after-admission",
+    "passed": true,
+    "positiveExitCode": 0,
+    "positiveCompletedAndAcknowledged": 1,
+    "faultExitCode": 2,
+    "faultOutcome": {
+      "status": "unknown",
+      "exitCode": 2,
+      "hostExitCode": 0,
+      "hostSignal": null,
+      "completed": 0,
+      "denied": 0,
+      "notDispatched": 0,
+      "unknown": 1,
+      "toolFailures": 0,
+      "awaitingApproval": 0
+    },
+    "newFaultDispatches": 1,
+    "sameActionRetryNewDispatches": 0,
+    "newActionDispatches": 0,
+    "afterOwnerRestartDispatches": 0,
+    "originalAuthorityAndJournalPreserved": true,
+    "configurationSha256": "504a370998102754595b1c958b46e3e36a074bc11a5dd9aaee70822ac0685fae",
+    "publicOwnerEvidence": "/private/tmp/chio-kernel-storage-fault-20260909/codex-final-after-admission",
+    "positiveElapsedSeconds": 12.389719500002684,
+    "faultElapsedSeconds": 17.115688417005003,
+    "retryElapsedSeconds": {
+      "same-action-retry": 10.416542332997778,
+      "new-action-refused": 10.01578662499378
+    },
+    "afterRestartElapsedSeconds": 10.44868575000146,
+    "totalElapsedSecondsIncludingProviderSetupAndObservers": 69.14903545899142,
+    "operatorInterventions": [
+      "create dedicated frozen owner with recorded resource reply barrier",
+      "prepare original scoped authority",
+      "run and acknowledge native positive control",
+      "hold selected SQLite write lock",
+      "run native faulted call",
+      "rollback fault transaction",
+      "retry same and new action under original authority",
+      "restart same owner",
+      "retry original action under unchanged authority and journal"
+    ]
+  }
+]

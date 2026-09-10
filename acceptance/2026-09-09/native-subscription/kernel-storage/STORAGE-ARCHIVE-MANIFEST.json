@@ -1,0 +1,949 @@
+{
+  "source": "/tmp/chio-codex-kernel-storage-final-20260909",
+  "copiedFiles": 157,
+  "omissions": [],
+  "files": [
+    {
+      "path": "storage/FOLLOWUP.md",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/FOLLOWUP.md",
+      "bytes": 3303,
+      "sha256": "8e3dafaef86e9f4dfc2e2243f91cd9ce1be6376f9933597208fa6ef094c24f66"
+    },
+    {
+      "path": "storage/after-admission/after-owner-restart/driver.stderr",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/after-owner-restart/driver.stderr",
+      "bytes": 324,
+      "sha256": "84642bba82a2dfe7fd6c0b11b10b8e3d19e3b0b0477bcdda4a5d18e3b311d464"
+    },
+    {
+      "path": "storage/after-admission/after-owner-restart/driver.stdout",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/after-owner-restart/driver.stdout",
+      "bytes": 1742,
+      "sha256": "f8bd2da49e010b49ef1c6b05c827b2dd272e11401fe941f87ca150010ec48067"
+    },
+    {
+      "path": "storage/after-admission/after-owner-restart/invocation.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/after-owner-restart/invocation.json",
+      "bytes": 1014,
+      "sha256": "15f8afd2d6650a59a8420f8be131dd4f60af8bad3f210eb5ad86e11e4d21506e"
+    },
+    {
+      "path": "storage/after-admission/after-owner-restart/launch.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/after-owner-restart/launch.json",
+      "bytes": 5256,
+      "sha256": "861e5284e7844ceb95a4d1a0961a071eff125343cf43d89fb9105b21d5b3febe"
+    },
+    {
+      "path": "storage/after-admission/after-owner-restart/native-attempt.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/after-owner-restart/native-attempt.json",
+      "bytes": 165,
+      "sha256": "03908f8d00a811879698c2087f999c3ad1f63a699bf08f3fc38599af604f8c9d"
+    },
+    {
+      "path": "storage/after-admission/after-owner-restart/stderr.txt",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/after-owner-restart/stderr.txt",
+      "bytes": 211,
+      "sha256": "428c54401272700f1d033cd05a36958534fe05de2dc87e21bb23e7045f3e8957"
+    },
+    {
+      "path": "storage/after-admission/after-owner-restart/stdout.jsonl",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/after-owner-restart/stdout.jsonl",
+      "bytes": 1742,
+      "sha256": "f8bd2da49e010b49ef1c6b05c827b2dd272e11401fe941f87ca150010ec48067"
+    },
+    {
+      "path": "storage/after-admission/effect-before-fault.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/effect-before-fault.json",
+      "bytes": 1187,
+      "sha256": "e101ddd33dd824f8e7dfb978b322be10f2ce15a0ee001b6af7709383897525e0"
+    },
+    {
+      "path": "storage/after-admission/fault-controller.stderr",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/fault-controller.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "storage/after-admission/fault-controller.stdout",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/fault-controller.stdout",
+      "bytes": 151,
+      "sha256": "306a757ade3fda5ce7e2330b99ed41d42615d944e92a995ab673be7421e236d4"
+    },
+    {
+      "path": "storage/after-admission/fault-locked.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/fault-locked.json",
+      "bytes": 323,
+      "sha256": "f42a431ae935d351d297dd9456ca88ca839c45714aea308d7fba8f610121bf0b"
+    },
+    {
+      "path": "storage/after-admission/fault-released.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/fault-released.json",
+      "bytes": 75,
+      "sha256": "8e2fce2c210bbaac32dc98762d1d1c53f1a16e889f13f335034904dd714d1a17"
+    },
+    {
+      "path": "storage/after-admission/faulted/driver.stderr",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/faulted/driver.stderr",
+      "bytes": 312,
+      "sha256": "11c4922abc4b4bfb541891eb71f2b3514724665b193a3d43364c6524316f0b7c"
+    },
+    {
+      "path": "storage/after-admission/faulted/driver.stdout",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/faulted/driver.stdout",
+      "bytes": 1638,
+      "sha256": "bf947bdf52abf67531afb446bdbbeacd4c9baf2ad1f9deb089fe8bd1fcb58f7b"
+    },
+    {
+      "path": "storage/after-admission/faulted/invocation.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/faulted/invocation.json",
+      "bytes": 1003,
+      "sha256": "9146312faee824668ee3bb6929a0076bec72d7635d4278056b1cca7b9319da79"
+    },
+    {
+      "path": "storage/after-admission/faulted/launch.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/faulted/launch.json",
+      "bytes": 5238,
+      "sha256": "a5442a0bcf85a6c56d7fe9efdc3866e3ba4a2f216529ddc20a8592f4ad9b15eb"
+    },
+    {
+      "path": "storage/after-admission/faulted/native-attempt.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/faulted/native-attempt.json",
+      "bytes": 165,
+      "sha256": "03908f8d00a811879698c2087f999c3ad1f63a699bf08f3fc38599af604f8c9d"
+    },
+    {
+      "path": "storage/after-admission/faulted/stderr.txt",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/faulted/stderr.txt",
+      "bytes": 211,
+      "sha256": "35b8c360bf8d0be464982b0d7f241ed5028704e1ac689f988bfb67d77af3435e"
+    },
+    {
+      "path": "storage/after-admission/faulted/stdout.jsonl",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/faulted/stdout.jsonl",
+      "bytes": 1638,
+      "sha256": "bf947bdf52abf67531afb446bdbbeacd4c9baf2ad1f9deb089fe8bd1fcb58f7b"
+    },
+    {
+      "path": "storage/after-admission/journal-summary.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/journal-summary.json",
+      "bytes": 446,
+      "sha256": "91f98cd8abd514475df1c3f750ece1aeab6bfefa0283ad6bb1deb9448b3beec8"
+    },
+    {
+      "path": "storage/after-admission/native-after-unlock.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/native-after-unlock.json",
+      "bytes": 41572,
+      "sha256": "8f1fcd16cd7eac0b0eed6bb6c948b16806def74b4fef182e60ddb104c7cbfd38"
+    },
+    {
+      "path": "storage/after-admission/native-faulted-locked.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/native-faulted-locked.json",
+      "bytes": 41572,
+      "sha256": "df0574e850872c5485db35e3ae1cc10d4af1f5514c6c6ba25e3a0aeac9c62ecc"
+    },
+    {
+      "path": "storage/after-admission/native-final.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/native-final.json",
+      "bytes": 47364,
+      "sha256": "ca6d32fe3325494ab5b372e69179fc06a0105accc310aab80fc649a2fe787415"
+    },
+    {
+      "path": "storage/after-admission/native-initial.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/native-initial.json",
+      "bytes": 540,
+      "sha256": "6097a1713d079641034201c9aae5f52df3a26ba7a44a3499550d3bcb2ebe5c67"
+    },
+    {
+      "path": "storage/after-admission/native-new-action-refused.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/native-new-action-refused.json",
+      "bytes": 41571,
+      "sha256": "335b08aea5a2bb30b46c2368ebaf13d2643a4bd90b939e7f256d16e8e63d66db"
+    },
+    {
+      "path": "storage/after-admission/native-owner-restarted.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/native-owner-restarted.json",
+      "bytes": 47363,
+      "sha256": "60f9555a8d9277a481a0a9210236543ba41c4052851cd39870e7778c286a31f2"
+    },
+    {
+      "path": "storage/after-admission/native-positive-acked.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/native-positive-acked.json",
+      "bytes": 38525,
+      "sha256": "7a8708dd3075b4077f9f27254e789c813c3800b16292d5e6651bd065fe35afdb"
+    },
+    {
+      "path": "storage/after-admission/native-same-action-retry.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/native-same-action-retry.json",
+      "bytes": 41572,
+      "sha256": "e85d032577d09397bdefa49190d79f5d2960f4ee56bd64d5f8660ee1428bf104"
+    },
+    {
+      "path": "storage/after-admission/new-action-refused/driver.stderr",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/new-action-refused/driver.stderr",
+      "bytes": 323,
+      "sha256": "61bdcd5cf4330e19dc8fe80327acba0a97cba3d199542f3a39f731d6d620dd3e"
+    },
+    {
+      "path": "storage/after-admission/new-action-refused/driver.stdout",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/new-action-refused/driver.stdout",
+      "bytes": 1707,
+      "sha256": "5a603b099388393f8c163d443c29c1b50a918a1b5f00a38f345c9c33ac19c49c"
+    },
+    {
+      "path": "storage/after-admission/new-action-refused/invocation.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/new-action-refused/invocation.json",
+      "bytes": 1007,
+      "sha256": "5c45bd54353ac961aae3f623a4684b50412e7952756eca68358394791621f5e3"
+    },
+    {
+      "path": "storage/after-admission/new-action-refused/launch.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/new-action-refused/launch.json",
+      "bytes": 5250,
+      "sha256": "12a5b4c2d8965fa46f442a606ad702dea14281fe5b6ee94adb6426a554c7c22e"
+    },
+    {
+      "path": "storage/after-admission/new-action-refused/native-attempt.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/new-action-refused/native-attempt.json",
+      "bytes": 159,
+      "sha256": "91b1090a13e5f8ee96e8c62d73f1019080120a8864b9c83846039b56e4146625"
+    },
+    {
+      "path": "storage/after-admission/new-action-refused/stderr.txt",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/new-action-refused/stderr.txt",
+      "bytes": 211,
+      "sha256": "7516b17fb2f20e30cfd82e0fc01f8fe04554e4ae0e9114f3aacfeb32384a52e4"
+    },
+    {
+      "path": "storage/after-admission/new-action-refused/stdout.jsonl",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/new-action-refused/stdout.jsonl",
+      "bytes": 1707,
+      "sha256": "5a603b099388393f8c163d443c29c1b50a918a1b5f00a38f345c9c33ac19c49c"
+    },
+    {
+      "path": "storage/after-admission/owner-manifest.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/owner-manifest.json",
+      "bytes": 2014,
+      "sha256": "3d52e6d181bc5295d957b6bd1892d5e54a282418c25f5652502c25803f30157c"
+    },
+    {
+      "path": "storage/after-admission/owner-restart.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/owner-restart.json",
+      "bytes": 134,
+      "sha256": "94fdb5014d74a7be927cdc348c30e8d1dbc4ade3bb179928ec71c9aeec2374bb"
+    },
+    {
+      "path": "storage/after-admission/positive/driver.stderr",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/positive/driver.stderr",
+      "bytes": 313,
+      "sha256": "e54e4d57e192d3221ef67782065b0e36fe18196ecf32d36fd6e9e2c4c99ede30"
+    },
+    {
+      "path": "storage/after-admission/positive/driver.stdout",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/positive/driver.stdout",
+      "bytes": 4956,
+      "sha256": "93360702934c000cc1a2f011050b6740e77708e2c8918eeae94d064c4967e107"
+    },
+    {
+      "path": "storage/after-admission/positive/invocation.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/positive/invocation.json",
+      "bytes": 993,
+      "sha256": "8e984a21b9f483d5afbc64b7835f5908a1517d8b6c53627ea3c4b111d96f7f2c"
+    },
+    {
+      "path": "storage/after-admission/positive/launch.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/positive/launch.json",
+      "bytes": 5245,
+      "sha256": "5944daa55d8a32add289fdae22f72a6d446e35d0041078b10b80a461e9181603"
+    },
+    {
+      "path": "storage/after-admission/positive/native-attempt.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/positive/native-attempt.json",
+      "bytes": 154,
+      "sha256": "d2e670107bc32a9c1a638413fbde24c246f4594f0033494ecf4e94dab85fe189"
+    },
+    {
+      "path": "storage/after-admission/positive/stderr.txt",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/positive/stderr.txt",
+      "bytes": 211,
+      "sha256": "4d0099fd7bec78a54b0696d6422261de6323952627d2d39cd4d596f9a46f4f84"
+    },
+    {
+      "path": "storage/after-admission/positive/stdout.jsonl",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/positive/stdout.jsonl",
+      "bytes": 4956,
+      "sha256": "93360702934c000cc1a2f011050b6740e77708e2c8918eeae94d064c4967e107"
+    },
+    {
+      "path": "storage/after-admission/same-action-retry/driver.stderr",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/same-action-retry/driver.stderr",
+      "bytes": 322,
+      "sha256": "64094da0a7f2f273a44db358234f016bbfae8b1649bd3713f33413d92acc8de2"
+    },
+    {
+      "path": "storage/after-admission/same-action-retry/driver.stdout",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/same-action-retry/driver.stdout",
+      "bytes": 1748,
+      "sha256": "ff9fcf4e062c922745a2bb4cceea226e955bb917418b5959653bcdf2e4a4f918"
+    },
+    {
+      "path": "storage/after-admission/same-action-retry/invocation.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/same-action-retry/invocation.json",
+      "bytes": 1013,
+      "sha256": "78cdfa2bc60990051c609c54bdc9e179591a82559aa5ef81a9fdd81f4a5feeec"
+    },
+    {
+      "path": "storage/after-admission/same-action-retry/launch.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/same-action-retry/launch.json",
+      "bytes": 5256,
+      "sha256": "4e91c68c11e3311012b8c887631a80c0d7daa158700a1a8ba6f9d8fbb195d79d"
+    },
+    {
+      "path": "storage/after-admission/same-action-retry/native-attempt.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/same-action-retry/native-attempt.json",
+      "bytes": 165,
+      "sha256": "03908f8d00a811879698c2087f999c3ad1f63a699bf08f3fc38599af604f8c9d"
+    },
+    {
+      "path": "storage/after-admission/same-action-retry/stderr.txt",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/same-action-retry/stderr.txt",
+      "bytes": 211,
+      "sha256": "35cec029324b0511d717f229191436f2295589e60aece79afcbe7f33b1822b3c"
+    },
+    {
+      "path": "storage/after-admission/same-action-retry/stdout.jsonl",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-admission/same-action-retry/stdout.jsonl",
+      "bytes": 1748,
+      "sha256": "ff9fcf4e062c922745a2bb4cceea226e955bb917418b5959653bcdf2e4a4f918"
+    },
+    {
+      "path": "storage/after-receipt/after-owner-restart/driver.stderr",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/after-owner-restart/driver.stderr",
+      "bytes": 322,
+      "sha256": "b006bd4acc608f48edaefc7737d1d1a490f49254728deca271ecf08303493886"
+    },
+    {
+      "path": "storage/after-receipt/after-owner-restart/driver.stdout",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/after-owner-restart/driver.stdout",
+      "bytes": 1718,
+      "sha256": "a4d320aa81bdbf8de1aed390a879a783434b9358ff3d4cccfcfeed063d916de0"
+    },
+    {
+      "path": "storage/after-receipt/after-owner-restart/invocation.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/after-owner-restart/invocation.json",
+      "bytes": 1009,
+      "sha256": "59b912f7d1a8f904a624a6f328ef63c51db9ff3576d87e8d2666de9b6867d4c2"
+    },
+    {
+      "path": "storage/after-receipt/after-owner-restart/launch.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/after-owner-restart/launch.json",
+      "bytes": 5254,
+      "sha256": "14c3edfab01ea912eb9ae66d71d4e59c50488653efc4cf8fc2326a04fa487aff"
+    },
+    {
+      "path": "storage/after-receipt/after-owner-restart/native-attempt.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/after-owner-restart/native-attempt.json",
+      "bytes": 163,
+      "sha256": "b9d402e1e488b6a908bc1f517a1b8ccfdb1374a9750421e07c83c1e05ad4746a"
+    },
+    {
+      "path": "storage/after-receipt/after-owner-restart/stderr.txt",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/after-owner-restart/stderr.txt",
+      "bytes": 211,
+      "sha256": "17217d5430bfce6004bde8f6e30ae602a05819df59fb21a1f0f1ea03fa7a3f3e"
+    },
+    {
+      "path": "storage/after-receipt/after-owner-restart/stdout.jsonl",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/after-owner-restart/stdout.jsonl",
+      "bytes": 1718,
+      "sha256": "a4d320aa81bdbf8de1aed390a879a783434b9358ff3d4cccfcfeed063d916de0"
+    },
+    {
+      "path": "storage/after-receipt/effect-before-fault.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/effect-before-fault.json",
+      "bytes": 1185,
+      "sha256": "10e4a9bb17fa5dcf46f32d664e6fd55db5aae9f5c40e7ac9ac250f7ab52e4193"
+    },
+    {
+      "path": "storage/after-receipt/fault-controller.stderr",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/fault-controller.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "storage/after-receipt/fault-controller.stdout",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/fault-controller.stdout",
+      "bytes": 139,
+      "sha256": "17b492ddfd7eb7e977e03e1e43184403f508d21e88ba12f89a46912af6d3bf03"
+    },
+    {
+      "path": "storage/after-receipt/fault-locked.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/fault-locked.json",
+      "bytes": 309,
+      "sha256": "e2d1aa49b9635a9c343c125bd071088355f8b72c733c513ace8f5cefc13099af"
+    },
+    {
+      "path": "storage/after-receipt/fault-released.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/fault-released.json",
+      "bytes": 75,
+      "sha256": "825bce0c482e25dd461b55dbc17fb14cb5e144d5a2d16035d9eb5899b3185a7a"
+    },
+    {
+      "path": "storage/after-receipt/faulted/driver.stderr",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/faulted/driver.stderr",
+      "bytes": 310,
+      "sha256": "da78869ff543c4d1c651f2a4410f491495dff4b356e545d9ae0915c699eef95f"
+    },
+    {
+      "path": "storage/after-receipt/faulted/driver.stdout",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/faulted/driver.stdout",
+      "bytes": 1620,
+      "sha256": "75ee06a6b4c1fdc77e8a5a64fe60841e471410bfb873fc7ce5ce0bd0fee65cec"
+    },
+    {
+      "path": "storage/after-receipt/faulted/invocation.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/faulted/invocation.json",
+      "bytes": 997,
+      "sha256": "83d8d6793a10ec6f188870e0b016b3fc7a6e9279cc4b3c2dc43b0232545962ec"
+    },
+    {
+      "path": "storage/after-receipt/faulted/launch.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/faulted/launch.json",
+      "bytes": 5236,
+      "sha256": "6778e04a2c0398ec74c506c68d396a20de0e7517c6db501b01909621f9771cc2"
+    },
+    {
+      "path": "storage/after-receipt/faulted/native-attempt.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/faulted/native-attempt.json",
+      "bytes": 163,
+      "sha256": "b9d402e1e488b6a908bc1f517a1b8ccfdb1374a9750421e07c83c1e05ad4746a"
+    },
+    {
+      "path": "storage/after-receipt/faulted/stderr.txt",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/faulted/stderr.txt",
+      "bytes": 211,
+      "sha256": "842f08c968e16d422b37bb675de20cf25d2b51b77f1b4acce43fe0003195965b"
+    },
+    {
+      "path": "storage/after-receipt/faulted/stdout.jsonl",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/faulted/stdout.jsonl",
+      "bytes": 1620,
+      "sha256": "75ee06a6b4c1fdc77e8a5a64fe60841e471410bfb873fc7ce5ce0bd0fee65cec"
+    },
+    {
+      "path": "storage/after-receipt/journal-summary.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/journal-summary.json",
+      "bytes": 442,
+      "sha256": "cc87d1d14e131a27ca5354f1acc759ed9c9c44790ed6ede5b4a62c0a78095915"
+    },
+    {
+      "path": "storage/after-receipt/native-after-unlock.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/native-after-unlock.json",
+      "bytes": 61233,
+      "sha256": "36f239df882e1b7363651a1fc2c5acef93db0b6bc8cc568cdb0f41373724e3c3"
+    },
+    {
+      "path": "storage/after-receipt/native-faulted-locked.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/native-faulted-locked.json",
+      "bytes": 61234,
+      "sha256": "c8744c639dbec9870786f695d83257a9a61ba35cfab26dcf979e3b09fd1a15d2"
+    },
+    {
+      "path": "storage/after-receipt/native-final.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/native-final.json",
+      "bytes": 61234,
+      "sha256": "3c54fa019f8a9a7af21593ecb49365dccb4e6d6b2c1a57c513122ff7bbdd731c"
+    },
+    {
+      "path": "storage/after-receipt/native-initial.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/native-initial.json",
+      "bytes": 539,
+      "sha256": "00a67d90e9962893ee0b2e9b1af17dd0c3a48764a2123a264060e77354c21a9b"
+    },
+    {
+      "path": "storage/after-receipt/native-new-action-refused.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/native-new-action-refused.json",
+      "bytes": 61234,
+      "sha256": "37be9fa9ab26026db4b611540d653a7f2c24628c907f2a75949382371c29db7c"
+    },
+    {
+      "path": "storage/after-receipt/native-owner-restarted.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/native-owner-restarted.json",
+      "bytes": 61234,
+      "sha256": "566e9dc36decd28fa63f420a21e52a6b320516d82fc1a1f173b3745d588bdea0"
+    },
+    {
+      "path": "storage/after-receipt/native-positive-acked.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/native-positive-acked.json",
+      "bytes": 38469,
+      "sha256": "3d9ec59f95e5d771c82271c051f16b145e373c9252d70dce9d6fe09503e56b0c"
+    },
+    {
+      "path": "storage/after-receipt/native-same-action-retry.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/native-same-action-retry.json",
+      "bytes": 61235,
+      "sha256": "a782a5741466f30f1b7c65d7abce622906516d242729f3bf65d70191cdede918"
+    },
+    {
+      "path": "storage/after-receipt/new-action-refused/driver.stderr",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/new-action-refused/driver.stderr",
+      "bytes": 321,
+      "sha256": "1e988813373c0aee3530b2187af314680cd8ef8177710191a19574ef3149a7ab"
+    },
+    {
+      "path": "storage/after-receipt/new-action-refused/driver.stdout",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/new-action-refused/driver.stdout",
+      "bytes": 1558,
+      "sha256": "155f0b26294e6f2fab7bdd3537e8572042f02dc217b04ecbf26bbfe9a681e331"
+    },
+    {
+      "path": "storage/after-receipt/new-action-refused/invocation.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/new-action-refused/invocation.json",
+      "bytes": 1004,
+      "sha256": "e7d16db11b150de7e737b8879e1c94e5e0631b01fee66b2a4163d3bab9b70b8f"
+    },
+    {
+      "path": "storage/after-receipt/new-action-refused/launch.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/new-action-refused/launch.json",
+      "bytes": 5250,
+      "sha256": "79b36dd01ddf531a22d859070c70f4567e4ebd474becfee9581b569d57e2fcbb"
+    },
+    {
+      "path": "storage/after-receipt/new-action-refused/native-attempt.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/new-action-refused/native-attempt.json",
+      "bytes": 159,
+      "sha256": "91b1090a13e5f8ee96e8c62d73f1019080120a8864b9c83846039b56e4146625"
+    },
+    {
+      "path": "storage/after-receipt/new-action-refused/stderr.txt",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/new-action-refused/stderr.txt",
+      "bytes": 211,
+      "sha256": "2d7b7a61c07a6da438ddd173319ca683c0626302d0067f4facf1baa56b58cac9"
+    },
+    {
+      "path": "storage/after-receipt/new-action-refused/stdout.jsonl",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/new-action-refused/stdout.jsonl",
+      "bytes": 1558,
+      "sha256": "155f0b26294e6f2fab7bdd3537e8572042f02dc217b04ecbf26bbfe9a681e331"
+    },
+    {
+      "path": "storage/after-receipt/owner-manifest.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/owner-manifest.json",
+      "bytes": 2005,
+      "sha256": "2448559e3b766cfad7e18975cde77d7e7a4037655a296c582492c4dc09262843"
+    },
+    {
+      "path": "storage/after-receipt/owner-restart.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/owner-restart.json",
+      "bytes": 133,
+      "sha256": "5dfdeda7bef49f5b0d01d2b59c13cc1d7e9ce9b50114cc9e433351eadc70c2c7"
+    },
+    {
+      "path": "storage/after-receipt/positive/driver.stderr",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/positive/driver.stderr",
+      "bytes": 311,
+      "sha256": "77006d68d674cab0a610f27d7d7dbd968bd86b1571f873966cdd302b104a0d15"
+    },
+    {
+      "path": "storage/after-receipt/positive/driver.stdout",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/positive/driver.stdout",
+      "bytes": 5160,
+      "sha256": "c2ef1eaf3fcb5395aaba8b067a031e85a73a825fe40c86ba5664d2974cfa8ab8"
+    },
+    {
+      "path": "storage/after-receipt/positive/invocation.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/positive/invocation.json",
+      "bytes": 987,
+      "sha256": "b02aeeef2707e0756e7b71e81b748463e0efe6c5bf8755c9583b8ebd119c18ca"
+    },
+    {
+      "path": "storage/after-receipt/positive/launch.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/positive/launch.json",
+      "bytes": 5245,
+      "sha256": "4feee75dfdfcf4d8c8365336100802fe3416f7fb3f3faec5f67e9e9e83dc91ae"
+    },
+    {
+      "path": "storage/after-receipt/positive/native-attempt.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/positive/native-attempt.json",
+      "bytes": 154,
+      "sha256": "d2e670107bc32a9c1a638413fbde24c246f4594f0033494ecf4e94dab85fe189"
+    },
+    {
+      "path": "storage/after-receipt/positive/stderr.txt",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/positive/stderr.txt",
+      "bytes": 211,
+      "sha256": "3d7e4ed5d7634f4d23e3cf23714ed93c68662d0d0767acb0bc7a484768bb19d8"
+    },
+    {
+      "path": "storage/after-receipt/positive/stdout.jsonl",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/positive/stdout.jsonl",
+      "bytes": 5160,
+      "sha256": "c2ef1eaf3fcb5395aaba8b067a031e85a73a825fe40c86ba5664d2974cfa8ab8"
+    },
+    {
+      "path": "storage/after-receipt/same-action-retry/driver.stderr",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/same-action-retry/driver.stderr",
+      "bytes": 320,
+      "sha256": "23de636edc9fd632a69afd2291d1eb40df15269f7ca4995318c9ad29acb7a98a"
+    },
+    {
+      "path": "storage/after-receipt/same-action-retry/driver.stdout",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/same-action-retry/driver.stdout",
+      "bytes": 1686,
+      "sha256": "3972723a6785351f11e7f95e648bdc54cd6462c02c1ae3b92f1fa0fe8e7552d7"
+    },
+    {
+      "path": "storage/after-receipt/same-action-retry/invocation.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/same-action-retry/invocation.json",
+      "bytes": 1007,
+      "sha256": "100be36da529ab3954a30968cb5ad2991b74a08dfd642ca79881b8e47e8c00e7"
+    },
+    {
+      "path": "storage/after-receipt/same-action-retry/launch.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/same-action-retry/launch.json",
+      "bytes": 5254,
+      "sha256": "d388871d31af59a171c1d671b710930d9a96a749966cb6531f5d06ddbdf46c8f"
+    },
+    {
+      "path": "storage/after-receipt/same-action-retry/native-attempt.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/same-action-retry/native-attempt.json",
+      "bytes": 163,
+      "sha256": "b9d402e1e488b6a908bc1f517a1b8ccfdb1374a9750421e07c83c1e05ad4746a"
+    },
+    {
+      "path": "storage/after-receipt/same-action-retry/stderr.txt",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/same-action-retry/stderr.txt",
+      "bytes": 211,
+      "sha256": "1b8c24809e0555f4d2a2b8b17d441a651f0149ce0877f03439327c35b1a07e3e"
+    },
+    {
+      "path": "storage/after-receipt/same-action-retry/stdout.jsonl",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/after-receipt/same-action-retry/stdout.jsonl",
+      "bytes": 1686,
+      "sha256": "3972723a6785351f11e7f95e648bdc54cd6462c02c1ae3b92f1fa0fe8e7552d7"
+    },
+    {
+      "path": "storage/before-admission/after-owner-restart/driver.stderr",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/after-owner-restart/driver.stderr",
+      "bytes": 325,
+      "sha256": "c1ceef91ec221ca5501cc96f32ecba9f55323614767551fa64d2d75ccfef0fed"
+    },
+    {
+      "path": "storage/before-admission/after-owner-restart/driver.stdout",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/after-owner-restart/driver.stdout",
+      "bytes": 1773,
+      "sha256": "615020d8b2b009fb21b9d86646d81b88b7f930bdf31f3fe85aae9752be9a8c73"
+    },
+    {
+      "path": "storage/before-admission/after-owner-restart/invocation.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/after-owner-restart/invocation.json",
+      "bytes": 1020,
+      "sha256": "0d46a822d466c6382db22788e2c9405d93a34f1c3c77d4e7d01fd034ad901ab9"
+    },
+    {
+      "path": "storage/before-admission/after-owner-restart/launch.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/after-owner-restart/launch.json",
+      "bytes": 5260,
+      "sha256": "6d73a1775f4c460067b2da31981907c4b83f5c60a2ce83b49d14e94de15261b9"
+    },
+    {
+      "path": "storage/before-admission/after-owner-restart/native-attempt.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/after-owner-restart/native-attempt.json",
+      "bytes": 169,
+      "sha256": "89618d10c55750804f9578b12504333297d9ad1e7e59de7f66fd1328a3969dab"
+    },
+    {
+      "path": "storage/before-admission/after-owner-restart/stderr.txt",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/after-owner-restart/stderr.txt",
+      "bytes": 211,
+      "sha256": "ab11c14a35e018abdd8957f239fad7cc7192c30ab43ff72fc826c8b666e71521"
+    },
+    {
+      "path": "storage/before-admission/after-owner-restart/stdout.jsonl",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/after-owner-restart/stdout.jsonl",
+      "bytes": 1773,
+      "sha256": "615020d8b2b009fb21b9d86646d81b88b7f930bdf31f3fe85aae9752be9a8c73"
+    },
+    {
+      "path": "storage/before-admission/fault-controller.stderr",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/fault-controller.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "storage/before-admission/fault-controller.stdout",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/fault-controller.stdout",
+      "bytes": 152,
+      "sha256": "b0411b4ebce425d4d3dd70d35e384d0dbeecf6a5aea951141520b2affb30218e"
+    },
+    {
+      "path": "storage/before-admission/fault-locked.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/fault-locked.json",
+      "bytes": 325,
+      "sha256": "f54d2e4898cc201bdd5b647e0e8b838018284d31160fd27f3a5b76c6e958d8cc"
+    },
+    {
+      "path": "storage/before-admission/fault-released.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/fault-released.json",
+      "bytes": 75,
+      "sha256": "2a2140e35a1dff0831b3d56d26db9d069682f530e1c0406af196d2f54fdad17f"
+    },
+    {
+      "path": "storage/before-admission/faulted/driver.stderr",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/faulted/driver.stderr",
+      "bytes": 313,
+      "sha256": "9f170d05eda1feeefc25479211769464c65d7854bf9a199fd84d4e64bf4e4e54"
+    },
+    {
+      "path": "storage/before-admission/faulted/driver.stdout",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/faulted/driver.stdout",
+      "bytes": 3009,
+      "sha256": "7943dbe2075c488abd7496b7d26ab33423f37fc215d52033aec46f0ce1e14f94"
+    },
+    {
+      "path": "storage/before-admission/faulted/invocation.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/faulted/invocation.json",
+      "bytes": 1009,
+      "sha256": "5c1d161dbe46b22fca3279b191661ac8d4c07e9e04b4b5f8016e9c64e6b02fd4"
+    },
+    {
+      "path": "storage/before-admission/faulted/launch.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/faulted/launch.json",
+      "bytes": 5242,
+      "sha256": "15b0434f3868c2d7cf8c99dd72dd253c815821a3b6e076aae2c4292f2ed95324"
+    },
+    {
+      "path": "storage/before-admission/faulted/native-attempt.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/faulted/native-attempt.json",
+      "bytes": 169,
+      "sha256": "89618d10c55750804f9578b12504333297d9ad1e7e59de7f66fd1328a3969dab"
+    },
+    {
+      "path": "storage/before-admission/faulted/stderr.txt",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/faulted/stderr.txt",
+      "bytes": 211,
+      "sha256": "e1346cf048d0e0f342885eddd8626587d8746e3ecf4ec5fabf0ce447cb581772"
+    },
+    {
+      "path": "storage/before-admission/faulted/stdout.jsonl",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/faulted/stdout.jsonl",
+      "bytes": 3009,
+      "sha256": "7943dbe2075c488abd7496b7d26ab33423f37fc215d52033aec46f0ce1e14f94"
+    },
+    {
+      "path": "storage/before-admission/journal-summary.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/journal-summary.json",
+      "bytes": 448,
+      "sha256": "bf3a016425962c4d0d2fac9f90b5b6573797abf69b62b850e2204067840051ea"
+    },
+    {
+      "path": "storage/before-admission/native-after-unlock.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/native-after-unlock.json",
+      "bytes": 39041,
+      "sha256": "931ed1cbd1634224762fa7d7226fda2ddaa7e18afb66ab75f6873b0c0e0e56c4"
+    },
+    {
+      "path": "storage/before-admission/native-faulted-locked.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/native-faulted-locked.json",
+      "bytes": 39041,
+      "sha256": "55b60e4fc23a882702538af036e7eda4a17b1ec5e6c725df865c8f6888971760"
+    },
+    {
+      "path": "storage/before-admission/native-final.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/native-final.json",
+      "bytes": 39042,
+      "sha256": "26fbe3eddb074764f6a0ca46ef369ac13657e5a4c01cbc45c6e9d377f394927f"
+    },
+    {
+      "path": "storage/before-admission/native-initial.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/native-initial.json",
+      "bytes": 538,
+      "sha256": "e1ab2b59ef4de8fbc03a4ab76a7fc74471eb7eb64a490f94bc496837b2679699"
+    },
+    {
+      "path": "storage/before-admission/native-new-action-refused.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/native-new-action-refused.json",
+      "bytes": 39041,
+      "sha256": "1564495bfa6439910c2fcf488d9586a229b6aceb1d80b757b204bc68a4624555"
+    },
+    {
+      "path": "storage/before-admission/native-owner-restarted.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/native-owner-restarted.json",
+      "bytes": 39040,
+      "sha256": "b6eb969f61046c2ebea9d3b6bbe76e95b370e6325879775e13e5becea2635316"
+    },
+    {
+      "path": "storage/before-admission/native-positive-acked.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/native-positive-acked.json",
+      "bytes": 38554,
+      "sha256": "be21b295e43820b3cf8fb905696860227d795c324c8f3347159e7a3c325a18ec"
+    },
+    {
+      "path": "storage/before-admission/native-same-action-retry.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/native-same-action-retry.json",
+      "bytes": 39041,
+      "sha256": "df4810e466ea315407842f78ff1edb750fbd61e23d3af8ae880b1be6cb040b32"
+    },
+    {
+      "path": "storage/before-admission/new-action-refused/driver.stderr",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/new-action-refused/driver.stderr",
+      "bytes": 324,
+      "sha256": "3a8e1228afaa264a8af31740bf8655cc09e3e93842f34c1177f3694c9649db41"
+    },
+    {
+      "path": "storage/before-admission/new-action-refused/driver.stdout",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/new-action-refused/driver.stdout",
+      "bytes": 1567,
+      "sha256": "e65d1ef408e8a5322e01657bc68c11b92d29cc57f6e2ed78bb73e96b7c2882c9"
+    },
+    {
+      "path": "storage/before-admission/new-action-refused/invocation.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/new-action-refused/invocation.json",
+      "bytes": 1010,
+      "sha256": "7956430a96cf7c1fa78821a2dae330435629a7bdc6cdc5a5d7ed0f07c943de61"
+    },
+    {
+      "path": "storage/before-admission/new-action-refused/launch.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/new-action-refused/launch.json",
+      "bytes": 5250,
+      "sha256": "fbf076d74e20849dfda1b6fa133db6b04669f060f41d8b6a80b6268694b3ccc2"
+    },
+    {
+      "path": "storage/before-admission/new-action-refused/native-attempt.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/new-action-refused/native-attempt.json",
+      "bytes": 159,
+      "sha256": "91b1090a13e5f8ee96e8c62d73f1019080120a8864b9c83846039b56e4146625"
+    },
+    {
+      "path": "storage/before-admission/new-action-refused/stderr.txt",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/new-action-refused/stderr.txt",
+      "bytes": 211,
+      "sha256": "8af2c13d6ddf2c93a3e396d4f9df9af06d24b72129880d38ebd4060f96c57e35"
+    },
+    {
+      "path": "storage/before-admission/new-action-refused/stdout.jsonl",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/new-action-refused/stdout.jsonl",
+      "bytes": 1567,
+      "sha256": "e65d1ef408e8a5322e01657bc68c11b92d29cc57f6e2ed78bb73e96b7c2882c9"
+    },
+    {
+      "path": "storage/before-admission/owner-manifest.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/owner-manifest.json",
+      "bytes": 2019,
+      "sha256": "67d4ee217e98a48b641500a43e59f9910e14cc12f04dd583356980ab9f1ac322"
+    },
+    {
+      "path": "storage/before-admission/owner-restart.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/owner-restart.json",
+      "bytes": 134,
+      "sha256": "685a8e46613a189f2a8482e626d394161a5b3f65363e5bb612a2ef6e9fc457ef"
+    },
+    {
+      "path": "storage/before-admission/positive/driver.stderr",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/positive/driver.stderr",
+      "bytes": 314,
+      "sha256": "13fd8e0b196335d1a1c9cfda28101463742aca046996d81e0eacd62afac3837a"
+    },
+    {
+      "path": "storage/before-admission/positive/driver.stdout",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/positive/driver.stdout",
+      "bytes": 5148,
+      "sha256": "f5702e15655e636da375dbefe004115b3894fbce72661f79c21d9bb02534e582"
+    },
+    {
+      "path": "storage/before-admission/positive/invocation.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/positive/invocation.json",
+      "bytes": 994,
+      "sha256": "3ed240a8249637437a3590963ab2983622fb57c5d4ed20ac3a55330653ed11fa"
+    },
+    {
+      "path": "storage/before-admission/positive/launch.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/positive/launch.json",
+      "bytes": 5245,
+      "sha256": "78ddd02a616daaa6dd15aaba33d755efad2aaeb6bba75053185cae7b0da542c4"
+    },
+    {
+      "path": "storage/before-admission/positive/native-attempt.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/positive/native-attempt.json",
+      "bytes": 154,
+      "sha256": "d2e670107bc32a9c1a638413fbde24c246f4594f0033494ecf4e94dab85fe189"
+    },
+    {
+      "path": "storage/before-admission/positive/stderr.txt",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/positive/stderr.txt",
+      "bytes": 211,
+      "sha256": "298d83aa58448403d93b50e1c3dfde64d41572560d575f0582448984c656a28c"
+    },
+    {
+      "path": "storage/before-admission/positive/stdout.jsonl",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/positive/stdout.jsonl",
+      "bytes": 5148,
+      "sha256": "f5702e15655e636da375dbefe004115b3894fbce72661f79c21d9bb02534e582"
+    },
+    {
+      "path": "storage/before-admission/same-action-retry/driver.stderr",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/same-action-retry/driver.stderr",
+      "bytes": 323,
+      "sha256": "3b5303c2338451b7e26c45531a91b0ff18c82db2c287d63d255b89f3881e374e"
+    },
+    {
+      "path": "storage/before-admission/same-action-retry/driver.stdout",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/same-action-retry/driver.stdout",
+      "bytes": 1734,
+      "sha256": "5e225d29bc0eade95ac2c15690a99ef33bf13a0ae040ea9f98fe33874c7c3561"
+    },
+    {
+      "path": "storage/before-admission/same-action-retry/invocation.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/same-action-retry/invocation.json",
+      "bytes": 1018,
+      "sha256": "741fc4704cfd4c28cafc5acc8769f017fe21fe70a736cfc76bfce98edc0c1b5c"
+    },
+    {
+      "path": "storage/before-admission/same-action-retry/launch.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/same-action-retry/launch.json",
+      "bytes": 5260,
+      "sha256": "30c021d47f69e8f48050a742088524cd45e34f26645fb5e23d440d786252ace9"
+    },
+    {
+      "path": "storage/before-admission/same-action-retry/native-attempt.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/same-action-retry/native-attempt.json",
+      "bytes": 169,
+      "sha256": "89618d10c55750804f9578b12504333297d9ad1e7e59de7f66fd1328a3969dab"
+    },
+    {
+      "path": "storage/before-admission/same-action-retry/stderr.txt",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/same-action-retry/stderr.txt",
+      "bytes": 211,
+      "sha256": "53d948e093ccaaf88a609d89c5c7e4c6b3b32d7d012425d1aa3489884b8258fc"
+    },
+    {
+      "path": "storage/before-admission/same-action-retry/stdout.jsonl",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/same-action-retry/stdout.jsonl",
+      "bytes": 1734,
+      "sha256": "5e225d29bc0eade95ac2c15690a99ef33bf13a0ae040ea9f98fe33874c7c3561"
+    },
+    {
+      "path": "storage/database-state-review.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/database-state-review.json",
+      "bytes": 3951,
+      "sha256": "0f9cbffd751bdc8397c87bb0cf134cc3d083689af59e4a096f96e682ca27448a"
+    },
+    {
+      "path": "storage/identity.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/identity.json",
+      "bytes": 852,
+      "sha256": "da8a39cd0b8cf39acaa67bd2bb57246d1ec4d842d6be985ced9b0658e915da0c"
+    },
+    {
+      "path": "storage/operational-cost.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/operational-cost.json",
+      "bytes": 11724,
+      "sha256": "fb4161e7d43825a4ca3cbe3c2be212388570aa36013bef9c6a7a9f2f27935f0a"
+    },
+    {
+      "path": "storage/results.json",
+      "source": "/tmp/chio-codex-kernel-storage-final-20260909/results.json",
+      "bytes": 4929,
+      "sha256": "e5cd3f308de5dbc073851578f54c6261ca87805fa2f20d842670bf571b5d2001"
+    }
+  ]
+}

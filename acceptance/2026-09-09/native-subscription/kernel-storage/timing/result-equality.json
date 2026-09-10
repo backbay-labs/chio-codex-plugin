@@ -1,0 +1,23 @@
+[
+  {
+    "pair": 1,
+    "sameContent": true,
+    "contentSha256": "e25cce616a66d2b8165f846ae78b86685e4283d3cbd4309ff921b5746bcb86cf",
+    "nativeRequestId": "382a49c7-543e-44b8-85bd-8ada0ac04d3d:84ba02eb165251e327465d3960c06237ad32b609684f1767c101cef64428ea3f",
+    "nativeReceiptId": "99adbab69aef6375c584787332b35efc35cf2cde88b31c519046f897c49353b2"
+  },
+  {
+    "pair": 2,
+    "sameContent": true,
+    "contentSha256": "e25cce616a66d2b8165f846ae78b86685e4283d3cbd4309ff921b5746bcb86cf",
+    "nativeRequestId": "382a49c7-543e-44b8-85bd-8ada0ac04d3d:64e1337ba566e2437a049626447adf77ec4e142f4e8a099225d90361fa9d6f68",
+    "nativeReceiptId": "496fef4300aa67a1c51fdfc73109c476a8659054dd1e32ab5c90a151304c179a"
+  },
+  {
+    "pair": 3,
+    "sameContent": true,
+    "contentSha256": "e25cce616a66d2b8165f846ae78b86685e4283d3cbd4309ff921b5746bcb86cf",
+    "nativeRequestId": "382a49c7-543e-44b8-85bd-8ada0ac04d3d:439960a0df6485eb42a817c5d9496eb5ce42aa0d2f4e11b60b4f382ece9c141d",
+    "nativeReceiptId": "6c298bdb7eb45dc4e1fd1de263217c9b789de51fa48bb2c012dde28ce7e35c10"
+  }
+]
