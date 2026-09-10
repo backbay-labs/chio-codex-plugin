@@ -1,0 +1,933 @@
+[
+  {
+    "path": "raw/attempt-1/after-omission.invocation.json.gz",
+    "sha256": "66c4607fb85ef5117550c5d87cf5d5a1bae59a0276c0a5fefeb165a909f57eed",
+    "originalSha256": "e787b242edd06bf54cc786848ad605beecd3c3d39e328f6045d53e728b7c55c3",
+    "originalBytes": 914,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/after-omission.invocation.json"
+  },
+  {
+    "path": "raw/attempt-1/after-omission.json.gz",
+    "sha256": "35cc995f179ceaef4e82ac3245a936920c8c4eb60f32cfd3070699a82de0dc29",
+    "originalSha256": "de7a2a85d2251e40e090a0728b9c4dd246bec34da29a5c9c2ab528a06a79934f",
+    "originalBytes": 798,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/after-omission.json"
+  },
+  {
+    "path": "raw/attempt-1/after-omission.stderr.gz",
+    "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "originalBytes": 0,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/after-omission.stderr"
+  },
+  {
+    "path": "raw/attempt-1/after-omission.stdout.gz",
+    "sha256": "d6a220ce62ef234e82bdea6bdddf4d43f235020e132b3bd18182dc53d1b69dce",
+    "originalSha256": "b9ae668f16d770f9c853d03e3f3b657b840406da2413d04a441e86dd835f4478",
+    "originalBytes": 683,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/after-omission.stdout"
+  },
+  {
+    "path": "raw/attempt-1/before-omission.invocation.json.gz",
+    "sha256": "92c4e4413e663b5ea13d6449b808a2e45e7f6d1067776268da8185f23451f94b",
+    "originalSha256": "1d660db8cb93d0f2420152d8b96e2b996092226a6710e5ce90dc5da519f6fba1",
+    "originalBytes": 914,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/before-omission.invocation.json"
+  },
+  {
+    "path": "raw/attempt-1/before-omission.json.gz",
+    "sha256": "35cc995f179ceaef4e82ac3245a936920c8c4eb60f32cfd3070699a82de0dc29",
+    "originalSha256": "de7a2a85d2251e40e090a0728b9c4dd246bec34da29a5c9c2ab528a06a79934f",
+    "originalBytes": 798,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/before-omission.json"
+  },
+  {
+    "path": "raw/attempt-1/before-omission.stderr.gz",
+    "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "originalBytes": 0,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/before-omission.stderr"
+  },
+  {
+    "path": "raw/attempt-1/before-omission.stdout.gz",
+    "sha256": "d6a220ce62ef234e82bdea6bdddf4d43f235020e132b3bd18182dc53d1b69dce",
+    "originalSha256": "b9ae668f16d770f9c853d03e3f3b657b840406da2413d04a441e86dd835f4478",
+    "originalBytes": 683,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/before-omission.stdout"
+  },
+  {
+    "path": "raw/attempt-1/driver.py.gz",
+    "sha256": "f5e6effe7fcd070ec5fcc0409d45e863914456dd130eb46906649d67023bfd58",
+    "originalSha256": "6b8ceae043fcb4cf1d9c9866260243fe983c5119497aee7d529dfbf0eb001539",
+    "originalBytes": 13740,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/driver.py"
+  },
+  {
+    "path": "raw/attempt-1/failure-disposition.json.gz",
+    "sha256": "03d558a687b75c641a2473432f9eb783b203e96ec3feff0bf5feb160c4374752",
+    "originalSha256": "8f8225cb42d577f41e11a9dbb48617b462ca231290abafdd78bcc822313d949a",
+    "originalBytes": 1454,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/failure-disposition.json"
+  },
+  {
+    "path": "raw/attempt-1/fixture.mjs.gz",
+    "sha256": "5339517a59427747bbb52c7a76b8c514e29de68db1e7426692a8240587bb46ec",
+    "originalSha256": "4815e9a9ec74d99e2178769e4d28e85ba85d35656599538eb079c4452825ba97",
+    "originalBytes": 2834,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/fixture.mjs"
+  },
+  {
+    "path": "raw/attempt-1/identity.json.gz",
+    "sha256": "3e804075bea5f493490c59029a5e29fdf90d86ef2a5aec179b42c1be963710a7",
+    "originalSha256": "68d70be1b1b43c64e56c85883ef46187b53cde3649475e2329de73cb379bbac9",
+    "originalBytes": 2147,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/identity.json"
+  },
+  {
+    "path": "raw/attempt-1/initial.invocation.json.gz",
+    "sha256": "d1429e8bf07bbf47fa71cc21d5f0948daec8111cee480e8c90a0611788e00b93",
+    "originalSha256": "22276f67132df850e4b7498bf8488bebfde5096b4ae2aa0445a64ca7779dea0a",
+    "originalBytes": 914,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/initial.invocation.json"
+  },
+  {
+    "path": "raw/attempt-1/initial.json.gz",
+    "sha256": "4952fb53aceeecb564ff0629b938d9069e6fbddb657c9a2d6a9c69feeae9673d",
+    "originalSha256": "80027d8537dc5fd0d843f042008fead1dd82a41de9bcd4adae9c825a1a447aae",
+    "originalBytes": 213,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/initial.json"
+  },
+  {
+    "path": "raw/attempt-1/initial.stderr.gz",
+    "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "originalBytes": 0,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/initial.stderr"
+  },
+  {
+    "path": "raw/attempt-1/initial.stdout.gz",
+    "sha256": "f274697543fbcc9da7bfb5024b8785ce7aed6206bda7ea072551647c28bcfdbf",
+    "originalSha256": "5a84afeddbad9dba6f149ef3675ce9bd251b776c5135b6688b634a2337109f12",
+    "originalBytes": 189,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/initial.stdout"
+  },
+  {
+    "path": "raw/attempt-1/omission.jsonl.gz",
+    "sha256": "d5c35c1ce6cd9043c0f171332a2f50ba2132a8910ed4d84a4cecada34238730c",
+    "originalSha256": "b8433a4b64c3de251d86990ff9f5e3193be87b0adb0c63bab849ff6233a69ccc",
+    "originalBytes": 1491,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/omission.jsonl"
+  },
+  {
+    "path": "raw/attempt-1/owner-launcher.py.gz",
+    "sha256": "2e9e06ae17bc23f65544f397d89f16ff6f508bec2e1d582b60180d1907552504",
+    "originalSha256": "24187dd47e497d226fb0b1f6652a006a2514cff6bc84fea9b35361e948ed6399",
+    "originalBytes": 7273,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/owner-launcher.py"
+  },
+  {
+    "path": "raw/attempt-1/owner-start.invocation.json.gz",
+    "sha256": "a481b392bfdc3c435f7410f17d401f75e7f591f97c4cd7e9e6c6000e01991389",
+    "originalSha256": "5bcb9eb15ae1b769963ddc22be7f9c2846758fa60d0db0ac71c84c4af81e3f21",
+    "originalBytes": 944,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/owner-start.invocation.json"
+  },
+  {
+    "path": "raw/attempt-1/owner-start.stderr.gz",
+    "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "originalBytes": 0,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/owner-start.stderr"
+  },
+  {
+    "path": "raw/attempt-1/owner-start.stdout.gz",
+    "sha256": "c177dc0f19fb12dad2c1d10f2772a0404394b52c24460239c2f71466a78ea3ce",
+    "originalSha256": "0e2f4618d13cadcc24eeedc2322391f4f335675ecefcc8e8dc58e57555a377e5",
+    "originalBytes": 81,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/owner-start.stdout"
+  },
+  {
+    "path": "raw/attempt-1/owner-stop.json.gz",
+    "sha256": "c73a644dc46cb7e7f8fa37e2aa560eb8c235a5ece5784f27e0bdc72bbe5c8d22",
+    "originalSha256": "7d51ff1cd383a72dffb469af94070138bdb5cc76a2562304edd55fcce77dd97f",
+    "originalBytes": 524,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/owner-stop.json"
+  },
+  {
+    "path": "raw/attempt-1/policy.yaml.gz",
+    "sha256": "b68491ab8caeaf405ec0f8c6f3c9beddb62f89cc0d62226cdb37b6396f2b3266",
+    "originalSha256": "8c2c732d9115799b13150f7924da0e68fc1f9b2d42a2618912511d407035cc66",
+    "originalBytes": 631,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/policy.yaml"
+  },
+  {
+    "path": "raw/attempt-1/positive/launch.json.gz",
+    "sha256": "3aaaf50030e2917c2fdabf8dd2f2567004ac097198da5ed38813e160d1c50e27",
+    "originalSha256": "fe4197ad62f746e9b3cb9ef357b7ebc83512b564b9e263e60d2f01d4988b095a",
+    "originalBytes": 5168,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/positive/launch.json"
+  },
+  {
+    "path": "raw/attempt-1/positive/stderr.txt.gz",
+    "sha256": "44d20af200d719bc00a974c8b760cbe6408210babb94abaf3d06df3261950f46",
+    "originalSha256": "1a28a38ff1eb36e5144ffdc8d16501326c328e67358971fc3a0ae7cc282b8faa",
+    "originalBytes": 211,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/positive/stderr.txt"
+  },
+  {
+    "path": "raw/attempt-1/positive/stdout.jsonl.gz",
+    "sha256": "42883b827b8f906366db867a2307982d3e9528ae91063b80845cc914ae769e1f",
+    "originalSha256": "d61229e0ec25f145a16d32b3301a1a853ded40a13f005f0ef9d7df41de6aa406",
+    "originalBytes": 5191,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/positive/stdout.jsonl"
+  },
+  {
+    "path": "raw/attempt-1/positive.invocation.json.gz",
+    "sha256": "3381e5c15d07ed3beae56ccaec4864d15cefd0eecb3eef093b7a5c9358553f76",
+    "originalSha256": "17703327e8c0b74a99c74c150f0f9630459caae93fcdf527d1e6ff2f42897bdb",
+    "originalBytes": 978,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/positive.invocation.json"
+  },
+  {
+    "path": "raw/attempt-1/positive.stderr.gz",
+    "sha256": "6d00ff3a05630e1a1d758890fd17a1e895772482fe28d791de7e57ab8923e7ba",
+    "originalSha256": "a83e1bc0dd3215be013fca49ab5ad299c16e8cf488dcd3275c1493ae60cb3cf9",
+    "originalBytes": 298,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/positive.stderr"
+  },
+  {
+    "path": "raw/attempt-1/positive.stdout.gz",
+    "sha256": "42883b827b8f906366db867a2307982d3e9528ae91063b80845cc914ae769e1f",
+    "originalSha256": "d61229e0ec25f145a16d32b3301a1a853ded40a13f005f0ef9d7df41de6aa406",
+    "originalBytes": 5191,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/positive.stdout"
+  },
+  {
+    "path": "raw/attempt-1/prepare.invocation.json.gz",
+    "sha256": "9c7b460399151baf349310b5d7598dc8465f4c2907dc58ac6588709f0af2b562",
+    "originalSha256": "46af64705b9b283384be6ddf3f0ae533095bf4f63ac4ef4a045ed1bd05f4c1b2",
+    "originalBytes": 467,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/prepare.invocation.json"
+  },
+  {
+    "path": "raw/attempt-1/prepare.stderr.gz",
+    "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "originalBytes": 0,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/prepare.stderr"
+  },
+  {
+    "path": "raw/attempt-1/prepare.stdout.gz",
+    "sha256": "4e55ec8cc7c740a8c4a73bd7a6c5fc9d783e02081aea27fa7adca97a63cb2f27",
+    "originalSha256": "60b1ea54d79589ffc9e6cc213392eba7bf073503fd5277ecd4c06ee4568bdea8",
+    "originalBytes": 108,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/prepare.stdout"
+  },
+  {
+    "path": "raw/attempt-1/silent-omission/launch.json.gz",
+    "sha256": "988951b088dd8a230d05f24ecdac8c8bcafda86e3803680e358f01f6094777c1",
+    "originalSha256": "f47f5f84a85b221f7a209a49b3880b3e7153c7385cc9132dada36222c17d4d5c",
+    "originalBytes": 6895,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/silent-omission/launch.json"
+  },
+  {
+    "path": "raw/attempt-1/silent-omission/stderr.txt.gz",
+    "sha256": "1cebe43cb12b4bed8ed86603504f31075f7e21c920d205c4326e8cab859be98e",
+    "originalSha256": "606aff076226a0372a579089a5383a72123fbcb27e8d7c040e05c4d1ee6a1e13",
+    "originalBytes": 653,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/silent-omission/stderr.txt"
+  },
+  {
+    "path": "raw/attempt-1/silent-omission/stdout.jsonl.gz",
+    "sha256": "78fe8c3f573f6f0e7727a763500a874ea58304dbbd59123217db296743bf6b5f",
+    "originalSha256": "9934cbca0035480e1d856ce632c5a0d0529d288a5f8392283866c1987f39f8eb",
+    "originalBytes": 1441,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/silent-omission/stdout.jsonl"
+  },
+  {
+    "path": "raw/attempt-1/silent-omission.invocation.json.gz",
+    "sha256": "e8d3bf8ffcbed3b6133c20ce78bf3f92c24b1099c4acdf6975d62f5230434543",
+    "originalSha256": "8f59302fffc2b263dae3beae57ba15d76e17d0df3175d5c2e798d5887fde3e3a",
+    "originalBytes": 1970,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/silent-omission.invocation.json"
+  },
+  {
+    "path": "raw/attempt-1/silent-omission.stderr.gz",
+    "sha256": "d2b90ab3699f42961a265acc336a16292284fd7487941814a501b147a8f0d97d",
+    "originalSha256": "135224c003f06ef5f11973e1d7a3a33f540a1150d0b815cf1d93244b4aaff434",
+    "originalBytes": 747,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/silent-omission.stderr"
+  },
+  {
+    "path": "raw/attempt-1/silent-omission.stdout.gz",
+    "sha256": "78fe8c3f573f6f0e7727a763500a874ea58304dbbd59123217db296743bf6b5f",
+    "originalSha256": "9934cbca0035480e1d856ce632c5a0d0529d288a5f8392283866c1987f39f8eb",
+    "originalBytes": 1441,
+    "source": "/tmp/chio-final-codex-silent-omission-20260910/silent-omission.stdout"
+  },
+  {
+    "path": "raw/attempt-2/after-omission.invocation.json.gz",
+    "sha256": "2c46a98f347a2e4852d0d5ca63ea1d19a72116d4dd82c4e87f40124fb8673528",
+    "originalSha256": "f8030ea051b2fccb82b9e0a84f265da2b5f85d116e729d2575bd6557abb8ebab",
+    "originalBytes": 919,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/after-omission.invocation.json"
+  },
+  {
+    "path": "raw/attempt-2/after-omission.json.gz",
+    "sha256": "579b89c3682219faffbfa997b0aee3921239ce6cd16f2fabe564cce4a2de2416",
+    "originalSha256": "8a1a4fb932d1bbc0f0d0dc00ba7553c44b8f4a0963ff40c89e8110806329dd9a",
+    "originalBytes": 798,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/after-omission.json"
+  },
+  {
+    "path": "raw/attempt-2/after-omission.stderr.gz",
+    "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "originalBytes": 0,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/after-omission.stderr"
+  },
+  {
+    "path": "raw/attempt-2/after-omission.stdout.gz",
+    "sha256": "ea80847fd32a5a4f8ca0b2814060c3a7e4309a8abbb77f8ef2d528b8f386bfc7",
+    "originalSha256": "229d8a4a478e41ffb9eb1e201a3f4221a3275057747e1d6831a818794ec37777",
+    "originalBytes": 683,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/after-omission.stdout"
+  },
+  {
+    "path": "raw/attempt-2/before-omission.invocation.json.gz",
+    "sha256": "ae5add79d5e5ae2194db19eaaa55945455d91597bdcea4d31da20c3c4876b66a",
+    "originalSha256": "e1370e37afaeef880de985a86ff56b6b6453800068eb786c41a800dd1f280561",
+    "originalBytes": 920,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/before-omission.invocation.json"
+  },
+  {
+    "path": "raw/attempt-2/before-omission.json.gz",
+    "sha256": "579b89c3682219faffbfa997b0aee3921239ce6cd16f2fabe564cce4a2de2416",
+    "originalSha256": "8a1a4fb932d1bbc0f0d0dc00ba7553c44b8f4a0963ff40c89e8110806329dd9a",
+    "originalBytes": 798,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/before-omission.json"
+  },
+  {
+    "path": "raw/attempt-2/before-omission.stderr.gz",
+    "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "originalBytes": 0,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/before-omission.stderr"
+  },
+  {
+    "path": "raw/attempt-2/before-omission.stdout.gz",
+    "sha256": "ea80847fd32a5a4f8ca0b2814060c3a7e4309a8abbb77f8ef2d528b8f386bfc7",
+    "originalSha256": "229d8a4a478e41ffb9eb1e201a3f4221a3275057747e1d6831a818794ec37777",
+    "originalBytes": 683,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/before-omission.stdout"
+  },
+  {
+    "path": "raw/attempt-2/driver.py.gz",
+    "sha256": "25f035ec2b73fe73a69392ca12482fc84ceccffea7f81bee7e1429e9b317adec",
+    "originalSha256": "a88a5a45ed5c394716bdd30b6821d92196f281d15df851765ef3a07551b608b6",
+    "originalBytes": 13831,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/driver.py"
+  },
+  {
+    "path": "raw/attempt-2/environment.json.gz",
+    "sha256": "f0050764a037b4733a475480247e2e8e53ccbb8d7f40c130f11e4fe94f007898",
+    "originalSha256": "1596df6096afe3119603e2096542cec1dd498fe29749cb518fcb3e70eb1acf5c",
+    "originalBytes": 468,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/environment.json"
+  },
+  {
+    "path": "raw/attempt-2/failure-disposition.json.gz",
+    "sha256": "683e4aaea8f36b81e7bb120edd95e36029e38f7302128dd85f13042880ce56bd",
+    "originalSha256": "d85c37a6a61581b6fac596de83c98f4d7eef3d4b55651aa3e2c181389743d554",
+    "originalBytes": 816,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/failure-disposition.json"
+  },
+  {
+    "path": "raw/attempt-2/fixture.mjs.gz",
+    "sha256": "5339517a59427747bbb52c7a76b8c514e29de68db1e7426692a8240587bb46ec",
+    "originalSha256": "4815e9a9ec74d99e2178769e4d28e85ba85d35656599538eb079c4452825ba97",
+    "originalBytes": 2834,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/fixture.mjs"
+  },
+  {
+    "path": "raw/attempt-2/identity.json.gz",
+    "sha256": "2a9a43667b83461e9c4000aaac61d1755740b8877217332c523cb49cb418533c",
+    "originalSha256": "a3f43775e18670eaa415b95281650b1a277b77d61f28f8db165801e8c34e0ad9",
+    "originalBytes": 2150,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/identity.json"
+  },
+  {
+    "path": "raw/attempt-2/initial.invocation.json.gz",
+    "sha256": "a93cada00b27280fd8e0ff63bc12a8eaa3346e60589ba23a2d60086e007e9f1d",
+    "originalSha256": "64fd51528f535c02bf6aed3fd145e3f729530e0d42050ed9e323f999665bb5fc",
+    "originalBytes": 920,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/initial.invocation.json"
+  },
+  {
+    "path": "raw/attempt-2/initial.json.gz",
+    "sha256": "4952fb53aceeecb564ff0629b938d9069e6fbddb657c9a2d6a9c69feeae9673d",
+    "originalSha256": "80027d8537dc5fd0d843f042008fead1dd82a41de9bcd4adae9c825a1a447aae",
+    "originalBytes": 213,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/initial.json"
+  },
+  {
+    "path": "raw/attempt-2/initial.stderr.gz",
+    "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "originalBytes": 0,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/initial.stderr"
+  },
+  {
+    "path": "raw/attempt-2/initial.stdout.gz",
+    "sha256": "f274697543fbcc9da7bfb5024b8785ce7aed6206bda7ea072551647c28bcfdbf",
+    "originalSha256": "5a84afeddbad9dba6f149ef3675ce9bd251b776c5135b6688b634a2337109f12",
+    "originalBytes": 189,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/initial.stdout"
+  },
+  {
+    "path": "raw/attempt-2/omission.jsonl.gz",
+    "sha256": "332cd3e4efa1da557a71af322eee44d85dfc6b3d6a858a7f269db69b1cd18e4b",
+    "originalSha256": "f152c5905382feebae999b3412c82f743e06687f2e15c5226a9d57c85dd997fd",
+    "originalBytes": 1985,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/omission.jsonl"
+  },
+  {
+    "path": "raw/attempt-2/owner-launcher.py.gz",
+    "sha256": "2e9e06ae17bc23f65544f397d89f16ff6f508bec2e1d582b60180d1907552504",
+    "originalSha256": "24187dd47e497d226fb0b1f6652a006a2514cff6bc84fea9b35361e948ed6399",
+    "originalBytes": 7273,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/owner-launcher.py"
+  },
+  {
+    "path": "raw/attempt-2/owner-start.invocation.json.gz",
+    "sha256": "cb06d6ecf97818d4d2328afdaeb9df6bb29b029d79dc69bf92dca316abb4fd80",
+    "originalSha256": "343ebc693348d3f1e3a05191036d107a70e877a9489537f919af72549d6fd80c",
+    "originalBytes": 951,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/owner-start.invocation.json"
+  },
+  {
+    "path": "raw/attempt-2/owner-start.stderr.gz",
+    "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "originalBytes": 0,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/owner-start.stderr"
+  },
+  {
+    "path": "raw/attempt-2/owner-start.stdout.gz",
+    "sha256": "6e7f36b9bd5a469c01037874f8c5893a1b31dd8977ef91575da4c5b2dffa52ad",
+    "originalSha256": "004df3ce5d514859795bee1098f8be25eb2d99aaf5e36ce1ced9494f83d7479e",
+    "originalBytes": 81,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/owner-start.stdout"
+  },
+  {
+    "path": "raw/attempt-2/owner-stop.json.gz",
+    "sha256": "ddfe507e90deea7c0b9ac4749eeb8f1d1eb511b6e27452b3727447cafdd258b4",
+    "originalSha256": "93d9b6ec5cddcc289afc7ca4f9a3b6a2bb499d5f7bc9f95d69ff10165f5f208a",
+    "originalBytes": 527,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/owner-stop.json"
+  },
+  {
+    "path": "raw/attempt-2/policy.yaml.gz",
+    "sha256": "b68491ab8caeaf405ec0f8c6f3c9beddb62f89cc0d62226cdb37b6396f2b3266",
+    "originalSha256": "8c2c732d9115799b13150f7924da0e68fc1f9b2d42a2618912511d407035cc66",
+    "originalBytes": 631,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/policy.yaml"
+  },
+  {
+    "path": "raw/attempt-2/positive/launch.json.gz",
+    "sha256": "0c0190b5e18a46a4a5de5b09e1ef08c48c24dc30a6b649c183f7b05a272ab3d9",
+    "originalSha256": "91922602c53a78a330144b0f90a698eab066d9dcf505c401ed51a14e03455077",
+    "originalBytes": 5168,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/positive/launch.json"
+  },
+  {
+    "path": "raw/attempt-2/positive/stderr.txt.gz",
+    "sha256": "f8525826d7f456d8fb5bc519625b5ea7cc9e33984a54361b3828ac6961df8f80",
+    "originalSha256": "b73a5ad787cbe54c27aadd5ebc4e910bcbff11675a83b93c4a5b722108f65890",
+    "originalBytes": 211,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/positive/stderr.txt"
+  },
+  {
+    "path": "raw/attempt-2/positive/stdout.jsonl.gz",
+    "sha256": "2a3eb7e63dca8aad588e62848cbaafb647a99d39cf7e3d66172f2a361d13821d",
+    "originalSha256": "5f8dd58a1dc3fa4eb1ba34770fee9162b0f8dbf30cd8a64993ee2e976c693838",
+    "originalBytes": 5213,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/positive/stdout.jsonl"
+  },
+  {
+    "path": "raw/attempt-2/positive.invocation.json.gz",
+    "sha256": "0d37a1339ffbf25030fe6265ea3772d18794883e7b8207ac606bc6596d045749",
+    "originalSha256": "3560f9762e7a0003b817e1b6e23333f10773a7cba10b08fabff61b5e6571cb6f",
+    "originalBytes": 985,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/positive.invocation.json"
+  },
+  {
+    "path": "raw/attempt-2/positive.stderr.gz",
+    "sha256": "54593167dc58b23ba708c4444185c420334b8a3a98b45c9bf32b7d6ae14ebe98",
+    "originalSha256": "b8f0833fcd1905cdb98d9a1137658f049ec70338e91cd7e87b4c1ba99e645101",
+    "originalBytes": 301,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/positive.stderr"
+  },
+  {
+    "path": "raw/attempt-2/positive.stdout.gz",
+    "sha256": "2a3eb7e63dca8aad588e62848cbaafb647a99d39cf7e3d66172f2a361d13821d",
+    "originalSha256": "5f8dd58a1dc3fa4eb1ba34770fee9162b0f8dbf30cd8a64993ee2e976c693838",
+    "originalBytes": 5213,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/positive.stdout"
+  },
+  {
+    "path": "raw/attempt-2/prepare.invocation.json.gz",
+    "sha256": "77cbe3929f7c668eaae415e274fd53a962808a9451b7a8cf57b1a3c9462140e4",
+    "originalSha256": "78ddaa17e31f34bcd19dd2491142dc2339a6bbe9ed6bf93644e5f72627d3efc1",
+    "originalBytes": 473,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/prepare.invocation.json"
+  },
+  {
+    "path": "raw/attempt-2/prepare.stderr.gz",
+    "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "originalBytes": 0,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/prepare.stderr"
+  },
+  {
+    "path": "raw/attempt-2/prepare.stdout.gz",
+    "sha256": "4e55ec8cc7c740a8c4a73bd7a6c5fc9d783e02081aea27fa7adca97a63cb2f27",
+    "originalSha256": "60b1ea54d79589ffc9e6cc213392eba7bf073503fd5277ecd4c06ee4568bdea8",
+    "originalBytes": 108,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/prepare.stdout"
+  },
+  {
+    "path": "raw/attempt-2/qualification.invocation.json.gz",
+    "sha256": "447730030ae5ab5e7a50d9797513370202fa2ef56d41b71d11744b07a83c7e25",
+    "originalSha256": "a10433cac2467170c4b57ef6ad620f3b9a2851b770c5c244b914ae1d31963130",
+    "originalBytes": 1646,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/qualification.invocation.json"
+  },
+  {
+    "path": "raw/attempt-2/qualification.stderr.gz",
+    "sha256": "9646e85cf143ab4363a51f07b4374e2968ed6b8a3b3ef96a638f248a0d7c2ba0",
+    "originalSha256": "cf92686931101f0e6f92577c2e379c5a84bba3f49de0b2e88aaf84f529fdd7c4",
+    "originalBytes": 441,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/qualification.stderr"
+  },
+  {
+    "path": "raw/attempt-2/qualification.stdout.gz",
+    "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "originalBytes": 0,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/qualification.stdout"
+  },
+  {
+    "path": "raw/attempt-2/silent-omission/launch.json.gz",
+    "sha256": "f2b96db85180de5f989e8665b62045bd82260d1ff8e18b62e0eb1047fe430ee1",
+    "originalSha256": "42638c1e488c4977e75d5174c3ea2cda0042f60ed0d287c62d6d2ea813339dd2",
+    "originalBytes": 6872,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/silent-omission/launch.json"
+  },
+  {
+    "path": "raw/attempt-2/silent-omission/stderr.txt.gz",
+    "sha256": "a78c8786796eb71b8791a59c075f0b9f6171a5b4680bb8a75c898b227595f5c5",
+    "originalSha256": "9468938c76961fdfdb30296b8e62461dbf019c257e607ff1aad5008b12e93137",
+    "originalBytes": 656,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/silent-omission/stderr.txt"
+  },
+  {
+    "path": "raw/attempt-2/silent-omission/stdout.jsonl.gz",
+    "sha256": "faf4fa897768fa55fbd8e50ffc45bd54dbaf755598a77806890adcb629811220",
+    "originalSha256": "c51ebf6879f4d29d99b1555ad144f2209ed9e3cf515ec44d256412cd47c53bb8",
+    "originalBytes": 2779,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/silent-omission/stdout.jsonl"
+  },
+  {
+    "path": "raw/attempt-2/silent-omission.invocation.json.gz",
+    "sha256": "19a1c056ca188175cb8143a660ade3b593a75d4d2c282c71e0ff4f270f9d6ea5",
+    "originalSha256": "7ef5071c1a21c21dc656d47cfa8aca66e4e9af0a659f600085e6e2e4da8def68",
+    "originalBytes": 1979,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/silent-omission.invocation.json"
+  },
+  {
+    "path": "raw/attempt-2/silent-omission.stderr.gz",
+    "sha256": "5509ca910238d8c4b369df4ffdb0b835a372c73f3d570d001d611fa4620ae7d0",
+    "originalSha256": "23df99b9ea71db7e3300a99695aa1aec4984b793b4280949a5e8af1bba07068b",
+    "originalBytes": 753,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/silent-omission.stderr"
+  },
+  {
+    "path": "raw/attempt-2/silent-omission.stdout.gz",
+    "sha256": "faf4fa897768fa55fbd8e50ffc45bd54dbaf755598a77806890adcb629811220",
+    "originalSha256": "c51ebf6879f4d29d99b1555ad144f2209ed9e3cf515ec44d256412cd47c53bb8",
+    "originalBytes": 2779,
+    "source": "/tmp/chio-final-codex-silent-omission-r2-20260910/silent-omission.stdout"
+  },
+  {
+    "path": "raw/attempt-3/after-omission.invocation.json.gz",
+    "sha256": "6c8ebde8a531afdaa52a9999570c3e2d95497d8567a0e34f948939c5fcd1b59d",
+    "originalSha256": "6eaeddd20f7b96b80fc50b97adaac4bfcc8ed5dabc3eb601f2bbd17c747cf89a",
+    "originalBytes": 919,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/after-omission.invocation.json"
+  },
+  {
+    "path": "raw/attempt-3/after-omission.json.gz",
+    "sha256": "badec51c609c0a63681a9a0ab5a427655cbf993eeb74f78a538ea786d43deb66",
+    "originalSha256": "13f2c95ae06dd854d3d1d234af0ec9fc4a4fc705dc61705c8fdb304a0be04675",
+    "originalBytes": 798,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/after-omission.json"
+  },
+  {
+    "path": "raw/attempt-3/after-omission.stderr.gz",
+    "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "originalBytes": 0,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/after-omission.stderr"
+  },
+  {
+    "path": "raw/attempt-3/after-omission.stdout.gz",
+    "sha256": "21345cf0c47cbcb252fe8e2bc3c7fd8eac36382318d0ff993a569eb866391839",
+    "originalSha256": "128c92349cd5e01fad58727d122048960dc0a1ea7f97b1519f4f2f05050bc927",
+    "originalBytes": 683,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/after-omission.stdout"
+  },
+  {
+    "path": "raw/attempt-3/before-omission.invocation.json.gz",
+    "sha256": "317fbffa9a5266f0b6c0368473cb157e02f6fe74c738fc65d5dcdd9855288799",
+    "originalSha256": "f16a7a14a51e3cdaf961a28fba86fe185e85444f5f6b094bbb27d268ad2fe8aa",
+    "originalBytes": 920,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/before-omission.invocation.json"
+  },
+  {
+    "path": "raw/attempt-3/before-omission.json.gz",
+    "sha256": "badec51c609c0a63681a9a0ab5a427655cbf993eeb74f78a538ea786d43deb66",
+    "originalSha256": "13f2c95ae06dd854d3d1d234af0ec9fc4a4fc705dc61705c8fdb304a0be04675",
+    "originalBytes": 798,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/before-omission.json"
+  },
+  {
+    "path": "raw/attempt-3/before-omission.stderr.gz",
+    "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "originalBytes": 0,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/before-omission.stderr"
+  },
+  {
+    "path": "raw/attempt-3/before-omission.stdout.gz",
+    "sha256": "21345cf0c47cbcb252fe8e2bc3c7fd8eac36382318d0ff993a569eb866391839",
+    "originalSha256": "128c92349cd5e01fad58727d122048960dc0a1ea7f97b1519f4f2f05050bc927",
+    "originalBytes": 683,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/before-omission.stdout"
+  },
+  {
+    "path": "raw/attempt-3/driver.py.gz",
+    "sha256": "4ca101310faf3f77fba4d9b8a643e3b5b8bf68d0e9957b751f077f194b166433",
+    "originalSha256": "cd1a4ead01cbf48c838105f43e4aac18675e2b648a1bf0cf31a909e0346584af",
+    "originalBytes": 14893,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/driver.py"
+  },
+  {
+    "path": "raw/attempt-3/environment.json.gz",
+    "sha256": "6f5ee1eb861434f30bb4c7dc8eb5c98dc385b91f73ceef794e3ce012b2ef03eb",
+    "originalSha256": "089541ff05d1c959392929e003c27c140da1219ca3747c930c77ab588eb53513",
+    "originalBytes": 459,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/environment.json"
+  },
+  {
+    "path": "raw/attempt-3/final.invocation.json.gz",
+    "sha256": "efe472f1969e49ecf01fd64a48b67f79772173d23005513179a3dd8f4e1fb37a",
+    "originalSha256": "50af4cc56d57a5b5249ded8b9847f53d370fe4a8ff313d271b47a7ad0a087312",
+    "originalBytes": 919,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/final.invocation.json"
+  },
+  {
+    "path": "raw/attempt-3/final.json.gz",
+    "sha256": "fb6a3b47d85ae88d06c81ab4c0fd4e6083942dfe9b7b0c0a35eaa17f8bbf71a5",
+    "originalSha256": "56a1bf11fa74245232b13c88ce17b4bc8ae965bdc7394c584b9cecbd412ef357",
+    "originalBytes": 1379,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/final.json"
+  },
+  {
+    "path": "raw/attempt-3/final.stderr.gz",
+    "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "originalBytes": 0,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/final.stderr"
+  },
+  {
+    "path": "raw/attempt-3/final.stdout.gz",
+    "sha256": "7be2012b9a64ee0878c44ba12309f1c07ba9abc1dbf0e5d330f9b24d9b9c1fdb",
+    "originalSha256": "1c234b4a94f24bd8e4f243f5c1f4dc2d53d4842c3f06db9b1f5b3eafe04bb94a",
+    "originalBytes": 1176,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/final.stdout"
+  },
+  {
+    "path": "raw/attempt-3/fixture.mjs.gz",
+    "sha256": "5339517a59427747bbb52c7a76b8c514e29de68db1e7426692a8240587bb46ec",
+    "originalSha256": "4815e9a9ec74d99e2178769e4d28e85ba85d35656599538eb079c4452825ba97",
+    "originalBytes": 2834,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/fixture.mjs"
+  },
+  {
+    "path": "raw/attempt-3/identity.json.gz",
+    "sha256": "d0dde2d4e08a41bba90e83c7318ce130cd158c3a43031c9d2825fee0d8f332aa",
+    "originalSha256": "68035e09bda90a47b2d94c49545ffbc59c34b71adfb00977f3a17aa30a535462",
+    "originalBytes": 2150,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/identity.json"
+  },
+  {
+    "path": "raw/attempt-3/initial.invocation.json.gz",
+    "sha256": "dcad0a26091095348713c654d958ec1800fa6920406c4c94b1a17924803cb3e2",
+    "originalSha256": "a1aebf17f1740e52660701fe8cee0d7110cabe6ff4cc05889d72fc6af3368a6d",
+    "originalBytes": 920,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/initial.invocation.json"
+  },
+  {
+    "path": "raw/attempt-3/initial.json.gz",
+    "sha256": "4952fb53aceeecb564ff0629b938d9069e6fbddb657c9a2d6a9c69feeae9673d",
+    "originalSha256": "80027d8537dc5fd0d843f042008fead1dd82a41de9bcd4adae9c825a1a447aae",
+    "originalBytes": 213,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/initial.json"
+  },
+  {
+    "path": "raw/attempt-3/initial.stderr.gz",
+    "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "originalBytes": 0,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/initial.stderr"
+  },
+  {
+    "path": "raw/attempt-3/initial.stdout.gz",
+    "sha256": "f274697543fbcc9da7bfb5024b8785ce7aed6206bda7ea072551647c28bcfdbf",
+    "originalSha256": "5a84afeddbad9dba6f149ef3675ce9bd251b776c5135b6688b634a2337109f12",
+    "originalBytes": 189,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/initial.stdout"
+  },
+  {
+    "path": "raw/attempt-3/omission-result.json.gz",
+    "sha256": "fa4a7d503e1ae91a051ed0c3e25efe6af08a4aded823cb172f601cf7eee4d709",
+    "originalSha256": "aa922591a6250f00f7ea2371e721e9c6396869da0572fac2315b3282059afb88",
+    "originalBytes": 849,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/omission-result.json"
+  },
+  {
+    "path": "raw/attempt-3/omission.jsonl.gz",
+    "sha256": "f0d948be6e96045028cc19d8087ce22f36f2cbec300a10833dc739c4629ee0b3",
+    "originalSha256": "6e189ec93b76497dae5ca0f9434afa0e9b9518487d7ba21f6fcda696d13c5d66",
+    "originalBytes": 1985,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/omission.jsonl"
+  },
+  {
+    "path": "raw/attempt-3/owner-launcher.py.gz",
+    "sha256": "2e9e06ae17bc23f65544f397d89f16ff6f508bec2e1d582b60180d1907552504",
+    "originalSha256": "24187dd47e497d226fb0b1f6652a006a2514cff6bc84fea9b35361e948ed6399",
+    "originalBytes": 7273,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/owner-launcher.py"
+  },
+  {
+    "path": "raw/attempt-3/owner-start.invocation.json.gz",
+    "sha256": "da4ea43003e531069ec69d5c4b7b17ce0191960cb38c9e2ea7b394ec9162641b",
+    "originalSha256": "4dfbf5700c8944c2394ef7e7862cf2c507869beb952e9522095b71f62cb17ae0",
+    "originalBytes": 951,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/owner-start.invocation.json"
+  },
+  {
+    "path": "raw/attempt-3/owner-start.stderr.gz",
+    "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "originalBytes": 0,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/owner-start.stderr"
+  },
+  {
+    "path": "raw/attempt-3/owner-start.stdout.gz",
+    "sha256": "d7060c48f02b10b361d160c7e28f4ec94c3ddcb1c4a5ae2f28cf4686d4f9e3df",
+    "originalSha256": "d39cd94b509c16fe35dac8a6d6b70f8d0765ed2a8f1b94169f1d46fa109b066e",
+    "originalBytes": 81,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/owner-start.stdout"
+  },
+  {
+    "path": "raw/attempt-3/owner-stop.json.gz",
+    "sha256": "99f8ac476d600ba657155146e583db60306e0f3f47524fea81c9ec09d5b9131e",
+    "originalSha256": "77ecf158125ffefc149e79d3a92630784436a26ac7f78aa28ff1ba930fd5d483",
+    "originalBytes": 600,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/owner-stop.json"
+  },
+  {
+    "path": "raw/attempt-3/policy.yaml.gz",
+    "sha256": "b68491ab8caeaf405ec0f8c6f3c9beddb62f89cc0d62226cdb37b6396f2b3266",
+    "originalSha256": "8c2c732d9115799b13150f7924da0e68fc1f9b2d42a2618912511d407035cc66",
+    "originalBytes": 631,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/policy.yaml"
+  },
+  {
+    "path": "raw/attempt-3/positive/launch.json.gz",
+    "sha256": "f018ca17f709d6412bfb7b10194f9b0685efcb6406b1e5b0ae748a6353023de9",
+    "originalSha256": "6bf00d6e989b260d72ffdf0a0b10edbc2a67a1eabfdfbb726a0ed14026ae52d0",
+    "originalBytes": 5168,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/positive/launch.json"
+  },
+  {
+    "path": "raw/attempt-3/positive/stderr.txt.gz",
+    "sha256": "adf8ef56ee2f834aac245096348678bf33b2557c69ef86fba286295105297660",
+    "originalSha256": "381ba413bd1e8da3bd1507bf2f72b91a2a07ac919df1a758ef88d748b5e7e9ab",
+    "originalBytes": 211,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/positive/stderr.txt"
+  },
+  {
+    "path": "raw/attempt-3/positive/stdout.jsonl.gz",
+    "sha256": "3025b6d8b20e280bbc145599854008b8bd023fac56a5a6a8ca8b56f692ca0b54",
+    "originalSha256": "4c3c5c6e1b5c71923bf09ed8d6002ce5e739f887561987abd68417f22f807df6",
+    "originalBytes": 5223,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/positive/stdout.jsonl"
+  },
+  {
+    "path": "raw/attempt-3/positive.invocation.json.gz",
+    "sha256": "d3c5cdae19a86a8a333ae6c2ac049cc82ba7b2467b732afe5c405881027f5dba",
+    "originalSha256": "a33ce4b75ecafd664abb682ff6d0143ed9fa770e0d1f212f73412beb608cd4fb",
+    "originalBytes": 985,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/positive.invocation.json"
+  },
+  {
+    "path": "raw/attempt-3/positive.stderr.gz",
+    "sha256": "0b42945e1392be2588715777a28237cafe244e6226a6403ba769213d906ace04",
+    "originalSha256": "7a8a2928016a28359bb0781194f7be845877e37c3864f085308851631451e106",
+    "originalBytes": 301,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/positive.stderr"
+  },
+  {
+    "path": "raw/attempt-3/positive.stdout.gz",
+    "sha256": "3025b6d8b20e280bbc145599854008b8bd023fac56a5a6a8ca8b56f692ca0b54",
+    "originalSha256": "4c3c5c6e1b5c71923bf09ed8d6002ce5e739f887561987abd68417f22f807df6",
+    "originalBytes": 5223,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/positive.stdout"
+  },
+  {
+    "path": "raw/attempt-3/prepare.invocation.json.gz",
+    "sha256": "9efcdd448af07839deaba5acc341a3a322634fcb14fd0aba34f06cd11d811dee",
+    "originalSha256": "c8be94f4149200b29ae620dca61a4bea971cb638c1d0bd49a3b33fccfab3effd",
+    "originalBytes": 473,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/prepare.invocation.json"
+  },
+  {
+    "path": "raw/attempt-3/prepare.stderr.gz",
+    "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "originalBytes": 0,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/prepare.stderr"
+  },
+  {
+    "path": "raw/attempt-3/prepare.stdout.gz",
+    "sha256": "4e55ec8cc7c740a8c4a73bd7a6c5fc9d783e02081aea27fa7adca97a63cb2f27",
+    "originalSha256": "60b1ea54d79589ffc9e6cc213392eba7bf073503fd5277ecd4c06ee4568bdea8",
+    "originalBytes": 108,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/prepare.stdout"
+  },
+  {
+    "path": "raw/attempt-3/qualification.invocation.json.gz",
+    "sha256": "b606eca525790319182d33bcaea210e0a40608e45f5abe53cf0e8f9f13071d14",
+    "originalSha256": "4296733de48991085341b2cd8c7a993445350cbacf425051f67a30481750ec11",
+    "originalBytes": 1648,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/qualification.invocation.json"
+  },
+  {
+    "path": "raw/attempt-3/qualification.stderr.gz",
+    "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "originalBytes": 0,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/qualification.stderr"
+  },
+  {
+    "path": "raw/attempt-3/qualification.stdout.gz",
+    "sha256": "85d1f358700380fe38b0278a31753ee5d30141c7dcc289225223d0f42d9e6c20",
+    "originalSha256": "0ab2dfbc3519143ced56506e969d16449ed8b545971e0b2c13d7acc0147cfb52",
+    "originalBytes": 88,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/qualification.stdout"
+  },
+  {
+    "path": "raw/attempt-3/restored/launch.json.gz",
+    "sha256": "60542c820c0033906ceb340722ca24aecaae66b31e0f673a19bffab7e3430517",
+    "originalSha256": "738a9bbb85368374abf07a200cac9a5f7a302404f59b5790cb4b2b9382b0e324",
+    "originalBytes": 5176,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/restored/launch.json"
+  },
+  {
+    "path": "raw/attempt-3/restored/stderr.txt.gz",
+    "sha256": "469dc602439af92b962b32f2e34005d7abe59c524d447e5cd6801c7ad506fca2",
+    "originalSha256": "8c208ee1a242b57c4538ee0b0cc8a4a9066c1ba5b768fa720f156ead7d732ffa",
+    "originalBytes": 211,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/restored/stderr.txt"
+  },
+  {
+    "path": "raw/attempt-3/restored/stdout.jsonl.gz",
+    "sha256": "3ecf456fbae2f5451302ee0a2e90cccc2b475c5c6be586aabdbbe9fa0e7a5021",
+    "originalSha256": "e900f2cbaba50e2b0ff0eaf156ad64a54f2a353e07b76880d73aa4d985c12262",
+    "originalBytes": 5150,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/restored/stdout.jsonl"
+  },
+  {
+    "path": "raw/attempt-3/restored.invocation.json.gz",
+    "sha256": "441a9c778915b3ae03796c0cf627a2518ec20e96c37ce054d955b286808c907f",
+    "originalSha256": "d9991df1dd5d68b1515234d3e5e43b057b4186501949cd7f8b70a9b0cba88668",
+    "originalBytes": 991,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/restored.invocation.json"
+  },
+  {
+    "path": "raw/attempt-3/restored.stderr.gz",
+    "sha256": "1eb70cb41bed0f37bae5728e5d0421adf151c24bb53eaadb3b50cd6f80b550a8",
+    "originalSha256": "a49daad0d6e4be6c2725cf7d3f55d8f53bbeefb61425864f1f2cf3b9c6e81264",
+    "originalBytes": 301,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/restored.stderr"
+  },
+  {
+    "path": "raw/attempt-3/restored.stdout.gz",
+    "sha256": "3ecf456fbae2f5451302ee0a2e90cccc2b475c5c6be586aabdbbe9fa0e7a5021",
+    "originalSha256": "e900f2cbaba50e2b0ff0eaf156ad64a54f2a353e07b76880d73aa4d985c12262",
+    "originalBytes": 5150,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/restored.stdout"
+  },
+  {
+    "path": "raw/attempt-3/result.json.gz",
+    "sha256": "d30e2d1492f6f77de376a962ed41cc85d20f667c96412716c9cb2420d6cb72cc",
+    "originalSha256": "7c9cb11b2269656863e1d47bb9204d6241ff62a1321f432dc23f5569e1b278f3",
+    "originalBytes": 1008,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/result.json"
+  },
+  {
+    "path": "raw/attempt-3/silent-omission/launch.json.gz",
+    "sha256": "7bbec70cd9391eea566b997bfd3092683895131eaf89f51f0775690b07b7e70a",
+    "originalSha256": "41f15cca53823096ed4314e4d329453060efdc2f9086a685793446ee3d880246",
+    "originalBytes": 6872,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/silent-omission/launch.json"
+  },
+  {
+    "path": "raw/attempt-3/silent-omission/stderr.txt.gz",
+    "sha256": "f1796bb5f09388cec94b1d33c52352f22c0402426bcf6063fcd12d995944860e",
+    "originalSha256": "11b4af87e255aec4b5f3003ec72cef6a4698f841040908ad2ddeeadb1c2a9651",
+    "originalBytes": 656,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/silent-omission/stderr.txt"
+  },
+  {
+    "path": "raw/attempt-3/silent-omission/stdout.jsonl.gz",
+    "sha256": "007d5e8ad53f44b6d2dc1f1639cdf4df7bbbd3b98092fab741d0209820a957e1",
+    "originalSha256": "3199b862c5ca58a6d4a933c6ee0cac57ec11295f3e6c1ba3236594340ba624d5",
+    "originalBytes": 2827,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/silent-omission/stdout.jsonl"
+  },
+  {
+    "path": "raw/attempt-3/silent-omission.invocation.json.gz",
+    "sha256": "4adc085a474239667d3d05a78097b1b97eec68302f4781a30d41caa1e4035199",
+    "originalSha256": "62232fede1b40eb86823f161c59c150e6ef35afed036950367992a1aef786660",
+    "originalBytes": 1978,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/silent-omission.invocation.json"
+  },
+  {
+    "path": "raw/attempt-3/silent-omission.stderr.gz",
+    "sha256": "c5f7d8300bd30e56d40fbbfecf7a6916811fcea3a920cddda40f0376a635881f",
+    "originalSha256": "d368f41b042efc282797a9ecad2b6d4c8296a6b9c6421432fd8f0b23dbb5d475",
+    "originalBytes": 753,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/silent-omission.stderr"
+  },
+  {
+    "path": "raw/attempt-3/silent-omission.stdout.gz",
+    "sha256": "007d5e8ad53f44b6d2dc1f1639cdf4df7bbbd3b98092fab741d0209820a957e1",
+    "originalSha256": "3199b862c5ca58a6d4a933c6ee0cac57ec11295f3e6c1ba3236594340ba624d5",
+    "originalBytes": 2827,
+    "source": "/tmp/chio-final-codex-silent-omission-r3-20260910/silent-omission.stdout"
+  }
+]

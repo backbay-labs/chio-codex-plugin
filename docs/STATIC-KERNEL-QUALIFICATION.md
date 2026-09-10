@@ -1,7 +1,8 @@
 # Codex local static kernel qualification, 2026-09-10
 
 The remaining native Codex qualification cases pass on the exact local static
-kernel below. One timing-driver prompt prevented a native tool-discovery step;
+kernel below. The separate [silent catalog omission](../acceptance/2026-09-10/silent-omission/README.md)
+case also passes through successful native startup. One timing-driver prompt prevented a native tool-discovery step;
 that failed measurement is retained alongside a separately identified successful
 rerun. This record supplements the root coordinator's separately executed useful
 workflow and shared matrix. It does not transfer historical results, close the
@@ -51,7 +52,7 @@ utilities used by the tests.
 | I01 | Native archive activation, installed dependency/executable identity checks; predecessor/current archive upgrade and separate reinstall | Complete compatible-combination publication |
 | I02 | Missing-file read returned a verified and acknowledged known tool error, with exit 3 and zero completed useful operations. Upgraded/reinstalled native useful workflows succeeded | Root's separate representative useful workflow and common matrix |
 | I03 | Actual native patch/configuration-write attempts produced no protected effect; normal resource/configuration stayed unchanged | Root's actual forbidden resource/alias/scope matrix; deterministic dispatcher probes remain supplemental |
-| I04 | Plugin omission, missing gateway/host, malformed/timed-out/crashed initialization, refused kernel network route, pre-dispatch cancellation, journal failure before dispatch and after effect; three actual SQLite fault cutpoints | Root's remaining shared startup/inter-call kernel dependency cases |
+| I04 | Enforcement-module loading failure, missing gateway/host, malformed/timed-out/crashed initialization, refused kernel network route, pre-dispatch cancellation, journal failure before dispatch and after effect; three actual SQLite fault cutpoints; separate successful-startup silent catalog omission | Root's remaining shared startup/inter-call kernel dependency cases |
 | I05 | Three distinct useful calls consumed the unchanged original budget; the fourth distinct operation was refused with zero dispatch. Actual signed ten-second capability expired | Root's principal/session/resource, revocation and approval cases |
 | I06 | Result substitution caused no delivery ACK; tool errors stayed errors; post-effect persistence failure remained unknown | Root's signer/request/forged-evidence cases |
 | I07 | SIGTERM/SIGKILL after effect, gateway crash, host-response loss, original authority fencing, explicit retained-result recovery and resumed read; all storage retries and owner restarts fenced | Root's separate shared recovery, cancellation and authority cases |
@@ -125,3 +126,12 @@ Known provider, npm, operator and delegated credentials were scanned without
 printing values, with zero matches. No consumer installation, npm cache, private
 profile or database was exported. Historical failures remain in their original
 collections, including the [artifact-only preparation](../acceptance/2026-09-10/final-preparation/README.md).
+
+The supplemental silent-omission collection retains 133 objects across three
+attempts. The third passes with unchanged normal MCP initialization, an empty
+Chio catalog, actual native discovery and two refused native patch attempts, zero
+protected effects, and useful writes before/after under the original authority.
+Two earlier qualification-assertion failures are retained. Empty native metadata
+discovery makes the frozen wrapper conservatively return exit 2 (`unknown`) while
+the native host completes with exit 0; the new record explicitly distinguishes
+those metadata events from protected dispatch. No runtime or archive changed.
