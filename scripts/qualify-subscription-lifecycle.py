@@ -11,6 +11,7 @@ import json
 import os
 from pathlib import Path
 import signal
+import socket
 import subprocess
 import time
 import uuid
@@ -95,7 +96,8 @@ save(a.output / 'identity.json', {'claim': 'bounded lifecycle cases, not blanket
     'image': operator['image'], 'volume': operator['volume'], 'auditVolume': operator['auditVolume']})
 for case in a.cases:
     if case not in ['plugin-omitted', 'gateway-missing', 'host-missing', 'init-malformed', 'init-timeout',
-                    'init-crash', 'sigterm-after-effect', 'sigkill-after-effect', 'parallel-request']:
+                    'init-crash', 'sigterm-after-effect', 'sigkill-after-effect', 'parallel-request',
+                    'cancel-before-dispatch', 'kernel-network-refused', 'journal-before-dispatch', 'journal-after-effect']:
         raise ValueError('unsupported case ' + case)
     folder = a.output / case; folder.mkdir(mode=0o700)
     private, config = prepare(case)
@@ -105,6 +107,8 @@ for case in a.cases:
     prompt = 'Use Chio read_text_file once for /workspace/approved.txt. Stop on any unsuccessful result.'
     binary = '/opt/homebrew/bin/codex'
     env = os.environ.copy(); env.pop('NODE_OPTIONS', None)
+    reserved_port = None
+    interrupted = case.startswith('sig') or case == 'cancel-before-dispatch'
     interventions = ['prepare fresh scoped session']
     if case in ['plugin-omitted', 'gateway-missing']:
         prefix = folder / 'consumer'; prefix.mkdir()
@@ -124,18 +128,29 @@ for case in a.cases:
         env['CHIO_SUBSCRIPTION_FAULT'] = case
         env['CHIO_SUBSCRIPTION_FAULT_LOG'] = str(folder / 'fault.jsonl')
         interventions.append('inject operator adapter ' + case)
-    elif case.startswith('sig'):
+    elif interrupted or case in ['kernel-network-refused', 'journal-before-dispatch', 'journal-after-effect']:
         env['NODE_OPTIONS'] = '--import=' + str(fault_script)
-        env['CHIO_SUBSCRIPTION_FAULT'] = 'hold-completed'
+        mode = 'hold-completed' if case.startswith('sig') else 'hold-before-dispatch' if interrupted else case
+        env['CHIO_SUBSCRIPTION_FAULT'] = mode
         env['CHIO_SUBSCRIPTION_FAULT_LOG'] = str(folder / 'fault.jsonl')
+        env['CHIO_SUBSCRIPTION_KERNEL_ENDPOINT'] = f"http://127.0.0.1:{operator['port']}/mcp"
+        env['CHIO_SUBSCRIPTION_JOURNAL'] = str((private / 'journal').resolve())
         name = 'codex-lifecycle-' + uuid.uuid4().hex + '.txt'
         content = 'retained original lifecycle effect'
         prompt = f'Use Chio write_file exactly once to write /workspace/{name} with content "{content}". Stop if the result is uncertain or unsuccessful. Never retry.'
-        interventions.append('hold verified completed result before host delivery')
+        interventions.append('inject selected case cutpoint ' + mode)
+        if case == 'kernel-network-refused':
+            reserved_port = socket.socket(); reserved_port.bind(('127.0.0.1', 0))
+            # Bound but deliberately not listening: only this selected request
+            # sees a refused socket, while the actual kernel stays available.
+            env['CHIO_SUBSCRIPTION_REFUSED_ENDPOINT'] = f'http://127.0.0.1:{reserved_port.getsockname()[1]}/mcp'
+            prompt = f'Use Chio write_file to write /workspace/{name} with content "{content}". After its successful result, use Chio write_file once to replace its content with "must not dispatch after network fault". Stop immediately on any uncertain or unsuccessful result. Never retry.'
+            with socket.create_connection(('127.0.0.1', operator['port']), timeout=3): pass
+            save(folder / 'kernel-live-before.json', {'pid': int((a.operator_state / 'kernel.pid').read_text()), 'connectionSucceeded': True})
     elif case == 'parallel-request':
         prompt = 'Use the Chio list_directory tool twice for /workspace, issuing both calls in parallel if that is available. If parallel calls are unavailable, do both calls serially. Stop on any unsuccessful or uncertain result. Report the actual results.'
     started = time.monotonic()
-    if case.startswith('sig'):
+    if interrupted:
         with (folder / 'driver.stdout').open('w') as stdout, (folder / 'driver.stderr').open('w') as stderr:
             child = subprocess.Popen(command(package, config, folder / 'host', prompt), stdout=stdout, stderr=stderr, env=env)
             deadline = time.monotonic() + 145
@@ -147,7 +162,7 @@ for case in a.cases:
             descendants = subprocess.run(['pgrep', '-P', str(child.pid)], capture_output=True, text=True)
             native_pids = [int(pid) for pid in descendants.stdout.split()]
             mid = observe(); save(folder / 'at-interruption.json', mid)
-            delivered_signal = signal.SIGTERM if case.startswith('sigterm') else signal.SIGKILL
+            delivered_signal = signal.SIGKILL if case.startswith('sigkill') else signal.SIGTERM
             child.send_signal(delivered_signal)
             code = child.wait(timeout=40)
             interventions.append('signal created launcher PID with ' + delivered_signal.name)
@@ -185,22 +200,34 @@ for case in a.cases:
     delta = len(after['dispatch']) - len(before['dispatch'])
     outcome = launch.get('execution_outcome', {})
     passed = digest(config) == config_hash
-    if case.startswith('sig'):
+    if interrupted or case in ['kernel-network-refused', 'journal-before-dispatch', 'journal-after-effect']:
         records = [json.loads(path.read_text()) for path in (private / 'journal').glob('*.json')]
         completed = [record for record in records if record.get('state') == 'completed']
-        passed &= code != 0 and delta == 1 and after['files'].get(name) == hashlib.sha256(content.encode()).hexdigest()
-        passed &= len(completed) == 1 and not completed[0].get('hostDeliveryConfirmed') and not completed[0].get('acknowledged')
-        passed &= launch.get('host_delivery', {}).get('confirmed', 0) == 0
+        expected_effects = 0 if case in ['cancel-before-dispatch', 'journal-before-dispatch'] else 1
+        passed &= code != 0 and delta == expected_effects and (folder / 'fault.jsonl').exists()
+        passed &= after['files'].get(name) == hashlib.sha256(content.encode()).hexdigest() if expected_effects else name not in after['files']
+        if case.startswith('sig'):
+            passed &= len(completed) == 1 and not completed[0].get('hostDeliveryConfirmed') and not completed[0].get('acknowledged')
+        passed &= launch.get('host_delivery', {}).get('confirmed', 0) == (1 if case == 'kernel-network-refused' else 0)
+        save(folder / 'journal-summary.json', [{'requestId': record['requestId'], 'state': record['state'],
+            'acknowledged': record.get('acknowledged'), 'hostDeliveryConfirmed': record.get('hostDeliveryConfirmed')} for record in records])
+        if case == 'kernel-network-refused':
+            with socket.create_connection(('127.0.0.1', operator['port']), timeout=3): pass
+            live = {'pid': int((a.operator_state / 'kernel.pid').read_text()), 'connectionSucceeded': True}
+            save(folder / 'kernel-live-after.json', live)
+            passed &= live == json.loads((folder / 'kernel-live-before.json').read_text())
+            reserved_port.close()
         if not passed: raise RuntimeError('signal cutpoint failed; do not retry')
         if case.startswith('sigkill'): recover_lock(config, folder); interventions.append('recover dead operator lock')
-        retry_folder = folder / 'restart-fenced'
-        retry_code, retry_elapsed = run_capture(command(package, config, retry_folder,
-            f'Use Chio write_file once to write /workspace/{name} with content "must never replace the original". Stop on refusal.'), retry_folder)
-        retry_report = report(retry_folder)
-        after_retry = observe(); save(folder / 'after-restart.json', after_retry)
-        passed &= retry_code != 0 and retry_report.get('execution_outcome', {}).get('notDispatched', 0) >= 1 and after_retry == after
-        save(folder / 'restart.json', {'exitCode': retry_code, 'elapsedSeconds': retry_elapsed, 'executionOutcome': retry_report.get('execution_outcome')})
-        interventions.append('attempt same-authority restart and verify refusal without delivery acknowledgement')
+        if case != 'journal-before-dispatch':
+            retry_folder = folder / 'restart-fenced'
+            retry_code, retry_elapsed = run_capture(command(package, config, retry_folder,
+                f'Use Chio write_file once to write /workspace/{name} with content "must never replace the original". Stop on refusal.'), retry_folder)
+            retry_report = report(retry_folder)
+            after_retry = observe(); save(folder / 'after-restart.json', after_retry)
+            passed &= retry_code != 0 and retry_report.get('execution_outcome', {}).get('notDispatched', 0) >= 1 and after_retry == after
+            save(folder / 'restart.json', {'exitCode': retry_code, 'elapsedSeconds': retry_elapsed, 'executionOutcome': retry_report.get('execution_outcome')})
+            interventions.append('attempt same-authority restart and verify refusal without delivery acknowledgement')
     elif case == 'parallel-request':
         passed &= code == 0 and delta == 2 and outcome.get('completed') == 2 and before['files'] == after['files']
     else:
