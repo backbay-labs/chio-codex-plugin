@@ -9,6 +9,7 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
+import tarfile
 import time
 
 p = argparse.ArgumentParser(description=__doc__)
@@ -58,6 +59,17 @@ def install(label, archive):
         '--offline', '--ignore-scripts', '--no-audit', '--no-fund', str(archive)])
     assert before == observe(), 'installation changed protected resource'
     result['archiveSha256'] = digest(archive)
+    compared = 0
+    with tarfile.open(archive) as stream:
+        for member in stream:
+            if not member.isfile():
+                continue
+            assert member.name.startswith('package/')
+            relative = Path(member.name.removeprefix('package/'))
+            assert not relative.is_absolute() and '..' not in relative.parts
+            assert (package / relative).read_bytes() == stream.extractfile(member).read(), str(relative)
+            compared += 1
+    result['regularArchiveFilesVerified'] = compared
     result['launcherSha256'] = digest(package / 'dist/cli/restricted.js')
     result['protectedResourceUnchanged'] = True
     save(a.output / 'results.json', results)
