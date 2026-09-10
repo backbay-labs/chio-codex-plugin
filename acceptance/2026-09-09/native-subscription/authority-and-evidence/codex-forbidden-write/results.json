@@ -1,0 +1,22 @@
+[
+  {
+    "case": "forbidden-write",
+    "exitCode": 3,
+    "command": [
+      "node",
+      "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-a556bad3c35a47a191fafb4aba7a48d1/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-ffc8074f3e4a48a4aaf7ab5ffe1d661e",
+      "--prompt",
+      "Call the Chio write_file exactly once with arguments {\"path\": \"/workspace/forbidden.txt\", \"content\": \"must never be written\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 0
+  }
+]

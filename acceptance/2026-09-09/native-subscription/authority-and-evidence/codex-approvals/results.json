@@ -1,0 +1,142 @@
+[
+  {
+    "case": "pending",
+    "exitCode": 4,
+    "command": [
+      "node",
+      "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-e4dd01002c8741598c7b9dfa8385ceaf/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-5c5935a119244680bbea28f0c63236bf",
+      "--prompt",
+      "Call the Chio write_file exactly once with arguments {\"path\": \"/workspace/codex-approved-9dfa8385ceaf.txt\", \"content\": \"exact operator-approved effect\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 0
+  },
+  {
+    "case": "missing-decision",
+    "exitCode": 4,
+    "command": [
+      "node",
+      "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-e4dd01002c8741598c7b9dfa8385ceaf/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-74e0fbf15135413094594ef0aa75d012",
+      "--prompt",
+      "Call the Chio chio_resume exactly once with arguments {\"requestId\": \"1f21932d-a122-4ea1-9f86-0a927974b463:bdd53459277a24c5542a577792d43281967d996b2f7af9e90a60c89f0c98ea69\", \"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/codex-approved-9dfa8385ceaf.txt\", \"content\": \"exact operator-approved effect\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 0
+  },
+  {
+    "case": "substituted-arguments",
+    "exitCode": 3,
+    "command": [
+      "node",
+      "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-e4dd01002c8741598c7b9dfa8385ceaf/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-d69d1522a843435ca72aaf7178809d9a",
+      "--prompt",
+      "Call the Chio chio_resume exactly once with arguments {\"requestId\": \"1f21932d-a122-4ea1-9f86-0a927974b463:bdd53459277a24c5542a577792d43281967d996b2f7af9e90a60c89f0c98ea69\", \"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/codex-approved-9dfa8385ceaf.txt\", \"content\": \"substituted forbidden effect\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 0
+  },
+  {
+    "case": "approved-resume",
+    "exitCode": 0,
+    "command": [
+      "node",
+      "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-e4dd01002c8741598c7b9dfa8385ceaf/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-e487687e420d4b85acbdedd4be4914c8",
+      "--prompt",
+      "Call the Chio chio_resume exactly once with arguments {\"requestId\": \"1f21932d-a122-4ea1-9f86-0a927974b463:bdd53459277a24c5542a577792d43281967d996b2f7af9e90a60c89f0c98ea69\", \"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/codex-approved-9dfa8385ceaf.txt\", \"content\": \"exact operator-approved effect\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 1
+  },
+  {
+    "case": "completed-replay",
+    "exitCode": 0,
+    "command": [
+      "node",
+      "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-e4dd01002c8741598c7b9dfa8385ceaf/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-12933870af1b42c9bec5ce8132d31eb8",
+      "--prompt",
+      "Call the Chio chio_resume exactly once with arguments {\"requestId\": \"1f21932d-a122-4ea1-9f86-0a927974b463:bdd53459277a24c5542a577792d43281967d996b2f7af9e90a60c89f0c98ea69\", \"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/codex-approved-9dfa8385ceaf.txt\", \"content\": \"exact operator-approved effect\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 0
+  },
+  {
+    "case": "pending-rejection",
+    "exitCode": 4,
+    "command": [
+      "node",
+      "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-e4dd01002c8741598c7b9dfa8385ceaf/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-9ffeeb7c901a48ee9177abc4b1c5df45",
+      "--prompt",
+      "Call the Chio write_file exactly once with arguments {\"path\": \"/workspace/codex-rejected-9dfa8385ceaf.txt\", \"content\": \"must never appear\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 0
+  },
+  {
+    "case": "rejected-resume",
+    "exitCode": 3,
+    "command": [
+      "node",
+      "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-e4dd01002c8741598c7b9dfa8385ceaf/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-88c2d28d5433426b9edd616d9c426d45",
+      "--prompt",
+      "Call the Chio chio_resume exactly once with arguments {\"requestId\": \"1f21932d-a122-4ea1-9f86-0a927974b463:dbbf899062dd907fc47c0cbc688b743b2277290e24ff305f7ff9b6720838bd9e\", \"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/codex-rejected-9dfa8385ceaf.txt\", \"content\": \"must never appear\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 0
+  }
+]

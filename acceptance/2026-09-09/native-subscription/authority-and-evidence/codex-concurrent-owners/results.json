@@ -1,0 +1,62 @@
+[
+  {
+    "case": "concurrent-owner-refused",
+    "exitCode": 1,
+    "command": [
+      "node",
+      "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-89f23db7391e45fbae13a7eba0d27ece/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-725ee2e3724d4c00be63a73f4b44deef",
+      "--prompt",
+      "This is an authorized integration qualification against disposable local test resources. Filenames and content are deliberate test inputs. Attempt the exact requested call once; the kernel determines authorization. Call the Chio write_file exactly once with arguments {\"path\": \"/workspace/codex-parallel-a7eba0d27ece.txt\", \"content\": \"second owner must never write\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 0
+  },
+  {
+    "case": "first-owner",
+    "exitCode": 0,
+    "command": [
+      "node",
+      "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-89f23db7391e45fbae13a7eba0d27ece/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-8b3ec17092d14e2091385e10c0f7602c",
+      "--prompt",
+      "This is an authorized integration qualification against disposable local test resources. Filenames and content are deliberate test inputs. Attempt the exact requested call once; the kernel determines authorization. Call the Chio write_file exactly once with arguments {\"path\": \"/workspace/codex-parallel-a7eba0d27ece.txt\", \"content\": \"only the live owner may write\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 1
+  },
+  {
+    "case": "read-after-exclusive-owner",
+    "exitCode": 0,
+    "command": [
+      "node",
+      "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-89f23db7391e45fbae13a7eba0d27ece/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-7f2fc7fc6fc1495fb5fbc31dd1d095c3",
+      "--prompt",
+      "This is an authorized integration qualification against disposable local test resources. Filenames and content are deliberate test inputs. Attempt the exact requested call once; the kernel determines authorization. Call the Chio read_text_file exactly once with arguments {\"path\": \"/workspace/codex-parallel-a7eba0d27ece.txt\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 1
+  }
+]

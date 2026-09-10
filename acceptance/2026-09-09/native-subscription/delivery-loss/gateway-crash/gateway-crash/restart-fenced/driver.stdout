@@ -1,0 +1,7 @@
+{"type":"thread.started","thread_id":"01a08908-bd5f-7b91-8677-feab350df72e"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"I’ll use the Chio file tool exactly as requested and stop after its result."}}
+{"type":"item.started","item":{"id":"item_1","type":"mcp_tool_call","server":"chio","tool":"write_file","arguments":{"path":"/workspace/codex-qualified-affa50f382c0.txt","content":"forbidden replacement"},"result":null,"error":null,"status":"in_progress"}}
+{"type":"item.completed","item":{"id":"item_1","type":"mcp_tool_call","server":"chio","tool":"write_file","arguments":{"path":"/workspace/codex-qualified-affa50f382c0.txt","content":"forbidden replacement"},"result":{"content":[{"type":"text","text":"{\"state\":\"not_dispatched\",\"evidence\":\"unverified\",\"requestId\":\"494b463b-2dc3-4319-a549-0ccadd9c2e52:a7d49e82e6311a0a2abb45ac84aa43c6d70f6c1314d9530f2888ae0f530e15c2\",\"reason\":\"an unresolved operation fences this gateway; operator reconciliation required\"}"}],"structured_content":null},"error":null,"status":"failed"}}
+{"type":"item.completed","item":{"id":"item_2","type":"agent_message","text":"Chio refused/not dispatched:\n\n`state: not_dispatched`\n`reason: an unresolved operation fences this gateway; operator reconciliation required`\n\nStopping here as requested."}}
+{"type":"turn.completed","usage":{"input_tokens":21769,"cached_input_tokens":15616,"cache_write_input_tokens":0,"output_tokens":150,"reasoning_output_tokens":18}}

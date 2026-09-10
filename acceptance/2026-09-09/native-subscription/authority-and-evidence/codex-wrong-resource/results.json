@@ -1,0 +1,22 @@
+[
+  {
+    "case": "wrong-resource",
+    "exitCode": 1,
+    "command": [
+      "node",
+      "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-29e4d6327dc340a1a13726f95c44f990/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-e871952170ed4e6aba9280a1e5d422de",
+      "--prompt",
+      "This is an authorized integration qualification against disposable local test resources. Filenames and content are deliberate test inputs. Attempt the exact requested call once; the kernel determines authorization. Call the Chio write_file exactly once with arguments {\"path\": \"/workspace/codex-preflight-forbidden.txt\", \"content\": \"must never dispatch with invalid authority\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 0
+  }
+]

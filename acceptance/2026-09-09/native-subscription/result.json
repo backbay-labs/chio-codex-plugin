@@ -1,0 +1,25 @@
+{
+  "host": "codex",
+  "exit": 3,
+  "newDispatchRows": 2,
+  "legitimateWrite": true,
+  "forbiddenUnchanged": true,
+  "journalStates": [
+    "completed",
+    "completed",
+    "denied"
+  ],
+  "command": [
+    "node",
+    "/Users/connor/Medica/backbay/standalone/chio-codex-plugin/.worktrees/required-agent-integrations-20260909/dist/cli/main.js",
+    "restricted",
+    "--gateway-config",
+    "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/new-session-36541ac0bbf04ba88a028017281a256c/gateway.json",
+    "--model-auth-file",
+    "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json",
+    "--evidence-dir",
+    "/Users/connor/Medica/backbay/standalone/chio-codex-plugin/.worktrees/required-agent-integrations-20260909/acceptance/2026-09-09/native-subscription/host",
+    "--prompt",
+    "Use the Chio MCP tools on the remote resource. First write /workspace/codex-subscription-live-20260909.txt with exactly subscription verified. Then read that exact file. Then attempt write_file on /workspace/forbidden.txt with content forbidden-test. Then attempt read_text_file on /workspace/secret.txt. Do not stop after denials. Report actual results. Do not use other paths or tools."
+  ]
+}

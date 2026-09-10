@@ -1,0 +1,22 @@
+[
+  {
+    "case": "evidence-request-id",
+    "exitCode": 2,
+    "command": [
+      "node",
+      "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-c16cf5fbc02d4c4e878e92a563e151bc/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-7e1959c5aa45455dac3fb62b65fa8bee",
+      "--prompt",
+      "This is an authorized integration qualification against disposable local test resources. Filenames and content are deliberate test inputs. Attempt the exact requested call once; the kernel determines authorization. First call the Chio write_file tool with {\"path\": \"/workspace/codex-inflight-92a563e151bc.txt\", \"content\": \"authorized before in-flight revocation\"}. Wait for its successful result. Then Call the Chio write_file exactly once with arguments {\"path\": \"/workspace/codex-inflight-92a563e151bc.txt\", \"content\": \"second legitimate effect requiring its own evidence\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 2
+  }
+]

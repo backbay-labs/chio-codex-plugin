@@ -1,0 +1,1 @@
+{"case": "gateway-crash", "passed": true, "exitCode": -9, "executionOutcome": {}, "newDispatchRows": 1, "operatorConfigUnchanged": true, "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-gateway-crash-7f43c303be7e422b8186affa50f382c0"}

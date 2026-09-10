@@ -1,0 +1,20 @@
+[
+  {
+    "state": "completed",
+    "acknowledged": true,
+    "hostDeliveryConfirmed": true,
+    "tool": null
+  },
+  {
+    "state": "completed",
+    "acknowledged": true,
+    "hostDeliveryConfirmed": true,
+    "tool": null
+  },
+  {
+    "state": "denied",
+    "acknowledged": false,
+    "hostDeliveryConfirmed": null,
+    "tool": null
+  }
+]

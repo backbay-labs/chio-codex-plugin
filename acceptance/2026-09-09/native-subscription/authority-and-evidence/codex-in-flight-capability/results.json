@@ -1,0 +1,22 @@
+[
+  {
+    "case": "in-flight-capability",
+    "exitCode": 3,
+    "command": [
+      "node",
+      "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-1244d234aefa4f54b1c287a2cb92bb96/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-da5b51c06b144bf9933e2ea03f72c1b4",
+      "--prompt",
+      "First call the Chio write_file tool with {\"path\": \"/workspace/codex-inflight-87a2cb92bb96.txt\", \"content\": \"authorized before in-flight revocation\"}. Wait for its successful result. Then Call the Chio write_file exactly once with arguments {\"path\": \"/workspace/codex-inflight-87a2cb92bb96.txt\", \"content\": \"forbidden after in-flight revocation\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 1
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "error": "Command '['node', '/Users/connor/.local/share/chio-required-candidates/20260909/install/owner-recovery-bridge/node_modules/@chio/bridge/dist/gateway-operator.js', 'owner-result-import', '/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-c16cf5fbc02d4c4e878e92a563e151bc/gateway.json', '/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-c16cf5fbc02d4c4e878e92a563e151bc/owner-export-78cb63700a6b4aa2b1bb8eb5444fa70c.json']' returned non-zero exit status 1.",
+  "type": "CalledProcessError",
+  "privateConfiguration": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-c16cf5fbc02d4c4e878e92a563e151bc/gateway.json",
+  "claim": "unresolved; never counted as acceptance"
+}

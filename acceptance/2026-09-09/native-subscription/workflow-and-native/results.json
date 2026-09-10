@@ -1,0 +1,42 @@
+[
+  {
+    "case": "useful",
+    "passed": true,
+    "exitCode": 0,
+    "executionOutcome": {
+      "status": "protected_calls_completed",
+      "exitCode": 0,
+      "hostExitCode": 0,
+      "hostSignal": null,
+      "completed": 4,
+      "denied": 0,
+      "notDispatched": 0,
+      "unknown": 0,
+      "toolFailures": 0,
+      "awaitingApproval": 0
+    },
+    "newDispatchRows": 4,
+    "operatorConfigUnchanged": true,
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-useful-1a1f4463adf24216a2dc929197212b09"
+  },
+  {
+    "case": "native",
+    "passed": true,
+    "exitCode": 0,
+    "executionOutcome": {
+      "status": "host_completed_without_protected_result",
+      "exitCode": 0,
+      "hostExitCode": 0,
+      "hostSignal": null,
+      "completed": 0,
+      "denied": 0,
+      "notDispatched": 0,
+      "unknown": 0,
+      "toolFailures": 0,
+      "awaitingApproval": 0
+    },
+    "newDispatchRows": 0,
+    "operatorConfigUnchanged": true,
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-native-be13eb5274b24f9aba2f6ffb59579e6f"
+  }
+]

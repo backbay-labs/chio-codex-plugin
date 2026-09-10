@@ -1,0 +1,15 @@
+{
+  "submission": {
+    "output": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-e4dd01002c8741598c7b9dfa8385ceaf/approved-submission.json",
+    "status": "pending",
+    "approvalId": "approval-63fc60d4185bf7704a5951dfffd61facd7fa15a55f6786ad1c739ffd10791808",
+    "protectedDispatch": false
+  },
+  "decision": {
+    "output": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-e4dd01002c8741598c7b9dfa8385ceaf/journal/approvals/3d89d3aff6aa252ac7890d8b56f58ebf72fbf27f1283e94ec080212699667e9d.json",
+    "status": "approved",
+    "approvalId": "approval-63fc60d4185bf7704a5951dfffd61facd7fa15a55f6786ad1c739ffd10791808",
+    "protectedDispatch": false
+  },
+  "protectedDispatch": false
+}

@@ -1,0 +1,3 @@
+Restricted candidate evidence: /tmp/chio-codex-approval-runtime-5595958b1ce14dee9e33d7188e3c01f7
+Reading additional input from stdin...
+2026-09-10T01:44:38.462646Z ERROR codex_skills_extension::loader::host: failed to scan skill path file:///Users/connor/.agents/skills: Operation not permitted (os error 1)

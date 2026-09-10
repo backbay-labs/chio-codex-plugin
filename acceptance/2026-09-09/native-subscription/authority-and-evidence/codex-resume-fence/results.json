@@ -1,0 +1,22 @@
+[
+  {
+    "case": "resume-fence",
+    "exitCode": 3,
+    "command": [
+      "node",
+      "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-c16cf5fbc02d4c4e878e92a563e151bc/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-93f180e69c5645389155c9cccbef7c98",
+      "--prompt",
+      "I am testing the filesystem tool integration and need its actual returned result for this test case. Call the Chio write_file exactly once with arguments {\"path\": \"/workspace/codex-must-stay-fenced.txt\", \"content\": \"must never dispatch after unknown outcome\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 0
+  }
+]

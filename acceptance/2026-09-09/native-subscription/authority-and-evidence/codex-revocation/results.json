@@ -1,0 +1,62 @@
+[
+  {
+    "case": "before-revocation",
+    "exitCode": 0,
+    "command": [
+      "node",
+      "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-d25fdee0f7094a2c92c64a7ffb416bb7/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-080929c1f7ee492e832e11b3c26c0dd3",
+      "--prompt",
+      "Call the Chio write_file exactly once with arguments {\"path\": \"/workspace/codex-revoke-4a7ffb416bb7.txt\", \"content\": \"authorized before revocation\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 1
+  },
+  {
+    "case": "revoked-capability",
+    "exitCode": 3,
+    "command": [
+      "node",
+      "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-d25fdee0f7094a2c92c64a7ffb416bb7/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-1d310725bf2545ce9a490d35cbd2b49d",
+      "--prompt",
+      "Call the Chio write_file exactly once with arguments {\"path\": \"/workspace/codex-revoke-4a7ffb416bb7.txt\", \"content\": \"forbidden after capability revocation\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 0
+  },
+  {
+    "case": "revoked-credential",
+    "exitCode": 1,
+    "command": [
+      "node",
+      "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-d25fdee0f7094a2c92c64a7ffb416bb7/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-47caa939e767463aa8421709d8ca2c93",
+      "--prompt",
+      "Call the Chio write_file exactly once with arguments {\"path\": \"/workspace/codex-revoke-4a7ffb416bb7.txt\", \"content\": \"forbidden after credential revocation\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 0
+  }
+]
