@@ -1,97 +1,143 @@
-# @chio/codex-plugin
+<p align="center">
+  <picture>
+    <source media="(max-width: 600px)" srcset="docs/assets/readme-hero-mobile.svg" />
+    <img src="docs/assets/readme-hero.svg" alt="Chio for Codex" width="960" />
+  </picture>
+</p>
 
-Chio policy diagnostics and receipt collection for the Codex CLI.
-**Complete kernel mediation is not accepted.** Real Codex 0.153.4 testing found
-that hook crashes, missing scripts, malformed output, timeout and omitted hooks
-permit file effects. The full record is in
-[acceptance/2026-09-09/ACCEPTANCE.md](acceptance/2026-09-09/ACCEPTANCE.md).
+<p align="center">
+  <strong>Kernel-owned file work for Codex.</strong>
+</p>
 
-The plugin can send tool events that Codex delivers to Chio for policy evaluation.
-A successful precheck does not mean Chio owns execution or that a signed execution
-result exists. Do not use this plugin alone as the security boundary for files,
-secrets, shell commands or remote resources.
+<p align="center">
+  <a href="#build-from-source">Build</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+  <a href="#run-a-scoped-file-task">Run</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+  <a href="#the-execution-boundary">Boundary</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+  <a href="#ordinary-codex-hooks">Hooks</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+  <a href="#recovery-and-operation">Recovery</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+  <a href="#development">Development</a>
+</p>
 
-## Restricted execution candidate
+[Chio](https://github.com/backbay-labs/chio) gives Codex scoped access to file
+tools executed by the kernel. This repository supplies a restricted launcher
+that separates the agent from the protected resource, keeps operator credentials
+outside the guest, and verifies results before acknowledging delivery. It also
+ships ordinary Codex hooks for policy diagnostics and receipt collection.
 
-A separate [restricted launcher](RESTRICTED.md) now uses a fixed Chio MCP gateway,
-a fresh profile and working directory, disabled native shell/delegation/browser
-paths, and enforced read-only native patches. Real kernel-backed file work and
-denial have run successfully. Full gate acceptance remains open.
+> **Restricted-mode candidate:** macOS arm64, Codex CLI **0.153.4**, model
+> **gpt-5.5**. [Bounded real-host evidence](docs/STATIC-KERNEL-QUALIFICATION.md)
+> records useful work, prevention and recovery on exact artifacts. Full I01-I08
+> acceptance and compatible published delivery remain open.
 
-## Reproduce the current host contract
+## Build from source
 
-Requires Python 3, Node 22+, an installed Codex CLI, and access to a model in the
-account. This uses real model sessions and can incur account usage.
+Use Node.js 22 or newer, npm and Git. The pinned Chio bridge is included in the
+repository; the build needs no private sibling checkout.
 
-```bash
-./smoke.sh --model gpt-6-astra
+```sh
+git clone https://github.com/backbay-labs/chio-codex-plugin.git
+cd chio-codex-plugin
+npm ci --ignore-scripts --no-audit --no-fund
+npm run build
+node ./dist/cli/main.js --help
 ```
 
-The script creates private temporary profiles and disposable workspaces, copies
-the configured Codex auth file only into those profiles, deletes those copies
-after each case, and independently inspects the file effects. Normal Codex and
-Chio state is never reset. Set `--auth-file /path/to/test/auth.json` to use a
-designated login. `--output /path/to/new/evidence` retains the raw reports. Exit
-status is unsuccessful when a forbidden effect occurs or useful work cannot run.
-The fixture hook isolates the host contract; it is not I01-I08 acceptance for the
-Chio kernel/plugin pair.
+This builds the CLI and prints its commands. Protected execution additionally
+requires the pinned native Codex binary, a compatible running kernel and an
+operator-owned resource setup.
 
-## Plugin contract
+## Run a scoped file task
 
-The manifest is `.codex-plugin/plugin.json`, and it references `./hooks.json`.
-The file contains a `hooks` envelope with synchronous SessionStart,
-UserPromptSubmit, PreToolUse, PostToolUse and Stop handlers. Codex supplies
-`PLUGIN_ROOT` and `PLUGIN_DATA`. Hooks must be trusted through Codex's `/hooks`
-interface. Installing a plugin does not automatically trust its hooks.
-[OpenAI hooks reference](https://developers.openai.com/codex/hooks).
+Start with the [operator setup](RESTRICTED.md#operator-configuration-and-run):
+the kernel owns the filesystem tool server, and the agent has no direct mount
+or Docker access. The restricted launcher requires a loopback IPv4 kernel
+endpoint and delegated session authority. The original public kernel CLI 0.1.0
+does not provide the qualified version combination.
 
-State uses `PLUGIN_DATA` when installed, then `CHIO_CODEX_STATE_DIR` when explicitly
-set, then the current `CODEX_HOME` under `plugins/data/chio-codex`. This respects
-isolated profiles. Do not place authority state or secrets in a workspace writable
-by an untrusted agent; this package does not enforce that separation itself.
+Prepare the private request described in that guide, then run from the built
+checkout. Replace the absolute paths below with your operator-owned files and a
+new evidence directory:
 
-PreToolUse requires a matching session bond and an explicit `allow` decision.
-Unknown/pending/cancelled/denied decisions and bridge errors produce deny JSON.
-Codex must actually run the hook for that check to happen. A missing SessionStart
-bond cannot be replaced by the default policy at tool time. Cached records use
-exact session/tool IDs; they never borrow another parallel call's receipt.
+```sh
+node ./dist/cli/main.js prepare-gateway \
+  /absolute/private/request.json \
+  /absolute/private/gateway.json
 
-PostToolUse records authorization correlation and signature integrity separately
-from trusted caller/request and execution-result verification. These stronger
-verification claims remain false until their trusted evidence is available.
-Prompt/plan hashes stored beside a receipt are unsigned local metadata.
+node ./dist/cli/main.js restricted \
+  --gateway-config /absolute/private/gateway.json \
+  --model-auth-file /absolute/private/codex/auth.json \
+  --evidence-dir /absolute/evidence/new-run \
+  --prompt 'Use Chio to write /workspace/example.txt with "hello from Codex", then read it back.'
+```
 
-## Development and diagnostic commands
+The example uses a [designated native ChatGPT login](RESTRICTED.md#existing-chatgpt-subscription-login).
+Keep its cache owned by the operator, mode `0600`, outside the checkout and guest
+trees. API authentication is also supported through `--model-key-file` or
+`OPENAI_API_KEY`. The launcher verifies the Codex executable's version and digest;
+use `--codex-binary` to select its path explicitly.
 
-The candidate pins a bundled bridge artifact. Run `npm ci` from source and
-`npm run pack:release -- /absolute/output` to produce the self-contained staged
-package. Installation/delivery qualification is tracked in the acceptance record.
+`/workspace/example.txt` belongs to the kernel's resource container. The launcher
+retains native events in `stdout.jsonl` and records the host exit separately from
+the protected execution outcome in `launch.json`. A finished model turn alone
+does not establish that the requested file work completed.
 
-```bash
+## The execution boundary
+
+```mermaid
+flowchart LR
+  C["Codex guest<br/>Fresh profile, confined process"] --> G["Trusted launcher<br/>Chio gateway and private journal"]
+  G --> K["Chio kernel<br/>Authority, policy, signed results"]
+  K --> F["Filesystem tool server<br/>Owns protected resource"]
+```
+
+The supported workflow consists of `read_text_file`, `write_file`, `edit_file`
+and `list_directory`, with approval resume when configured. The launcher disables
+native shell, delegation, arbitrary plugins/MCP servers, browser/computer tools
+and hosted web search. Native `apply_patch` remains visible, but its read-only
+effect boundary blocks writes. User configuration cannot add an alternate route
+to the protected resource in this mode.
+
+Resource ownership is part of the contract. Mounting the protected files into the
+guest or enabling a shell or second MCP server changes that boundary. See the
+[restricted-mode contract](RESTRICTED.md#resource-boundary) for the exact scope.
+
+## Ordinary Codex hooks
+
+The [.codex-plugin manifest](.codex-plugin/plugin.json), [hooks](hooks.json) and
+[skills](skills/) support policy diagnostics in ordinary Codex sessions.
+`chio-codex run` passes policy/session settings to Codex; it does not create the
+restricted launcher or ensure hooks run. Real host tests observed file effects
+when hooks were omitted, crashed or failed. A hook precheck cannot serve as the
+resource's enforcement boundary.
+
+The [hook reference](docs/HOOKS.md) covers trust, isolated state, diagnostic
+commands, host-contract probes and removal. Those probes remain separate from
+kernel integration acceptance.
+
+## Recovery and operation
+
+An unknown protected outcome keeps the original authority fenced. Preserve the
+private gateway configuration, journal and resource evidence; reconcile the
+original operation before another dispatch. A new model conversation, renewed
+login or deleted journal is not recovery.
+
+- [Operator recovery, approvals and upgrades](RESTRICTED.md#recovery-and-upgrades)
+- [Native login and renewal](RESTRICTED.md#existing-chatgpt-subscription-login)
+- [Exact artifact and native-test record](docs/STATIC-KERNEL-QUALIFICATION.md)
+- [Package qualification and release procedures](docs/RELEASE-QUALIFICATION.md)
+
+## Development
+
+```sh
 npm test
 npm run typecheck
-chio-codex status
-chio-codex run --policy /absolute/path/policy.yaml -- codex 'your task'
+npm run pack:release -- /absolute/new-artifact-directory
 ```
 
-`run` exports policy and session options. It does not establish an execution
-sandbox or require that hooks loaded. All capability, approval, budget, guard
-administration, passport and scheduled-citizen operations remain unqualified for
-untrusted-agent authority. Do not expose operator administration as an agent
-privilege.
+The pack command builds a staged tarball with production dependencies included.
+Direct `npm pack` intentionally refuses an unbundled package. Follow the
+[clean consumer procedure](docs/RELEASE-QUALIFICATION.md#local-qualification)
+to install and inspect the emitted artifact. A source build or passing component
+suite does not replace real-host qualification of that exact kernel/plugin set.
 
-## Recovery, upgrade and removal
-
-Stop active diagnostic sessions before replacing artifacts. Retain receipt and
-session records; an unknown external outcome must be reconciled at the resource
-before any retry. Local bond removal cannot prove remote revocation. A failed
-remote revoke reports that uncertainty while clearing the local bond.
-
-Upgrade only using an identified plugin/bridge/kernel combination and rerun the
-host probes and applicable integration gates. Trust review after a hook change
-can leave it skipped, which does not block tool execution in the tested host.
-Use `codex plugin remove chio-codex@<marketplace>` in the same isolated profile
-for a plugin installed by Codex. Preserve evidence before removing that profile.
-Do not delete normal `~/.codex/plugins` or `~/.chio/citizens` state.
-
-Apache-2.0.
+[Apache-2.0](LICENSE).

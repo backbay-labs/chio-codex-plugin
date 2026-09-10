@@ -17,7 +17,9 @@
     "LICENSE",
     "vendor",
     "RESTRICTED.md",
-    "acceptance/2026-09-09"
+    "acceptance/2026-09-09",
+    "docs/assets",
+    "docs/HOOKS.md"
   ],
   "scripts": {
     "build": "tsc && node ./scripts/mark-hooks-executable.mjs",
