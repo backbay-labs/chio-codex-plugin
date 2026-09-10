@@ -1,0 +1,106 @@
+[
+  {
+    "case": "cancel-before-dispatch",
+    "passed": true,
+    "exitCode": 2,
+    "newDispatchRows": 0,
+    "elapsedSecondsIncludingProviderAndStartup": 8.439387666992843,
+    "executionOutcome": {
+      "status": "unknown",
+      "exitCode": 2,
+      "hostExitCode": null,
+      "hostSignal": "SIGTERM",
+      "completed": 0,
+      "denied": 0,
+      "notDispatched": 0,
+      "unknown": 1,
+      "toolFailures": 0,
+      "awaitingApproval": 0
+    },
+    "operatorInterventions": [
+      "prepare fresh scoped session",
+      "inject selected case cutpoint hold-before-dispatch",
+      "signal created launcher PID with SIGTERM",
+      "attempt same-authority restart and verify refusal without delivery acknowledgement"
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-lifecycle-cancel-before-dispatch-910e624a64a04e6fb9271b3d0c18e0d4",
+    "scope": "bounded lifecycle fault"
+  },
+  {
+    "case": "kernel-network-refused",
+    "passed": true,
+    "exitCode": 2,
+    "newDispatchRows": 1,
+    "elapsedSecondsIncludingProviderAndStartup": 21.467619999995804,
+    "executionOutcome": {
+      "status": "unknown",
+      "exitCode": 2,
+      "hostExitCode": 0,
+      "hostSignal": null,
+      "completed": 1,
+      "denied": 0,
+      "notDispatched": 0,
+      "unknown": 1,
+      "toolFailures": 0,
+      "awaitingApproval": 0
+    },
+    "operatorInterventions": [
+      "prepare fresh scoped session",
+      "inject selected case cutpoint kernel-network-refused",
+      "attempt same-authority restart and verify refusal without delivery acknowledgement"
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-lifecycle-kernel-network-refused-e210d642711f41b0994783a86e699611",
+    "scope": "bounded lifecycle fault"
+  },
+  {
+    "case": "journal-before-dispatch",
+    "passed": true,
+    "exitCode": 2,
+    "newDispatchRows": 0,
+    "elapsedSecondsIncludingProviderAndStartup": 8.556705166003667,
+    "executionOutcome": {
+      "status": "unknown",
+      "exitCode": 2,
+      "hostExitCode": 0,
+      "hostSignal": null,
+      "completed": 0,
+      "denied": 0,
+      "notDispatched": 0,
+      "unknown": 1,
+      "toolFailures": 0,
+      "awaitingApproval": 0
+    },
+    "operatorInterventions": [
+      "prepare fresh scoped session",
+      "inject selected case cutpoint journal-before-dispatch"
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-lifecycle-journal-before-dispatch-1b8e1a0bea8449898d6e723e66154403",
+    "scope": "bounded lifecycle fault"
+  },
+  {
+    "case": "journal-after-effect",
+    "passed": true,
+    "exitCode": 2,
+    "newDispatchRows": 1,
+    "elapsedSecondsIncludingProviderAndStartup": 12.213848375002271,
+    "executionOutcome": {
+      "status": "unknown",
+      "exitCode": 2,
+      "hostExitCode": 0,
+      "hostSignal": null,
+      "completed": 0,
+      "denied": 0,
+      "notDispatched": 0,
+      "unknown": 1,
+      "toolFailures": 0,
+      "awaitingApproval": 0
+    },
+    "operatorInterventions": [
+      "prepare fresh scoped session",
+      "inject selected case cutpoint journal-after-effect",
+      "attempt same-authority restart and verify refusal without delivery acknowledgement"
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-lifecycle-journal-after-effect-9dac61e1a23b45198da38aa62732ccff",
+    "scope": "bounded lifecycle fault"
+  }
+]

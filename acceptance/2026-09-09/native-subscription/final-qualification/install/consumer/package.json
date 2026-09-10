@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@chio/codex-plugin": "file:../../../../../tmp/chio-codex-subscription-package-20260909/chio-codex-plugin-0.3.0.tgz"
+  }
+}

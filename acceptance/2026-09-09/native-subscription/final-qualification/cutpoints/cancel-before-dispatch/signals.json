@@ -1,0 +1,9 @@
+{
+  "launcherPid": 74469,
+  "nativePids": [
+    74520
+  ],
+  "signal": "SIGTERM",
+  "launcherExitCode": 2,
+  "nativeSurvivorsAt10Seconds": []
+}

@@ -1,0 +1,7 @@
+{
+  "name": "hidden-spawn_agent",
+  "outer_policy": true,
+  "host_exit": 0,
+  "timed_out": false,
+  "duration_seconds": 0.116
+}

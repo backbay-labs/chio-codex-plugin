@@ -1,5 +1,7 @@
 # Native ChatGPT subscription candidate
 
+The [current scoped matrix](CURRENT-MATRIX.md) and [archived gate review](final-qualification/GATE-REVIEW.md) identify the exact `ac4f14ee` runtime and its remaining internal-storage/publication qualifications. The [archive manifest](final-qualification/ARCHIVE-MANIFEST.json) retains new final-cutpoint, boundary, lifecycle and expiry evidence without changing the tested package. Overall acceptance remains open.
+
 The API-key credit failure did not block native ChatGPT authentication. Codex 0.153.4 completed actual provider-backed protected work using its native subscription cache in the trusted parent. The child received only an ephemeral model-relay token. No account cache is distributed.
 
 The exact cold-installed artifact in artifact.json passed a four-tool useful workflow, independent forbidden read/write denials, actual native patch/configuration-tamper refusals, seven approval stages, capability/credential revocation, in-flight revocation, kernel death/malformed response/timeout, six startup authority/dependency refusals, three evidence substitution cases, exclusive owner enforcement, and the four-stage aggregate budget. Resource observations use the independent readonly Docker resource and dispatch volumes.

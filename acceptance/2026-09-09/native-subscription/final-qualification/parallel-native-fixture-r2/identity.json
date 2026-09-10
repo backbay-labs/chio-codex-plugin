@@ -1,0 +1,41 @@
+{
+  "claim": "Supplemental forced model batch with actual native host, launcher, gateway, kernel and independent resource observer",
+  "liveModel": false,
+  "acceptance": false,
+  "archiveSha256": "ac4f14ee4073abdc0c9ff2b4771e99adf7a871d084a9b488513f5d28eae56874",
+  "harnessSha256": "091a1d665ff22a22dd19a56b27543094ba5a4c2efc4142711fd491e54c0de98d",
+  "launcherSha256": "1ea563da0a738a3a10ba1166b3702aafe7bace92946935b4791f6912b0d7906b",
+  "preparedConfigSha256": "f9a98530a93c24e970953f4175ac493bdb5c9ec8d17d949408f0a122852a2a2f",
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "image": "sha256:188cb84d5d0bb4063d4ce5a3b9c3832445a5acda5604911cda80a9136d1850a0",
+  "volume": "chio-required-codex-final-http-20260909",
+  "auditVolume": "chio-required-codex-final-http-20260909-audit",
+  "calls": [
+    {
+      "path": "/workspace/codex-forced-parallel-206fe21b-6ab6-44a1-b223-7fa41e9feb8c-a.txt",
+      "content": "designated native parallel fixture 206fe21b-6ab6-44a1-b223-7fa41e9feb8c a"
+    },
+    {
+      "path": "/workspace/codex-forced-parallel-206fe21b-6ab6-44a1-b223-7fa41e9feb8c-b.txt",
+      "content": "designated native parallel fixture 206fe21b-6ab6-44a1-b223-7fa41e9feb8c b"
+    }
+  ],
+  "command": [
+    "/opt/homebrew/Cellar/node/25.5.0/bin/node",
+    "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+    "restricted",
+    "--gateway-config",
+    "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-parallel-fixture-6449ed216f594301a146774eb3a8bdf7/gateway.json",
+    "--model-auth-file",
+    "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json",
+    "--evidence-dir",
+    "/tmp/chio-codex-subscription-final-20260909/parallel-native-fixture-r2/host",
+    "--prompt",
+    "Use the designated Chio file tools. Stop after the fixture returns both recorded outcomes. Never retry an uncertain effect."
+  ],
+  "startedAt": "2026-09-10T02:38:37.252Z",
+  "interventions": [
+    "operator preload substitutes fixed model responses",
+    "one response intentionally contains two Chio calls"
+  ]
+}

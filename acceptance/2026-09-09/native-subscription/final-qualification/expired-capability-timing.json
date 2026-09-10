@@ -1,0 +1,9 @@
+{
+  "exitCode": 0,
+  "elapsedSecondsIncludingPreparationAndExpiryWait": 11.419243499985896,
+  "operatorInterventions": [
+    "prepare dedicated short-lived signed capability",
+    "wait for bound capability and clamped credential expiry",
+    "invoke supported launcher with expired authority"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "native-network-policy",
+  "outer_policy": true,
+  "host_exit": -9,
+  "timed_out": true,
+  "duration_seconds": 12.008
+}

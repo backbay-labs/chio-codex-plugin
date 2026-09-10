@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "launcherExitCode": 3,
+  "newDispatchRows": 0,
+  "originalGatewayConfigUnchanged": true,
+  "originalJournalBytesUnchanged": true,
+  "sessionId": "f4d2e316715508678651ef6ba68b1676972d33b48a7310aa1997d238c0f5885c",
+  "configurationSha256": "c32da60f48cedf7b5ab2fa2b53406fc2985b44c63ab6f9d5bb595956c28ee1ea",
+  "journalSha256": {
+    "e5c2b18251f4751db649bccb4eefe3692324ffc2f172328dfcbe8e30250bfa13.json": "00cc92df6ca34beb245aa430bb50b15a9aed9d4b8019614b12fc24948d306e8b"
+  },
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "target": "/workspace/codex-lifecycle-7125475162a74b6a98b2ce6f2f472f5b.txt",
+  "executionOutcome": {
+    "status": "protected_work_incomplete",
+    "exitCode": 3,
+    "hostExitCode": 0,
+    "hostSignal": null,
+    "completed": 0,
+    "denied": 0,
+    "notDispatched": 1,
+    "unknown": 0,
+    "toolFailures": 0,
+    "awaitingApproval": 0
+  },
+  "elapsedSecondsIncludingProviderAndRestart": 20.898899167004856,
+  "hostElapsedSecondsIncludingProvider": 18.965725040994585,
+  "operatorInterventions": [
+    "restart the exclusive resource owner preserving its stores",
+    "launch same original authority and journal"
+  ],
+  "scope": "same original post-effect pending journal remains fenced after actual owner and host restart"
+}

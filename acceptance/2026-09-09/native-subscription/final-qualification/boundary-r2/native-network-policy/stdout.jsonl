@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a0891c-281e-78d3-99df-dc65b000f6a7"}
+{"type":"turn.started"}
+{"type":"error","message":"Reconnecting... waiting for network (Connection failed: error sending request)"}
+{"type":"error","message":"Reconnecting... waiting for network (Connection failed: error sending request)"}

@@ -1,0 +1,16 @@
+[
+  {
+    "case": "init-crash",
+    "passed": true,
+    "exitCode": 86,
+    "newDispatchRows": 0,
+    "elapsedSecondsIncludingProviderAndStartup": 0.9804215420008404,
+    "executionOutcome": {},
+    "operatorInterventions": [
+      "prepare fresh scoped session",
+      "inject operator adapter init-crash"
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-lifecycle-init-crash-87051f95cf1f4c8f89719e23aa27662b",
+    "scope": "bounded lifecycle fault"
+  }
+]

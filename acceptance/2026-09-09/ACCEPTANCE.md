@@ -1,5 +1,7 @@
 # Codex integration acceptance record
 
+Current restricted-launcher artifact observations are indexed separately in the [native-subscription current matrix](native-subscription/CURRENT-MATRIX.md). This document preserves the historical hook-mode failures and does not describe that newer resource boundary.
+
 Scope: historical/current hook mode. The separate [restricted candidate record](RESTRICTED.md) records subsequent real kernel-backed progress.
 
 Status: **NOT ACCEPTED**. Confidence: high in the observed host failure behavior;

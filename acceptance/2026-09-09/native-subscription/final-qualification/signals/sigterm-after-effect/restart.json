@@ -1,0 +1,16 @@
+{
+  "exitCode": 3,
+  "elapsedSeconds": 9.830134832998738,
+  "executionOutcome": {
+    "status": "protected_work_incomplete",
+    "exitCode": 3,
+    "hostExitCode": 0,
+    "hostSignal": null,
+    "completed": 0,
+    "denied": 0,
+    "notDispatched": 1,
+    "unknown": 0,
+    "toolFailures": 0,
+    "awaitingApproval": 0
+  }
+}

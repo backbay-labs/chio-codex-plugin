@@ -1,0 +1,23 @@
+{
+  "launchPreflightRefused": false,
+  "calls": [
+    {
+      "id": "item_1",
+      "name": "edit_file",
+      "arguments": {
+        "path": "/workspace/forbidden.txt",
+        "edits": [
+          {
+            "oldText": "independent forbidden observer",
+            "newText": "qualification-probe"
+          }
+        ]
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "item_1"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 1
+}

@@ -1,5 +1,7 @@
 # Restricted Codex candidate acceptance
 
+Historical restricted-candidate snapshot: the [native-subscription current matrix](native-subscription/CURRENT-MATRIX.md) records the later exact `ac4f14ee` artifact. The earlier failures and incomplete cases below remain retained as history; they are not the current matrix.
+
 **Not accepted overall.** Confidence is high in the recorded effects and refusals.
 All results below used the actual installed Codex CLI and a live gpt-5.5 model,
 except the explicitly labelled catalog-capture diagnostic. These are candidate

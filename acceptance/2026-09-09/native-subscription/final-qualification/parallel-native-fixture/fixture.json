@@ -1,0 +1,15 @@
+{
+  "schema": "chio.codex.parallel-probe.v1",
+  "calls": [
+    {
+      "path": "/workspace/codex-forced-parallel-a1ca14d6-624f-493d-a62e-69b84cd4655f-a.txt",
+      "content": "designated native parallel fixture a1ca14d6-624f-493d-a62e-69b84cd4655f a"
+    },
+    {
+      "path": "/workspace/codex-forced-parallel-a1ca14d6-624f-493d-a62e-69b84cd4655f-b.txt",
+      "content": "designated native parallel fixture a1ca14d6-624f-493d-a62e-69b84cd4655f b"
+    }
+  ],
+  "kernelEndpoint": "http://127.0.0.1:58492/",
+  "log": "/tmp/chio-codex-subscription-final-20260909/parallel-native-fixture/fixture.jsonl"
+}

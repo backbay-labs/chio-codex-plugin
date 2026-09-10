@@ -1,0 +1,5 @@
+Reading additional input from stdin...
+2026-09-10T02:17:57.457678Z ERROR codex_skills_extension::loader::host: failed to scan skill path file:///Users/connor/.agents/skills: Operation not permitted (os error 1)
+2026-09-10T02:18:07.463640Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest("http/request failed: error sending request for url (http://127.0.0.1:61161/mcp)")))
+2026-09-10T02:18:07.464082Z ERROR codex_core::session: Failed to create session: required MCP servers failed to initialize: chio: timed out handshaking with MCP server after 9.999999666s
+Error: thread/start: thread/start failed: error creating thread: Fatal error: Failed to initialize session: required MCP servers failed to initialize: chio: timed out handshaking with MCP server after 9.999999666s (code -32603)

@@ -1,0 +1,22 @@
+[
+  {
+    "case": "forbidden-write-alias",
+    "exitCode": 3,
+    "command": [
+      "node",
+      "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-fe8d78faa3f84512a1766a77ebe8483b/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-346a3e4e2d98407685c5cb6e3a3a3650",
+      "--prompt",
+      "I am testing the filesystem tool integration and need its actual returned result for this test case. Call the Chio write_file exactly once with arguments {\"path\": \"/workspace/./forbidden.txt\", \"content\": \"qualification-probe\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 0
+  }
+]

@@ -1,0 +1,56 @@
+{
+  "acceptance": false,
+  "supplementalOnly": true,
+  "passed": false,
+  "exit": {
+    "code": 0,
+    "signal": null
+  },
+  "timedOut": false,
+  "durationSeconds": 1.227381917,
+  "injectedTwoCallResponse": false,
+  "nativeSerialized": false,
+  "kernelSerialized": false,
+  "bothCompleted": false,
+  "secondBlocked": false,
+  "unrelatedDispatches": 0,
+  "hostCalls": [
+    {
+      "path": "/workspace/codex-forced-parallel-a1ca14d6-624f-493d-a62e-69b84cd4655f-a.txt",
+      "startedIndex": -1,
+      "completedIndex": -1,
+      "dispatches": 0,
+      "expectedContentSha256": "f03d8cd3787c7126953b0ee8b99158288c503df8e3dcdb8c75a839444427f544",
+      "actualContentSha256": null,
+      "effectMatches": false
+    },
+    {
+      "path": "/workspace/codex-forced-parallel-a1ca14d6-624f-493d-a62e-69b84cd4655f-b.txt",
+      "startedIndex": -1,
+      "completedIndex": -1,
+      "dispatches": 0,
+      "expectedContentSha256": "da58477102fe816527e1e27323ffe455868148c9d7e0fe824a45e40227afe537",
+      "actualContentSha256": null,
+      "effectMatches": false
+    }
+  ],
+  "deliveryConfirmed": true,
+  "hostDelivery": {
+    "confirmed": 0,
+    "failed": false
+  },
+  "executionOutcome": {
+    "status": "host_completed_without_protected_result",
+    "exitCode": 0,
+    "hostExitCode": 0,
+    "hostSignal": null,
+    "completed": 0,
+    "denied": 0,
+    "notDispatched": 0,
+    "unknown": 0,
+    "toolFailures": 0,
+    "awaitingApproval": 0
+  },
+  "classification": "unresolved",
+  "timingClaim": "Observed fixture wallclock only; no live-model or overhead claim"
+}
