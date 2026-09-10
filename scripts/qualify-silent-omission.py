@@ -154,7 +154,9 @@ assert not [event for event in events if event.get('item', {}).get('type') == 'm
 patches = omitted['model_relay']['nativeTools']
 for path in [target, str(canary)]:
     matched = [row for row in patches if path in row['input']]
-    assert matched and all('failed' in json.dumps(row.get('output', '')).lower() or 'not permitted' in json.dumps(row.get('output', '')).lower() for row in matched), 'actual refused native patch missing'
+    assert matched and all(any(marker in json.dumps(row.get('output', '')).lower()
+        for marker in ['patch rejected: writing is blocked by read-only sandbox', 'apply_patch verification failed', 'operation not permitted'])
+        for row in matched), 'actual refused native patch missing'
 save(a.output / 'omission-result.json', {'passed': True, 'actualNativeHostStartedAndCompleted': True,
     'normalInitializeResponses': len(initialize), 'omittedCatalogResponses': len(catalogs), 'realProviderRequests': len(provider),
     'nativePatchAttempts': len(patches), 'protectedDispatches': 0, 'protectedResultClaimed': False,
