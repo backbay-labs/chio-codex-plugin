@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { validateModelRequest, startModelRelay } from "../dist/cli/modelRelay.js";
+import { validateModelRequest, startModelRelay, chatGptCredential } from "../dist/cli/modelRelay.js";
 const model = "gpt-5.5";
 function request(): Record<string, unknown> {
   return {model, store: false, stream: true, input: [{role: "user", content: "Read the designated file"}],
@@ -54,4 +54,13 @@ test("unverified received tool bytes are refused before the next provider turn",
     }
     assert.equal(relay.stats.forwarded, 0);
   } finally { await relay.close(); }
+});
+
+test("native ChatGPT cache requires an unambiguous account credential and never accepts API fallback", () => {
+  const cache = {tokens: {access_token: "local-test-token", account_id: "local-test-account", refresh_token: "must-not-be-forwarded"}};
+  assert.deepEqual(chatGptCredential(cache), {kind: "chatgpt", secret: "local-test-token", accountId: "local-test-account"});
+  for (const invalid of [null, {}, {...cache, auth_mode: "apikey"}, {...cache, OPENAI_API_KEY: "other"},
+    {tokens: {access_token: "x"}}, {tokens: {access_token: "x\r\nInjected: value", account_id: "y"}}]) {
+    assert.throws(() => chatGptCredential(invalid), /Native ChatGPT login cache required/);
+  }
 });

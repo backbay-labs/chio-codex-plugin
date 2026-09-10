@@ -2,6 +2,19 @@ import { randomBytes } from "node:crypto";
 import { createServer } from "node:http";
 
 type ObjectValue = Record<string, unknown>;
+export type ModelCredential = { kind: "api-key"; secret: string } | { kind: "chatgpt"; secret: string; accountId: string };
+
+/** Read only a native Codex cache. Native Codex owns login and token refresh. */
+export function chatGptCredential(value: unknown): ModelCredential {
+  if (!object(value) || (value.auth_mode !== undefined && value.auth_mode !== null && value.auth_mode !== "chatgpt")
+    || value.OPENAI_API_KEY || !object(value.tokens)
+    || typeof value.tokens.access_token !== "string" || !value.tokens.access_token
+    || typeof value.tokens.account_id !== "string" || !value.tokens.account_id
+    || /[\r\n]/.test(value.tokens.access_token + value.tokens.account_id)) {
+    throw new Error("Native ChatGPT login cache required; refresh it with Codex login");
+  }
+  return { kind: "chatgpt", secret: value.tokens.access_token, accountId: value.tokens.account_id };
+}
 function object(value: unknown): value is ObjectValue { return Boolean(value) && typeof value === "object" && !Array.isArray(value); }
 function keys(value: ObjectValue, allowed: string[]): boolean { return Object.keys(value).every(key => allowed.includes(key)); }
 const localFunctions = new Set(["list_mcp_resources", "list_mcp_resource_templates", "read_mcp_resource", "request_user_input"]);
@@ -75,7 +88,9 @@ export function validateModelRequest(body: ObjectValue, model: string): void {
 
 /** Operator-owned fixed OpenAI Responses transport. The child sees only a
  * temporary relay token, never the provider account credential. */
-export async function startModelRelay(apiKey: string, model: string, onToolResults?: (outcomes: unknown[]) => Promise<void>) {
+export async function startModelRelay(credential: string | ModelCredential, model: string, onToolResults?: (outcomes: unknown[]) => Promise<void>) {
+  const auth = typeof credential === "string" ? { kind: "api-key" as const, secret: credential } : credential;
+  const endpoint = auth.kind === "chatgpt" ? "https://chatgpt.com/backend-api/codex/responses" : "https://api.openai.com/v1/responses";
   const token = randomBytes(32).toString("hex");
   const stats = { requests: 0, forwarded: 0, refused: 0, upstreamFailures: 0, cancelled: 0, lastRefusal: "", lastRequestKeys: [] as string[], nativeTools: [] as {callId: string; input: string; output?: unknown}[] };
   let port = 0;
@@ -126,8 +141,10 @@ export async function startModelRelay(apiKey: string, model: string, onToolResul
       await onToolResults?.(outcomes);
       body.parallel_tool_calls = false;
       stats.forwarded++;
-      const upstream = await fetch("https://api.openai.com/v1/responses", { method: "POST", redirect: "error", signal: controller.signal,
-        headers: { authorization: `Bearer ${apiKey}`, "content-type": "application/json" }, body: JSON.stringify(body) });
+      const headers: Record<string, string> = { authorization: `Bearer ${auth.secret}`, "content-type": "application/json" };
+      if (auth.kind === "chatgpt") headers["ChatGPT-Account-Id"] = auth.accountId;
+      const upstream = await fetch(endpoint, { method: "POST", redirect: "error", signal: controller.signal,
+        headers, body: JSON.stringify(body) });
       if (!upstream.ok) stats.upstreamFailures++;
       response.writeHead(upstream.status, { "content-type": upstream.headers.get("content-type") ?? "application/json" });
       if (upstream.body) for await (const data of upstream.body) response.write(data);

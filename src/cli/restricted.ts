@@ -6,7 +6,7 @@ import { tmpdir } from "node:os";
 import { dirname, isAbsolute, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildSandboxPolicy, isWithin, requireSessionCredential } from "./sandbox.js";
-import { startModelRelay } from "./modelRelay.js";
+import { startModelRelay, chatGptCredential } from "./modelRelay.js";
 import { startGatewayHttp } from "@chio/bridge";
 
 // The selected model must expose ordinary MCP tools. Code-mode-only models
@@ -24,7 +24,7 @@ export const DISABLED_FEATURES = [
   "hooks", "shell_snapshot", "in_app_local_automation",
 ] as const;
 
-interface RestrictedOptions { gatewayConfig: string; modelKeyFile?: string; codexBinary: string; evidenceDir: string; prompt: string }
+interface RestrictedOptions { gatewayConfig: string; modelKeyFile?: string; modelAuthFile?: string; codexBinary: string; evidenceDir: string; prompt: string }
 
 export function prepareGatewayCmd(args: string[]): number {
   if (args.length !== 2 || args.some(path => !isAbsolute(path))) throw new Error("prepare-gateway: requires /absolute/private-request.json /absolute/new-config.json");
@@ -35,7 +35,7 @@ export function prepareGatewayCmd(args: string[]): number {
 
 function parseArgs(args: string[]): RestrictedOptions {
   const values = new Map<string, string>();
-  const known = new Set(["--gateway-config", "--model-key-file", "--codex-binary", "--evidence-dir", "--prompt"]);
+  const known = new Set(["--gateway-config", "--model-key-file", "--model-auth-file", "--codex-binary", "--evidence-dir", "--prompt"]);
   for (let i = 0; i < args.length; i += 2) {
     const flag = args[i], value = args[i + 1];
     if (!flag || !known.has(flag) || !value || value.startsWith("--") || values.has(flag)) {
@@ -47,7 +47,9 @@ function parseArgs(args: string[]): RestrictedOptions {
   const evidenceDir = values.get("--evidence-dir");
   const prompt = values.get("--prompt");
   if (!gatewayConfig || !evidenceDir || !prompt || !isAbsolute(gatewayConfig) || !isAbsolute(evidenceDir)) throw new Error("restricted: absolute gateway config, new evidence directory and prompt are required");
+  if (values.has("--model-key-file") && values.has("--model-auth-file")) throw new Error("Choose one explicit provider authentication mode");
   return { gatewayConfig, evidenceDir, prompt, ...(values.has("--model-key-file") ? { modelKeyFile: values.get("--model-key-file")! } : {}),
+    ...(values.has("--model-auth-file") ? { modelAuthFile: values.get("--model-auth-file")! } : {}),
     codexBinary: values.get("--codex-binary") ?? "codex" };
 }
 
@@ -71,6 +73,11 @@ function requirePrivateFile(path: string): string {
     throw new Error("Operator file must be a private owned regular file");
   }
   return realpathSync(path);
+}
+
+function readChatGptCache(path: string) {
+  try { return chatGptCredential(JSON.parse(readFileSync(path, "utf8"))); }
+  catch { throw new Error("Invalid native ChatGPT cache; credential contents are not logged"); }
 }
 
 /** Fixed configuration, never supplemented with agent-provided host flags. */
@@ -142,10 +149,11 @@ export async function restrictedCmd(args: string[]): Promise<number> {
   const gateway = realpathSync(join(dirname(fileURLToPath(import.meta.resolve("@chio/bridge/package.json"))), "dist", "gateway-http.js"));
   if (!lstatSync(gateway).isFile()) throw new Error("restricted: packaged gateway is missing");
   const installation = realpathSync(resolve(dirname(fileURLToPath(import.meta.url)), "../.."));
-  const keyFile = options.modelKeyFile ? requirePrivateFile(options.modelKeyFile) : undefined;
+  const keyFile = options.modelAuthFile ? requirePrivateFile(options.modelAuthFile) : options.modelKeyFile ? requirePrivateFile(options.modelKeyFile) : undefined;
   if (keyFile && isWithin(installation, keyFile)) throw new Error("Provider credential must be outside the readable installation");
-  const apiKey = keyFile ? readFileSync(keyFile, "utf8").trim() : process.env["OPENAI_API_KEY"];
-  if (!apiKey) throw new Error("Operator OPENAI_API_KEY or --model-key-file is required; account auth is never copied to the host");
+  const credential = options.modelAuthFile ? readChatGptCache(keyFile!)
+    : keyFile ? readFileSync(keyFile, "utf8").trim() : process.env["OPENAI_API_KEY"];
+  if (!credential) throw new Error("Operator API key or --model-auth-file native ChatGPT cache is required; credentials stay outside the host");
   mkdirSync(options.evidenceDir, { mode: 0o700 });
   const runtime = realpathSync(mkdtempSync(join(tmpdir(), "chio-codex-restricted-")));
   const profile = join(runtime, "profile"), workspace = join(runtime, "workspace");
@@ -182,7 +190,7 @@ export async function restrictedCmd(args: string[]): Promise<number> {
   let relay: Awaited<ReturnType<typeof startModelRelay>> | undefined;
   try {
   if (typeof transport.acknowledgeReceivedOutcome !== "function") throw new Error("Host delivery acknowledgement transport is required");
-  relay = await startModelRelay(apiKey, RESTRICTED_MODEL, receiveHostResults);
+  relay = await startModelRelay(credential, RESTRICTED_MODEL, receiveHostResults);
   env["CHIO_CODEX_MODEL_TOKEN"] = relay.token;
   env["CHIO_CODEX_GATEWAY_TOKEN"] = transport.token;
   const command = restrictedHostArgs(workspace, transport.url, options.prompt, Boolean(authority.config.approval));
@@ -192,7 +200,7 @@ export async function restrictedCmd(args: string[]): Promise<number> {
   const boundary = { codex: binary, profile, workspace, gatewayPort: transport.port, modelPort: relay.port };
   const policy = await buildSandboxPolicy(boundary), policyPath = join(runtime, "boundary.sb");
   writeFileSync(policyPath, policy, { mode: 0o600 });
-  const report: Record<string, unknown> = { host: RESTRICTED_HOST_VERSION, model: RESTRICTED_MODEL, runtime, workspace, profile,
+  const report: Record<string, unknown> = { host: RESTRICTED_HOST_VERSION, model: RESTRICTED_MODEL, model_auth: options.modelAuthFile ? "chatgpt-native-cache" : "api-key", runtime, workspace, profile,
     boundary, policy_path: policyPath, policy_sha256: createHash("sha256").update(policy).digest("hex"),
     host_binary_sha256: createHash("sha256").update(readFileSync(binary)).digest("hex"),
     gateway_sha256: createHash("sha256").update(readFileSync(gateway)).digest("hex"),

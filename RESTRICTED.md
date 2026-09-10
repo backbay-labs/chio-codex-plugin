@@ -146,3 +146,11 @@ and repeat all applicable gates. The fresh profile contains no persistent Codex
 plugin installation to remove. Remove only the recorded temporary profile after
 preserving its evidence and reconciling any unknown resource outcome. The normal
 Codex profile and normal Chio citizen state are not removed or edited.
+
+## Existing ChatGPT subscription login
+
+The trusted operator launcher supports `--model-auth-file /absolute/private/codex-home/auth.json` instead of `--model-key-file`. This explicit choice overrides an inherited `OPENAI_API_KEY`. The file must be owned by the operator, mode 0600, outside the installation and writable guest trees. The native cache's access token and account identifier stay in the parent; the sandbox receives a temporary relay token only. The relay permits only validated inline Responses inference at the native Codex ChatGPT endpoint. It cannot access stored conversations, files, hosted tools or arbitrary account routes.
+
+Use `codex login` with a dedicated private `CODEX_HOME`, or copy the existing native cache into that directory as described in [Codex authentication](https://learn.chatgpt.com/docs/auth). Keep that profile in one serialized operator workflow. Native Codex owns renewal; this launcher never calls the OAuth refresh endpoint or rewrites the login cache. If inference returns 401, use native Codex to renew that operator profile before launching new work. An unknown protected operation still requires the documented owner reconciliation; authentication renewal does not release its fence. See [native refresh guidance](https://learn.chatgpt.com/docs/auth/ci-cd-auth).
+
+The 2026-09-09 subscription test used Codex 0.153.4 with model gpt-5.5. It performed real kernel-mediated write/read calls and a denied write. This removes the API-credit blocker for this mode; full I01-I08 acceptance remains open. Keep account caches out of release bundles and evidence.
