@@ -46,5 +46,9 @@
   "devDependencies": {
     "@types/node": "^22.0.0",
     "typescript": "~5.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/backbay-labs/chio-codex-plugin.git"
   }
 }
