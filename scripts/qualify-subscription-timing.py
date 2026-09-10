@@ -23,7 +23,10 @@ for key in ['owner-launcher', 'state-dir', 'kernel', 'policy', 'package-dir', 'a
 p.add_argument('--kernel-sha256', required=True)
 p.add_argument('--image', required=True)
 p.add_argument('--volume', required=True)
+p.add_argument('--port', type=int, help='Reserved owner port; defaults to an available ephemeral port')
 a = p.parse_args()
+if a.port is not None and not 1024 <= a.port <= 65535:
+    p.error('owner port must be unprivileged')
 a.output.mkdir(mode=0o700, parents=True, exist_ok=False)
 bridge = a.package_dir / 'node_modules/@chio/bridge'
 instrument = Path(__file__).with_name('subscription-timing.mjs').resolve()
@@ -46,7 +49,7 @@ def checked(command, timeout=45):
 
 
 with socket.socket() as probe:
-    probe.bind(('127.0.0.1', 0)); port = probe.getsockname()[1]
+    probe.bind(('127.0.0.1', a.port or 0)); port = probe.getsockname()[1]
 owner_command = ['python3', str(a.owner_launcher), 'start', '--state-dir', str(a.state_dir), '--kernel', str(a.kernel),
     '--kernel-sha256', a.kernel_sha256, '--image', a.image, '--volume', a.volume, '--port', str(port), '--policy', str(a.policy)]
 save(a.output / 'owner-start.json', {'command': owner_command, 'stdout': checked(owner_command).stdout})
