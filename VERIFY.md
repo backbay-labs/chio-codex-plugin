@@ -1,3 +1,6 @@
+> Historical document. This is not current host or kernel acceptance. See
+> [the 2026-09-09 acceptance record](acceptance/2026-09-09/ACCEPTANCE.md).
+
 # VERIFY
 
 ```

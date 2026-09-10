@@ -1,0 +1,22 @@
+[
+  {
+    "case": "aggregate-budget",
+    "passed": true,
+    "exitCode": 3,
+    "executionOutcome": {
+      "status": "protected_work_incomplete",
+      "exitCode": 3,
+      "hostExitCode": 0,
+      "hostSignal": null,
+      "completed": 3,
+      "denied": 1,
+      "notDispatched": 0,
+      "unknown": 0,
+      "toolFailures": 0,
+      "awaitingApproval": 0
+    },
+    "newDispatchRows": 3,
+    "operatorConfigUnchanged": true,
+    "privateState": "/Users/connor/.local/share/chio-required-operators/budget3-hosts-20260909/codex-aggregate-budget-c25255eb7edb4be9a3bdbf15e1481321"
+  }
+]

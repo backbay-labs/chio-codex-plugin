@@ -1,0 +1,128 @@
+[
+  {
+    "case": "pending",
+    "exitCode": 4,
+    "command": [
+      "node",
+      "/tmp/chio-codex-received-result-cold-consumer-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/bridge-host-delivery-approval-20260909/codex-approvals-daaa3da427f4440fbbd273d155dccae2/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-dfc166aa0bee481a8a9089306b7d872c",
+      "--prompt",
+      "Call the Chio write_file tool exactly once with arguments {\"path\": \"/workspace/codex-approved-73d155dccae2.txt\", \"content\": \"exact operator-approved effect\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 0
+  },
+  {
+    "case": "missing-decision",
+    "exitCode": 4,
+    "command": [
+      "node",
+      "/tmp/chio-codex-received-result-cold-consumer-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/bridge-host-delivery-approval-20260909/codex-approvals-daaa3da427f4440fbbd273d155dccae2/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-b9686257cbc8435699738db10f5cf21d",
+      "--prompt",
+      "Call the Chio chio_resume tool exactly once with arguments {\"requestId\": \"170b518c-d3f7-4df9-a475-08b88d8ec0a2:4243706ec76f895b8848d9d85b3fb92c2f26267683ddb8851e6c7eb988d3ad72\", \"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/codex-approved-73d155dccae2.txt\", \"content\": \"exact operator-approved effect\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 0
+  },
+  {
+    "case": "substituted-arguments",
+    "exitCode": 3,
+    "command": [
+      "node",
+      "/tmp/chio-codex-received-result-cold-consumer-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/bridge-host-delivery-approval-20260909/codex-approvals-daaa3da427f4440fbbd273d155dccae2/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-e7e557e85c444c809df4230bb68478fc",
+      "--prompt",
+      "Call the Chio chio_resume tool exactly once with arguments {\"requestId\": \"170b518c-d3f7-4df9-a475-08b88d8ec0a2:4243706ec76f895b8848d9d85b3fb92c2f26267683ddb8851e6c7eb988d3ad72\", \"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/codex-approved-73d155dccae2.txt\", \"content\": \"substituted forbidden effect\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 0
+  },
+  {
+    "case": "approved-resume",
+    "exitCode": 0,
+    "command": [
+      "node",
+      "/tmp/chio-codex-received-result-cold-consumer-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/bridge-host-delivery-approval-20260909/codex-approvals-daaa3da427f4440fbbd273d155dccae2/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-c4d94e12b2874d8aba691bfe1957ac28",
+      "--prompt",
+      "Call the Chio chio_resume tool exactly once with arguments {\"requestId\": \"170b518c-d3f7-4df9-a475-08b88d8ec0a2:4243706ec76f895b8848d9d85b3fb92c2f26267683ddb8851e6c7eb988d3ad72\", \"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/codex-approved-73d155dccae2.txt\", \"content\": \"exact operator-approved effect\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 1
+  },
+  {
+    "case": "completed-replay",
+    "exitCode": 0,
+    "command": [
+      "node",
+      "/tmp/chio-codex-received-result-cold-consumer-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/bridge-host-delivery-approval-20260909/codex-approvals-daaa3da427f4440fbbd273d155dccae2/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-2cf7e25e6c2142879a252c65d55031c3",
+      "--prompt",
+      "Call the Chio chio_resume tool exactly once with arguments {\"requestId\": \"170b518c-d3f7-4df9-a475-08b88d8ec0a2:4243706ec76f895b8848d9d85b3fb92c2f26267683ddb8851e6c7eb988d3ad72\", \"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/codex-approved-73d155dccae2.txt\", \"content\": \"exact operator-approved effect\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 0
+  },
+  {
+    "case": "pending-rejection",
+    "exitCode": 4,
+    "command": [
+      "node",
+      "/tmp/chio-codex-received-result-cold-consumer-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/bridge-host-delivery-approval-20260909/codex-approvals-daaa3da427f4440fbbd273d155dccae2/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-b864821af5e1492a9c18a115084c365c",
+      "--prompt",
+      "Call the Chio write_file tool exactly once with arguments {\"path\": \"/workspace/codex-rejected-73d155dccae2.txt\", \"content\": \"must never appear\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 0
+  },
+  {
+    "case": "rejected-resume",
+    "exitCode": 3,
+    "command": [
+      "node",
+      "/tmp/chio-codex-received-result-cold-consumer-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/bridge-host-delivery-approval-20260909/codex-approvals-daaa3da427f4440fbbd273d155dccae2/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-bcec262b36054f3eae194d1556070255",
+      "--prompt",
+      "Call the Chio chio_resume tool exactly once with arguments {\"requestId\": \"170b518c-d3f7-4df9-a475-08b88d8ec0a2:803f1e775f74bef4101ff9d02130f759960cdd7d2eabf35a2c1da1ecb898235c\", \"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/codex-rejected-73d155dccae2.txt\", \"content\": \"must never appear\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 0
+  }
+]

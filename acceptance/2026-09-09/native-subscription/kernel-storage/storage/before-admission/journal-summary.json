@@ -1,0 +1,14 @@
+[
+  {
+    "requestId": "storage-fault-codex-final-before-admission:0ae625fa2aa3b4dd891f838145b6e8ed8e78eacf0e67f3d0ca80f3bd0be053e6",
+    "state": "completed",
+    "acknowledged": true,
+    "hostDeliveryConfirmed": true
+  },
+  {
+    "requestId": "storage-fault-codex-final-before-admission:ad71fb51584edf01c6777d956ac621124d254c026549f6a211013f74c12eb647",
+    "state": "unknown",
+    "acknowledged": false,
+    "hostDeliveryConfirmed": null
+  }
+]

@@ -1,0 +1,49 @@
+{
+  "content": "Three paired Codex native resource reads.\n",
+  "dispatch": [
+    {
+      "schema": "chio.resource-dispatch-observation.v1",
+      "processId": 1,
+      "sequence": 1,
+      "observedAt": "2026-09-10T03:31:14.235Z",
+      "upstreamRequestId": 3,
+      "tool": "write_file",
+      "path": "/workspace/timing.txt",
+      "argumentsSha256": "d58af3548976443f66fcdf1b158c9c46d85a415633db01b03bafd9d9d0015a22",
+      "frameSha256": "841e4f6a40bf65d1dfdb91d6aa77c49c8485ec104544e788c9c0ba5efccd8783"
+    },
+    {
+      "schema": "chio.resource-dispatch-observation.v1",
+      "processId": 1,
+      "sequence": 2,
+      "observedAt": "2026-09-10T03:31:28.270Z",
+      "upstreamRequestId": 4,
+      "tool": "read_text_file",
+      "path": "/workspace/timing.txt",
+      "argumentsSha256": "0d4b890c341c5ca36855d6ed05e130797812c6697b3cd9a70d3af6966f0c4585",
+      "frameSha256": "14bc59a12315afdd0ac649a4874c912407cf27fb72ccb741679f8cf200064635"
+    },
+    {
+      "schema": "chio.resource-dispatch-observation.v1",
+      "processId": 1,
+      "sequence": 3,
+      "observedAt": "2026-09-10T03:31:42.013Z",
+      "upstreamRequestId": 5,
+      "tool": "read_text_file",
+      "path": "/workspace/timing.txt",
+      "argumentsSha256": "0d4b890c341c5ca36855d6ed05e130797812c6697b3cd9a70d3af6966f0c4585",
+      "frameSha256": "03e548f84484b1c7cd7896d08360020789862382a88ceeb2ac6759721c0bfb44"
+    },
+    {
+      "schema": "chio.resource-dispatch-observation.v1",
+      "processId": 1,
+      "sequence": 4,
+      "observedAt": "2026-09-10T03:31:54.708Z",
+      "upstreamRequestId": 6,
+      "tool": "read_text_file",
+      "path": "/workspace/timing.txt",
+      "argumentsSha256": "0d4b890c341c5ca36855d6ed05e130797812c6697b3cd9a70d3af6966f0c4585",
+      "frameSha256": "dba0b1ffdd4ff02f1240a355358709f1364f9facd4d7453c84dfef471b77a73d"
+    }
+  ]
+}

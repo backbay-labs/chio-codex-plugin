@@ -1,0 +1,4 @@
+Reading additional input from stdin...
+2026-09-10T02:17:05.933080Z ERROR codex_skills_extension::loader::host: failed to scan skill path file:///Users/connor/.agents/skills: Operation not permitted (os error 1)
+2026-09-10T02:17:05.937448Z ERROR codex_core::session: Failed to create session: required MCP servers failed to initialize: chio: Operation not permitted (os error 1)
+Error: thread/start: thread/start failed: error creating thread: Fatal error: Failed to initialize session: required MCP servers failed to initialize: chio: Operation not permitted (os error 1) (code -32603)

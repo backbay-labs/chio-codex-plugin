@@ -1,0 +1,20 @@
+[
+  {
+    "case": "kernel-absent",
+    "exitCode": 1,
+    "command": [
+      "node",
+      "/tmp/chio-codex-received-result-cold-consumer-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-55f66747f00742d0ab7ae4feea386d89/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-ce25ad087beb4b4fa09521b95099d582",
+      "--prompt",
+      "Call the Chio write_file tool exactly once with arguments {\"path\": \"/workspace/codex-preflight-forbidden.txt\", \"content\": \"must never dispatch with invalid authority\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 0
+  }
+]

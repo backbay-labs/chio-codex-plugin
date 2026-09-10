@@ -1,0 +1,336 @@
+{
+  "copiedFiles": 55,
+  "omissions": [],
+  "files": [
+    {
+      "path": "timing-instrumentation-attempt/FAILED-INSTRUMENTATION.json",
+      "source": "/tmp/chio-codex-paired-timing-final-20260909/FAILED-INSTRUMENTATION.json",
+      "bytes": 403,
+      "sha256": "203f3e966a7ce83c9b6a670b7b7d22700261f25821636e176f54e6de00449bcb"
+    },
+    {
+      "path": "timing-instrumentation-attempt/identity.json",
+      "source": "/tmp/chio-codex-paired-timing-final-20260909/identity.json",
+      "bytes": 1714,
+      "sha256": "1a9e659dc667a18e816aedd7c2400a6a87474c75a26cf4e8162cc9cdcbfd941d"
+    },
+    {
+      "path": "timing-instrumentation-attempt/owner-start.json",
+      "source": "/tmp/chio-codex-paired-timing-final-20260909/owner-start.json",
+      "bytes": 936,
+      "sha256": "08bd1f159e5c840ca38cdcd34c35e099bb296732fce3d167af6eb96daf4416aa"
+    },
+    {
+      "path": "timing-instrumentation-attempt/prepare-result.json",
+      "source": "/tmp/chio-codex-paired-timing-final-20260909/prepare-result.json",
+      "bytes": 128,
+      "sha256": "ff3f9f81f126125d2176ea22687d6a3f2925c6b668e7a25b1cb23e067a647031"
+    },
+    {
+      "path": "timing-instrumentation-attempt/qualify-subscription-timing.py",
+      "source": "/tmp/chio-codex-paired-timing-final-20260909/qualify-subscription-timing.py",
+      "bytes": 11624,
+      "sha256": "0e014d3a75243887c1bdf0b3b3d14d9f63af2cfa2c0290d617132d05f0e7c33c"
+    },
+    {
+      "path": "timing-instrumentation-attempt/seed/driver.stderr",
+      "source": "/tmp/chio-codex-paired-timing-final-20260909/seed/driver.stderr",
+      "bytes": 292,
+      "sha256": "2f528b834b9b31dddff9b42c69cb1a5c152a8677ce58924aab349320b0789099"
+    },
+    {
+      "path": "timing-instrumentation-attempt/seed/driver.stdout",
+      "source": "/tmp/chio-codex-paired-timing-final-20260909/seed/driver.stdout",
+      "bytes": 4887,
+      "sha256": "64cb7947005e1f560f444ecb6663a59a8161d38b18656d1147e6fa9c957ed491"
+    },
+    {
+      "path": "timing-instrumentation-attempt/seed/invocation.json",
+      "source": "/tmp/chio-codex-paired-timing-final-20260909/seed/invocation.json",
+      "bytes": 1047,
+      "sha256": "3c1a6855566b4cbc0a72450a46a4dd00df17ccfc6f60356bc330cd203684a9d4"
+    },
+    {
+      "path": "timing-instrumentation-attempt/seed/launch.json",
+      "source": "/tmp/chio-codex-paired-timing-final-20260909/seed/launch.json",
+      "bytes": 5188,
+      "sha256": "dc1092f54d1b96fbe9dea7b99c2f9841a60fd65de04f8c1375f92209602a56e2"
+    },
+    {
+      "path": "timing-instrumentation-attempt/seed/stderr.txt",
+      "source": "/tmp/chio-codex-paired-timing-final-20260909/seed/stderr.txt",
+      "bytes": 211,
+      "sha256": "2c49247c438c3e4f24b44e8f1ec9ec79d37cd951f2cd9d655c51b6dd2a0b84d3"
+    },
+    {
+      "path": "timing-instrumentation-attempt/seed/stdout.jsonl",
+      "source": "/tmp/chio-codex-paired-timing-final-20260909/seed/stdout.jsonl",
+      "bytes": 4887,
+      "sha256": "64cb7947005e1f560f444ecb6663a59a8161d38b18656d1147e6fa9c957ed491"
+    },
+    {
+      "path": "timing-instrumentation-attempt/seed.timing.jsonl",
+      "source": "/tmp/chio-codex-paired-timing-final-20260909/seed.timing.jsonl",
+      "bytes": 561,
+      "sha256": "89deba1dcd86287a72d41873e32a35602aa2ab2eb18a8532ea750c846ebcba66"
+    },
+    {
+      "path": "timing-instrumentation-attempt/subscription-timing.mjs",
+      "source": "/tmp/chio-codex-paired-timing-final-20260909/subscription-timing.mjs",
+      "bytes": 3316,
+      "sha256": "cb4b73b409105f70a28a27e12e8d47f07864033a2b4763d0d54403527009d8c7"
+    },
+    {
+      "path": "timing/after.json",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/after.json",
+      "bytes": 1851,
+      "sha256": "7bd7b8c869c95609d237b80334a0a40a7a021245372b647f179643bf6ce15bbf"
+    },
+    {
+      "path": "timing/before.json",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/before.json",
+      "bytes": 522,
+      "sha256": "92f9f86a386f6c37fc074ba934956d40bbfd95ec5143c6dd3a47f584eb9cdf72"
+    },
+    {
+      "path": "timing/direct-command.json",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/direct-command.json",
+      "bytes": 451,
+      "sha256": "4b9a17512e129491af838d46fde38af830d135b88ea85ff8069cfef7bb2a3437"
+    },
+    {
+      "path": "timing/direct-initialize.json",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/direct-initialize.json",
+      "bytes": 1067,
+      "sha256": "c0d59bd3cb730fbd768351595aabee8c56ad701b8d5d864c9e70d5b9ff8b0757"
+    },
+    {
+      "path": "timing/direct.stderr",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/direct.stderr",
+      "bytes": 146,
+      "sha256": "7bb5bd8b47f881f269679e33354c1e276833d7f1ccf01aba0a9fefa5281205d8"
+    },
+    {
+      "path": "timing/identity.json",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/identity.json",
+      "bytes": 1720,
+      "sha256": "2f65a78436b0f4cad571594ee5743eaaf099171bd418c70ec26a7f92fd9c2b77"
+    },
+    {
+      "path": "timing/owner-start.json",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/owner-start.json",
+      "bytes": 942,
+      "sha256": "667035cc4b2fb4d882480e66a1c2896353eb66cac2b57a8e6dd59b4564932a6d"
+    },
+    {
+      "path": "timing/pair-1-direct.json",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/pair-1-direct.json",
+      "bytes": 1010,
+      "sha256": "ae0b01a2f27eff0a3d739f8e984d9a7675a52e5eaea080ba50a76c2319bed235"
+    },
+    {
+      "path": "timing/pair-1-native/driver.stderr",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/pair-1-native/driver.stderr",
+      "bytes": 304,
+      "sha256": "53e1e9d6140e1e74fcc1f5802b0ae65fc9a00f0e1259ac9c13569bae4688decb"
+    },
+    {
+      "path": "timing/pair-1-native/driver.stdout",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/pair-1-native/driver.stdout",
+      "bytes": 4728,
+      "sha256": "849837d944ad8624c902046751e6fcd3a9e291580af5ae632e92f8f3d0f60888"
+    },
+    {
+      "path": "timing/pair-1-native/invocation.json",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/pair-1-native/invocation.json",
+      "bytes": 1003,
+      "sha256": "ca5f77ebb3cb49bc5aaa9ce4548c967c29fcd492050390eb6aa20f0c09acef38"
+    },
+    {
+      "path": "timing/pair-1-native/launch.json",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/pair-1-native/launch.json",
+      "bytes": 5129,
+      "sha256": "fb8bc9198556069fd61e514c3300a89614d51794d1234bac3acd2ffaa2ddb9d6"
+    },
+    {
+      "path": "timing/pair-1-native/stderr.txt",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/pair-1-native/stderr.txt",
+      "bytes": 211,
+      "sha256": "f19f7207665e4a584b79d5ae64676e7217dfc85ae37506aad1e4f4b94c3e06d3"
+    },
+    {
+      "path": "timing/pair-1-native/stdout.jsonl",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/pair-1-native/stdout.jsonl",
+      "bytes": 4728,
+      "sha256": "849837d944ad8624c902046751e6fcd3a9e291580af5ae632e92f8f3d0f60888"
+    },
+    {
+      "path": "timing/pair-1-native.timing.jsonl",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/pair-1-native.timing.jsonl",
+      "bytes": 1302,
+      "sha256": "6561cb6761f88550cfc5466febf62437fc0e524e6017d0826e5f6572c7fbdacd"
+    },
+    {
+      "path": "timing/pair-2-direct.json",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/pair-2-direct.json",
+      "bytes": 1009,
+      "sha256": "0681288e758f026230c6112764d9e8ba986666b4289537d24f248dd4ccc630e6"
+    },
+    {
+      "path": "timing/pair-2-native/driver.stderr",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/pair-2-native/driver.stderr",
+      "bytes": 304,
+      "sha256": "f58adb1d3d84724181672a9a9eb373d3b88757baac860b131a71ff585852a3b0"
+    },
+    {
+      "path": "timing/pair-2-native/driver.stdout",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/pair-2-native/driver.stdout",
+      "bytes": 4728,
+      "sha256": "4137b2a5a5b68470af65980336df62c83a9b70e3f422be4c14672ebbbb998f7a"
+    },
+    {
+      "path": "timing/pair-2-native/invocation.json",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/pair-2-native/invocation.json",
+      "bytes": 1003,
+      "sha256": "cce29650f1357cc5b349625a3fcb0f97c093e7cfe4bf1627ccc8e8a5c70dfaa2"
+    },
+    {
+      "path": "timing/pair-2-native/launch.json",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/pair-2-native/launch.json",
+      "bytes": 5129,
+      "sha256": "57982997ad67c8c851503f0ab42ac8b6f90988cc487c6d4688b6dde5e59eab5d"
+    },
+    {
+      "path": "timing/pair-2-native/stderr.txt",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/pair-2-native/stderr.txt",
+      "bytes": 211,
+      "sha256": "76643b3278448248ed1456c8d1fb57cd516fb5e46b6373eae9baa841d4e850de"
+    },
+    {
+      "path": "timing/pair-2-native/stdout.jsonl",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/pair-2-native/stdout.jsonl",
+      "bytes": 4728,
+      "sha256": "4137b2a5a5b68470af65980336df62c83a9b70e3f422be4c14672ebbbb998f7a"
+    },
+    {
+      "path": "timing/pair-2-native.timing.jsonl",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/pair-2-native.timing.jsonl",
+      "bytes": 1298,
+      "sha256": "a0b9e1625757759386f50928904b4e94ea409712a3c9a74d4724f78c356b6d7a"
+    },
+    {
+      "path": "timing/pair-3-direct.json",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/pair-3-direct.json",
+      "bytes": 1010,
+      "sha256": "9710592e971eef0358234e38977f29ba4cd26e5dcf9e4982c2f053395eb786cd"
+    },
+    {
+      "path": "timing/pair-3-native/driver.stderr",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/pair-3-native/driver.stderr",
+      "bytes": 304,
+      "sha256": "dacdbb5d0c483e836d3c73a219d8eb0943714475c62f318dafc3a4865ab42adb"
+    },
+    {
+      "path": "timing/pair-3-native/driver.stdout",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/pair-3-native/driver.stdout",
+      "bytes": 4728,
+      "sha256": "375ec22e9a4250194e8e5898915000a28ce2e0cee377a806a3a335eda3e960a4"
+    },
+    {
+      "path": "timing/pair-3-native/invocation.json",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/pair-3-native/invocation.json",
+      "bytes": 1003,
+      "sha256": "10c5801d37bdfb52ade57c62a8667f44259c4fca51f3e7e9c469c9a843c41c9f"
+    },
+    {
+      "path": "timing/pair-3-native/launch.json",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/pair-3-native/launch.json",
+      "bytes": 5129,
+      "sha256": "4ce62e1dcbbd06aa2f866b458cb03abe76097f740d62bfaefcb96fdf36eeae5b"
+    },
+    {
+      "path": "timing/pair-3-native/stderr.txt",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/pair-3-native/stderr.txt",
+      "bytes": 211,
+      "sha256": "49491e78b755e38b6d5319cae6bd25828e6d00720e49d764badbcd40bd01456a"
+    },
+    {
+      "path": "timing/pair-3-native/stdout.jsonl",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/pair-3-native/stdout.jsonl",
+      "bytes": 4728,
+      "sha256": "375ec22e9a4250194e8e5898915000a28ce2e0cee377a806a3a335eda3e960a4"
+    },
+    {
+      "path": "timing/pair-3-native.timing.jsonl",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/pair-3-native.timing.jsonl",
+      "bytes": 1301,
+      "sha256": "a6dca5c2ae9ca1b0e987f0128c2adc2c8d3fdd6cc29704dde5f748243bcf7438"
+    },
+    {
+      "path": "timing/pairs.json",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/pairs.json",
+      "bytes": 1218,
+      "sha256": "686556b102914db878164720a329716db533164d703717f8e4857e8918f91d4a"
+    },
+    {
+      "path": "timing/prepare-result.json",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/prepare-result.json",
+      "bytes": 128,
+      "sha256": "ff3f9f81f126125d2176ea22687d6a3f2925c6b668e7a25b1cb23e067a647031"
+    },
+    {
+      "path": "timing/result-equality.json",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/result-equality.json",
+      "bytes": 1071,
+      "sha256": "cbff2e5d16ceedf83f59f634abefa13d9abeb1f3de10c7327a3946d271ef8ce7"
+    },
+    {
+      "path": "timing/result.json",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/result.json",
+      "bytes": 825,
+      "sha256": "536725d90cf52bd6eb29f42e0539d94cb33b9fd7f132a0aece10a0c0b1e1fe8b"
+    },
+    {
+      "path": "timing/seed/driver.stderr",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/seed/driver.stderr",
+      "bytes": 295,
+      "sha256": "6e2f3c77586a5b3aca5a6a9028c096da55eb4072e557372ee6db6090ea6b3007"
+    },
+    {
+      "path": "timing/seed/driver.stdout",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/seed/driver.stdout",
+      "bytes": 4886,
+      "sha256": "47167c2115f826cd307da9df643bb2f4aa06830e1b45de5c4dc6c394195d1f41"
+    },
+    {
+      "path": "timing/seed/invocation.json",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/seed/invocation.json",
+      "bytes": 1053,
+      "sha256": "d1a35bc29953dd06483ea9ba24904ce8d45a9fd9dea2901266e43dd635b7b12e"
+    },
+    {
+      "path": "timing/seed/launch.json",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/seed/launch.json",
+      "bytes": 5188,
+      "sha256": "abe438623b7eef2987f3e53ddb15c67d3f865ae93f1ecbc163c34a81dd7dbb02"
+    },
+    {
+      "path": "timing/seed/stderr.txt",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/seed/stderr.txt",
+      "bytes": 211,
+      "sha256": "f477a1ba8f5420e2bd3ca00f644c7291ab7d8d02f2acbf564cd60538f51c6c2c"
+    },
+    {
+      "path": "timing/seed/stdout.jsonl",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/seed/stdout.jsonl",
+      "bytes": 4886,
+      "sha256": "47167c2115f826cd307da9df643bb2f4aa06830e1b45de5c4dc6c394195d1f41"
+    },
+    {
+      "path": "timing/seed.timing.jsonl",
+      "source": "/tmp/chio-codex-paired-timing-final-r2-20260909/seed.timing.jsonl",
+      "bytes": 1406,
+      "sha256": "e29c6bcba5d3713fd5a39d12edcd6900b3dddd167a75bb31f528190caeb1ccf1"
+    }
+  ]
+}

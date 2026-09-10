@@ -1,0 +1,64 @@
+{
+  "acceptance": false,
+  "supplementalOnly": true,
+  "passed": true,
+  "exit": {
+    "code": 3,
+    "signal": null
+  },
+  "timedOut": false,
+  "durationSeconds": 1.6730235420000001,
+  "injectedTwoCallResponse": true,
+  "nativeSerialized": true,
+  "kernelSerialized": false,
+  "bothCompleted": false,
+  "secondBlocked": true,
+  "unrelatedDispatches": 0,
+  "hostCalls": [
+    {
+      "path": "/workspace/codex-forced-parallel-206fe21b-6ab6-44a1-b223-7fa41e9feb8c-a.txt",
+      "startedIndex": 2,
+      "completedIndex": 3,
+      "state": "completed",
+      "evidence": "verified",
+      "requestId": "1912108b-2f4b-4c97-b6dd-79d8e52135a9:575ec21751e89a4f43282eab87376e88da157f24bdd95311ef1d55785d88af0a",
+      "error": null,
+      "dispatches": 1,
+      "expectedContentSha256": "ffff6b14a80a4c8494de15e402f006adba246c02ebbd969642eb86041a4e6919",
+      "actualContentSha256": "ffff6b14a80a4c8494de15e402f006adba246c02ebbd969642eb86041a4e6919",
+      "effectMatches": true
+    },
+    {
+      "path": "/workspace/codex-forced-parallel-206fe21b-6ab6-44a1-b223-7fa41e9feb8c-b.txt",
+      "startedIndex": 4,
+      "completedIndex": 5,
+      "state": "not_dispatched",
+      "evidence": "unverified",
+      "requestId": "1912108b-2f4b-4c97-b6dd-79d8e52135a9:cb90dae311b1e05521a9c1fdb9171984cd1127dea616b7d89a182b183bb9ea1d",
+      "error": null,
+      "dispatches": 0,
+      "expectedContentSha256": "586696d83af88efacd253eb86647fc0c2f66071590f6b0e149d1f9d3fd8f14cf",
+      "actualContentSha256": null,
+      "effectMatches": false
+    }
+  ],
+  "deliveryConfirmed": true,
+  "hostDelivery": {
+    "confirmed": 1,
+    "failed": false
+  },
+  "executionOutcome": {
+    "status": "protected_work_incomplete",
+    "exitCode": 3,
+    "hostExitCode": 0,
+    "hostSignal": null,
+    "completed": 1,
+    "denied": 0,
+    "notDispatched": 1,
+    "unknown": 0,
+    "toolFailures": 0,
+    "awaitingApproval": 0
+  },
+  "classification": "second-call-blocked",
+  "timingClaim": "Observed fixture wallclock only; no live-model or overhead claim"
+}

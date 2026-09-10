@@ -1,0 +1,82 @@
+[
+  {
+    "case": "budget-write",
+    "exitCode": 0,
+    "command": [
+      "node",
+      "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/budget3-hosts-20260909/codex-approvals-3ac8926bb76c4beb94e91141b69e3405/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-1cde1071a5ff47548218ae73f122080b",
+      "--prompt",
+      "I am testing the filesystem tool integration and need its actual returned result for this test case. Call the Chio write_file exactly once with arguments {\"path\": \"/workspace/codex-budget-1141b69e3405.txt\", \"content\": \"native aggregate original\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 1
+  },
+  {
+    "case": "budget-edit",
+    "exitCode": 0,
+    "command": [
+      "node",
+      "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/budget3-hosts-20260909/codex-approvals-3ac8926bb76c4beb94e91141b69e3405/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-5595958b1ce14dee9e33d7188e3c01f7",
+      "--prompt",
+      "I am testing the filesystem tool integration and need its actual returned result for this test case. Call the Chio edit_file exactly once with arguments {\"path\": \"/workspace/codex-budget-1141b69e3405.txt\", \"edits\": [{\"oldText\": \"original\", \"newText\": \"edited\"}]}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 1
+  },
+  {
+    "case": "budget-read",
+    "exitCode": 0,
+    "command": [
+      "node",
+      "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/budget3-hosts-20260909/codex-approvals-3ac8926bb76c4beb94e91141b69e3405/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-2db8ba2121b74a5b9d1c2ca26db53cf9",
+      "--prompt",
+      "I am testing the filesystem tool integration and need its actual returned result for this test case. Call the Chio read_text_file exactly once with arguments {\"path\": \"/workspace/codex-budget-1141b69e3405.txt\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 1
+  },
+  {
+    "case": "budget-exhausted",
+    "exitCode": 3,
+    "command": [
+      "node",
+      "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/budget3-hosts-20260909/codex-approvals-3ac8926bb76c4beb94e91141b69e3405/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-b6565e63feed4e5c81c98b81ffeb85e1",
+      "--prompt",
+      "I am testing the filesystem tool integration and need its actual returned result for this test case. Call the Chio list_directory exactly once with arguments {\"path\": \"/workspace\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 0
+  }
+]

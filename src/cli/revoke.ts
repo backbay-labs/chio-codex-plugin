@@ -11,6 +11,8 @@ import { buildBridge } from "../chio/bridge.js";
 export async function revokeCmd(): Promise<string> {
   const bond = getSoleBond();
   if (!bond) return "chio · no active bond · nothing to revoke";
+  // Local access stops even when the authority service cannot be reached.
+  clearBond(bond.sessionId);
   const bridge = buildBridge();
   // ChioBridge.revoke takes a subject id (capability / passport did). We
   // pass the capability id we tracked; if instead a passport was issued
@@ -21,10 +23,9 @@ export async function revokeCmd(): Promise<string> {
     } catch (err) {
       return (
         `chio · revoke partial: bridge threw "${(err as Error).message}"; ` +
-        `clearing local state anyway`
+        `local bond cleared; remote revocation remains unresolved`
       );
     }
   }
-  clearBond(bond.sessionId);
   return `chio · revoked (capability=${bond.capabilityId ?? "n/a"}, session=${bond.sessionId})`;
 }

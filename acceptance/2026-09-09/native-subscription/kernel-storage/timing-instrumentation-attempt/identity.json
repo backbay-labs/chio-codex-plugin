@@ -1,0 +1,35 @@
+{
+  "artifactSha256": "ac4f14ee4073abdc0c9ff2b4771e99adf7a871d084a9b488513f5d28eae56874",
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "image": "sha256:188cb84d5d0bb4063d4ce5a3b9c3832445a5acda5604911cda80a9136d1850a0",
+  "configurationSha256": "71d13f444903e825542c1b971a83d055d153d948c7f394929a4f83e0e3a6a67f",
+  "hostSessionId": "6e412f26-9676-49a1-b415-ae75d7227403",
+  "sessionCredential": {
+    "schema": "chio.mcp.session-credential.v1",
+    "sessionId": "6b65b35e5e5eab61c1af82f081218f34461ade5ab89184f8f451313eb251fc4f",
+    "subjectKey": "a5e614ec8e8df57bd9cad566755a782ba994b433ed235b7f12dc5555d7038272",
+    "capabilityIds": [
+      "cap-01a0895d-19a7-7331-b50b-21614226df70"
+    ],
+    "serverId": "fs",
+    "endpointPath": "/mcp",
+    "allowedTools": [
+      "edit_file",
+      "list_directory",
+      "read_text_file",
+      "write_file"
+    ],
+    "issuedAt": 1789010975,
+    "expiresAt": 1789012775
+  },
+  "launcherSha256": "1ea563da0a738a3a10ba1166b3702aafe7bace92946935b4791f6912b0d7906b",
+  "bridgeGatewaySha256": "33e7054cef3eae53400fc63de8586e65b23f041455d0471a4b6df932d136c876",
+  "instrumentSha256": "cb4b73b409105f70a28a27e12e8d47f07864033a2b4763d0d54403527009d8c7",
+  "harnessSha256": "0e014d3a75243887c1bdf0b3b3d14d9f63af2cfa2c0290d617132d05f0e7c33c",
+  "endpoint": "http://127.0.0.1:58147",
+  "host": "codex-cli 0.153.4",
+  "model": "gpt-5.5",
+  "stateDir": "/Users/connor/.local/share/chio-required-operators/codex-paired-timing-20260909",
+  "volume": "chio-required-codex-paired-timing-20260909",
+  "scope": "three same-file, same native authority read pairs; operator direct control has no kernel capability and a readonly resource mount"
+}

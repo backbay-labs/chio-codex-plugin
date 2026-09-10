@@ -1,0 +1,22 @@
+{
+  "launchPreflightRefused": false,
+  "calls": [
+    {
+      "id": "item_1",
+      "name": "chio_resume",
+      "arguments": {
+        "requestId": "1f21932d-a122-4ea1-9f86-0a927974b463:dbbf899062dd907fc47c0cbc688b743b2277290e24ff305f7ff9b6720838bd9e",
+        "tool": "write_file",
+        "arguments": {
+          "path": "/workspace/codex-rejected-9dfa8385ceaf.txt",
+          "content": "must never appear"
+        }
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "item_1"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 1
+}

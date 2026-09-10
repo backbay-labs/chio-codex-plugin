@@ -1,0 +1,1 @@
+chio-codex: authenticated session credential does not match the retained caller, capability, resource owner, tool scope or lifetime

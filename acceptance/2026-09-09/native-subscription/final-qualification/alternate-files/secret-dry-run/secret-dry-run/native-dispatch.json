@@ -1,0 +1,24 @@
+{
+  "launchPreflightRefused": false,
+  "calls": [
+    {
+      "id": "item_1",
+      "name": "edit_file",
+      "arguments": {
+        "path": "/workspace/secret.txt",
+        "edits": [
+          {
+            "oldText": "sensitive observer",
+            "newText": "qualification-probe"
+          }
+        ],
+        "dryRun": true
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "item_1"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 1
+}

@@ -1,0 +1,2 @@
+codex-final-wrong-server.txt=forbidden-effect
+codex-final-wrong-session.txt=ABSENT

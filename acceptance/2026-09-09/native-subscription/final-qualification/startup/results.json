@@ -1,0 +1,58 @@
+[
+  {
+    "case": "plugin-omitted",
+    "passed": true,
+    "exitCode": 1,
+    "newDispatchRows": 0,
+    "elapsedSecondsIncludingProviderAndStartup": 0.18172899998899084,
+    "executionOutcome": {},
+    "operatorInterventions": [
+      "prepare fresh scoped session",
+      "remove enforcement module from disposable installed consumer"
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-lifecycle-plugin-omitted-115c8250a6454ddea835a01c03fa43c2",
+    "scope": "bounded lifecycle fault"
+  },
+  {
+    "case": "gateway-missing",
+    "passed": true,
+    "exitCode": 1,
+    "newDispatchRows": 0,
+    "elapsedSecondsIncludingProviderAndStartup": 0.12959241701173596,
+    "executionOutcome": {},
+    "operatorInterventions": [
+      "prepare fresh scoped session",
+      "remove enforcement module from disposable installed consumer"
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-lifecycle-gateway-missing-a3623eab1eab494d963befdcf848d6ed",
+    "scope": "bounded lifecycle fault"
+  },
+  {
+    "case": "host-missing",
+    "passed": true,
+    "exitCode": 1,
+    "newDispatchRows": 0,
+    "elapsedSecondsIncludingProviderAndStartup": 0.23183787499147002,
+    "executionOutcome": {},
+    "operatorInterventions": [
+      "prepare fresh scoped session",
+      "select absent native executable"
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-lifecycle-host-missing-ecb8427839ce42398b7a0f245415297d",
+    "scope": "bounded lifecycle fault"
+  },
+  {
+    "case": "init-malformed",
+    "passed": false,
+    "exitCode": 1,
+    "newDispatchRows": 0,
+    "elapsedSecondsIncludingProviderAndStartup": 0.5872784999955911,
+    "executionOutcome": {},
+    "operatorInterventions": [
+      "prepare fresh scoped session",
+      "inject operator adapter init-malformed"
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-lifecycle-init-malformed-0c1b21b22f034c4fb5f29ff7c4ddb5b8",
+    "scope": "bounded lifecycle fault"
+  }
+]

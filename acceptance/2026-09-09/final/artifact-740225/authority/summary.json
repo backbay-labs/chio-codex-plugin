@@ -1,0 +1,203 @@
+{
+  "integration_accepted": false,
+  "host_cases": [
+    {
+      "case": "budget",
+      "exit": 0,
+      "outputs": [
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "completed",
+          "evidence": "verified",
+          "reason": null
+        },
+        {
+          "tool": "read_text_file",
+          "state": "not_dispatched",
+          "evidence": "unverified",
+          "reason": "kernel unavailable or malformed handshake before dispatch"
+        }
+      ]
+    },
+    {
+      "case": "wrong-server",
+      "exit": 0,
+      "outputs": [
+        {
+          "tool": "write_file",
+          "state": "unknown",
+          "evidence": "unverified",
+          "reason": "execution receipt failed trusted request verification"
+        }
+      ]
+    }
+  ]
+}

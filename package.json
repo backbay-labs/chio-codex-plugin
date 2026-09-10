@@ -1,7 +1,7 @@
 {
   "name": "@chio/codex-plugin",
-  "version": "0.2.0",
-  "description": "Chio plugin for the OpenAI Codex CLI. Bonds every plan-then-act loop through the chio kernel: seven guards, attested plans, publishable did:chio citizens.",
+  "version": "0.3.0",
+  "description": "Chio policy diagnostics and receipts for Codex. Complete kernel mediation is not yet accepted.",
   "type": "module",
   "main": "./dist/cli/main.js",
   "bin": {
@@ -10,19 +10,21 @@
   "files": [
     "dist",
     ".codex-plugin",
-    ".codex",
     "hooks.json",
     "skills",
     "examples",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "vendor",
+    "RESTRICTED.md",
+    "acceptance/2026-09-09"
   ],
   "scripts": {
     "build": "tsc && node ./scripts/mark-hooks-executable.mjs",
     "typecheck": "tsc --noEmit",
-    "test": "node --experimental-strip-types --test ./test/*.test.ts",
-    "prepack": "node ./scripts/prep-publish.mjs && npm run build",
-    "postpack": "node ./scripts/restore-publish.mjs"
+    "test": "npm run build && node --experimental-strip-types --test ./test/*.test.ts",
+    "prepack": "node -e \"throw new Error('Use npm run pack:release for a self-contained staged artifact')\"",
+    "pack:release": "node scripts/pack-release.mjs"
   },
   "keywords": [
     "codex",
@@ -39,10 +41,14 @@
     "node": ">=22"
   },
   "dependencies": {
-    "@chio/bridge": "file:../chio-bridge"
+    "@chio/bridge": "file:vendor/chio-bridge-0.3.0-7d9e34f7408a.tgz"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
     "typescript": "~5.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/backbay-labs/chio-codex-plugin.git"
   }
 }

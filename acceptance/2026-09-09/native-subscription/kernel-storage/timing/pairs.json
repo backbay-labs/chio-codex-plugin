@@ -1,0 +1,32 @@
+[
+  {
+    "pair": 1,
+    "order": "native then direct",
+    "nativeGatewayRequestToResponseEndMs": 562.8522499999999,
+    "kernelFetchToSdkTerminalConsumptionMs": 521.1958329999998,
+    "warmDirectMcpStdioReadMs": 16.206833,
+    "gatewayMinusDirectMs": 546.645417,
+    "kernelMinusDirectMs": 504.98899999999975,
+    "interpretation": "descriptive stage differences only, not pure plugin overhead"
+  },
+  {
+    "pair": 2,
+    "order": "direct then native",
+    "nativeGatewayRequestToResponseEndMs": 889.4190409999992,
+    "kernelFetchToSdkTerminalConsumptionMs": 817.9742920000008,
+    "warmDirectMcpStdioReadMs": 5.530792,
+    "gatewayMinusDirectMs": 883.8882489999992,
+    "kernelMinusDirectMs": 812.4435000000008,
+    "interpretation": "descriptive stage differences only, not pure plugin overhead"
+  },
+  {
+    "pair": 3,
+    "order": "native then direct",
+    "nativeGatewayRequestToResponseEndMs": 1188.6706249999988,
+    "kernelFetchToSdkTerminalConsumptionMs": 1132.0955830000003,
+    "warmDirectMcpStdioReadMs": 87.110417,
+    "gatewayMinusDirectMs": 1101.5602079999987,
+    "kernelMinusDirectMs": 1044.9851660000002,
+    "interpretation": "descriptive stage differences only, not pure plugin overhead"
+  }
+]

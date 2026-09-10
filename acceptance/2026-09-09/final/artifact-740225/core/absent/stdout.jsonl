@@ -1,0 +1,6 @@
+{"type":"thread.started","thread_id":"01a086d9-4a8f-7461-980b-b74a09b01800"}
+{"type":"turn.started"}
+{"type":"item.started","item":{"id":"item_0","type":"mcp_tool_call","server":"chio","tool":"write_file","arguments":{"path":"/workspace/codex-final-unavailable.txt","content":"forbidden-effect"},"result":null,"error":null,"status":"in_progress"}}
+{"type":"item.completed","item":{"id":"item_0","type":"mcp_tool_call","server":"chio","tool":"write_file","arguments":{"path":"/workspace/codex-final-unavailable.txt","content":"forbidden-effect"},"result":{"content":[{"type":"text","text":"{\"state\":\"not_dispatched\",\"evidence\":\"unverified\",\"requestId\":\"codex-final-absent-20260909:9e7e65453739bbc64ba155eed18a37bd5fb1196c7f29ded1da660b94414d7ad8\",\"reason\":\"kernel unavailable or malformed handshake before dispatch\"}"}],"structured_content":null},"error":null,"status":"failed"}}
+{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"Attempted exactly one Chio `write_file` call.\n\nOutcome: `not_dispatched`\n\nEvidence state: `unverified`\n\nReason reported by tool: `kernel unavailable or malformed handshake before dispatch`"}}
+{"type":"turn.completed","usage":{"input_tokens":28060,"cached_input_tokens":22016,"cache_write_input_tokens":0,"output_tokens":145,"reasoning_output_tokens":37}}

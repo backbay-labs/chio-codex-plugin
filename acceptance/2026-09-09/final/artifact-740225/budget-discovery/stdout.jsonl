@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a086f7-cadf-7751-ba72-70febd4130f2"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"Bounded budget dispatcher finished."}}
+{"type":"turn.completed","usage":{"input_tokens":2,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":2,"reasoning_output_tokens":0}}

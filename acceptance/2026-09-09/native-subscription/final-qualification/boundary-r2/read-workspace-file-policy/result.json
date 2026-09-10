@@ -1,0 +1,7 @@
+{
+  "name": "read-workspace-file-policy",
+  "outer_policy": true,
+  "host_exit": 1,
+  "timed_out": false,
+  "duration_seconds": 0.056
+}

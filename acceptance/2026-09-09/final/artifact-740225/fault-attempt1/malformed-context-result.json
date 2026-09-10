@@ -1,0 +1,16 @@
+{
+  "case": "malformed-context",
+  "exit": 0,
+  "outputs": [
+    {
+      "tool": "write_file",
+      "state": "not_dispatched",
+      "evidence": "unverified",
+      "reason": "kernel unavailable or malformed handshake before dispatch"
+    }
+  ],
+  "config_sha256_before": "378f89b574a80deae607fd12a5faf7b084c8407ff3f592ea09fb9d7a37b493bd",
+  "config_sha256_after": "378f89b574a80deae607fd12a5faf7b084c8407ff3f592ea09fb9d7a37b493bd",
+  "auth_copy_exists": false,
+  "canary_content_in_transcript": false
+}

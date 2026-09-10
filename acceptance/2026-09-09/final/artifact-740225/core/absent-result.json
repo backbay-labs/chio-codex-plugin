@@ -1,0 +1,14 @@
+{
+  "case": "absent",
+  "exit": 0,
+  "outputs": [
+    {
+      "tool": "write_file",
+      "state": "not_dispatched",
+      "evidence": "unverified",
+      "reason": "kernel unavailable or malformed handshake before dispatch"
+    }
+  ],
+  "local_bypass_exists": false,
+  "auth_copy_exists": false
+}

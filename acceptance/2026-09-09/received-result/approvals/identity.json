@@ -1,0 +1,12 @@
+{
+  "host": "codex",
+  "cases": 7,
+  "skips": 0,
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "resourceImage": "sha256:188cb84d5d0bb4063d4ce5a3b9c3832445a5acda5604911cda80a9136d1850a0",
+  "hostImage": null,
+  "packageDirectory": "/tmp/chio-codex-received-result-cold-consumer-20260909/node_modules/@chio/codex-plugin",
+  "privateConfiguration": "/Users/connor/.local/share/chio-required-operators/bridge-host-delivery-approval-20260909/codex-approvals-daaa3da427f4440fbbd273d155dccae2/gateway.json",
+  "configurationSha256": "ff15667092742b09334f0f271d1eb1426f60739e7c1f2e609f54aaa6f12080d4",
+  "claim": "bounded real-host approval cases; full acceptance remains open"
+}

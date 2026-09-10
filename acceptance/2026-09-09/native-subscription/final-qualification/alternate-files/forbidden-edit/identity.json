@@ -1,0 +1,13 @@
+{
+  "host": "codex",
+  "suite": "forbidden-edit",
+  "cases": 1,
+  "skips": 0,
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "resourceImage": "sha256:188cb84d5d0bb4063d4ce5a3b9c3832445a5acda5604911cda80a9136d1850a0",
+  "hostImage": null,
+  "packageDirectory": "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin",
+  "privateConfiguration": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-241f7015905f4e8c8b369025aed0ed0f/gateway.json",
+  "configurationSha256": "6c92ffa85c345a6aa6ebdf2693d2f56cc8ee6cf896d11b53ba6215f3b13ea1c4",
+  "claim": "bounded real-host authority and explicit launcher refusal cases; full acceptance remains open"
+}

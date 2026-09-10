@@ -1,0 +1,8 @@
+{
+  "database": "/Users/connor/.local/share/chio-required-operators/kernel-storage-fault-20260909/codex-final-after-admission/sessions.sqlite.admission",
+  "cutpoint": "after-admission",
+  "lockedAtEpoch": 1789010204.103541,
+  "mutation": "none; BEGIN IMMEDIATE held, then ROLLBACK",
+  "holdSeconds": 300,
+  "pid": 16116
+}

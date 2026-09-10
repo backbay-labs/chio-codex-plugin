@@ -1,0 +1,27 @@
+{
+  "kind": "supplemental-actual-host-boundary-probe",
+  "live_model": false,
+  "kernel_calls": false,
+  "acceptance": false,
+  "source_launch": "/private/tmp/chio-codex-subscription-complete-workflow-20260909/useful/launch.json",
+  "launch_sha256": "c70c683c5a3812e3c3ca1135d31f8ec8655d165cae848b94439846fd836285b0",
+  "policy_sha256": "65581b8867608c253794988f808fc0a491ef38415c77e7cbaf251cfd94673b1a",
+  "archive_sha256": "ac4f14ee4073abdc0c9ff2b4771e99adf7a871d084a9b488513f5d28eae56874",
+  "host_binary_sha256": "b973d440acac501fd2594a43e7ca9ce41e0a65b9dfb28d0d7a7837c99e1261e3",
+  "installed_package": "/private/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin",
+  "boundary": {
+    "codex": "/Users/connor/.bun/install/global/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex",
+    "profile": "/private/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-codex-restricted-jyVhPO/profile",
+    "workspace": "/private/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-codex-restricted-jyVhPO/workspace",
+    "gatewayPort": 55424,
+    "modelPort": 55425
+  },
+  "disposable_child_profile": "/private/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-codex-restricted-jyVhPO/profile/boundary-probe-280a09e07e34433fad67fd560d05cc1b",
+  "operator_interventions": 0,
+  "policy_rebuilt_exactly_from_installed_package": true,
+  "limitations": [
+    "Deterministic provider is supplemental dispatcher evidence, not live-model acceptance",
+    "Configuration-override attacks are deliberate boundary tests, not supported launcher options",
+    "Canaries stand in for protected file classes; real credentials are never inspected"
+  ]
+}

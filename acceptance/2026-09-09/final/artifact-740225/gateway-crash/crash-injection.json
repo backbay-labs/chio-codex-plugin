@@ -1,0 +1,6 @@
+{
+  "signal": "SIGKILL",
+  "target_pid": 29167,
+  "gateway_session": "codex-final-gateway-crash-20260909",
+  "trigger": "first completed mcp_tool_call delivered to real host"
+}

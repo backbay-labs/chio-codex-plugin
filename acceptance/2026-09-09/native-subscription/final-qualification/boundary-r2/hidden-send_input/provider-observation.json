@@ -1,0 +1,343 @@
+[
+  {
+    "path": "/v1/responses",
+    "tools": [
+      {
+        "type": "function",
+        "name": "list_mcp_resources",
+        "description": "Lists resources provided by MCP servers. Resources allow servers to share data that provides context to language models, such as files, database schemas, or application-specific information. Prefer resources over web search when possible.",
+        "strict": false,
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "cursor": {
+              "type": "string",
+              "description": "Opaque cursor from a previous list_mcp_resources call; omit for the first page."
+            },
+            "server": {
+              "type": "string",
+              "description": "MCP server name. Omit to list resources from every configured server."
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      {
+        "type": "function",
+        "name": "list_mcp_resource_templates",
+        "description": "Lists resource templates provided by MCP servers. Parameterized resource templates allow servers to share data that takes parameters and provides context to language models, such as files, database schemas, or application-specific information. Prefer resource templates over web search when possible.",
+        "strict": false,
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "cursor": {
+              "type": "string",
+              "description": "Opaque cursor from a previous list_mcp_resource_templates call; omit for the first page."
+            },
+            "server": {
+              "type": "string",
+              "description": "MCP server name. Omit to list resource templates from every configured server."
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      {
+        "type": "function",
+        "name": "read_mcp_resource",
+        "description": "Read a specific resource from an MCP server given the server name and resource URI.",
+        "strict": false,
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "server": {
+              "type": "string",
+              "description": "MCP server name exactly as configured. Must match the 'server' field returned by list_mcp_resources."
+            },
+            "uri": {
+              "type": "string",
+              "description": "Resource URI to read. Must be one of the URIs returned by list_mcp_resources."
+            }
+          },
+          "required": [
+            "server",
+            "uri"
+          ],
+          "additionalProperties": false
+        }
+      },
+      {
+        "type": "function",
+        "name": "request_user_input",
+        "description": "Request user input for one to three short questions and wait for the response. This tool is only available in Plan mode.",
+        "strict": false,
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "questions": {
+              "type": "array",
+              "description": "Questions to show the user. Prefer 1 and do not exceed 3",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "header": {
+                    "type": "string",
+                    "description": "Short header label shown in the UI (12 or fewer chars)."
+                  },
+                  "id": {
+                    "type": "string",
+                    "description": "Stable identifier for mapping answers (snake_case)."
+                  },
+                  "options": {
+                    "type": "array",
+                    "description": "Provide 2-3 mutually exclusive choices. Put the recommended option first and suffix its label with \"(Recommended)\". Do not include an \"Other\" option in this list; the client will add a free-form \"Other\" option automatically.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "description": {
+                          "type": "string",
+                          "description": "One short sentence explaining impact/tradeoff if selected."
+                        },
+                        "label": {
+                          "type": "string",
+                          "description": "User-facing label (1-5 words)."
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "description"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "question": {
+                    "type": "string",
+                    "description": "Single-sentence prompt shown to the user."
+                  }
+                },
+                "required": [
+                  "id",
+                  "header",
+                  "question",
+                  "options"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "questions"
+          ],
+          "additionalProperties": false
+        }
+      },
+      {
+        "type": "custom",
+        "name": "apply_patch",
+        "description": "The `apply_patch` tool can be used to edit files. This is a FREEFORM tool, so do not wrap the patch in JSON.",
+        "format": {
+          "type": "grammar",
+          "syntax": "lark",
+          "definition": "start: begin_patch hunk+ end_patch\nbegin_patch: \"*** Begin Patch\" LF\nend_patch: \"*** End Patch\" LF?\n\nhunk: add_hunk | delete_hunk | update_hunk\nadd_hunk: \"*** Add File: \" filename LF add_line+\ndelete_hunk: \"*** Delete File: \" filename LF\nupdate_hunk: \"*** Update File: \" filename LF change_move? change?\n\nfilename: /(.+)/\nadd_line: \"+\" /(.*)/ LF -> line\n\nchange_move: \"*** Move to: \" filename LF\nchange: (change_context | change_line)+ eof_line?\nchange_context: (\"@@\" | \"@@ \" /(.+)/) LF\nchange_line: (\"+\" | \"-\" | \" \") /(.*)/ LF\neof_line: \"*** End of File\" LF\n\n%import common.LF\n"
+        }
+      },
+      {
+        "type": "tool_search",
+        "execution": "client",
+        "description": "# Tool discovery\n\nSearches over deferred tool metadata with BM25 and exposes matching tools for the next model call.\n\nYou have access to tools from the following sources:\n- chio\nSome of the tools may not have been provided to you upfront, and you should use this tool (`tool_search`) to search for the required tools. For MCP tool discovery, always use `tool_search` instead of `list_mcp_resources` or `list_mcp_resource_templates`.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "limit": {
+              "type": "number",
+              "description": "Maximum number of tools to return. Defaults to 8."
+            },
+            "query": {
+              "type": "string",
+              "description": "Search query for deferred tools."
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "additionalProperties": false
+        }
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "path": "/v1/responses",
+    "tools": [
+      {
+        "type": "function",
+        "name": "list_mcp_resources",
+        "description": "Lists resources provided by MCP servers. Resources allow servers to share data that provides context to language models, such as files, database schemas, or application-specific information. Prefer resources over web search when possible.",
+        "strict": false,
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "cursor": {
+              "type": "string",
+              "description": "Opaque cursor from a previous list_mcp_resources call; omit for the first page."
+            },
+            "server": {
+              "type": "string",
+              "description": "MCP server name. Omit to list resources from every configured server."
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      {
+        "type": "function",
+        "name": "list_mcp_resource_templates",
+        "description": "Lists resource templates provided by MCP servers. Parameterized resource templates allow servers to share data that takes parameters and provides context to language models, such as files, database schemas, or application-specific information. Prefer resource templates over web search when possible.",
+        "strict": false,
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "cursor": {
+              "type": "string",
+              "description": "Opaque cursor from a previous list_mcp_resource_templates call; omit for the first page."
+            },
+            "server": {
+              "type": "string",
+              "description": "MCP server name. Omit to list resource templates from every configured server."
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      {
+        "type": "function",
+        "name": "read_mcp_resource",
+        "description": "Read a specific resource from an MCP server given the server name and resource URI.",
+        "strict": false,
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "server": {
+              "type": "string",
+              "description": "MCP server name exactly as configured. Must match the 'server' field returned by list_mcp_resources."
+            },
+            "uri": {
+              "type": "string",
+              "description": "Resource URI to read. Must be one of the URIs returned by list_mcp_resources."
+            }
+          },
+          "required": [
+            "server",
+            "uri"
+          ],
+          "additionalProperties": false
+        }
+      },
+      {
+        "type": "function",
+        "name": "request_user_input",
+        "description": "Request user input for one to three short questions and wait for the response. This tool is only available in Plan mode.",
+        "strict": false,
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "questions": {
+              "type": "array",
+              "description": "Questions to show the user. Prefer 1 and do not exceed 3",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "header": {
+                    "type": "string",
+                    "description": "Short header label shown in the UI (12 or fewer chars)."
+                  },
+                  "id": {
+                    "type": "string",
+                    "description": "Stable identifier for mapping answers (snake_case)."
+                  },
+                  "options": {
+                    "type": "array",
+                    "description": "Provide 2-3 mutually exclusive choices. Put the recommended option first and suffix its label with \"(Recommended)\". Do not include an \"Other\" option in this list; the client will add a free-form \"Other\" option automatically.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "description": {
+                          "type": "string",
+                          "description": "One short sentence explaining impact/tradeoff if selected."
+                        },
+                        "label": {
+                          "type": "string",
+                          "description": "User-facing label (1-5 words)."
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "description"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "question": {
+                    "type": "string",
+                    "description": "Single-sentence prompt shown to the user."
+                  }
+                },
+                "required": [
+                  "id",
+                  "header",
+                  "question",
+                  "options"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "questions"
+          ],
+          "additionalProperties": false
+        }
+      },
+      {
+        "type": "custom",
+        "name": "apply_patch",
+        "description": "The `apply_patch` tool can be used to edit files. This is a FREEFORM tool, so do not wrap the patch in JSON.",
+        "format": {
+          "type": "grammar",
+          "syntax": "lark",
+          "definition": "start: begin_patch hunk+ end_patch\nbegin_patch: \"*** Begin Patch\" LF\nend_patch: \"*** End Patch\" LF?\n\nhunk: add_hunk | delete_hunk | update_hunk\nadd_hunk: \"*** Add File: \" filename LF add_line+\ndelete_hunk: \"*** Delete File: \" filename LF\nupdate_hunk: \"*** Update File: \" filename LF change_move? change?\n\nfilename: /(.+)/\nadd_line: \"+\" /(.*)/ LF -> line\n\nchange_move: \"*** Move to: \" filename LF\nchange: (change_context | change_line)+ eof_line?\nchange_context: (\"@@\" | \"@@ \" /(.+)/) LF\nchange_line: (\"+\" | \"-\" | \" \") /(.*)/ LF\neof_line: \"*** End of File\" LF\n\n%import common.LF\n"
+        }
+      },
+      {
+        "type": "tool_search",
+        "execution": "client",
+        "description": "# Tool discovery\n\nSearches over deferred tool metadata with BM25 and exposes matching tools for the next model call.\n\nYou have access to tools from the following sources:\n- chio\nSome of the tools may not have been provided to you upfront, and you should use this tool (`tool_search`) to search for the required tools. For MCP tool discovery, always use `tool_search` instead of `list_mcp_resources` or `list_mcp_resource_templates`.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "limit": {
+              "type": "number",
+              "description": "Maximum number of tools to return. Defaults to 8."
+            },
+            "query": {
+              "type": "string",
+              "description": "Search query for deferred tools."
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "additionalProperties": false
+        }
+      }
+    ],
+    "outputs": [
+      {
+        "type": "function_call_output",
+        "id": "fco_01a0891c-20e3-7433-a1e6-0ff859ce9177",
+        "call_id": "call_boundary",
+        "output": "unsupported call: send_input"
+      }
+    ]
+  }
+]

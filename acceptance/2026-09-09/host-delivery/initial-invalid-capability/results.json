@@ -1,0 +1,22 @@
+[
+  {
+    "case": "useful",
+    "passed": false,
+    "exitCode": 1,
+    "executionOutcome": {
+      "status": "host_failed",
+      "exitCode": 1,
+      "hostExitCode": 1,
+      "hostSignal": null,
+      "completed": 0,
+      "denied": 0,
+      "notDispatched": 0,
+      "unknown": 0,
+      "toolFailures": 0,
+      "awaitingApproval": 0
+    },
+    "newDispatchRows": 0,
+    "operatorConfigUnchanged": true,
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-useful-aa2ebfad178e4618979ae1da89f1ef72"
+  }
+]

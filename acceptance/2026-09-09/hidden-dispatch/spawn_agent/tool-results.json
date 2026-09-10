@@ -1,0 +1,11 @@
+[
+  [],
+  [
+    {
+      "type": "function_call_output",
+      "id": "fco_01a086d6-1384-7ab1-86e2-42de73c99db7",
+      "call_id": "call_probe",
+      "output": "unsupported call: spawn_agent"
+    }
+  ]
+]

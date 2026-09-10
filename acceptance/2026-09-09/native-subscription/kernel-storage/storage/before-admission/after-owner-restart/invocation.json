@@ -1,0 +1,19 @@
+{
+  "command": [
+    "node",
+    "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+    "restricted",
+    "--gateway-config",
+    "/Users/connor/.local/share/chio-required-operators/kernel-storage-fault-20260909/codex-final-before-admission/gateway.json",
+    "--codex-binary",
+    "/opt/homebrew/bin/codex",
+    "--evidence-dir",
+    "/tmp/chio-codex-kernel-storage-final-20260909/before-admission/after-owner-restart",
+    "--model-auth-file",
+    "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json",
+    "--prompt",
+    "Call the Chio write_file tool exactly once with path \"/workspace/before-fault.txt\" and content \"Codex retained fault effect before-admission\". Preserve both strings exactly. Stop after the returned result, especially if unsuccessful or uncertain. Do not retry, substitute a tool, or infer success from prose."
+  ],
+  "elapsedSecondsIncludingProvider": 10.34808445800445,
+  "exitCode": 3
+}

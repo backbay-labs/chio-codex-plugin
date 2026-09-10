@@ -1,0 +1,5 @@
+{
+  "retained_authority_session_from": "/tmp/chio-codex-final-fault-evidence-20260909/request-substitution-config.private.json",
+  "reason": "prior fault transport never reached tools/call; all prior outcomes not_dispatched; prior journals preserved",
+  "new_operation_namespace": "codex-final-fault3-request-substitution-20260909"
+}

@@ -1,0 +1,22 @@
+{
+  "case": "request-substitution",
+  "exit": 0,
+  "outputs": [
+    {
+      "tool": "write_file",
+      "state": "unknown",
+      "evidence": "unverified",
+      "reason": "missing or substituted execution evidence"
+    },
+    {
+      "tool": "write_file",
+      "state": "not_dispatched",
+      "evidence": "unverified",
+      "reason": "an unresolved operation fences this gateway; operator reconciliation required"
+    }
+  ],
+  "config_sha256_before": "40069779aa0103929c4ceb69ac9fe0fa4a1cb6216ec8c9b378f04e364fa4e117",
+  "config_sha256_after": "40069779aa0103929c4ceb69ac9fe0fa4a1cb6216ec8c9b378f04e364fa4e117",
+  "auth_copy_exists": false,
+  "canary_content_in_transcript": false
+}

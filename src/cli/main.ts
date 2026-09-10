@@ -39,6 +39,7 @@ import { revokeCmd } from "./revoke.js";
 import { receiptExportCmd } from "./receiptExport.js";
 import { publishCmd } from "./publish.js";
 import { runCmd } from "./run.js";
+import { restrictedCmd, prepareGatewayCmd } from "./restricted.js";
 import { planFirstCmd } from "./planFirst.js";
 
 function usage(): string {
@@ -46,6 +47,8 @@ function usage(): string {
     "Usage: chio-codex <subcommand> [...args]",
     "",
     "  run            Run Codex with Chio bonded (wraps `codex ...` with policy, publish, evidence)",
+    "  restricted     Candidate isolated Codex mode using only an operator-configured Chio MCP gateway",
+    "  prepare-gateway Establish a private gateway configuration using the packaged bridge",
     "  status         Show the current bonded session",
     "  bond           Bond the current/given session to a policy (creates state)",
     "  policy         Print the active policy path and parsed summary",
@@ -65,6 +68,10 @@ async function main(): Promise<void> {
     switch (sub) {
       case "run":
         process.exit(await runCmd(rest));
+      case "restricted":
+        process.exit(await restrictedCmd(rest));
+      case "prepare-gateway":
+        process.exit(prepareGatewayCmd(rest));
       case "status":
         console.log(await statusCmd());
         return;

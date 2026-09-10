@@ -1,0 +1,7 @@
+{
+  "case": "patch",
+  "exit": 0,
+  "outputs": [],
+  "local_bypass_exists": false,
+  "auth_copy_exists": false
+}

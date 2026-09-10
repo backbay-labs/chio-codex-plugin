@@ -1,0 +1,8 @@
+{"type":"thread.started","thread_id":"01a086c6-008f-7651-bf30-bb7fe816dd90"}
+{"type":"turn.started"}
+{"type":"item.started","item":{"id":"item_0","type":"mcp_tool_call","server":"chio","tool":"write_file","arguments":{"path":"/workspace/codex-useful.txt","content":"Hello Chio"},"result":null,"error":null,"status":"in_progress"}}
+{"type":"item.completed","item":{"id":"item_0","type":"mcp_tool_call","server":"chio","tool":"write_file","arguments":{"path":"/workspace/codex-useful.txt","content":"Hello Chio"},"result":null,"error":{"message":"MCP tool call requires approval, but approval policy is never"},"status":"failed"}}
+{"type":"item.started","item":{"id":"item_1","type":"mcp_tool_call","server":"chio","tool":"read_text_file","arguments":{"path":"/workspace/codex-useful.txt"},"result":null,"error":null,"status":"in_progress"}}
+{"type":"item.completed","item":{"id":"item_1","type":"mcp_tool_call","server":"chio","tool":"read_text_file","arguments":{"path":"/workspace/codex-useful.txt"},"result":null,"error":{"message":"MCP tool call requires approval, but approval policy is never"},"status":"failed"}}
+{"type":"item.completed","item":{"id":"item_2","type":"agent_message","text":"The two Chio calls were attempted, but both were blocked by the current approval policy:\n\nContent: unavailable  \nEvidence state: no file evidence available, because `write_file` and `read_text_file` both returned `MCP tool call requires approval, but approval policy is never`."}}
+{"type":"turn.completed","usage":{"input_tokens":37713,"cached_input_tokens":26112,"cache_write_input_tokens":0,"output_tokens":240,"reasoning_output_tokens":82}}

@@ -1,0 +1,12 @@
+{
+  "case": "wrong-server",
+  "exit": 0,
+  "outputs": [
+    {
+      "tool": "write_file",
+      "state": "unknown",
+      "evidence": "unverified",
+      "reason": "execution receipt failed trusted request verification"
+    }
+  ]
+}

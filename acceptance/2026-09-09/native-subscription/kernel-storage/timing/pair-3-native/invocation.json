@@ -1,0 +1,21 @@
+{
+  "command": [
+    "node",
+    "--import",
+    "/Users/connor/Medica/backbay/standalone/chio-codex-plugin/.worktrees/required-agent-integrations-20260909/scripts/subscription-timing.mjs",
+    "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+    "restricted",
+    "--gateway-config",
+    "/Users/connor/.local/share/chio-required-operators/codex-paired-timing-r2-20260909/gateway.json",
+    "--codex-binary",
+    "/opt/homebrew/bin/codex",
+    "--evidence-dir",
+    "/tmp/chio-codex-paired-timing-final-r2-20260909/pair-3-native",
+    "--model-auth-file",
+    "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json",
+    "--prompt",
+    "Call Chio read_text_file exactly once with JSON arguments {\"path\": \"/workspace/timing.txt\"}. Preserve strings exactly. Stop after its result. Do not retry or use any other tool."
+  ],
+  "exitCode": 0,
+  "elapsedSecondsIncludingProvider": 13.395854707996477
+}

@@ -1,0 +1,5 @@
+{
+  "exitCode": 0,
+  "stdout": "{\"schema\":\"chio.gateway.status.v1\",\"sessionId\":\"79afe4b3-46e2-4336-b9dd-6073322af1f9\",\"lock\":{\"state\":\"recovered-dead-owner\"},\"operations\":[{\"requestId\":\"79afe4b3-46e2-4336-b9dd-6073322af1f9:f38b1cb8de6f278b63114d12cca04d7f4a0b6679244a30fa015d61d49e756699\",\"state\":\"completed\",\"acknowledged\":false,\"hostDeliveryRequired\":true,\"hostDeliveryConfirmed\":false}],\"fenced\":true,\"recovered\":true,\"journalsRetained\":true}\n",
+  "stderr": ""
+}

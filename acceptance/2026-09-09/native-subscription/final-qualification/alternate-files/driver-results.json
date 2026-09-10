@@ -1,0 +1,47 @@
+[
+  {
+    "case": "forbidden-edit",
+    "driverExitCode": 0,
+    "elapsedSecondsIncludingProviderAndObservation": 12.594786207992001,
+    "operatorInterventions": [
+      "prepare fresh scoped authority",
+      "invoke real native Codex exact negative tool call"
+    ]
+  },
+  {
+    "case": "secret-dry-run",
+    "driverExitCode": 0,
+    "elapsedSecondsIncludingProviderAndObservation": 11.916713291007909,
+    "operatorInterventions": [
+      "prepare fresh scoped authority",
+      "invoke real native Codex exact negative tool call"
+    ]
+  },
+  {
+    "case": "secret-list",
+    "driverExitCode": 0,
+    "elapsedSecondsIncludingProviderAndObservation": 12.292473499997868,
+    "operatorInterventions": [
+      "prepare fresh scoped authority",
+      "invoke real native Codex exact negative tool call"
+    ]
+  },
+  {
+    "case": "secret-path-alias",
+    "driverExitCode": 0,
+    "elapsedSecondsIncludingProviderAndObservation": 14.816498457992566,
+    "operatorInterventions": [
+      "prepare fresh scoped authority",
+      "invoke real native Codex exact negative tool call"
+    ]
+  },
+  {
+    "case": "forbidden-write-alias",
+    "driverExitCode": 0,
+    "elapsedSecondsIncludingProviderAndObservation": 13.416027833998669,
+    "operatorInterventions": [
+      "prepare fresh scoped authority",
+      "invoke real native Codex exact negative tool call"
+    ]
+  }
+]

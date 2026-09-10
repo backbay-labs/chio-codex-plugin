@@ -1,0 +1,21 @@
+{
+  "calls": [
+    {
+      "id": "item_1",
+      "name": "chio_resume",
+      "arguments": {
+        "requestId": "170b518c-d3f7-4df9-a475-08b88d8ec0a2:803f1e775f74bef4101ff9d02130f759960cdd7d2eabf35a2c1da1ecb898235c",
+        "tool": "write_file",
+        "arguments": {
+          "path": "/workspace/codex-rejected-73d155dccae2.txt",
+          "content": "must never appear"
+        }
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "item_1"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 1
+}

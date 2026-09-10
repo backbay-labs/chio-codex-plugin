@@ -1,0 +1,16 @@
+{
+  "content": "Three paired Codex native resource reads.\n",
+  "dispatch": [
+    {
+      "schema": "chio.resource-dispatch-observation.v1",
+      "processId": 1,
+      "sequence": 1,
+      "observedAt": "2026-09-10T03:31:14.235Z",
+      "upstreamRequestId": 3,
+      "tool": "write_file",
+      "path": "/workspace/timing.txt",
+      "argumentsSha256": "d58af3548976443f66fcdf1b158c9c46d85a415633db01b03bafd9d9d0015a22",
+      "frameSha256": "841e4f6a40bf65d1dfdb91d6aa77c49c8485ec104544e788c9c0ba5efccd8783"
+    }
+  ]
+}

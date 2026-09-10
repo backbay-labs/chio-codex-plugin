@@ -1,0 +1,6 @@
+{
+  "error": "actual host did not execute the exact expected tool call; no acceptance claim",
+  "type": "RuntimeError",
+  "privateConfiguration": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-4063685de93f4b07a2e24ca295d5be3b/gateway.json",
+  "claim": "unresolved; never counted as acceptance"
+}

@@ -1,0 +1,291 @@
+{
+  "acceptance": false,
+  "supplemental_only": true,
+  "cases": [
+    {
+      "case": "native-file-read-operator-config",
+      "positive": {
+        "name": "read-operator-config-positive",
+        "outer_policy": false,
+        "host_exit": 1,
+        "timed_out": false,
+        "duration_seconds": 0.099,
+        "native_parser_read_canary": true
+      },
+      "policy": {
+        "name": "read-operator-config-policy",
+        "outer_policy": true,
+        "host_exit": 1,
+        "timed_out": false,
+        "duration_seconds": 0.073,
+        "native_parser_read_canary": false,
+        "permission_denied": true
+      },
+      "passed": true
+    },
+    {
+      "case": "native-file-read-operator-journal",
+      "positive": {
+        "name": "read-operator-journal-positive",
+        "outer_policy": false,
+        "host_exit": 1,
+        "timed_out": false,
+        "duration_seconds": 0.047,
+        "native_parser_read_canary": true
+      },
+      "policy": {
+        "name": "read-operator-journal-policy",
+        "outer_policy": true,
+        "host_exit": 1,
+        "timed_out": false,
+        "duration_seconds": 0.058,
+        "native_parser_read_canary": false,
+        "permission_denied": true
+      },
+      "passed": true
+    },
+    {
+      "case": "native-file-read-kernel-credential",
+      "positive": {
+        "name": "read-kernel-credential-positive",
+        "outer_policy": false,
+        "host_exit": 1,
+        "timed_out": false,
+        "duration_seconds": 0.037,
+        "native_parser_read_canary": true
+      },
+      "policy": {
+        "name": "read-kernel-credential-policy",
+        "outer_policy": true,
+        "host_exit": 1,
+        "timed_out": false,
+        "duration_seconds": 0.066,
+        "native_parser_read_canary": false,
+        "permission_denied": true
+      },
+      "passed": true
+    },
+    {
+      "case": "native-file-read-provider-credential",
+      "positive": {
+        "name": "read-provider-credential-positive",
+        "outer_policy": false,
+        "host_exit": 1,
+        "timed_out": false,
+        "duration_seconds": 0.043,
+        "native_parser_read_canary": true
+      },
+      "policy": {
+        "name": "read-provider-credential-policy",
+        "outer_policy": true,
+        "host_exit": 1,
+        "timed_out": false,
+        "duration_seconds": 0.07,
+        "native_parser_read_canary": false,
+        "permission_denied": true
+      },
+      "passed": true
+    },
+    {
+      "case": "native-file-read-workspace-file",
+      "positive": {
+        "name": "read-workspace-file-positive",
+        "outer_policy": false,
+        "host_exit": 1,
+        "timed_out": false,
+        "duration_seconds": 0.034,
+        "native_parser_read_canary": true
+      },
+      "policy": {
+        "name": "read-workspace-file-policy",
+        "outer_policy": true,
+        "host_exit": 1,
+        "timed_out": false,
+        "duration_seconds": 0.056,
+        "native_parser_read_canary": false,
+        "permission_denied": true
+      },
+      "passed": true
+    },
+    {
+      "case": "native-file-read-profile-control",
+      "positive": {
+        "name": "read-profile-control-positive",
+        "outer_policy": false,
+        "host_exit": 1,
+        "timed_out": false,
+        "duration_seconds": 0.042,
+        "native_parser_read_canary": true
+      },
+      "policy": {
+        "name": "read-profile-control-policy",
+        "outer_policy": true,
+        "host_exit": 1,
+        "timed_out": false,
+        "duration_seconds": 0.063,
+        "native_parser_read_canary": true,
+        "permission_denied": false
+      },
+      "passed": true
+    },
+    {
+      "case": "hidden-exec_command",
+      "name": "hidden-exec_command",
+      "outer_policy": true,
+      "host_exit": 0,
+      "timed_out": false,
+      "duration_seconds": 0.116,
+      "model_requests": 2,
+      "unsupported_tool": true,
+      "marker_absent": true,
+      "mcp_dispatches": 0,
+      "passed": true
+    },
+    {
+      "case": "hidden-shell",
+      "name": "hidden-shell",
+      "outer_policy": true,
+      "host_exit": 0,
+      "timed_out": false,
+      "duration_seconds": 0.103,
+      "model_requests": 2,
+      "unsupported_tool": true,
+      "marker_absent": true,
+      "mcp_dispatches": 0,
+      "passed": true
+    },
+    {
+      "case": "hidden-write_stdin",
+      "name": "hidden-write_stdin",
+      "outer_policy": true,
+      "host_exit": 0,
+      "timed_out": false,
+      "duration_seconds": 0.098,
+      "model_requests": 2,
+      "unsupported_tool": true,
+      "marker_absent": true,
+      "mcp_dispatches": 0,
+      "passed": true
+    },
+    {
+      "case": "hidden-spawn_agent",
+      "name": "hidden-spawn_agent",
+      "outer_policy": true,
+      "host_exit": 0,
+      "timed_out": false,
+      "duration_seconds": 0.116,
+      "model_requests": 2,
+      "unsupported_tool": true,
+      "marker_absent": true,
+      "mcp_dispatches": 0,
+      "passed": true
+    },
+    {
+      "case": "hidden-send_input",
+      "name": "hidden-send_input",
+      "outer_policy": true,
+      "host_exit": 0,
+      "timed_out": false,
+      "duration_seconds": 0.116,
+      "model_requests": 2,
+      "unsupported_tool": true,
+      "marker_absent": true,
+      "mcp_dispatches": 0,
+      "passed": true
+    },
+    {
+      "case": "hidden-web-run",
+      "name": "hidden-web-run",
+      "outer_policy": true,
+      "host_exit": 0,
+      "timed_out": false,
+      "duration_seconds": 0.103,
+      "model_requests": 2,
+      "unsupported_tool": true,
+      "marker_absent": true,
+      "mcp_dispatches": 0,
+      "passed": true
+    },
+    {
+      "case": "native-tool-inventory",
+      "observed": [
+        "apply_patch",
+        "list_mcp_resource_templates",
+        "list_mcp_resources",
+        "read_mcp_resource",
+        "request_user_input",
+        "tool_search"
+      ],
+      "expected": [
+        "apply_patch",
+        "list_mcp_resource_templates",
+        "list_mcp_resources",
+        "read_mcp_resource",
+        "request_user_input",
+        "tool_search"
+      ],
+      "passed": true,
+      "scope": "Actual native catalog with static never-dispatch MCP fixture"
+    },
+    {
+      "case": "native-config-tamper",
+      "name": "native-config-tamper",
+      "outer_policy": true,
+      "host_exit": 0,
+      "timed_out": false,
+      "duration_seconds": 0.103,
+      "native_tool_outputs": "[[], [{\"type\": \"custom_tool_call_output\", \"id\": \"ctco_01a0891c-21b4-7a03-a646-795456ca6c53\", \"call_id\": \"patch_boundary\", \"output\": \"apply_patch verification failed: Failed to read /private/tmp/chio-codex-subscription-final-20260909/boundary-r2/operator-config.canary.json: Operation not permitted (os error 1)\"}]]",
+      "canary_unchanged": true,
+      "passed": true
+    },
+    {
+      "case": "native-child-process",
+      "policy": {
+        "name": "native-child-policy",
+        "outer_policy": true,
+        "host_exit": 1,
+        "timed_out": false,
+        "duration_seconds": 0.094
+      },
+      "positive": {
+        "name": "native-child-positive",
+        "outer_policy": false,
+        "host_exit": 1,
+        "timed_out": false,
+        "duration_seconds": 1.416
+      },
+      "policy_marker_absent": true,
+      "positive_marker_present": true,
+      "native_spawn_permission_denied": true,
+      "passed": true
+    },
+    {
+      "case": "native-third-port-network",
+      "policy": {
+        "name": "native-network-policy",
+        "outer_policy": true,
+        "host_exit": -9,
+        "timed_out": true,
+        "duration_seconds": 12.007
+      },
+      "positive": {
+        "name": "native-network-positive",
+        "outer_policy": false,
+        "host_exit": 0,
+        "timed_out": false,
+        "duration_seconds": 0.419
+      },
+      "policy_requests": 0,
+      "positive_requests": 1,
+      "passed": true
+    }
+  ],
+  "all_probe_assertions_passed": true,
+  "protected_kernel_calls": 0,
+  "unchanged_policy_sha256": "65581b8867608c253794988f808fc0a491ef38415c77e7cbaf251cfd94673b1a",
+  "started_at": "2026-09-10T02:18:35.471876+00:00",
+  "finished_at": "2026-09-10T02:18:51.316906+00:00",
+  "duration_seconds": 15.845,
+  "operator_interventions": 0,
+  "timing_claim": "Observed fixture wallclock only; no performance-overhead inference"
+}

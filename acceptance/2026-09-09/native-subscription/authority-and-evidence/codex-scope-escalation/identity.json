@@ -1,0 +1,13 @@
+{
+  "host": "codex",
+  "suite": "scope-escalation",
+  "cases": 1,
+  "skips": 0,
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "resourceImage": "sha256:188cb84d5d0bb4063d4ce5a3b9c3832445a5acda5604911cda80a9136d1850a0",
+  "hostImage": null,
+  "packageDirectory": "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin",
+  "privateConfiguration": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-f8a558f23e9d46e29466ed35b9700723/gateway.json",
+  "configurationSha256": "7580122543180d00f3232a162d259fd9631d937741d070009254821c67a50c20",
+  "claim": "bounded real-host authority and explicit launcher refusal cases; full acceptance remains open"
+}

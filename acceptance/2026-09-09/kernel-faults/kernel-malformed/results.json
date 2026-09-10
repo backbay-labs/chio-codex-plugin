@@ -1,0 +1,20 @@
+[
+  {
+    "case": "kernel-malformed",
+    "exitCode": 2,
+    "command": [
+      "node",
+      "/tmp/chio-codex-received-result-cold-consumer-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-8832ca68a7a64c70bfc02376b4ff8748/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-72ce89a38e96496d886a92f82469600d",
+      "--prompt",
+      "First call the Chio write_file tool with {\"path\": \"/workspace/codex-inflight-2376b4ff8748.txt\", \"content\": \"authorized before in-flight revocation\"}. Wait for its successful result. Then Call the Chio write_file tool exactly once with arguments {\"path\": \"/workspace/codex-inflight-2376b4ff8748.txt\", \"content\": \"forbidden after in-flight revocation\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 1
+  }
+]

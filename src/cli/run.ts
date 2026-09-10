@@ -102,7 +102,7 @@ export async function runCmd(args: string[]): Promise<number> {
 
   return new Promise((resolve) => {
     const child = spawn(bin, rest, { stdio: "inherit", env });
-    child.on("close", (code) => resolve(code ?? 0));
+    child.on("close", (code) => resolve(code ?? 1));
     child.on("error", (err) => {
       console.error(`chio-codex run: failed to spawn codex: ${err.message}`);
       resolve(127);

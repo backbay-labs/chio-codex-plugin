@@ -1,0 +1,46 @@
+[
+  {
+    "case": "install-previous-candidate",
+    "exitCode": 0,
+    "elapsedSecondsIncludingProviderWhenUsed": 2.651174708007602,
+    "archiveSha256": "740225b7b0bef72634ee6e04b159565f0c75b494a69ce496b6a9b73dcbe50e30",
+    "launcherSha256": "056eb73049f8fc0056b597b3386b07c90f3e370c54c12ecb58b5a98cbd65174d",
+    "protectedResourceUnchanged": true
+  },
+  {
+    "case": "upgrade-to-current-candidate",
+    "exitCode": 0,
+    "elapsedSecondsIncludingProviderWhenUsed": 6.164837083008024,
+    "archiveSha256": "ac4f14ee4073abdc0c9ff2b4771e99adf7a871d084a9b488513f5d28eae56874",
+    "launcherSha256": "1ea563da0a738a3a10ba1166b3702aafe7bace92946935b4791f6912b0d7906b",
+    "protectedResourceUnchanged": true
+  },
+  {
+    "case": "current-help",
+    "exitCode": 0,
+    "elapsedSecondsIncludingProviderWhenUsed": 0.1865124169999035
+  },
+  {
+    "case": "upgraded-real-host",
+    "exitCode": 0,
+    "elapsedSecondsIncludingProviderWhenUsed": 24.673024332994828
+  },
+  {
+    "case": "remove-current-candidate",
+    "exitCode": 0,
+    "elapsedSecondsIncludingProviderWhenUsed": 0.7545411250030156
+  },
+  {
+    "case": "reinstall-current-candidate",
+    "exitCode": 0,
+    "elapsedSecondsIncludingProviderWhenUsed": 3.5670069589978084,
+    "archiveSha256": "ac4f14ee4073abdc0c9ff2b4771e99adf7a871d084a9b488513f5d28eae56874",
+    "launcherSha256": "1ea563da0a738a3a10ba1166b3702aafe7bace92946935b4791f6912b0d7906b",
+    "protectedResourceUnchanged": true
+  },
+  {
+    "case": "reinstalled-real-host",
+    "exitCode": 0,
+    "elapsedSecondsIncludingProviderWhenUsed": 23.404069209005684
+  }
+]

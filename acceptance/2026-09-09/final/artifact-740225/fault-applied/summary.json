@@ -1,0 +1,93 @@
+{
+  "integration_accepted": false,
+  "host_cases": [
+    {
+      "case": "request-substitution",
+      "exit": 0,
+      "outputs": [
+        {
+          "tool": "write_file",
+          "state": "unknown",
+          "evidence": "unverified",
+          "reason": "missing or substituted execution evidence"
+        },
+        {
+          "tool": "write_file",
+          "state": "not_dispatched",
+          "evidence": "unverified",
+          "reason": "an unresolved operation fences this gateway; operator reconciliation required"
+        }
+      ],
+      "config_sha256_before": "40069779aa0103929c4ceb69ac9fe0fa4a1cb6216ec8c9b378f04e364fa4e117",
+      "config_sha256_after": "40069779aa0103929c4ceb69ac9fe0fa4a1cb6216ec8c9b378f04e364fa4e117",
+      "auth_copy_exists": false,
+      "canary_content_in_transcript": false
+    },
+    {
+      "case": "result-substitution",
+      "exit": 0,
+      "outputs": [
+        {
+          "tool": "write_file",
+          "state": "unknown",
+          "evidence": "verified",
+          "reason": "no verified completed result; preserve the operation fence"
+        },
+        {
+          "tool": "write_file",
+          "state": "not_dispatched",
+          "evidence": "unverified",
+          "reason": "an unresolved operation fences this gateway; operator reconciliation required"
+        }
+      ],
+      "config_sha256_before": "52531a4c55b5a80a0d073912ee41f09cad4cebed662ef29d962f87914fb44df6",
+      "config_sha256_after": "52531a4c55b5a80a0d073912ee41f09cad4cebed662ef29d962f87914fb44df6",
+      "auth_copy_exists": false,
+      "canary_content_in_transcript": false
+    },
+    {
+      "case": "lost-response",
+      "exit": 0,
+      "outputs": [
+        {
+          "tool": "write_file",
+          "state": "unknown",
+          "evidence": "unverified",
+          "reason": "execution outcome unknown; no automatic retry"
+        },
+        {
+          "tool": "write_file",
+          "state": "not_dispatched",
+          "evidence": "unverified",
+          "reason": "an unresolved operation fences this gateway; operator reconciliation required"
+        }
+      ],
+      "config_sha256_before": "3063a42b33cd206fede72c8f0320a3a4b614e3c8eb9bb77222166c2b1b35c346",
+      "config_sha256_after": "3063a42b33cd206fede72c8f0320a3a4b614e3c8eb9bb77222166c2b1b35c346",
+      "auth_copy_exists": false,
+      "canary_content_in_transcript": false
+    },
+    {
+      "case": "timeout",
+      "exit": 0,
+      "outputs": [
+        {
+          "tool": "write_file",
+          "state": "unknown",
+          "evidence": "unverified",
+          "reason": "execution outcome unknown; no automatic retry"
+        },
+        {
+          "tool": "write_file",
+          "state": "not_dispatched",
+          "evidence": "unverified",
+          "reason": "an unresolved operation fences this gateway; operator reconciliation required"
+        }
+      ],
+      "config_sha256_before": "1518bb350dce7b3e1ad01b003d9b1d82f6e965adaf9dc9cc11a964c0c007da9b",
+      "config_sha256_after": "1518bb350dce7b3e1ad01b003d9b1d82f6e965adaf9dc9cc11a964c0c007da9b",
+      "auth_copy_exists": false,
+      "canary_content_in_transcript": false
+    }
+  ]
+}

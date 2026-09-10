@@ -1,0 +1,1 @@
+chio-codex: EEXIST: file already exists, open '/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-89f23db7391e45fbae13a7eba0d27ece/journal/gateway.lock'

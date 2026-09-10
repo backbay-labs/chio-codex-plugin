@@ -1,0 +1,5 @@
+{
+  "retained_authority_session_from": "/tmp/chio-codex-final-fault-evidence-20260909/tamper-config.private.json",
+  "reason": "previous test attempted only native patch; no protected MCP calls; original journal preserved",
+  "new_operation_namespace": "codex-final-gateway-crash-20260909"
+}

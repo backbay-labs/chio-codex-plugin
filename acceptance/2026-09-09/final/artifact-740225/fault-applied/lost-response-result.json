@@ -1,0 +1,22 @@
+{
+  "case": "lost-response",
+  "exit": 0,
+  "outputs": [
+    {
+      "tool": "write_file",
+      "state": "unknown",
+      "evidence": "unverified",
+      "reason": "execution outcome unknown; no automatic retry"
+    },
+    {
+      "tool": "write_file",
+      "state": "not_dispatched",
+      "evidence": "unverified",
+      "reason": "an unresolved operation fences this gateway; operator reconciliation required"
+    }
+  ],
+  "config_sha256_before": "3063a42b33cd206fede72c8f0320a3a4b614e3c8eb9bb77222166c2b1b35c346",
+  "config_sha256_after": "3063a42b33cd206fede72c8f0320a3a4b614e3c8eb9bb77222166c2b1b35c346",
+  "auth_copy_exists": false,
+  "canary_content_in_transcript": false
+}

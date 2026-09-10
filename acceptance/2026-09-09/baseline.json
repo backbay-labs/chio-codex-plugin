@@ -1,0 +1,14 @@
+{
+  "baseline_source": "6841c72e82c982600bf5fb070181c4ab723cf6ed",
+  "host_binary": "/Users/connor/.bun/install/global/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex",
+  "host_binary_sha256": "b973d440acac501fd2594a43e7ca9ce41e0a65b9dfb28d0d7a7837c99e1261e3",
+  "kernel_binary": "/usr/local/bin/chio",
+  "kernel_sha256": "c8d7ee8dc4ffdbed4a864b5984f931164a2b320e1a3d914adcb61d0636c354c3",
+  "kernel_version": "chio-cli 0.1.0",
+  "plugin_source_version": "0.2.0",
+  "plugin_manifest_version": "0.1.0",
+  "bridge_source_version": "0.2.2",
+  "public_registry_plugin_status": "E404",
+  "public_registry_bridge_status": "E404",
+  "integration_accepted": false
+}

@@ -1,0 +1,8 @@
+{
+  "database": "/Users/connor/.local/share/chio-required-operators/kernel-storage-fault-20260909/codex-final-after-receipt/receipts.sqlite",
+  "cutpoint": "after-receipt",
+  "lockedAtEpoch": 1789010058.0866492,
+  "mutation": "none; BEGIN IMMEDIATE held, then ROLLBACK",
+  "holdSeconds": 300,
+  "pid": 3493
+}

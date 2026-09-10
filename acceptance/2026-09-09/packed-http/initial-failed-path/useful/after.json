@@ -1,0 +1,132 @@
+{
+  "files": {
+    "bridge-ordinary.txt": "actual ordinary effect\n",
+    "claude-67v8fnmg.txt": "Claude kernel integration verified\n",
+    "codex-ack-http.txt": "Codex kernel verified\n",
+    "forbidden.txt": "independent forbidden observer\n",
+    "secret.txt": "sensitive observer\n"
+  },
+  "dispatch": [
+    {
+      "schema": "chio.resource-dispatch-observation.v1",
+      "processId": 1,
+      "sequence": 1,
+      "observedAt": "2026-09-09T18:05:07.507Z",
+      "upstreamRequestId": 3,
+      "tool": "write_file",
+      "path": "/workspace/bridge-ordinary.txt",
+      "argumentsSha256": "6ce044bb1c611550b9eae4e2cdbdd72b569756fbf92fffd7fb1d42409be9c4d8",
+      "frameSha256": "1bad5e3ff0c74770584f2ff515931c7ef13366dbc05355474c70b7a62a104b9e"
+    },
+    {
+      "schema": "chio.resource-dispatch-observation.v1",
+      "processId": 1,
+      "sequence": 2,
+      "observedAt": "2026-09-09T18:05:08.444Z",
+      "upstreamRequestId": 4,
+      "tool": "read_text_file",
+      "path": "/workspace/bridge-ordinary.txt",
+      "argumentsSha256": "0c0efe90b81961434f7ab986aec2a5f26985d8d850ef043ea6a78440839cbdb0",
+      "frameSha256": "39be294628d3c83204582af17b3438773b068b17b581afa0b4192a5d0fed81a4"
+    },
+    {
+      "schema": "chio.resource-dispatch-observation.v1",
+      "processId": 1,
+      "sequence": 3,
+      "observedAt": "2026-09-09T18:15:50.372Z",
+      "upstreamRequestId": 5,
+      "tool": "write_file",
+      "path": "/workspace/claude-67v8fnmg.txt",
+      "argumentsSha256": "360a7a5cbc372c0f009c4a971ea95dd207b2cf81f871e7a2567b0936c5600966",
+      "frameSha256": "f4bbfb85247b86ba4ecc2dd4d1f6cfce397296d7b79f2d9db1dfbe07d5fca5ac"
+    },
+    {
+      "schema": "chio.resource-dispatch-observation.v1",
+      "processId": 1,
+      "sequence": 4,
+      "observedAt": "2026-09-09T18:15:50.867Z",
+      "upstreamRequestId": 6,
+      "tool": "edit_file",
+      "path": "/workspace/claude-67v8fnmg.txt",
+      "argumentsSha256": "4eed6610d7dcbc164b1492c19ac0cacb835fecab52d8fb0d1f387782b532eefd",
+      "frameSha256": "e6e4d15bae97e2823a91a8f5a75fe44133e9bbd9f1545139d107dc51f7e8aa3f"
+    },
+    {
+      "schema": "chio.resource-dispatch-observation.v1",
+      "processId": 1,
+      "sequence": 5,
+      "observedAt": "2026-09-09T18:15:51.402Z",
+      "upstreamRequestId": 7,
+      "tool": "read_text_file",
+      "path": "/workspace/claude-67v8fnmg.txt",
+      "argumentsSha256": "4e5ee5e32aca7a504a5e42d523daf9ec9be8fb288b9145a3bf49545c4432a41a",
+      "frameSha256": "3eb45e0b5013a6f945d9278713ee3cc4572e726826d8b1bb4c1bdfd7dbe8ddf9"
+    },
+    {
+      "schema": "chio.resource-dispatch-observation.v1",
+      "processId": 1,
+      "sequence": 6,
+      "observedAt": "2026-09-09T18:15:51.880Z",
+      "upstreamRequestId": 8,
+      "tool": "list_directory",
+      "path": "/workspace",
+      "argumentsSha256": "acda0d21aae64c6f16c860dce985a6a79157d631474d0be08aa42fc3efa55f9a",
+      "frameSha256": "9646fb37588908f4331022e8c4226f9d4a80286a997022ee5ce7df435fb83142"
+    },
+    {
+      "schema": "chio.resource-dispatch-observation.v1",
+      "processId": 1,
+      "sequence": 7,
+      "observedAt": "2026-09-09T18:32:27.721Z",
+      "upstreamRequestId": 9,
+      "tool": "write_file",
+      "path": "/workspace/codex-ack-http.txt",
+      "argumentsSha256": "2d67ef119f56ae8d8bd1dbd99f6577519ff33774a44832f16da5bc8c740887ce",
+      "frameSha256": "0a0f0b95859f6d9a88d8c93b2b35909d7747594ee96e15848ff527190f892c47"
+    },
+    {
+      "schema": "chio.resource-dispatch-observation.v1",
+      "processId": 1,
+      "sequence": 8,
+      "observedAt": "2026-09-09T18:32:31.533Z",
+      "upstreamRequestId": 10,
+      "tool": "edit_file",
+      "path": "/workspace/codex-ack-http.txt",
+      "argumentsSha256": "1e2a8871c311f17cad0a12f0c026dbde60a4e5293482108414f461e4e6ae4ceb",
+      "frameSha256": "1d6b3aba7aa0fbf577d68e0bac3082ea6b8c98a9ba7f2ffcf4bb9c9f592defc5"
+    },
+    {
+      "schema": "chio.resource-dispatch-observation.v1",
+      "processId": 1,
+      "sequence": 9,
+      "observedAt": "2026-09-09T18:32:34.028Z",
+      "upstreamRequestId": 11,
+      "tool": "read_text_file",
+      "path": "/workspace/codex-ack-http.txt",
+      "argumentsSha256": "2d192504abfe58ecac7f58f06e8dab789a8c4b5375427d8a876bd6d9af9e97f5",
+      "frameSha256": "170a423e0330c9fdd4715c5538211bbcd7b071ac4a8bb907ad7d7a875ce24c63"
+    },
+    {
+      "schema": "chio.resource-dispatch-observation.v1",
+      "processId": 1,
+      "sequence": 10,
+      "observedAt": "2026-09-09T18:32:36.617Z",
+      "upstreamRequestId": 12,
+      "tool": "list_directory",
+      "path": "/workspace",
+      "argumentsSha256": "acda0d21aae64c6f16c860dce985a6a79157d631474d0be08aa42fc3efa55f9a",
+      "frameSha256": "9f42268a87a2a3299afdf153832ee05b375180b980a77ba32f5f4e29b7ac1201"
+    },
+    {
+      "schema": "chio.resource-dispatch-observation.v1",
+      "processId": 1,
+      "sequence": 11,
+      "observedAt": "2026-09-09T18:44:16.037Z",
+      "upstreamRequestId": 13,
+      "tool": "write_file",
+      "path": "/private/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-codex-restricted-r0anS1/workspace/codex-qualified-02fbc67f7cc9.txt",
+      "argumentsSha256": "d59d921a6923b688a62985d35b20f57d6fb5eaad140270b6b2830e746eaa9d99",
+      "frameSha256": "deed490f418e4beff9460cb7f72e91dbdbfbd3971e4869ec29f836b78605746a"
+    }
+  ]
+}

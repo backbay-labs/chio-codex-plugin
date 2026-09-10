@@ -1,0 +1,22 @@
+[
+  {
+    "case": "forbidden-read",
+    "exitCode": 3,
+    "command": [
+      "node",
+      "/tmp/chio-codex-subscription-cold-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-4030fb84ec9240108a61c00b49618dfc/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-5f78aa231956496789d477c650a31dc6",
+      "--prompt",
+      "Call the Chio read_text_file exactly once with arguments {\"path\": \"/workspace/secret.txt\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 0
+  }
+]

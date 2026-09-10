@@ -1,0 +1,14 @@
+[
+  {
+    "requestId": "7baed5e4-82a6-4f06-9f4f-3057568f23f7:4f6af8a4479a3dd55b4b18899c1cd4ad331bbc376f8682dcde07b8813d31ce5c",
+    "state": "unknown",
+    "acknowledged": false,
+    "hostDeliveryConfirmed": null
+  },
+  {
+    "requestId": "7baed5e4-82a6-4f06-9f4f-3057568f23f7:702e33a9f69fa5bf591c9a100148ac47f0db2b9368800d31861742976eb34215",
+    "state": "completed",
+    "acknowledged": true,
+    "hostDeliveryConfirmed": true
+  }
+]

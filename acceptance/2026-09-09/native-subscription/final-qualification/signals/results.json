@@ -1,0 +1,70 @@
+[
+  {
+    "case": "sigterm-after-effect",
+    "passed": true,
+    "exitCode": 2,
+    "newDispatchRows": 1,
+    "elapsedSecondsIncludingProviderAndStartup": 8.19116720900638,
+    "executionOutcome": {
+      "status": "unknown",
+      "exitCode": 2,
+      "hostExitCode": null,
+      "hostSignal": "SIGTERM",
+      "completed": 0,
+      "denied": 0,
+      "notDispatched": 0,
+      "unknown": 1,
+      "toolFailures": 0,
+      "awaitingApproval": 0
+    },
+    "operatorInterventions": [
+      "prepare fresh scoped session",
+      "hold verified completed result before host delivery",
+      "signal created launcher PID with SIGTERM",
+      "attempt same-authority restart and verify refusal without delivery acknowledgement"
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-lifecycle-sigterm-after-effect-a3c3d24a325e43dc80d94d087d64b2b9",
+    "scope": "bounded lifecycle fault"
+  },
+  {
+    "case": "sigkill-after-effect",
+    "passed": true,
+    "exitCode": -9,
+    "newDispatchRows": 1,
+    "elapsedSecondsIncludingProviderAndStartup": 7.852906125001027,
+    "executionOutcome": {},
+    "operatorInterventions": [
+      "prepare fresh scoped session",
+      "hold verified completed result before host delivery",
+      "signal created launcher PID with SIGKILL",
+      "recover dead operator lock",
+      "attempt same-authority restart and verify refusal without delivery acknowledgement"
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-lifecycle-sigkill-after-effect-3276edef9eba4594aa42d782c565f196",
+    "scope": "bounded lifecycle fault"
+  },
+  {
+    "case": "parallel-request",
+    "passed": false,
+    "exitCode": 3,
+    "newDispatchRows": 1,
+    "elapsedSecondsIncludingProviderAndStartup": 10.377009249990806,
+    "executionOutcome": {
+      "status": "protected_work_incomplete",
+      "exitCode": 3,
+      "hostExitCode": 0,
+      "hostSignal": null,
+      "completed": 0,
+      "denied": 0,
+      "notDispatched": 0,
+      "unknown": 0,
+      "toolFailures": 1,
+      "awaitingApproval": 0
+    },
+    "operatorInterventions": [
+      "prepare fresh scoped session"
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-lifecycle-parallel-request-66f67a121c22422eb1407da4e222565f",
+    "scope": "serial reads with parallel requested; relay disables parallel_tool_calls"
+  }
+]

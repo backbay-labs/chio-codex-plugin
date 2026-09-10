@@ -1,0 +1,66 @@
+{
+  "artifact": "/tmp/chio-codex-retained-artifacts/chio-codex-plugin-0.3.0-740225b7b0be.tgz",
+  "artifact_sha256": "740225b7b0bef72634ee6e04b159565f0c75b494a69ce496b6a9b73dcbe50e30",
+  "consumer_prefix": "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-codex-removal-qualified-f1n402hr/consumer",
+  "operations": [
+    {
+      "command": [
+        "npm",
+        "install",
+        "--prefix",
+        "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-codex-removal-qualified-f1n402hr/consumer",
+        "--cache",
+        "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-codex-removal-qualified-f1n402hr/empty-cache-0",
+        "--offline",
+        "--ignore-scripts",
+        "--no-audit",
+        "--no-fund",
+        "/tmp/chio-codex-retained-artifacts/chio-codex-plugin-0.3.0-740225b7b0be.tgz"
+      ],
+      "exit": 0,
+      "stdout": "\nadded 1 package in 2s\n",
+      "stderr": "npm notice\nnpm notice New minor version of npm available! 11.8.0 -> 11.19.1\nnpm notice Changelog: https://github.com/npm/cli/releases/tag/v11.19.1\nnpm notice To update run: npm install -g npm@11.19.1\nnpm notice\n",
+      "entrypoint_exists": true
+    },
+    {
+      "command": [
+        "npm",
+        "uninstall",
+        "--prefix",
+        "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-codex-removal-qualified-f1n402hr/consumer",
+        "--cache",
+        "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-codex-removal-qualified-f1n402hr/empty-cache-1",
+        "--offline",
+        "--ignore-scripts",
+        "--no-audit",
+        "--no-fund",
+        "@chio/codex-plugin"
+      ],
+      "exit": 0,
+      "stdout": "\nremoved 5 packages in 298ms\n",
+      "stderr": "",
+      "entrypoint_exists": false
+    },
+    {
+      "command": [
+        "npm",
+        "install",
+        "--prefix",
+        "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-codex-removal-qualified-f1n402hr/consumer",
+        "--cache",
+        "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-codex-removal-qualified-f1n402hr/empty-cache-2",
+        "--offline",
+        "--ignore-scripts",
+        "--no-audit",
+        "--no-fund",
+        "/tmp/chio-codex-retained-artifacts/chio-codex-plugin-0.3.0-740225b7b0be.tgz"
+      ],
+      "exit": 0,
+      "stdout": "\nadded 1 package in 2s\n",
+      "stderr": "npm notice\nnpm notice New minor version of npm available! 11.8.0 -> 11.19.1\nnpm notice Changelog: https://github.com/npm/cli/releases/tag/v11.19.1\nnpm notice To update run: npm install -g npm@11.19.1\nnpm notice\n",
+      "entrypoint_exists": true
+    }
+  ],
+  "reinstalled_cli_help_exit": 0,
+  "help": "Usage: chio-codex <subcommand> [...args]\n\n  run            Run Codex with Chio bonded (wraps `codex ...` with policy, publish, evidence)\n  restricted     Candidate isolated Codex mode using only an operator-configured Chio MCP gateway\n  prepare-gateway Establish a private gateway configuration using the packaged bridge\n  status         Show the current bonded session\n  bond           Bond the current/given session to a policy (creates state)\n  policy         Print the active policy path and parsed summary\n  guard-pause    Temporarily pause a named arc guard\n  budget         Adjust the spend ceiling (USD)\n  approve        Countersign a gated receipt by id\n  revoke         Tear down the bonded capability\n  receipt-export Emit an offline-verifiable evidence bundle\n  publish        Promote the current run into a scheduled citizen (did:chio:...)\n  plan-first     Wrap a prompt with a plan-first instruction for plan attestation\n"
+}

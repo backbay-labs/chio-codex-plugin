@@ -1,0 +1,22 @@
+[
+  {
+    "case": "host-response-loss",
+    "passed": true,
+    "exitCode": 2,
+    "executionOutcome": {
+      "status": "unknown",
+      "exitCode": 2,
+      "hostExitCode": null,
+      "hostSignal": "SIGTERM",
+      "completed": 0,
+      "denied": 0,
+      "notDispatched": 0,
+      "unknown": 1,
+      "toolFailures": 0,
+      "awaitingApproval": 0
+    },
+    "newDispatchRows": 1,
+    "operatorConfigUnchanged": true,
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-host-response-loss-bdc6f9e56dbd43268d09566e002605d1"
+  }
+]

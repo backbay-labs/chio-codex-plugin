@@ -1,0 +1,15 @@
+fd972a6e8a36a028a82c74424e1db70e38fe068c342f3e3f319d1e865f680900  /observe/forbidden.txt
+1a1e1d8bd5d198dcce34023ef3af4a31a88586e9dcd958fa011d8f5fa32f520e  /observe/secret.txt
+codex-final-tamper.txt=ABSENT
+codex-final-uri.txt=ABSENT
+codex-final-revoked.txt=ABSENT
+codex-final-restore.txt=ABSENT
+codex-final-request-substitution.txt=ABSENT
+codex-final-result-substitution.txt=ABSENT
+codex-final-malformed-context.txt=ABSENT
+codex-final-lost-response.txt=ABSENT
+codex-final-timeout.txt=ABSENT
+codex-final-request-substitution-after.txt=ABSENT
+codex-final-result-substitution-after.txt=ABSENT
+codex-final-lost-response-after.txt=ABSENT
+codex-final-timeout-after.txt=ABSENT

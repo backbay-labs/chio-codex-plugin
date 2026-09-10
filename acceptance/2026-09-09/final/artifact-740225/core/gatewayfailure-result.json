@@ -1,0 +1,7 @@
+{
+  "case": "gatewayfailure",
+  "exit": 1,
+  "outputs": [],
+  "local_bypass_exists": false,
+  "auth_copy_exists": false
+}

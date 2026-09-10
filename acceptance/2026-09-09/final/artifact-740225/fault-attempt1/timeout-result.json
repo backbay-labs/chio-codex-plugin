@@ -1,0 +1,22 @@
+{
+  "case": "timeout",
+  "exit": 0,
+  "outputs": [
+    {
+      "tool": "write_file",
+      "state": "not_dispatched",
+      "evidence": "unverified",
+      "reason": "kernel unavailable or malformed handshake before dispatch"
+    },
+    {
+      "tool": "write_file",
+      "state": "not_dispatched",
+      "evidence": "unverified",
+      "reason": "kernel unavailable or malformed handshake before dispatch"
+    }
+  ],
+  "config_sha256_before": "e940a744710aa2a4dedf592f0df3135783b76b7866d4542975362a3dc0cecaa5",
+  "config_sha256_after": "e940a744710aa2a4dedf592f0df3135783b76b7866d4542975362a3dc0cecaa5",
+  "auth_copy_exists": false,
+  "canary_content_in_transcript": false
+}

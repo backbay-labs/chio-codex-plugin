@@ -1,0 +1,56 @@
+[
+  {
+    "case": "concurrent-owner-refused",
+    "exitCode": 1,
+    "command": [
+      "node",
+      "/tmp/chio-codex-received-result-cold-consumer-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-24a5bd68227d4af9939b2d818a1fbb8d/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-a51809a279434d7db6cebdce9c98413f",
+      "--prompt",
+      "Call the Chio write_file tool exactly once with arguments {\"path\": \"/workspace/codex-parallel-2d818a1fbb8d.txt\", \"content\": \"second owner must never write\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 0
+  },
+  {
+    "case": "first-owner",
+    "exitCode": 0,
+    "command": [
+      "node",
+      "/tmp/chio-codex-received-result-cold-consumer-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-24a5bd68227d4af9939b2d818a1fbb8d/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-b9396845b7cc4d6c90144c5fc68ecd69",
+      "--prompt",
+      "Call the Chio write_file tool exactly once with arguments {\"path\": \"/workspace/codex-parallel-2d818a1fbb8d.txt\", \"content\": \"only the live owner may write\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 1
+  },
+  {
+    "case": "read-after-exclusive-owner",
+    "exitCode": 0,
+    "command": [
+      "node",
+      "/tmp/chio-codex-received-result-cold-consumer-20260909/node_modules/@chio/codex-plugin/dist/cli/main.js",
+      "restricted",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-approvals-24a5bd68227d4af9939b2d818a1fbb8d/gateway.json",
+      "--codex-binary",
+      "/opt/homebrew/bin/codex",
+      "--evidence-dir",
+      "/tmp/chio-codex-approval-runtime-fb46f29975a041b19b13a5271ab8aa8a",
+      "--prompt",
+      "Call the Chio read_text_file tool exactly once with arguments {\"path\": \"/workspace/codex-parallel-2d818a1fbb8d.txt\"}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 1
+  }
+]

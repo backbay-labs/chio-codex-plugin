@@ -1,0 +1,16 @@
+{
+  "case": "revoked",
+  "exit": 0,
+  "outputs": [
+    {
+      "tool": "write_file",
+      "state": "denied",
+      "evidence": "verified",
+      "reason": "capability has been revoked: cap-01a086e7-b928-7730-be54-477004ba04ba"
+    }
+  ],
+  "config_sha256_before": "ecebd1e19b1ba4ad6eb53827336758a6bf7e4050c3bb52f550593e374085fcf7",
+  "config_sha256_after": "ecebd1e19b1ba4ad6eb53827336758a6bf7e4050c3bb52f550593e374085fcf7",
+  "auth_copy_exists": false,
+  "canary_content_in_transcript": false
+}

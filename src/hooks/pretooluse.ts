@@ -15,17 +15,18 @@
  *   - allow/continue path: exit 0 with no stdout (Codex proceeds).
  *   - exit 2: also a block; reason goes to stderr.
  *
- * Fail-closed: any unexpected error → deny with reason
- * "chio unavailable: <detail>". We never let a tool through on error; a
- * deny here stops the tool call *before* it executes and records the
- * deny reason in the transcript Codex sees.
+ * Caught application errors emit deny. Codex 0.153.4 continues on hook
+ * loader failure, crash, timeout, malformed output and omission. This
+ * diagnostic hook is not an enforcing resource boundary; the restricted
+ * launcher uses a kernel-owned MCP resource instead.
  */
 
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
-import { buildBridge, getDefaultPolicyPath } from "../chio/bridge.js";
+import { buildBridge } from "../chio/bridge.js";
 import { getBond, patchBond } from "../chio/state.js";
 import { PENDING_DIR } from "../chio/paths.js";
+import { receiptKey } from "../chio/receiptKey.js";
 import type { Verdict } from "@chio/bridge";
 
 interface PreToolUseInput {
@@ -67,17 +68,26 @@ async function main(): Promise<never> {
     );
   }
 
+  if (!input || typeof input !== "object" || Array.isArray(input)) {
+    return deny("chio unavailable: hook input must be an object");
+  }
+  if (typeof input.session_id !== "string" || !input.session_id) {
+    return deny("chio unavailable: hook input missing session_id");
+  }
+  if (typeof input.tool_use_id !== "string" || !input.tool_use_id) {
+    return deny("chio unavailable: hook input missing tool_use_id");
+  }
   const toolName = input.tool_name;
   if (typeof toolName !== "string" || toolName.length === 0) {
     return deny("chio unavailable: hook input missing tool_name");
   }
 
   const bond = getBond(input.session_id);
-  const policyPath = bond?.policyPath ?? getDefaultPolicyPath();
-  if (!bond && !policyPath) {
+  const policyPath = bond?.policyPath;
+  if (!bond || !policyPath) {
     return deny(
-      "no capability bonded for this Codex session and no default policy " +
-        "configured; run `codex --chio --policy <path>` or set CHIO_POLICY_PATH",
+      "no bond for this Codex session; SessionStart must initialize the session " +
+        "before tool checks (a default policy does not restore revoked authority)",
     );
   }
 
@@ -96,15 +106,12 @@ async function main(): Promise<never> {
     return deny(`chio unavailable: ${(err as Error).message}`);
   }
 
-  // Cache the receipt so PostToolUse can verify its signature and persist it.
-  // Codex doesn't thread state between hooks, so we key by tool_use_id when
-  // present, else by turn_id + timestamp.
+  // Cache authorization evidence only. This is not an execution receipt.
+  // Untrusted host identifiers never become filesystem paths.
   if (verdict.receipt) {
     try {
       mkdirSync(PENDING_DIR, { recursive: true });
-      const id =
-        input.tool_use_id ??
-        `${input.turn_id ?? "turn"}-${Date.now()}`;
+      const id = receiptKey(input.session_id, input.tool_use_id);
       const pendingPath = join(PENDING_DIR, `${id}.json`);
 
       // Embed the plan hash (and prompt hash) in the receipt metadata we
@@ -114,6 +121,9 @@ async function main(): Promise<never> {
       // than mutating the signed receipt body.
       const wrapped = {
         receipt: verdict.receipt,
+        session_id: input.session_id,
+        tool_use_id: input.tool_use_id,
+        tool_name: toolName,
         chio_plan_attestation: bond
           ? {
               plan_hash: bond.planHash ?? null,
@@ -122,11 +132,9 @@ async function main(): Promise<never> {
             }
           : null,
       };
-      writeFileSync(pendingPath, JSON.stringify(wrapped));
+      writeFileSync(pendingPath, JSON.stringify(wrapped), { flag: "wx", mode: 0o600 });
     } catch (err) {
-      process.stderr.write(
-        `[chio] failed to cache receipt: ${(err as Error).message}\n`,
-      );
+      return deny(`chio unavailable: failed to cache authorization evidence (${(err as Error).message})`);
     }
   }
 
@@ -135,10 +143,10 @@ async function main(): Promise<never> {
     patchBond(bond.sessionId, { lastReceiptId: verdict.receipt.id });
   }
 
-  if (verdict.decision === "deny" || verdict.decision === "cancelled") {
+  if (verdict.decision !== "allow") {
     const guard = verdict.guard ? ` [guard: ${verdict.guard}]` : "";
     const reason = verdict.reason ?? "denied by chio";
-    return deny(`chio ${verdict.decision}: ${reason}${guard}`);
+    return deny(`chio ${verdict.decision ?? "invalid verdict"}: ${reason}${guard}`);
   }
 
   return allow(`verdict=${verdict.decision}`);

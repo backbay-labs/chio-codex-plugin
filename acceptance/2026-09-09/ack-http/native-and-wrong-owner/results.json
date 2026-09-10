@@ -1,0 +1,31 @@
+[
+  {
+    "case": "native",
+    "passed": true,
+    "exitCode": 0,
+    "executionOutcome": {
+      "status": "host_completed_without_protected_result",
+      "exitCode": 0,
+      "hostExitCode": 0,
+      "hostSignal": null,
+      "completed": 0,
+      "denied": 0,
+      "notDispatched": 0,
+      "unknown": 0,
+      "toolFailures": 0,
+      "awaitingApproval": 0
+    },
+    "newDispatchRows": 0,
+    "operatorConfigUnchanged": true,
+    "privateState": "/Users/connor/.local/share/chio-required-operators/aggregate-ack-20260909/codex-native-25eadb9e7e3d4e27840038a7d5b89a54"
+  },
+  {
+    "case": "wrong-owner",
+    "passed": true,
+    "exitCode": 1,
+    "executionOutcome": {},
+    "newDispatchRows": 0,
+    "operatorConfigUnchanged": true,
+    "privateState": "/Users/connor/.local/share/chio-required-operators/aggregate-ack-20260909/codex-wrong-owner-d4bcb63f7d5e4f2d8a7551c9fc631a23"
+  }
+]

@@ -1,0 +1,5 @@
+{
+  "gatewayConfig": "/Users/connor/.local/share/chio-required-operators/capability-expiry-20260909/qualification-codex-final/gateway.json",
+  "binding": "/tmp/chio-capability-expiry-20260909/codex-final/binding.json",
+  "expiresAt": 1789007062
+}

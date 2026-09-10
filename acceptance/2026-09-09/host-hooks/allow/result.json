@@ -1,0 +1,28 @@
+{
+  "case": "allow",
+  "host_exit": 0,
+  "timed_out": false,
+  "duration_s": 12.258,
+  "hook_events": 1,
+  "tool_names": [
+    "Bash"
+  ],
+  "effect_exists": true,
+  "effect_content": "observed-effect",
+  "command": [
+    "/opt/homebrew/bin/codex",
+    "exec",
+    "--skip-git-repo-check",
+    "--sandbox",
+    "workspace-write",
+    "--json",
+    "--model",
+    "gpt-6-astra",
+    "-C",
+    "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-codex-host-raau5idx/allow/workspace",
+    "--dangerously-bypass-hook-trust",
+    "Use the shell tool exactly once to run: printf 'observed-effect' > effect.txt . Run the command without the final period. Do not inspect files or use another tool. If the tool is blocked or fails, stop and report that result. This is a designated disposable test workspace."
+  ],
+  "profile": "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-codex-host-raau5idx/allow/profile",
+  "workspace": "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-codex-host-raau5idx/allow/workspace"
+}

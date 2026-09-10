@@ -1,0 +1,18 @@
+{
+  "launchPreflightRefused": false,
+  "calls": [
+    {
+      "id": "item_1",
+      "name": "write_file",
+      "arguments": {
+        "path": "/workspace/codex-parallel-2d818a1fbb8d.txt",
+        "content": "only the live owner may write"
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "item_1"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 1
+}

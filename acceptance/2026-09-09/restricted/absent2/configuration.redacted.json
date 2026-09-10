@@ -1,0 +1,119 @@
+{
+  "execution": {
+    "endpoint": "http://127.0.0.1:1/mcp",
+    "bearerToken": "REDACTED: retained only in operator private configuration",
+    "trustedSigners": [
+      "fdd1d3e5702ccb18232cf353b365e17a5ce8ad4249cade41fdcde2b7e8d3dc4b"
+    ],
+    "serverId": "fs",
+    "subjectKey": "3d22b749cbbc808f3ad90f3e78b944f4babba3a0968309eb900ed76b57ba7c19",
+    "capabilityId": "cap-01a086c8-a7b2-7621-9a66-b4d7ffa95dee",
+    "sessionId": "ed10cfaa85511e5ba534feb2db83774008a51d66a62413c2ca0ce9ea65480427"
+  },
+  "sessionId": "codex-absent2-20260909",
+  "journalDir": "/tmp/chio-six-host-kernel-20260909/codex-absent2-journal",
+  "tools": [
+    {
+      "name": "read_text_file",
+      "description": "Read Text File\n\nRead the complete contents of a file from the file system as text. Handles various text encodings and provides detailed error messages if the file cannot be read. Use this tool when you need to examine the contents of a single file. Use the 'head' parameter to read only the first N lines of a file, or the 'tail' parameter to read only the last N lines of a file. Operates on the file as text regardless of extension. Only works within allowed directories.",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "properties": {
+          "head": {
+            "description": "If provided, returns only the first N lines of the file",
+            "type": "number"
+          },
+          "path": {
+            "type": "string"
+          },
+          "tail": {
+            "description": "If provided, returns only the last N lines of the file",
+            "type": "number"
+          }
+        },
+        "required": [
+          "path"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "name": "write_file",
+      "description": "Write File\n\nCreate a new file or completely overwrite an existing file with new content. Use with caution as it will overwrite existing files without warning. Handles text content with proper encoding. Only works within allowed directories.",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path",
+          "content"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "name": "edit_file",
+      "description": "Edit File\n\nMake line-based edits to a text file. Each edit replaces exact line sequences with new content. Returns a git-style diff showing the changes made. Only works within allowed directories.",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "properties": {
+          "dryRun": {
+            "default": false,
+            "description": "Preview changes using git-style diff format",
+            "type": "boolean"
+          },
+          "edits": {
+            "items": {
+              "properties": {
+                "newText": {
+                  "description": "Text to replace with",
+                  "type": "string"
+                },
+                "oldText": {
+                  "description": "Text to search for - must match exactly",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "oldText",
+                "newText"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path",
+          "edits"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_directory",
+      "description": "List Directory\n\nGet a detailed listing of all files and directories in a specified path. Results clearly distinguish between files and directories with [FILE] and [DIR] prefixes. This tool is essential for understanding directory structure and finding specific files within a directory. Only works within allowed directories.",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "properties": {
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path"
+        ],
+        "type": "object"
+      }
+    }
+  ]
+}

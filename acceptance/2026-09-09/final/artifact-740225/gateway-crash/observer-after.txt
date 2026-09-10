@@ -1,0 +1,2 @@
+codex-final-crash-first.txt=first-completed
+codex-final-crash-after.txt=ABSENT

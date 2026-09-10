@@ -1,0 +1,20 @@
+{
+  "case": "wrongsigner",
+  "exit": 0,
+  "outputs": [
+    {
+      "tool": "write_file",
+      "state": "unknown",
+      "evidence": "unverified",
+      "reason": "execution receipt failed trusted request verification"
+    },
+    {
+      "tool": "write_file",
+      "state": "not_dispatched",
+      "evidence": "unverified",
+      "reason": "an unresolved operation fences this gateway; operator reconciliation required"
+    }
+  ],
+  "local_bypass_exists": false,
+  "auth_copy_exists": false
+}

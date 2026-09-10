@@ -1,0 +1,108 @@
+[
+  {
+    "case": "plugin-omitted",
+    "passed": true,
+    "exitCode": 1,
+    "newDispatchRows": 0,
+    "elapsedSecondsIncludingProviderAndStartup": 0.18451862499932759,
+    "executionOutcome": {},
+    "operatorInterventions": [
+      "prepare fresh scoped session",
+      "remove enforcement module from disposable installed consumer"
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-lifecycle-plugin-omitted-af0557a7c78c4e69ac291a14ef78eef8",
+    "scope": "bounded lifecycle fault"
+  },
+  {
+    "case": "gateway-missing",
+    "passed": true,
+    "exitCode": 1,
+    "newDispatchRows": 0,
+    "elapsedSecondsIncludingProviderAndStartup": 0.13295054199988954,
+    "executionOutcome": {},
+    "operatorInterventions": [
+      "prepare fresh scoped session",
+      "remove enforcement module from disposable installed consumer"
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-lifecycle-gateway-missing-c6a809888e844200805e25e1ff78be5c",
+    "scope": "bounded lifecycle fault"
+  },
+  {
+    "case": "host-missing",
+    "passed": true,
+    "exitCode": 1,
+    "newDispatchRows": 0,
+    "elapsedSecondsIncludingProviderAndStartup": 0.3589233340026112,
+    "executionOutcome": {},
+    "operatorInterventions": [
+      "prepare fresh scoped session",
+      "select absent native executable"
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-lifecycle-host-missing-4bc79c7938464b1db6236334ca6e564d",
+    "scope": "bounded lifecycle fault"
+  },
+  {
+    "case": "init-malformed",
+    "passed": true,
+    "exitCode": 1,
+    "newDispatchRows": 0,
+    "elapsedSecondsIncludingProviderAndStartup": 1.269413000001805,
+    "executionOutcome": {
+      "status": "host_failed",
+      "exitCode": 1,
+      "hostExitCode": 1,
+      "hostSignal": null,
+      "completed": 0,
+      "denied": 0,
+      "notDispatched": 0,
+      "unknown": 0,
+      "toolFailures": 0,
+      "awaitingApproval": 0
+    },
+    "operatorInterventions": [
+      "prepare fresh scoped session",
+      "inject operator adapter init-malformed"
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-lifecycle-init-malformed-2f1da6d579e041b2a6654d600140badb",
+    "scope": "bounded lifecycle fault"
+  },
+  {
+    "case": "init-timeout",
+    "passed": true,
+    "exitCode": 1,
+    "newDispatchRows": 0,
+    "elapsedSecondsIncludingProviderAndStartup": 10.890781791997142,
+    "executionOutcome": {
+      "status": "host_failed",
+      "exitCode": 1,
+      "hostExitCode": 1,
+      "hostSignal": null,
+      "completed": 0,
+      "denied": 0,
+      "notDispatched": 0,
+      "unknown": 0,
+      "toolFailures": 0,
+      "awaitingApproval": 0
+    },
+    "operatorInterventions": [
+      "prepare fresh scoped session",
+      "inject operator adapter init-timeout"
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-lifecycle-init-timeout-6d658e6508e4495baa1e9b430f574b86",
+    "scope": "bounded lifecycle fault"
+  },
+  {
+    "case": "init-crash",
+    "passed": true,
+    "exitCode": 86,
+    "newDispatchRows": 0,
+    "elapsedSecondsIncludingProviderAndStartup": 1.1906490419933107,
+    "executionOutcome": {},
+    "operatorInterventions": [
+      "prepare fresh scoped session",
+      "inject operator adapter init-crash"
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-lifecycle-init-crash-df697c27de8140e192c4a7dd101f8b0b",
+    "scope": "bounded lifecycle fault"
+  }
+]

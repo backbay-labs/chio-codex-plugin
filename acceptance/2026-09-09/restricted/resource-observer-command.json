@@ -1,0 +1,13 @@
+[
+  "docker",
+  "run",
+  "--rm",
+  "--network",
+  "none",
+  "--mount",
+  "type=volume,src=chio-required-agents-20260909,dst=/observe,readonly",
+  "alpine:3.20",
+  "sh",
+  "-c",
+  "for file in codex-useful.txt forbidden.txt codex-unavailable.txt codex-wrongsubject.txt codex-wrongsigner.txt codex-after-unknown.txt; do if test -f \"/observe/$file\"; then printf \"%s=\" \"$file\"; cat \"/observe/$file\"; printf \"\\n\"; else printf \"%s=ABSENT\\n\" \"$file\"; fi; done"
+]

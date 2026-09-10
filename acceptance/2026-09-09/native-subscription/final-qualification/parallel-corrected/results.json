@@ -1,0 +1,26 @@
+[
+  {
+    "case": "parallel-request",
+    "passed": true,
+    "exitCode": 0,
+    "newDispatchRows": 2,
+    "elapsedSecondsIncludingProviderAndStartup": 26.5904980829946,
+    "executionOutcome": {
+      "status": "protected_calls_completed",
+      "exitCode": 0,
+      "hostExitCode": 0,
+      "hostSignal": null,
+      "completed": 2,
+      "denied": 0,
+      "notDispatched": 0,
+      "unknown": 0,
+      "toolFailures": 0,
+      "awaitingApproval": 0
+    },
+    "operatorInterventions": [
+      "prepare fresh scoped session"
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/codex-final-http-20260909/codex-lifecycle-parallel-request-ae2f5295773747e382fac5caa682461f",
+    "scope": "serial reads with parallel requested; relay disables parallel_tool_calls"
+  }
+]

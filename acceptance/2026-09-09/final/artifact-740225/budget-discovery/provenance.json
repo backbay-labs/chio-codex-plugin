@@ -1,0 +1,13 @@
+{
+  "kind": "deterministic model-transport driver; actual Codex host and real kernel; not a live model",
+  "prior_authority_session": "/tmp/chio-codex-final-authority-evidence-20260909/budget-config.private.json",
+  "prior_invocations": 29,
+  "prior_outcomes": "29 completed, then one not_dispatched; original journal retained",
+  "artifact": {
+    "prefix": "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-codex-final-qualified-clfjwafz/consumer",
+    "artifact": "/tmp/chio-staged-packaging/chio-codex-plugin-0.3.0.tgz",
+    "artifact_sha256": "740225b7b0bef72634ee6e04b159565f0c75b494a69ce496b6a9b73dcbe50e30",
+    "install_exit": 0
+  },
+  "gateway_sha256": "e882c579cff0da72476ab60fdca029a7962b84a55440788f12a513d20ed1ac96"
+}
